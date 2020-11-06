@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Locomotion </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Locomotion ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="locomotion">Locomotion</h1>
+
+<hr>
+<p>This page describes the ways for VotanicXR user to move the player.</p>
+<h2 id="using-preset-of-controller">Using Preset of Controller</h2>
+<p>As mentioned at previous chapter, VotanicXR SDK have provided mapped buttons and commands, this part will introduce based Vive Controller.</p>
+<ol>
+<li><p>Please connected a controller accpeted by VotanicXR and open the scene created at previous chapter.</p>
+</li>
+<li><p>Click play to enter the play mode. Game window will be shown with the perspective view of the vGear user at the start point with the default wand tool.</p>
+</li>
+<li><p>Use directional pad to navigate forward, backward and rotate.</p>
+</li>
+<li><p>Also, send the <code>Move</code> command and <code>Rotate</code> command with specified value through <a href="InputSystem.html">Input System</a>, can navigate forward, backward and rotate.</p>
+</li>
+</ol>
+<pre><code class="csharp">
+void Update()
+{
+	//  Using WASD to move
+	if (vGear.Input.KeyboardPress(KeyCode.W))
+		vGear.Cmd.Send("Move", 1);
+	if (vGear.Input.KeyboardPress(KeyCode.S))
+		vGear.Cmd.Send("Move", -1);
+	if (vGear.Input.KeyboardPress(KeyCode.D))
+		vGear.Cmd.Send("Rotate", 1);
+	if (vGear.Input.KeyboardPress(KeyCode.A))
+		vGear.Cmd.Send("Rotate", -1);
+}
+</code></pre>
+<h2 id="using-teleport-tool">Using Teleport Tool</h2>
+<p>Teleport is common navigation tool in VR application, VotanicXR have provided it with editable effects.</p>
+<ol>
+<li><p>Go to <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code>, component <code>V Gear_Teleport (Script)</code> is shown at the inspector window, which manage the setting of the Teleport tool.</p>
+<p>And go to <code>vGear &gt; Frame &gt; Controller</code> to set the default tool into <code>Teleport</code> for testing.</p>
+<p><img src="../images/5.2.1.png" alt="set the default tool to Teleport"></p>
+</li>
+<li><p>Enter play mode, the default tool is changed into teleport.</p>
+<p>By pressing the Trigger button of the controller, or send the <code>Teleport</code> command through <a href="InputSystem.html">Input System</a>, the vGear user will be teleported into the projection point.</p>
+</li>
+</ol>
+<pre><code class="csharp">
+void Update()
+{
+	//	Press Space to Teleport
+	if (vGear.Input.KeyboardPress(KeyCode.Space))
+		vGear.Cmd.Send("Teleport");
+}
+</code></pre>
+<ol start="3">
+<li><p>To make sure player teleport into a correct position, <code>Waypoint</code> can be used.
+Right click <code>vGear &gt; Waypoint</code> and drag the prefab into desired position.</p>
+<p>To apply a custom rotation, you can enable the <code>Apply Rotation</code> with custom value of face angle and offset.</p>
+</li>
+<li><p>To limit the teleport function for different usage, we can set different modes in setting <strong>[Advance]</strong> of component <code>V Gear_Teleport (Script)</code>.</p>
+<table width="100%">
+	<caption><b>[Advanced]</b></caption>
+	<tr><td>Teleport Waypoint			<td>Waypoint detection setting.<br><b>Detect</b> will detect waypoint, <b>Ignore</b> will ignore waypoint, <br>and <b>WaypointOnly</b> only detect waypoint for teleportation.
+	<tr><td>Collision Mode				<td>Enable to detect collisions to prevent teleportation, <br>else only teleport to the ground level.
+</td></td></tr></td></td></tr></table>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
