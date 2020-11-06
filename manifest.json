@@ -1,0 +1,674 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/laye/VontanicXR Tutorial/Docfx Template/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "+BQW6fP4bHZSQ2ai1lh8cA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "H5frWk4fYGIWHpFNp3BdfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ConfigurationSetting.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ConfigurationSetting.html",
+          "hash": "oJd11AN6OfG+1p/Fya9Suw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/InputSystem.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/InputSystem.html",
+          "hash": "MSejeTD1MCVJQGZDQyGVyg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Interaction.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Interaction.html",
+          "hash": "DUeMTg7ipWdKEeHGTsxuMQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Locomotion.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Locomotion.html",
+          "hash": "ADQfeB3XChSshZqdS5GBfg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/QuickStart.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/QuickStart.html",
+          "hash": "z1YD8bIhgDXlXzXesyyE9Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/SettingUpwithOpenVR.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/SettingUpwithOpenVR.html",
+          "hash": "PuZ56MgjQ6ZAdKtyyvhOIw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/UIElement.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/UIElement.html",
+          "hash": "Mn2LOhgJY5OutrKmAlLK7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/UsingConfigurator.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/UsingConfigurator.html",
+          "hash": "emmjps+5lIowqr9TsaN4/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "NdnlaE+QG++15Ng87RjgGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "ffJ/09JjEErdCmkWYFEYlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.1.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.1.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.2.1.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.2.1.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.2.1.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.2.1.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.2.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.2.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.2.2.1b.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.2.2.1b.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.2.2.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.2.2.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.2.2.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.2.2.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.2.2.4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.2.2.4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.3.1.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.3.1.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.3.1.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.3.1.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/3.4.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/3.4.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.1.0 - Copy.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.1.0 - Copy.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.1.0.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.1.0.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.1.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.1.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.2.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.2.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.2.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.2.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.2.4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.2.4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.3.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/4.3.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/4.3.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/5.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/5.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.3.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.4.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.4.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.4.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.4.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.4.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.4.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.5.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.5.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.2.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.2.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.3.1 - Copy.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.3.1 - Copy.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.3.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.3.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.3.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.5.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.5.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.6.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.6.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.7.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.7.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.1.7.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.7.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.2.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.2.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.2.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.2.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/7.2.4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.2.4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "kHG4DGNZhWbPavNwC4eNNQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "XYVjUjvh2ga7/ePzzPkzHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 10
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
