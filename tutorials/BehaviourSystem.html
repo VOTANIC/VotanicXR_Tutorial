@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title> </title>
+    <title>Behaviour System </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content=" ">
+    <meta name="title" content="Behaviour System ">
     <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,8 +67,70 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
+<h1 id="behaviour-system">Behaviour System</h1>
 
-<p>Under construct.</p>
+<hr>
+<p>The <code>Behaviour System</code> is a tool to replace coding interactions with user interface and button presses.</p>
+<h2 id="behaviour-manager">Behaviour Manager</h2>
+<p><code>Behaviour Manager</code> is the manager of <code>Behaviour System</code>, will be introduced below. Right-click <code>vGear &gt; GameObject &gt; Behaviour Manager</code>, the prefab added contain <code>V Gear_Behaviour Manager(Script)</code> component, which manage the system.</p>
+<p><img src="../images/10.1.0.png" alt="The V Gear_Behaviour Manager (Script)"></p>
+<ol>
+<li><p>Click <code>Add Behaviour</code> of the manager, a new gameobject is added in <strong>[Behaviour]</strong>, and added into Hierarchy as a child of <code>Behaviour Manager</code>.</p>
+<p><img src="../images/10.1.1.1.png" alt="The Behaviour GameObject"></p>
+<p><img src="../images/10.1.1.2.png" alt="The V Gear_Behaviour (Script)"></p>
+</li>
+<li><p>Select the <code>Behaviour (0)</code> generated, click <code>Add Condition</code> in the <code>V Gear Behaiour (Script)</code> component. Then click <code>Condition 1</code> of the <code>If</code> Branch, it will bring you to the <code>Condition Edit Window</code>. There are different types of condition with parameter to choose.</p>
+<p><img src="../images/10.1.2.png" alt="The Condition window."></p>
+</li>
+<li><p>Place a prop gameobject from <code>Props</code>, add <code>V Gear_Interactable</code> component into the gameobject. Attach it into the <code>Condition 1</code> and set the Condition type to <code>Interaction</code> as follow.</p>
+<p><img src="../images/10.1.3.png" alt="The Condition window with Interaction type."></p>
+</li>
+<li><p>Click <code>Add Action</code> in the <code>Behaviour</code> component, <code>Action</code> window is brought out with different types of action.</p>
+<p><img src="../images/10.1.4.png" alt="The Action window."></p>
+</li>
+<li><p>Place another prop gameobject at the top of the prop before and disable it. Attach it into the <code>Action 1</code> and set the Action Type to <code>Enable</code> as follow.</p>
+<p><img src="../images/10.1.5.png" alt="The Action window with Enable."></p>
+</li>
+<li><p>The result of this example will be as follow, when the box is selected, the bathtub appears!</p>
+</li>
+</ol>
+<table width="100%">
+<tr><td>
+<img src="../images/10.1.6.1.png" alt="Before the Box selected"> 
+<td>
+<img src="../images/10.1.6.2.png" alt="After the Box selected">
+</td></td></tr></table>
+<h2 id="scenario">Scenario</h2>
+<p>By using <code>Behaviour Manager</code>, we can perform scenario without coding. The following example is a simple scenario, when the box is interacted or we wait in front of the box for five seconds, a shield is found and can be rotate.</p>
+<ol>
+<li><p>Place the models in suitable position with adding <code>v Gear_Interactables(Script)</code>component to them and disable the arrow button and the shield.
+Add a <code>Positioner</code> prefab in front of the box by right-click <code>vGEar &gt; GameObject &gt; Positioner</code>.</p>
+<p><img src="../images/10.2.1.png" alt="The gameObjects added."></p>
+</li>
+<li><p>Here will be two behaviour in this scenario, one to open the box with shield and arrow button, another to rotate the shield.</p>
+<p><img src="../images/10.2.2.1.png" alt=""></p>
+</li>
+<li><p>The first behaviour shows the functions in the branch. If one of the <code>Trigger</code> is triggered, the <code>Plan</code> in the branch will be executed.</p>
+<p>For multiple <code>Plans</code>, one of it will be excuted. The sum of their probability will be 100% automatically.</p>
+<p>For no <code>Trigger</code>, the <code>Plan</code> will be directly executed.</p>
+<p>If none of the <code>Trigger</code> is triggered, the Behaviour will go to next branch.</p>
+<p><img src="../images/10.2.2.2.png" alt="Detail of the first behaviour"></p>
+<p>Below is the detail of the first behaviour.</p>
+<p>It performs <code>logical AND</code> in the <code>Trigger</code> <code>Wait in front of box for 5 seconds</code>, and <code>logical OR</code> between the <code>Trigger</code> <code>Wait in front of box for 5 seconds</code> and the <code>Trigger</code> <code>Interact with the box</code>.</p>
+<p>To perform <code>logical AND</code> with two conditions in a <code>Trigger</code>, press the <code>+</code> button next to the first condition.</p>
+<p>To perform <code>logical OR</code> between <code>Triggers</code>, press the <code>+</code> button next to the first <code>Trigger</code>.</p>
+<p><img src="../images/10.2.2.4.png" alt="Detail of Triggers in the first behaviour"></p>
+<p><img src="../images/10.2.2.5.png" alt="Detail of Plan in the first behaviour"></p>
+</li>
+<li><p>The second behaviour shows the usage of loop in the <code>Behaviour</code>.</p>
+<p>Input desire value into <code>Loop Times</code> to loop the behaviour several times.</p>
+<p>Check the option <code>Loop Always</code> to loop the behaviour forever when it being triggered.</p>
+<p>Below is the detail of the second behaviour.</p>
+<p>It performs loop feature when the first <code>Trigger</code> is satisfied. When the <code>Trigger</code> <code>Press Arrow Button</code> is triggered, the Plan <code>Rotate the Shield</code> will be executed.</p>
+<p><img src="../images/10.2.2.3.png" alt="Detail of second behaviour"></p>
+<p><img src="../images/10.2.2.6.png" alt="Detail of Trigger and Plan second behaviour"></p>
+</li>
+</ol>
 </article>
           </div>
           
