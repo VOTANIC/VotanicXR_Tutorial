@@ -71,7 +71,30 @@
 
 <hr>
 <p><strong>SDK Manager</strong> (<strong>vGear</strong>) is the manager of the VotanicXR SDK, which is a prefab (prefabricate) provided by Votanic SDK. It is based on another prefab <strong>vCast</strong>, and implemented with other extension features.</p>
-<p>This page describes the basic features of the vGear and how to build a playable executable.</p>
+<p>This page describes how to build a playable executable.</p>
+<h2 id="before-start">Before start</h2>
+<h3 id="hardware">Hardware</h3>
+<h3 id="configuration">Configuration</h3>
+<p>Configure the following settings before import the VotanicXR SDK:</p>
+<ol>
+<li>In <code>Edit &gt; Project Settings &gt; Player</code>, set the <code>Scripting Runtime Version</code> to <strong>.Net 4.x Equivalent</strong> if you are using Unity 2018.2.</li>
+<li>In <code>Edit &gt; Project Settings &gt; Editor</code>, set the <code>Version Control</code> is <strong>Visible Meta Files</strong> and <code>Asset Serialization</code> is <strong>Mixed</strong>.</li>
+<li>In <code>File &gt; Build Settings</code>, set the <code>Architecture</code> into <strong>x86_64</strong>.</li>
+</ol>
+<h3 id="import-sdk">Import SDK</h3>
+<p>Import the VotanicXR SDK for Unity:</p>
+<ol>
+<li>Right-click in Project <code>Assets &gt; Import Package &gt; Custom Package</code>, and select the SDK package download.</li>
+<li>In the Importing Package dialog, make sure that all package options are selected and click Import.</li>
+</ol>
+<h3 id="activation">Activation</h3>
+<p>To use VotanicXR SDK, activation is required with either trial version or registration key. Unregistered message will be shown on console and the application will have watermark and can only play 30 minutes.</p>
+<p><img src="../images/1.7.2.png" alt="Activation Panel"></p>
+<ol>
+<li>After import the SDK package, License window will be popped out. If not, please go to <code>VotanicXR &gt; License</code>.</li>
+<li>If you use the Trial version, please enter your email, read and agree the License Terms and Conditions to start.
+If you use the Registration version, please enter the registration key, read and agree the License Terms and Conditions to start.</li>
+</ol>
 <h2 id="add-sdk-manager">Add SDK Manager</h2>
 <ol>
 <li><p>Start Unity Project imported VotanicXR SDK Manager.</p>
@@ -84,89 +107,16 @@
 <p><code>vGear</code> is the SDK Manager of the VotanicXR system, and the child gameobjects are the features of the the system.</p>
 <p><code>StartPoint</code> is a gameobject to coordinate the start point of the player.</p>
 </li>
-</ol>
-<h2 id="common-settings">Common Settings</h2>
-<p>Here will introduce some common settings to get start.</p>
-<ol>
-<li><p>Click the gameobject <code>vGear</code> in the Hierarchy window, component <code>V Gear (Script)</code> is shown at the inspector window, which manage the setting of the vGear system.</p>
-<table width="100%">
-<caption><b>[System]				
-<tr><td>Config Path				<td>The path of reading the system config in Unity Engine Editor.
-<tr><td>Setting Path			<td>The path of reading the system settings in Unity Engine Editor.
-<tr><td>Reference Config		<td>The path of config read for screen reference. <br>The screen reference is useful for attaching gameobjects in the screens.
-<tr><td>Show Reference			<td>Select the mode to show the screen gameobject reference.
-<tr><td>XR Support				<td>Enable to support OpenVR, <br>"Standard Mode" for HTC Vive and "Role Mode" for SteamVR Role Mode.
-</td></td></tr>
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
-<table width="100%">
-<caption><b>[Performance]
-<tr><td>Force Quality			<td>Enable to set the quality settings by setting file.
-<tr><td>Refresh Rate			<td>The refresh rate for the function that no need to update each frame.
-<tr><td>Target Frame Rate		<td>Target Frame Per Seconds. <br>Recommended 120 for VotanicXR SDK physics.
-</td></td></tr></td></td></tr></td></td></tr></b></caption></table>
-<table width="100%">	
-<caption><b>[Status]	
-<tr><td>Traveler				<td>Enable Traveler for user navigation by controller.
-								<br>Usually disable during scene transition or playing animation.
-<tr><td>Soul					<td>Enable Soul for ignoring user free falling and wall collisions.
-								<br>Usually disable during flying or looking around the scene.
-<tr><td>Debug					<td>Enable Debug for custom uses and showing debug message.
-<tr><td>Tracking				<td>Enable Tracking for tracing trackers.
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
-<p><img src="../images/3.2.1.1.png" alt="vGear component"></p>
-</li>
-<li><p>Go to <code>vGear &gt; Frame &gt; Controller</code>, component <strong>V Gear_Controller (Script)</strong> is shown at the inspector window, which manages the setting of controller. API provided functions to get/set the controller gameobject and settings.</p>
-<table width="100%">	
-<caption><b>[Settings]
-<tr><td>Default Tool			<td>The name of default tool of controller. <br>Note that the tool name should be the same as the Tools below.
-<tr><td>Tools					<td>Tools list of controller, the expansion stores the setting to change between tools. <br>This component control the common settings for all tools.<br>There will be different settings for each tool, will be introduced below.
-<tr><td>Auto Switch				<td>When current tool is this tool, <br>all the tools which apply <b>Enable Scan</b> will scan objects and auto switch to the first detected tool.
-<tr><td>Enable Scan				<td>When current tool applies <b>Auto Switch</b>, <br>scan objects and determine this tool should be switched on or not.
-<tr><td>Scan length				<td>Tool detection scan distance.
-<tr><td>Detect Layers			<td>The layer related to this tool for scanning.
-<tr><td>Ignore Layers			<td>The layer ignored to this tool for scanning
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
-<table width="100%">	
-<caption><b>[Status]	
-<tr><td>Current Tool				<td>The current tool of controller.
-<tr><td>Select Object				<td>The interactables currently selecting.
-<tr><td>Grabbed Object				<td>The interactables currently grabbing.
-<tr><td>Triggered Object			<td>The interactables currently triggering. 
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>		
-<p><img src="../images/3.2.2.1b.png" alt="vGear component"></p>
-</li>
-<li><p>Go to <code>vGear &gt; Frame &gt; Controller &gt; Wand</code>, component <strong>V Gear_Wand (Script)</strong> is shown at the inspector window, which manages the setting of the wand tool.</p>
-<p>Wand is the basic tool to interact the gameobjects with Interactables that will be described in chapter <code>Interactables</code>. API provided functions to get/set the wand gameobject and settings.</p>
-<table width="100%">	
-<caption><b>[Components]
-<tr><td>RayBeam					<td>The transform of the Beam gameobject.
-<tr><td>Ray Point				<td>The transform of the Point gameobject.
-<tr><td>Ray						<td>Stored the settings of the ray, such as color, length.
-<tr><td>Enable					<td>Enable the wand ray.
-<tr><td>Interactive				<td>Set wand ray is interactive or not.
-<tr><td>Display					<td>Enable to display the wand ray.
-<tr><td>Length					<td>The length of the wand ray.
-<tr><td>Normal Display<br>Select Display	<br>Press Display<br>Disable Display<br>
-<td> WandRayDisplay structure.<br>Structure to save different Display detail for different states. 
-<br>The field included a color and an onTopAlpha.
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
-<p><img src="../images/3.2.2.2.png" alt="vGear component"></p>
-</li>
-<li><p>Go to <code>vGear &gt; Frame &gt; User</code>, component <strong>V Gear_User (Script)</strong> is shown at the inspector window, which manages the setting of the user. API provided functions to get the gameobject and settings.</p>
-<p>During play mode, it will instantiate corresponding gameobjects based on config reads, such as head and hands.</p>
-<p>Note that the <strong>Controller</strong> gameobject will become the child gameobject of the Hand.</p>
-<table width="100%">	
-<tr><td width="50%">Editor Mode			<td width="50%">Play Mode
-<tr><td><img src="../images/3.2.2.3.png" alt="Italian Trulli">
-<td><img src="../images/3.2.2.4.png" alt="Italian Trulli">
-</td></td></tr></td></td></tr></table>
+<li><p>If you are using controllers with <code>Role System</code>, please select <code>Role System</code> at the <code>[Settings] &gt; XR Support</code> of <code>V Gear (Script)</code> in vGear prefab. We will use the Vive controller and HMD with <code>Role System</code> as VR controller in this series of tutorial.</p>
 </li>
 </ol>
-<h2 id="to-build-the-scene">To build the scene</h2>
-<ol>
+<p>Detail of the components is described in <a href="../articles/vGearDetail.html">Detail of vGear Components</a>.</p>
+<h2 id="build-the-scene">Build the scene</h2>
+<ol start="0">
+<li><p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Scenes</code> and open the demo scene provided. (Optional)</p>
+<p><img src="../images/1.3.1.png" alt="Demo Scene"></p>
+</li>
 <li><p>Go to <code>File &gt; Build Setting</code>.</p>
-</li>
-<li><p>Confirm the <a href="ConfigurationSetting.html">configurations</a> are correct.</p>
 </li>
 <li><p>Click <code>Add Open Scenes</code>	if you need it.</p>
 </li>
@@ -175,7 +125,6 @@
 <li><p>When the build completed, the build folder will be popped out at the new window.</p>
 </li>
 <li><p>The built folder will contains some <code>batch</code> (.bat) files with the format <code>{Project Name}_[{Environment}].bat</code>. 	Double click the batch file with the environment you are using.</p>
-<p>The setting of generated batch files can be set on <code>[System] &gt; Batches</code> in V Gear Component.</p>
 </li>
 </ol>
 </article>

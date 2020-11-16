@@ -70,35 +70,38 @@
 <h1 id="locomotion">Locomotion</h1>
 
 <hr>
-<p>This page describes the ways for VotanicXR user to move the player.</p>
-<h2 id="using-preset-of-controller">Using Preset of Controller</h2>
-<p>As mentioned at previous chapter, VotanicXR SDK have provided mapped buttons and commands, this part will introduce based Vive Controller.</p>
+<p>This page describes the ways for VotanicXR user to move the player, includes using <code>Commands</code> and using <code>Teleport</code> tool.</p>
+<h2 id="using-commands">Using Commands</h2>
+<p>As mentioned at previous chapter, VotanicXR SDK have provided mapped buttons and commands.
+The commands with locomotion are <code>Move</code>, <code>Rotate</code>, <code>Shift</code>, <code>Float</code>, <code>Turn</code> and <code>JumpSink</code>.</p>
+<h3 id="using-controller">Using Controller</h3>
 <ol>
-<li><p>Please connected a controller accpeted by VotanicXR and open the scene created at previous chapter.</p>
+<li><p>Connected a controller accpeted by VotanicXR and open the scene created at previous chapter.</p>
 </li>
 <li><p>Click play to enter the play mode. Game window will be shown with the perspective view of the vGear user at the start point with the default wand tool.</p>
 </li>
 <li><p>Use directional pad to navigate forward, backward and rotate.</p>
 </li>
-<li><p>Also, send the <code>Move</code> command and <code>Rotate</code> command with specified value through <a href="InputSystem.html">Input System</a>, can navigate forward, backward and rotate.</p>
-</li>
 </ol>
-<pre><code class="csharp">
-void Update()
+<h3 id="using-inut-system">Using Inut System</h3>
+<p>Also, send the <code>Move</code> command and <code>Rotate</code> command with specified value through <a href="InputSystem.html">Input System</a>, can navigate forward, backward and rotate.</p>
+<pre><code class="csharp">void Update()
 {
-	//  Using WASD to move
-	if (vGear.Input.KeyboardPress(KeyCode.W))
-		vGear.Cmd.Send("Move", 1);
-	if (vGear.Input.KeyboardPress(KeyCode.S))
-		vGear.Cmd.Send("Move", -1);
-	if (vGear.Input.KeyboardPress(KeyCode.D))
-		vGear.Cmd.Send("Rotate", 1);
-	if (vGear.Input.KeyboardPress(KeyCode.A))
-		vGear.Cmd.Send("Rotate", -1);
+//  Using Keyboard WASD through DirectInput to move
+    if (vGear.Input.KeyboardPress(KeyCode.W))
+        vGear.Cmd.Send("Move", 1);
+    if (vGear.Input.KeyboardPress(KeyCode.S))
+        vGear.Cmd.Send("Move", -1);
+    if (vGear.Input.KeyboardPress(KeyCode.D))
+        vGear.Cmd.Send("Rotate", 1);
+    if (vGear.Input.KeyboardPress(KeyCode.A))
+        vGear.Cmd.Send("Rotate", -1);
 }
 </code></pre>
 <h2 id="using-teleport-tool">Using Teleport Tool</h2>
 <p>Teleport is common navigation tool in VR application, VotanicXR have provided it with editable effects.</p>
+<p><img src="../images/5.2.0.gif" alt="The Teleport tool "></p>
+<h3 id="set-teleport-tool-as-default-tool">Set Teleport Tool as Default Tool</h3>
 <ol>
 <li><p>Go to <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code>, component <code>V Gear_Teleport (Script)</code> is shown at the inspector window, which manage the setting of the Teleport tool.</p>
 <p>And go to <code>vGear &gt; Frame &gt; Controller</code> to set the default tool into <code>Teleport</code> for testing.</p>
@@ -106,26 +109,33 @@ void Update()
 </li>
 <li><p>Enter play mode, the default tool is changed into teleport.</p>
 <p>By pressing the Trigger button of the controller, or send the <code>Teleport</code> command through <a href="InputSystem.html">Input System</a>, the vGear user will be teleported into the projection point.</p>
-</li>
-</ol>
-<pre><code class="csharp">
-void Update()
+<pre><code class="csharp">void Update()
 {
 	//	Press Space to Teleport
 	if (vGear.Input.KeyboardPress(KeyCode.Space))
-		vGear.Cmd.Send("Teleport");
+	vGear.Cmd.Send("Teleport");
 }
 </code></pre>
-<ol start="3">
-<li><p>To make sure player teleport into a correct position, <code>Waypoint</code> can be used.
-Right click <code>vGear &gt; Waypoint</code> and drag the prefab into desired position.</p>
-<p>To apply a custom rotation, you can enable the <code>Apply Rotation</code> with custom value of face angle and offset.</p>
 </li>
-<li><p>To limit the teleport function for different usage, we can set different modes in setting <strong>[Advance]</strong> of component <code>V Gear_Teleport (Script)</code>.</p>
+</ol>
+<h3 id="using-teleport-toolwith-waypoints">Using Teleport Tool	with Waypoints</h3>
+<p>To make sure player teleport into a correct position, <code>Waypoint</code> can be used.</p>
+<p><img src="../images/5.2.2.gif" alt="The Teleport tool with Waypoint"></p>
+<ol>
+<li><p>Right click <code>vGear &gt; GameObjects &gt; Waypoint</code> and drag the prefab into desired position.</p>
+<p>To apply a custom rotation, you can enable the <code>Apply Rotation</code> with custom value of face angle and offset in <code>V Gear_Waypoint (Script)</code>.</p>
+<p><img src="../images/5.2.4.gif" alt="The Teleport tool with Waypoint applied rotation"></p>
+</li>
+<li><p>To use the teleport function in different ways, we can set different modes in setting <strong>[Advance]</strong> of component <code>V Gear_Teleport (Script)</code>.</p>
 <table width="100%">
 	<caption><b>[Advanced]</b></caption>
 	<tr><td>Teleport Waypoint			<td>Waypoint detection setting.<br><b>Detect</b> will detect waypoint, <b>Ignore</b> will ignore waypoint, <br>and <b>WaypointOnly</b> only detect waypoint for teleportation.
-	<tr><td>Collision Mode				<td>Enable to detect collisions to prevent teleportation, <br>else only teleport to the ground level.
+	<tr><td>Collision Mode				<td><b>Enable</b> to detect collisions to prevent teleportation, <br>else only teleport to the ground level.
+</td></td></tr></td></td></tr></table>
+<p><img src="../images/5.2.2.2.png" alt="Advanced setting of V Gear_Teleport (Script)"></p>
+<table width="100%">
+<tr><td>Collision Mode enable <td> Collision Mode disable
+<tr><td><img src="../images/5.2.4.1.png" alt="Collision Mode enable"><td><img src="../images/5.2.4.2.png" alt="Collision Mode disable">
 </td></td></tr></td></td></tr></table>
 </li>
 </ol>

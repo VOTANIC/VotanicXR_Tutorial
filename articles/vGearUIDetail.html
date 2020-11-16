@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Network fearture </title>
+    <title>Detail of UI Element </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Network fearture ">
+    <meta name="title" content="Detail of UI Element ">
     <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,54 +67,46 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="network-fearture">Network fearture</h1>
+<h1 id="detail-of-ui-element">Detail of UI Element</h1>
 
-<hr>
-<p>VotanicXR have provided networking module with multiplayer feature.</p>
-<h2 id="before-start">Before Start</h2>
-<p>If you are using Unity with Version 2018, please pass this part.</p>
-<p>For those who are using Unity 2019, please use the following setting.</p>
-<ol>
-<li><p>Before import the Votanic SDK package, go to Package Manager and install <code>Multiplayer HLAPI</code>.</p>
-<p><img src="../images/9.0.1.png" alt="Multiplayer HLAPI from Package Manager"></p>
-</li>
-<li><p>Import the Votanic SDK package with Net feature, with format <code>VotanicXR_{SDK Version} for {Unity Version} [Net].unitypackage</code>.</p>
-</li>
-</ol>
-<h2 id="xr-network-manager">XR Network Manager</h2>
-<ol>
-<li><p>Right-click <code>vGear &gt; GameObject &gt; XRNetworkManager</code> to add the prefab <code>XRNetworkManager</code>.</p>
-</li>
-<li><p>Go to the <code>V Gear_Networking(Script)</code> component of <code>XRNetworkManager</code>, there are the default settings for the server host using localhost.</p>
-<p><img src="../images/9.1.1.png" alt="V Gear_Networking(Script) component"></p>
-</li>
-<li><p>Enter Play Mode, the server is hosted by Unity Editor. Server host message will be sent with the message in <strong>[Host]</strong>, similarly server client will send the join message with <strong>[Client]</strong>.</p>
-<p><img src="../images/9.1.2.png" alt="Server host message."></p>
-<p>Build the project and join the server held by Unity Editor, you may test the connection with locolhost. Note that adjust the firewall setting for the connection of localhost, and there will be conflict to enter the game with using the same role system.</p>
-<p>We recommand to use the same build for the synchronization between host and client interactions.</p>
-</li>
-<li><p>Setting will be described in <a href="../articles/vGearNetworkManagerDetail.html">Detail of Network Manager</a>.</p>
-<p>The format of the <code>Networking Data</code> should be same as below, the first 7 lines corresponding to <code>[Settings]</code> and remaining corresponding to <code>[XR Setting]</code>:</p>
-<pre><code class="Json">{
-"Type": "Client",
-"IP": "localhost",
-"Port": 7777,
-"UserName": "UserName",
-"AutoConnect": true,
-"Reconnect": 5,
-"Buffer": 3.0,
-"Head": 0,
-"RightHand": 0,
-"LeftHand": 0,
-"HeadEntity": "Head",
-"RightHandEntity": "Hand",
-"LeftHandEntity": "Hand2",
-"EntityDisplay": "OthersEntities",
-"IdentityDisplay": "OthersName"
-}
-</code></pre>
-</li>
-</ol>
+<h2 id="transition-settings">Transition Settings</h2>
+<img src="../images/7.1.7.1.png">
+<table width="100%">
+<caption><b>[Transition]
+<tr><td>Color Field<td>Shader color field name for materials.<br>Should not be changed if using default material.
+<tr><td>Origin Color<td>The original color for the UI element.
+<tr><td>Origin Alpha<td>The original alpha for the UI element.
+<tr><td><b>Origin Outline<td>An Outline structure to save the original outline setting for the UI element.
+<tr><td>Origin Outline <br>- Enable<td>Enable to enable the outline
+<tr><td>Origin Outline <br>- Color<td>The color of the outline.
+<tr><td>Origin Outline <br>- Width<td>The width of the outline.
+<tr><td>Origin Outline <br>- Mode <td>The mode of the outline.
+<tr><td><b>Transition<td>Structure for frame and User transition of transformation.
+<tr><td>Transition<br>- Parameter<td>Transition calculation parameter.
+<tr><td>Transition<br>- Transition Factor<td>Transition factor value, affected by the parameter.
+<tr><td>Transition<br>- Acceleration Factor<td>Transition accelerating value.
+<tr><td>Transition<br>- Deceleration Factor<td>Transition decelerating value.
+<tr><td>Transition<br>- Unscaled Delta TIme<td>Enable to use unscaled delta time.
+<tr><td><b>UIState</b><td>The state of UI elements after a transition, including <br>a Transform, a color, an alpha and an outline structure. <br>Can be used on <b>disable</b>, on <b>select</b> or on <b>click</b>.
+<tr><td>Default Enable<td>Enable to enable the UI on start.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></b></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></b></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<h2 id="slider-settings">Slider Settings</h2>
+<table width="100%">
+<caption><b>[Slider]	
+<tr><td>Check Value Only<td>True to disable the first interaction.<br>For example be used to content slider. <br>False example is to be used as volume slider.
+<tr><td>Inertia<td>	The movement rate after controller release. <br>No movement for 0, no deceleration for 1.
+<tr><td>Value Range<td>The interaction return value range of slider. 
+<br>Note that the value is inherited from VGear interactable, that can be get/set by <b>GetValue()</b> or <b>SetValue()</b> here.
+<tr><td>Default Value	<td>Sliding value of slider on start.
+<tr><td>Controller Transform <td>Structure to calculate controller transformation
+<br>[, as a factor to map from controller input to the slider, the value of this should be the same ratio to the parent transform scale with the Max Slided Transform to synchorinize controller input]. 
+<tr><td>ObjectDirection<td>	Enable to check transform change base on object direction, else base on controller direction
+<tr><td>Max Slided Transform<td>The maximum slider transformation for the slider movement.
+<tr><td>Scroll Content<td>The transform of scrollcontent.
+<tr><td>Max Scroll Transform<td>The maximum scroll content transformation value from the original.
+<tr><td>Sync Slider <td>Synchronized slider, can be used with content slider.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<p><img src="../images/7.2.5.png" alt=" (Slider) and (Scroll Content) settings of V Gear Slider (Script)"></p>
 </article>
           </div>
           

@@ -72,21 +72,21 @@
 <hr>
 <p>This page describes using VotanicXR to interact with objects.</p>
 <h2 id="interactable">Interactable</h2>
-<p>The basic component for Interactable is <code>V Gear_Interactables (Script)</code>, to interact between <code>interactable</code> gameobjects and the <code>interactors</code>. The default interactors are the <code>Wand</code> tool and <code>Vision</code>.</p>
-<p>Right Click the game object, and select <code>vGear &gt; Component &gt; Interactables+</code> to add the <code>V Gear_Interactables (Script)</code> component.</p>
+<p>The basic component for Interactable is <code>V Gear_Interactables (Script)</code>, to interact between <code>interactable</code> gameobjects and the <code>interactors</code>. The default interactors are the <strong>Wand</strong> tool and <strong>Vision</strong>.</p>
+<p>Right Click and select <code>vGear &gt; Component &gt; Interactables+</code> to add the <code>V Gear_Interactables (Script)</code> component to a gameobject.</p>
 <h2 id="interaction-to-interactables">Interaction to Interactables</h2>
-<p>The interaction and condition can be set in the <code>Interaction</code> of [Settings], with the interaction type and response type. The response can be sending a Command or calling a Unity Event.</p>
-<p>By default, you will see the color of the wand changed to green when it collides with interactable gameobjects, and changed to red when it is interacting, the wand setting is introduced in the chapter <a href="Start.html">Start with VotanicXR</a>.</p>
-<p>The sample with the script is shown below.</p>
+<p>The interaction and condition can be set in the <code>Interaction</code> of <strong>[Settings]</strong>, with the interaction type and response type. The response can be sending a Command or calling a Unity Event.</p>
+<p>By default, you will see the color of the wand changed to green when it collides with interactable gameobjects, and changed to red when it is interacting, the wand setting can be edited through Unity Inspector and API, and is described in <a href="../articles/vGearDetail.html">Detail of vGear Components</a>.</p>
+<p>The sample with printing <a href="InputSystem.html">AllReceived()</a> is shown below.</p>
 <p><img src="../images/6.2.1.png" alt="Interaction with Interactable"></p>
 <p>To perform more interactions in one gameobject, you may set more interactions in Interactions in <strong>[Additional Setting]</strong>. The sample below print out the commands received in the Update function.</p>
 <p><img src="../images/6.3.1.png" alt="Multi interactions"></p>
-<h2 id="grab-interactables">Grab Interactables</h2>
-<p>Besides triggering, grabbing an object and grab to interact with other objects is usual in VR development[Need English support]. You can follow the setting below to perform grabbing.</p>
+<h3 id="grabbing-interactables">Grabbing Interactables</h3>
+<p>Besides, grabbing an object and grab to interact with other objects is usual in VR development. You can follow the setting below to perform grabbing.</p>
 <ol>
 <li><p>Set Interaction Type into <code>Press</code> and Command in to <code>Grab</code> in vGear Interactables. (Some controller keys is mapped with this, you may bind it in configurator if you need. Grip button is mapped to Grab for Vive Controller by default.)</p>
 </li>
-<li><p>Check the Grabble option in the Grab Setting of <strong>[Setting]</strong>.</p>
+<li><p>Check the Grabbable option in the Grab Setting of <strong>[Setting]</strong>.</p>
 <p><img src="../images/6.4.1.png" alt="Grab object Settings"></p>
 </li>
 <li><p>Check the Convex option of the gameobject if using Mesh Collider.</p>
@@ -95,22 +95,14 @@
 <p><img src="../images/6.4.2.png" alt="Grab object Settings2 and Result"></p>
 </li>
 </ol>
-<p><br>
-vGear have provided feature to <code>Pick</code> interactable that is similar to <code>Grab</code>.
-<code>Grab</code> should keep pressing the key (or keep receiving <code>Grab command</code>), and ungrab by release the key.</p>
+<h3 id="picking-interactables">Picking Interactables</h3>
+<p>vGear have provided feature to <code>Pick</code> interactable that is similar to <code>Grab</code>.</p>
+<p><code>Grab</code> should keep pressing the key (or keep receiving <code>Grab command</code>), and ungrab by release the key.</p>
 <p><code>Pick</code> only require a <code>Pick command</code> to attach the object to hand, and unpick by received a <code>Grab command</code> once.</p>
 <p><code>Pick</code> and <code>Grab</code> are capable for a gameobject, the below shows the setting with both <code>Grab</code> and <code>Pick</code>.</p>
 <p><img src="../images/6.4.3.png" alt="Grab object Settings2 and Result"></p>
-<p>The table below introduce the some common of <code>Grab Setting</code>.</p>
-<table width="100%">
-<caption><b>Grab Setting
-<tr><td>Grabbable <td>Decide the interactables can be grabbed or not.<br>Capable with <b>Pickable</b>.
-<tr><td>Pickable <td>Decide the interactables can be picked or not.<br>Capable with <b>Grabbable</b>.
-<tr><td>Pick To Grab <td>Able to change grab from pick so that the interactables can be ungrabbed.
-<tr><td>Parent To Controller <td>Decide parent to controller or not.
-<tr><td>Parent Back <td>Decide parent back to origin parent or not.
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
-<h2 id="climb-interactables">Climb Interactables</h2>
+<p>Detail of Interactable will be described in <a href="../articles/vGearInterctableDetail.html">Detail of vGear Interactable</a>.</p>
+<h3 id="climb-interactables">Climb Interactables</h3>
 <p>VGear Interactables have provided a climb feature, players can climb and implement games such as zipline and rock climbing. The sample is shown below.</p>
 <ol>
 <li><p>Set Interaction Type into <code>Press</code> and Command in to <code>Grab</code> in vGear Interactables.</p>

@@ -80,7 +80,7 @@
 <li><p>Set the corresponding canvas render mode into world space, and its rect transform in suitable size.</p>
 <p><img src="../images/7.1.1.png" alt="Set the rect transform of canvas into suitable size."></p>
 </li>
-<li><p>Add the vGear Button component by <code>vGear &gt; Component &gt; Button</code>, the gameobject is wrapped and parented to <code>{gameobject.name}.Grabbables</code>. The parent is a gameobject for the functionality of <code>V Gear_Button (Script)</code> component, and the gameobject with the <code>Canvas</code> and <code>V Gear_Button</code> component will be the child.</p>
+<li><p>Add the vGear Button component by <code>vGear &gt; Component &gt; Button</code>, the gameobject is wrapped and parented to <code>{gameobject.name}.Grabbables</code>. The parent is a gameobject with Transform for the <code>V Gear_Button (Script)</code> component, and the gameobject with the <code>Canvas</code> and <code>V Gear_Button (Script)</code> component will be the child.</p>
 <p><img src="../images/7.1.2.2.png" alt="Structure of the canvas elements was changed."></p>
 </li>
 <li><p>There are series of transition setting after <strong>[Additional Setting]</strong>. The transition settings can only be set in editor mode. And do not forget to set the Box Collider into suitable size.</p>
@@ -98,54 +98,19 @@
 <tr><td>Editor Mode<td>Play Mode
 <tr><td> <img src="../images/7.1.7.1.png"><td> <img src="../images/7.1.7.2.png">
 </td></td></tr></td></td></tr></table>
-<p>For the Transition Settings will be introduced below.</p>
-<table width="100%">
-<caption><b>[Transition]
-<tr><td>Color Field<td>Shader color field name for materials.<br>Should not be changed if using default material.
-<tr><td>Origin Color<td>The original color for the UI element.
-<tr><td>Origin Alpha<td>The original alpha for the UI element.
-<tr><td><b>Origin Outline<td>An Outline structure to save the original outline setting for the UI element.
-<tr><td>Origin Outline <br>- Enable<td>Enable to enable the outline
-<tr><td>Origin Outline <br>- Color<td>The color of the outline.
-<tr><td>Origin Outline <br>- Width<td>The width of the outline.
-<tr><td>Origin Outline <br>- Mode <td>The mode of the outline.
-<tr><td><b>Transition<td>Structure for frame and User transition of transformation.
-<tr><td>Transition<br>- Parameter<td>Transition calculation parameter.
-<tr><td>Transition<br>- Transition Factor<td>Transition factor value, affected by the parameter.
-<tr><td>Transition<br>- Acceleration Factor<td>Transition accelerating value.
-<tr><td>Transition<br>- Deceleration Factor<td>Transition decelerating value.
-<tr><td>Transition<br>- Unscaled Delta TIme<td>Enable to use unscaled delta time.
-<tr><td><b>UIState</b><td>The state of UI elements after a transition, including <br>a Transform, a color, an alpha and an outline structure. <br>Can be used on <b>disable</b>, on <b>select</b> or on <b>click</b>.
-<tr><td>Default Enable<td>Enable to enable the UI on start.
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></b></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></b></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<p>Detail of the <code>Transition Effects</code> will be described in <a href="../articles/vGearDetail.html">Detail of UI Element</a>.</p>
 <h2 id="vgear-panel-and-vgear-slider">VGear Panel and VGear Slider</h2>
 <p>VGear Panel is an animatable interactable with canvas to group a set of UI elements, provides transition settings and functions to react with the childs.</p>
-<p>VGear have provided the prefab of vGear Panel will be introduced below.
-The <code>V Gear Panel (Script)</code> component manages the display of itself and its child gameobjects, and the <code>V Gear Slider (Script)</code> component manages the child canvas gameobjects by the slider using <strong>triggering</strong>. Both the components are inherited from <code>vGear_Interactable</code> and <code>vGear_UI</code>.</p>
+<p>The <code>V Gear Panel (Script)</code> component manages the display of itself and its child gameobjects, and the <code>V Gear Slider (Script)</code> component manages the child canvas gameobjects by the slider using <strong>triggering</strong>.</p>
+<p>Both the components are inherited from <code>vGear_Interactable</code> and <code>vGear_UI</code>.</p>
 <p>The prefabs contain similar structrue as follow, and here take <code>UIPanel</code> as example.</p>
-<p>To add the prefab into the scene, right click in hierarchy and select <code>vGear &gt; GameObject &gt; UIPanel</code>. <code>UI Panel</code>, has a child Rect Transform with the <code>V Gear Slider (Script)</code>, is the template with default panel functions such as <code>Close()</code> when the child button is clicked.</p>
+<p><code>UI Panel</code> is the template with default panel functions such as <code>Close()</code> when the child button is clicked. To add the prefab into the scene, right click in hierarchy and select <code>vGear &gt; GameObject &gt; UIPanel</code>. You may create a new canvas for your UI, or customized the panel prefabs base on your need.
+<br><br></p>
 <p><img src="../images/7.2.4.png" alt="The UIPanel Prefab."></p>
 <p><img src="../images/7.2.2.png" alt="Structure of the UIPanel Prefab."></p>
 <p><img src="../images/7.2.3.png" alt="The template function and settings of button in UIPanel Prefab."></p>
-<p>You may create a new canvas for your UI, or customized the panel prefabs base on your need.
-<br><br></p>
-<p>For the <code>V Gear Slider (Script)</code>component, there are <strong>[Slider]</strong> and <strong>[Scroll Content]</strong> settings, will be introduced below.</p>
-<table width="100%">
-<caption><b>[Slider]	
-<tr><td>Check Value Only<td>True to disable the first interaction.<br>For example be used to content slider. <br>False example is to be used as volume slider.
-<tr><td>Inertia<td>	The movement rate after controller release. <br>No movement for 0, no deceleration for 1.
-<tr><td>Value Range<td>The interaction return value range of slider. 
-<br>Note that the value is inherited from VGear interactable, that can be get/set by <b>GetValue()</b> or <b>SetValue()</b> here.
-<tr><td>Default Value	<td>Sliding value of slider on start.
-<tr><td>Controller Transform <td>Structure to calculate controller transformation
-<br>[, as a factor to map from controller input to the slider, the value of this should be the same ratio to the parent transform scale with the Max Slided Transform to synchorinize controller input]. 
-<tr><td>ObjectDirection<td>	Enable to check transform change base on object direction, else base on controller direction
-<tr><td>Max Slided Transform<td>The maximum slider transformation for the slider movement.
-<tr><td>Scroll Content<td>The transform of scrollcontent.
-<tr><td>Max Scroll Transform<td>The maximum scroll content transformation value from the original.
-<tr><td>Sync Slider <td>Synchronized slider, can be used with content slider.
-</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
-<p><img src="../images/7.2.5.png" alt=" (Slider) and (Scroll Content) settings of V Gear Slider (Script)"></p>
+<p>For the <code>V Gear Slider (Script)</code>component, there are <strong>[Slider]</strong> and <strong>[Scroll Content]</strong> settings, will be described in <a href="../articles/vGearDetail.html">Detail of UI Element</a>.</p>
+<p><img src="../images/7.2.5.gif" alt="The Scroll Panel Prefab."></p>
 </article>
           </div>
           

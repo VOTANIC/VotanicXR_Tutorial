@@ -72,7 +72,8 @@
 <hr>
 <p>The <code>Behaviour System</code> is a tool to replace coding interactions with user interface and button presses.</p>
 <h2 id="behaviour-manager">Behaviour Manager</h2>
-<p><code>Behaviour Manager</code> is the manager of <code>Behaviour System</code>, will be introduced below. Right-click <code>vGear &gt; GameObject &gt; Behaviour Manager</code>, the prefab added contain <code>V Gear_Behaviour Manager(Script)</code> component, which manage the system.</p>
+<p><code>Behaviour Manager</code> is the manager of <code>Behaviour System</code>, will be introduced below.</p>
+<p>Right-click <code>vGear &gt; GameObject &gt; Behaviour Manager</code>, the prefab added contain <code>V Gear_Behaviour Manager(Script)</code> component, which manage the system.</p>
 <p><img src="../images/10.1.0.png" alt="The V Gear_Behaviour Manager (Script)"></p>
 <ol>
 <li><p>Click <code>Add Behaviour</code> of the manager, a new gameobject is added in <strong>[Behaviour]</strong>, and added into Hierarchy as a child of <code>Behaviour Manager</code>.</p>
@@ -82,7 +83,7 @@
 <li><p>Select the <code>Behaviour (0)</code> generated, click <code>Add Condition</code> in the <code>V Gear Behaiour (Script)</code> component. Then click <code>Condition 1</code> of the <code>If</code> Branch, it will bring you to the <code>Condition Edit Window</code>. There are different types of condition with parameter to choose.</p>
 <p><img src="../images/10.1.2.png" alt="The Condition window."></p>
 </li>
-<li><p>Place a prop gameobject from <code>Props</code>, add <code>V Gear_Interactable</code> component into the gameobject. Attach it into the <code>Condition 1</code> and set the Condition type to <code>Interaction</code> as follow.</p>
+<li><p>Place a prop gameobject from <code>Props</code> to add <code>V Gear_Interactable</code> component into the gameobject. Attach it into the <code>Condition 1</code> and set the Condition type to <code>Interaction</code> as follow.</p>
 <p><img src="../images/10.1.3.png" alt="The Condition window with Interaction type."></p>
 </li>
 <li><p>Click <code>Add Action</code> in the <code>Behaviour</code> component, <code>Action</code> window is brought out with different types of action.</p>
@@ -92,14 +93,14 @@
 <p><img src="../images/10.1.5.png" alt="The Action window with Enable."></p>
 </li>
 <li><p>The result of this example will be as follow, when the box is selected, the bathtub appears!</p>
-</li>
-</ol>
 <table width="100%">
 <tr><td>
 <img src="../images/10.1.6.1.png" alt="Before the Box selected"> 
 <td>
 <img src="../images/10.1.6.2.png" alt="After the Box selected">
 </td></td></tr></table>
+</li>
+</ol>
 <h2 id="scenario">Scenario</h2>
 <p>By using <code>Behaviour Manager</code>, we can perform scenario without coding. The following example is a simple scenario, when the box is interacted or we wait in front of the box for five seconds, a shield is found and can be rotate.</p>
 <ol>
