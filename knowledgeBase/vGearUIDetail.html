@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Adding Media </title>
+    <title>Detail of UI Element </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Adding Media ">
+    <meta name="title" content="Detail of UI Element ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,39 +67,48 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="adding-media">Adding Media</h1>
+<h1 id="detail-of-ui-element">Detail of UI Element</h1>
 
-<hr>
-<h2 id="mediaplayer">MediaPlayer</h2>
-<p>VGear have provided MediaPlayer feature with Virtual Reality environment, will be introduced below.</p>
-<ol>
-<li><p>Right-click <code>vGear &gt; GameObject &gt; MediaPlayer</code>.</p>
-<p><img src="../images/8.1.1.png" alt="The MediaPlayer Prefab."></p>
-</li>
-<li><p>Go to the component <code>Media Player (Script)</code> of the child, select the <code>Media</code> in [Settings].</p>
-<p><img src="../images/8.1.2.png" alt="Media setting of MediaPlayer"></p>
-</li>
-<li><p>For Size, set the desired number of the media want to play. For each element below, set the media file path to <code>Path</code>.</p>
-<p><img src="../images/8.1.3.1.png" alt="media file path of MediaPlayer"></p>
-<p>You can also set the whole directory to <code>Path</code> to play all the media in the folder and set the <code>Type</code> to filter the undesired media type.</p>
-<p><img src="../images/8.1.3.2.png" alt="whole directory for media file path of MediaPlayer"></p>
-<p>For <code>Path</code>, we suggested to use external resources folder with path <code>../Resources/*</code> and place this media folder next to the build.</p>
-<p><img src="../images/8.1.3.3.png" alt="external resources for media file path of MediaPlayer"></p>
-</li>
-</ol>
-<p>The media file supported for the MediaPlayer is shown below:</p>
+<p>This page described the detail of components related to <code>V Gear_UI (Script)</code>.</p>
+<p>Note:	This page is still <strong>Under Construct</strong>.</p>
+<h2 id="transition-settings">Transition Settings</h2>
+<img src="../images/7.1.7.1.png">
 <table width="100%">
-<tr><td>Audio:	<td>.wav, .ogg, 
-<tr><td>Image:	<td>.jpg, .png, .tga, .exr, 
-<tr><td>Video:	<td>.mp4, .mov, .avi, .mkv, .asf, .webm
-</td></td></tr></td></td></tr></td></td></tr></table>
-<p>For each type of media you may set the setting such as image duration or audio channel.</p>
-<p>Details of the Settings will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.html">Detail of MediaPlayers</a>.</p>
-<h2 id="mediaplayer360">MediaPlayer360</h2>
-<p>VGear have provided <code>MediaPlayer360</code> for the 360 degree video and Images.</p>
-<p>To add the prefab, right-click <code>vGear &gt; GameObject &gt; MediaPlayer360</code>.</p>
-<p><img src="../images/8.2.1.png" alt="MediaPlayer360 prefab"></p>
-<p>Most components of the MediaPlayer360 is the same as MediaPlayer, settings of <code>[360]</code> about the 360 media will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.html">Detail of MediaPlayers</a>.</p>
+<caption><b>[Transition]
+<tr><td>Color Field<td>Shader color field name for materials.<br>Should not be changed if using default material.
+<tr><td>Origin Color<td>The original color for the UI element.
+<tr><td>Origin Alpha<td>The original alpha for the UI element.
+<tr><td><b>Origin Outline<td>An Outline structure to save the original outline setting for the UI element.
+<tr><td>Origin Outline <br>- Enable<td>Enable to enable the outline
+<tr><td>Origin Outline <br>- Color<td>The color of the outline.
+<tr><td>Origin Outline <br>- Width<td>The width of the outline.
+<tr><td>Origin Outline <br>- Mode <td>The mode of the outline.
+<tr><td><b>Transition<td>Structure for frame and User transition of transformation.
+<tr><td>Transition<br>- Parameter<td>Transition calculation parameter.
+<tr><td>Transition<br>- Transition Factor<td>Transition factor value, affected by the parameter.
+<tr><td>Transition<br>- Acceleration Factor<td>Transition accelerating value.
+<tr><td>Transition<br>- Deceleration Factor<td>Transition decelerating value.
+<tr><td>Transition<br>- Unscaled Delta TIme<td>Enable to use unscaled delta time.
+<tr><td><b>UIState</b><td>The state of UI elements after a transition, including <br>a Transform, a color, an alpha and an outline structure. <br>Can be used on <b>disable</b>, on <b>select</b> or on <b>click</b>.
+<tr><td>Default Enable<td>Enable to enable the UI on start.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></b></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></b></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<h2 id="slider-settings">Slider Settings</h2>
+<table width="100%">
+<caption><b>[Slider]	
+<tr><td>Check Value Only<td>True to disable the first interaction.<br>For example be used to content slider. <br>False example is to be used as volume slider.
+<tr><td>Inertia<td>	The movement rate after controller release. <br>No movement for 0, no deceleration for 1.
+<tr><td>Value Range<td>The interaction return value range of slider. 
+<br>Note that the value is inherited from VGear interactable, that can be get/set by <b>GetValue()</b> or <b>SetValue()</b> here.
+<tr><td>Default Value	<td>Sliding value of slider on start.
+<tr><td>Controller Transform <td>Structure to calculate controller transformation
+<br>[, as a factor to map from controller input to the slider, the value of this should be the same ratio to the parent transform scale with the Max Slided Transform to synchorinize controller input]. 
+<tr><td>ObjectDirection<td>	Enable to check transform change base on object direction, else base on controller direction
+<tr><td>Max Slided Transform<td>The maximum slider transformation for the slider movement.
+<tr><td>Scroll Content<td>The transform of scrollcontent.
+<tr><td>Max Scroll Transform<td>The maximum scroll content transformation value from the original.
+<tr><td>Sync Slider <td>Synchronized slider, can be used with content slider.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<p><img src="../images/7.2.5.png" alt=" (Slider) and (Scroll Content) settings of V Gear Slider (Script)"></p>
 </article>
           </div>
           

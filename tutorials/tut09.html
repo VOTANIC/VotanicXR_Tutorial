@@ -66,7 +66,7 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
+            <article class="content wrap" id="_content" data-uid="tut09-ingamemenu">
 <h1 id="using-in-game-menu">Using In Game Menu</h1>
 
 <p>This page describes the <code>In-Game Menu</code> provided by VotanicXR SDK and how to edit the content of the <code>Menu</code>.</p>
@@ -76,7 +76,7 @@
 <p>Player can adjust the game setting such as game attribute and quality.</p>
 <p><img src="../images/11.1.2.png" alt="The quality setting in In-Game Menu"></p>
 <h2 id="edit-the-icons-of-menu">Edit the Icons of Menu</h2>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Materials &gt; Prefabs</code> in Project window and double click the <code>Menu</code> Prefab, which is a prefab made with <a href="UIElement.html">UI Elements</a> and <a href="InputSystem.html">Input System</a>.</p>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Materials &gt; Prefabs</code> in Project window and double click the <code>Menu</code> Prefab, which is a prefab made with <a class="xref" href="tut05.html">UI Elements</a> and <a class="xref" href="tut02.html">Input System</a>.</p>
 <p><code>V Gear_Menu (Script)</code> component is to manage the <code>In-Game Menu</code>, you may edit the icons by save the sprite into the <code>Icons</code> expansion of <strong>[Built-in Menu]</strong>.</p>
 <p><img src="../images/11.2.1.png" alt="The V Gear_Menu (Script) component"></p>
 <h2 id="edit-the-item-of-menu">Edit the Item of Menu</h2>
@@ -137,7 +137,7 @@
     ]
 }
 </code></pre>
-<p>The example above creates two buttons and a <code>Back</code> button to go back to the main menu. The buttons will send the command to the <code>SDK Manager</code> when the item is interacted, and the command can be handled by using <code>vGear.Cmd.Received(command)</code> or <code>vGear.Cmd.AllReceived()</code> described in <a href="InputSystem.html">Input System</a>.</p>
+<p>The example above creates two buttons and a <code>Back</code> button to go back to the main menu. The buttons will send the command to the <code>SDK Manager</code> when the item is interacted, and the command can be handled by using <code>vGear.Cmd.Received(command)</code> or <code>vGear.Cmd.AllReceived()</code> described in <a class="xref" href="tut02.html">Input System</a>.</p>
 <p><img src="../images/11.3.5.png" alt="The example of new page"></p>
 <p>The editing of the option will be enhanced using <code>Configurator</code> future.</p>
 </li>

@@ -66,13 +66,13 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
+            <article class="content wrap" id="_content" data-uid="tut10-ingametool">
 <h1 id="using-in-game-tool">Using In Game Tool</h1>
 
 <p>This page describes the <code>In-Game Tool</code> provided by VotanicXR SDK and how to set the <code>Tool</code> with Unity Inspector or API.</p>
 <h2 id="use-in-game-tool">Use In Game Tool</h2>
 <p>VotanicXR has provided seven tools, they are <code>Wand</code>, <code>Teleport</code>, <code>Glove</code>, <code>Magnifier</code>, <code>Reporter</code>, <code>Brush</code> and <code>Measurer</code>. Detail usage will be described in <a href="UnderContructed.html">In Game Tool</a>.</p>
-<p>Player may choose different tools in the <a href="InGameMenu.html">In-Game Menu</a>.</p>
+<p>Player may choose different tools in the <a class="xref" href="tut09.html">In-Game Menu</a>.</p>
 <p><img src="../images/12.1.1.png" alt="The tool menu of in-game menu"></p>
 <h2 id="switch-the-game-tool">Switch the Game Tool</h2>
 <p>The <code>V Gear_Controller (Script)</code> component of <code>vGear &gt; Frame &gt; Controller</code> prefab and its child gameObjects are controlling the <code>In-Game Tool</code>. The <code>Default Tool</code> is the tool be used when the game start.</p>
@@ -96,7 +96,7 @@
 <p><code>Wand</code> is the basic tool to interact with interactables, default value of the <code>Default Tool</code> is this tool. The settings such as response color and length of the <code>Wand</code> can be changed in <code>V Gear_Wand (Script)</code> through Unity Inspector and API.</p>
 <p><img src="../images/12.2.1.2.gif" alt="The Wand tool"></p>
 <h3 id="teleport">Teleport</h3>
-<p><code>Teleport</code> is a tool to teleport around, detail is decribed in <a href="Locomotion.html">Locomotion</a>.</p>
+<p><code>Teleport</code> is a tool to teleport around, detail is decribed in <a class="xref" href="tut03.html">Locomotion</a>.</p>
 <p><img src="../images/12.2.2.png" alt="The Teleport tool"></p>
 <p>By default setting of the prefab, the tool will be switch between <code>Teleport</code> and <code>Wand</code> when user turn up or down the controller, this is because the <code>Auto Switch</code> and <code>Enable Scan</code> are enabled, the tool will scan the floor instantiated by <code>Start Point</code> to switch.</p>
 <p><img src="../images/12.2.2.2.gif" alt="The auto switch between Wand and Teleport"></p>

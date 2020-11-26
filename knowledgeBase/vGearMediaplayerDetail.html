@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Adding Media </title>
+    <title>Detail of Mediaplayers </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Adding Media ">
+    <meta name="title" content="Detail of Mediaplayers ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,39 +67,36 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="adding-media">Adding Media</h1>
+<h1 id="detail-of-mediaplayers">Detail of Mediaplayers</h1>
 
-<hr>
-<h2 id="mediaplayer">MediaPlayer</h2>
-<p>VGear have provided MediaPlayer feature with Virtual Reality environment, will be introduced below.</p>
-<ol>
-<li><p>Right-click <code>vGear &gt; GameObject &gt; MediaPlayer</code>.</p>
-<p><img src="../images/8.1.1.png" alt="The MediaPlayer Prefab."></p>
-</li>
-<li><p>Go to the component <code>Media Player (Script)</code> of the child, select the <code>Media</code> in [Settings].</p>
-<p><img src="../images/8.1.2.png" alt="Media setting of MediaPlayer"></p>
-</li>
-<li><p>For Size, set the desired number of the media want to play. For each element below, set the media file path to <code>Path</code>.</p>
-<p><img src="../images/8.1.3.1.png" alt="media file path of MediaPlayer"></p>
-<p>You can also set the whole directory to <code>Path</code> to play all the media in the folder and set the <code>Type</code> to filter the undesired media type.</p>
-<p><img src="../images/8.1.3.2.png" alt="whole directory for media file path of MediaPlayer"></p>
-<p>For <code>Path</code>, we suggested to use external resources folder with path <code>../Resources/*</code> and place this media folder next to the build.</p>
-<p><img src="../images/8.1.3.3.png" alt="external resources for media file path of MediaPlayer"></p>
-</li>
-</ol>
-<p>The media file supported for the MediaPlayer is shown below:</p>
+<p>This page described the detail of components related to <code>Mediaplayer (Script)</code>.</p>
+<p>Note:	This page is still <strong>Under Construct</strong>.</p>
+<h2 id="detail-setting-of-mediaplayer">Detail Setting of Mediaplayer</h2>
 <table width="100%">
-<tr><td>Audio:	<td>.wav, .ogg, 
-<tr><td>Image:	<td>.jpg, .png, .tga, .exr, 
-<tr><td>Video:	<td>.mp4, .mov, .avi, .mkv, .asf, .webm
-</td></td></tr></td></td></tr></td></td></tr></table>
-<p>For each type of media you may set the setting such as image duration or audio channel.</p>
-<p>Details of the Settings will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.html">Detail of MediaPlayers</a>.</p>
-<h2 id="mediaplayer360">MediaPlayer360</h2>
-<p>VGear have provided <code>MediaPlayer360</code> for the 360 degree video and Images.</p>
-<p>To add the prefab, right-click <code>vGear &gt; GameObject &gt; MediaPlayer360</code>.</p>
-<p><img src="../images/8.2.1.png" alt="MediaPlayer360 prefab"></p>
-<p>Most components of the MediaPlayer360 is the same as MediaPlayer, settings of <code>[360]</code> about the 360 media will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.html">Detail of MediaPlayers</a>.</p>
+<caption><b>[Settings]
+<tr><td>Ignore List					<td>Path of text file of the media list wanted to be ignored in current launch.<br>The list should includes the file name of the ignored media with the format.
+<tr><td>Auto Play					<td>Enable to auto play media.
+<tr><td>Auto Next					<td>Enable to auto open next media.
+<tr><td>Random						<td>Enable to randomly play media.
+<tr><td>Loop						<td>Loop setting of media player, <b>All</b> to loop all media, <b>One</b> to loop one medium.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">
+<tr><td>[Player UI]					<td>The settings to store the UI components of the Player.
+<tr><td>[Status]					<td>The settings to store and display the status of the player, can be get/set by provided functions.
+</td></td></tr></td></td></tr></table>
+<h2 id="detail-setting-of-mediaplayer360">Detail Setting of Mediaplayer360</h2>
+<table width="100%">
+<caption><b>[360]	
+<tr><td>Data Path					<td>Path of the json file which store the media data in the path. <br>Recommented to use external resources folder with path <b>"../Resources/*"</b>.
+<tr><td>Zoomer						<td>Transform for zoom.
+<tr><td>Rotater						<td>Transform for rotate.
+<tr><td>Pitcher						<td>Transform for pitch angle.
+<tr><td>Calibrator					<td>Calibrate factor for calibrator.
+<tr><td>Logo Element				<td>Logo Element for hiding top and bottom of 360 medium.
+<tr><td>Zoom Speed					<td>Zoom speed of zoomer.
+<tr><td>Rotate Speed				<td>Rotate speed of rotater.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<p><img src="../images/8.2.2.png" alt="Setting 360 of MediaPlayer360 "></p>
 </article>
           </div>
           

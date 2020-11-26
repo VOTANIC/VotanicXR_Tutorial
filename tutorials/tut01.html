@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Start with VotanicXR </title>
+    <title>Quick Start </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Start with VotanicXR ">
+    <meta name="title" content="Quick Start ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -66,39 +66,57 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="start-with-votanicxr">Start with VotanicXR</h1>
+            <article class="content wrap" id="_content" data-uid="tut01-quickstart">
+<h1 id="quick-start">Quick Start</h1>
 
-<hr>
-<p><strong>SDK Manager</strong> (<strong>vGear</strong>) is the manager of the VotanicXR SDK, which is a prefab (prefabricate) provided by Votanic SDK. It is based on another prefab <strong>vCast</strong>, and implemented with other extension features.</p>
-<p>This page describes how to build a playable executable.</p>
-<h2 id="before-start">Before start</h2>
-<h3 id="hardware">Hardware</h3>
-<h3 id="configuration">Configuration</h3>
+<p>In this article</p>
+<ul>
+<li><a class="xref" href="tut01.html#set-up-tutorial-project">Set Up Tutorial Project</a></li>
+<li><a class="xref" href="tut01.html#import-votanicxr">Import VotanicXR</a></li>
+<li><a class="xref" href="tut01.html#add-votanicxr-manager-to-scene">Add VotanicXR Manager to Scene</a></li>
+<li><a class="xref" href="tut01.html#build-the-scene">Build the Scene</a></li>
+<li><a class="xref" href="tut01.html#running-the-build">Running the Build</a></li>
+</ul>
+<h3 id="objective">Objective</h3>
+<p>VotanicXR is a Software Development Toolkit of Extended Reality as a plug-in of Unity Engine. This chapter will cover the quick start guide to build and run a basic scene using VotanicXR SDK with different platform.</p>
+<h3 id="conventions-in-this-tutorial">Conventions in this Tutorial</h3>
+<p>In this series of tutorial, we will use the following conventions.</p>
+<p>Each part of the tutorial consists an objective, a folder with sample scene and script, and detail step of using corresponding component.</p>
+<p>The components provided by VotanicXR SDK will using the following naming convention:</p>
+<p>Using <code>vGear_Interactable</code> class as example, the component using <code>vGear</code> as prefix, and connect the component with underscore <code>_</code>. The class will be shown in Unity Inspector with its convention as script component, i.e. <code>V Gear_Interactable (Script)</code>.</p>
+<p>The code fragment provided in the tutorial will follow the <a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules">Code style naming rules of .Net</a>.</p>
+<h2 id="set-up-tutorial-project">Set Up Tutorial Project</h2>
+<h3 id="download-tutorial-package">Download Tutorial Package</h3>
+<p>Click <a href="../Resources/package.zip">here</a> to download the Tutorial Package, the package includes the material of the tutorial and the sample scene.</p>
+<h3 id="configure-unity">Configure Unity</h3>
 <p>Configure the following settings before import the VotanicXR SDK:</p>
 <ol>
 <li>In <code>Edit &gt; Project Settings &gt; Player</code>, set the <code>Scripting Runtime Version</code> to <strong>.Net 4.x Equivalent</strong> if you are using Unity 2018.2.</li>
 <li>In <code>Edit &gt; Project Settings &gt; Editor</code>, set the <code>Version Control</code> is <strong>Visible Meta Files</strong> and <code>Asset Serialization</code> is <strong>Mixed</strong>.</li>
 <li>In <code>File &gt; Build Settings</code>, set the <code>Architecture</code> into <strong>x86_64</strong>.</li>
 </ol>
-<h3 id="import-sdk">Import SDK</h3>
+<h2 id="import-votanicxr">Import VotanicXR</h2>
+<h3 id="import-votanicxr-package">Import VotanicXR Package</h3>
 <p>Import the VotanicXR SDK for Unity:</p>
 <ol>
 <li>Right-click in Project <code>Assets &gt; Import Package &gt; Custom Package</code>, and select the SDK package download.</li>
 <li>In the Importing Package dialog, make sure that all package options are selected and click Import.</li>
 </ol>
-<h3 id="activation">Activation</h3>
-<p>To use VotanicXR SDK, activation is required with either trial version or registration key. Unregistered message will be shown on console and the application will have watermark and can only play 30 minutes.</p>
-<p><img src="../images/1.7.2.png" alt="Activation Panel"></p>
+<h3 id="import-tutorial-package">Import Tutorial Package</h3>
+<p>Import the Tutorial Package of VotanicXR:</p>
 <ol>
-<li>After import the SDK package, License window will be popped out. If not, please go to <code>VotanicXR &gt; License</code>.</li>
-<li>If you use the Trial version, please enter your email, read and agree the License Terms and Conditions to start.
-If you use the Registration version, please enter the registration key, read and agree the License Terms and Conditions to start.</li>
+<li>Right-click in Project <code>Assets &gt; Import Package &gt; Custom Package</code>, and select the SDK package download.</li>
+<li>In the Importing Package dialog, make sure that all package options are selected and click Import.</li>
 </ol>
-<h2 id="add-sdk-manager">Add SDK Manager</h2>
+<p>Please import the package after import the VotanicXR Package, for the requirement of the package contents.</p>
+<h2 id="add-votanicxr-manager-to-scene">Add VotanicXR Manager to Scene</h2>
+<h3 id="open-sample-scene">Open Sample Scene</h3>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial01 </code> and open the demo scene provided.</p>
+<p>//scene capture</p>
+<p><img src="../images/1.3.1.png" alt="Demo Scene"></p>
+<h3 id="add-vgear">Add vGear</h3>
+<p>Add the SDK Manager of VotanicXR <code>vGear</code> to the scene:</p>
 <ol>
-<li><p>Start Unity Project imported VotanicXR SDK Manager.</p>
-</li>
 <li><p>Right-click in the Hierarchy window.</p>
 </li>
 <li><p>Select <code>VGear &gt; SDK Manager</code></p>
@@ -111,11 +129,8 @@ If you use the Registration version, please enter the registration key, read and
 </li>
 </ol>
 <p>Detail of the components is described in <a href="../knowledgeBase/vGearDetail.html">Detail of vGear Components</a>.</p>
-<h2 id="build-the-scene">Build the scene</h2>
-<ol start="0">
-<li><p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Scenes</code> and open the demo scene provided. (Optional)</p>
-<p><img src="../images/1.3.1.png" alt="Demo Scene"></p>
-</li>
+<h2 id="build-the-scene">Build the Scene</h2>
+<ol>
 <li><p>Go to <code>File &gt; Build Setting</code>.</p>
 </li>
 <li><p>Click <code>Add Open Scenes</code>	if you need it.</p>
@@ -124,9 +139,18 @@ If you use the Registration version, please enter the registration key, read and
 </li>
 <li><p>When the build completed, the build folder will be popped out at the new window.</p>
 </li>
-<li><p>The built folder will contains some <code>batch</code> (.bat) files with the format <code>{Project Name}_[{Environment}].bat</code>. 	Double click the batch file with the environment you are using.</p>
-</li>
 </ol>
+<h2 id="running-the-build">Running the Build</h2>
+<p>The built folder will contains some <code>batch</code> (.bat) files with the format <code>{Project Name}_[{Environment}].bat</code>.</p>
+<p>Double click the batch file with the environment you are using.</p>
+<h3 id="running-in-multi-display-system">Running in Multi Display System</h3>
+<p>//tb</p>
+<h3 id="running-in-hmd-system">Running in HMD System</h3>
+<p>//tb</p>
+<h3 id="running-on-pc">Running on PC</h3>
+<p>//tb</p>
+<h3 id="running-a-local-test-configuration">Running a Local Test Configuration</h3>
+<p>//tb</p>
 </article>
           </div>
           

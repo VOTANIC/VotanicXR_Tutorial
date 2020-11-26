@@ -66,15 +66,68 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
+            <article class="content wrap" id="_content" data-uid="tut03-locomotion">
 <h1 id="locomotion">Locomotion</h1>
 
-<hr>
-<p>This page describes the ways for VotanicXR user to move the player, includes using <code>Commands</code> and using <code>Teleport</code> tool.</p>
-<h2 id="using-commands">Using Commands</h2>
+<p>In this article</p>
+<ul>
+<li><a class="xref" href="tut03.html#teleport-tool">Teleport Tool</a></li>
+<li><a class="xref" href="tut03.html#artificial-movement">Artificial Movement</a></li>
+<li><a class="xref" href="tut03.html#movenent-for-input">Movement from Input</a></li>
+</ul>
+<h2 id="objective">Objective</h2>
+<p>Locomotion is how to move the player through the virtual world, but simply move the player may lead to discomfort. This chapter introduces  some locotmotion features to move the player in comfort way provided by VotanicXR, include using <code>Commands</code> and using <code>Teleport</code> tool.  (more intro? using fade ?)</p>
+<h3 id="built-in-locomotion-option-in-votanicxr">Built-in Locomotion Option in VotanicXR</h3>
+<p>//tb</p>
+<h3 id="set-up-locomotion-sample-scene">Set up Locomotion Sample Scene</h3>
+<p>//tb</p>
+<h2 id="teleport-tool">Teleport Tool</h2>
+<p>Teleport is common navigation tool in VR application, VotanicXR have provided it with editable effects.</p>
+<p><img src="../images/5.2.0.gif" alt="The Teleport tool "></p>
+<h3 id="using-default-teleport-tool">Using Default Teleport Tool</h3>
+<h4 id="set-teleport-as-default-tool">Set Teleport as Default Tool</h4>
+<ol>
+<li><p>Go to <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code>, component <code>V Gear_Teleport (Script)</code> is shown at the inspector window, which manage the setting of the Teleport tool.</p>
+<p>And go to <code>vGear &gt; Frame &gt; Controller</code> to set the default tool into <code>Teleport</code> for testing.</p>
+<p><img src="../images/5.2.1.png" alt="set the default tool to Teleport"></p>
+</li>
+<li><p>Enter play mode, the default tool is changed into teleport.</p>
+<p>By pressing the Trigger button of the controller, or send the <code>Teleport</code> command through <a class="xref" href="tut02.html">Input System</a>, the vGear user will be teleported into the projection point.</p>
+<pre><code class="lang-cs">{
+	//	Press Space to Teleport
+	if (vGear.Input.KeyboardPress(KeyCode.Space))
+	vGear.Cmd.Send(&quot;Teleport&quot;);
+}
+</code></pre>
+</li>
+</ol>
+<h4 id="configure-teleport-tool">Configure Teleport Tool</h4>
+<p>//tb</p>
+<h3 id="advance-teleport">Advance Teleport</h3>
+<p>//tb</p>
+<h4 id="teleport-using-waypoints">Teleport using Waypoints</h4>
+<p>To make sure player teleport into a correct position, <code>Waypoint</code> can be used.</p>
+<p><img src="../images/5.2.2.gif" alt="The Teleport tool with Waypoint"></p>
+<ol>
+<li><p>Right click <code>vGear &gt; GameObjects &gt; Waypoint</code> and drag the prefab into desired position.</p>
+<p>To apply a custom rotation, you can enable the <code>Apply Rotation</code> with custom value of face angle and offset in <code>V Gear_Waypoint (Script)</code>.</p>
+<p><img src="../images/5.2.4.gif" alt="The Teleport tool with Waypoint applied rotation"></p>
+</li>
+</ol>
+<h4 id="teleport-using-collision-mode">Teleport using Collision Mode</h4>
+<h2 id="artificial-movement">Artificial Movement</h2>
+<h3 id="add-waypoints">Add Waypoints</h3>
+<h3 id="move-along-the-waypoints">Move Along the Waypoints</h3>
+<h2 id="movement-from-input">Movement from Input</h2>
+<h3 id="using-movement-commands">Using Movement Commands</h3>
 <p>As mentioned at previous chapter, VotanicXR SDK have provided mapped buttons and commands.
 The commands with locomotion are <code>Move</code>, <code>Rotate</code>, <code>Shift</code>, <code>Float</code>, <code>Turn</code> and <code>JumpSink</code>.</p>
-<h3 id="using-controller">Using Controller</h3>
+<h3 id="movement-modes">Movement Modes</h3>
+<h4 id="traveler-mode-vs-soul-mode">Traveler Mode vs Soul Mode</h4>
+<h4 id="movement-in-traveler-mode">Movement in Traveler Mode</h4>
+<hr>
+<p>before content</p>
+<h1 id="using-controller">Using Controller</h1>
 <ol>
 <li><p>Connected a controller accpeted by VotanicXR and open the scene created at previous chapter.</p>
 </li>
@@ -84,49 +137,20 @@ The commands with locomotion are <code>Move</code>, <code>Rotate</code>, <code>S
 </li>
 </ol>
 <h3 id="using-inut-system">Using Inut System</h3>
-<p>Also, send the <code>Move</code> command and <code>Rotate</code> command with specified value through <a href="InputSystem.html">Input System</a>, can navigate forward, backward and rotate.</p>
-<pre><code class="csharp">void Update()
-{
+<p>Also, send the <code>Move</code> command and <code>Rotate</code> command with specified value through <a class="xref" href="tut02.html">Input System</a>, can navigate forward, backward and rotate.</p>
+<pre><code class="lang-cs">{
 //  Using Keyboard WASD through DirectInput to move
     if (vGear.Input.KeyboardPress(KeyCode.W))
-        vGear.Cmd.Send("Move", 1);
+        vGear.Cmd.Send(&quot;Move&quot;, 1);
     if (vGear.Input.KeyboardPress(KeyCode.S))
-        vGear.Cmd.Send("Move", -1);
+        vGear.Cmd.Send(&quot;Move&quot;, -1);
     if (vGear.Input.KeyboardPress(KeyCode.D))
-        vGear.Cmd.Send("Rotate", 1);
+        vGear.Cmd.Send(&quot;Rotate&quot;, 1);
     if (vGear.Input.KeyboardPress(KeyCode.A))
-        vGear.Cmd.Send("Rotate", -1);
+        vGear.Cmd.Send(&quot;Rotate&quot;, -1);
 }
 </code></pre>
-<h2 id="using-teleport-tool">Using Teleport Tool</h2>
-<p>Teleport is common navigation tool in VR application, VotanicXR have provided it with editable effects.</p>
-<p><img src="../images/5.2.0.gif" alt="The Teleport tool "></p>
-<h3 id="set-teleport-tool-as-default-tool">Set Teleport Tool as Default Tool</h3>
-<ol>
-<li><p>Go to <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code>, component <code>V Gear_Teleport (Script)</code> is shown at the inspector window, which manage the setting of the Teleport tool.</p>
-<p>And go to <code>vGear &gt; Frame &gt; Controller</code> to set the default tool into <code>Teleport</code> for testing.</p>
-<p><img src="../images/5.2.1.png" alt="set the default tool to Teleport"></p>
-</li>
-<li><p>Enter play mode, the default tool is changed into teleport.</p>
-<p>By pressing the Trigger button of the controller, or send the <code>Teleport</code> command through <a href="InputSystem.html">Input System</a>, the vGear user will be teleported into the projection point.</p>
-<pre><code class="csharp">void Update()
-{
-	//	Press Space to Teleport
-	if (vGear.Input.KeyboardPress(KeyCode.Space))
-	vGear.Cmd.Send("Teleport");
-}
-</code></pre>
-</li>
-</ol>
-<h3 id="using-teleport-toolwith-waypoints">Using Teleport Tool	with Waypoints</h3>
-<p>To make sure player teleport into a correct position, <code>Waypoint</code> can be used.</p>
-<p><img src="../images/5.2.2.gif" alt="The Teleport tool with Waypoint"></p>
-<ol>
-<li><p>Right click <code>vGear &gt; GameObjects &gt; Waypoint</code> and drag the prefab into desired position.</p>
-<p>To apply a custom rotation, you can enable the <code>Apply Rotation</code> with custom value of face angle and offset in <code>V Gear_Waypoint (Script)</code>.</p>
-<p><img src="../images/5.2.4.gif" alt="The Teleport tool with Waypoint applied rotation"></p>
-</li>
-<li><p>To use the teleport function in different ways, we can set different modes in setting <strong>[Advance]</strong> of component <code>V Gear_Teleport (Script)</code>.</p>
+<p>To use the teleport function in different ways, we can set different modes in setting <strong>[Advance]</strong> of component <code>V Gear_Teleport (Script)</code>.</p>
 <table width="100%">
 	<caption><b>[Advanced]</b></caption>
 	<tr><td>Teleport Waypoint			<td>Waypoint detection setting.<br><b>Detect</b> will detect waypoint, <b>Ignore</b> will ignore waypoint, <br>and <b>WaypointOnly</b> only detect waypoint for teleportation.
@@ -137,8 +161,6 @@ The commands with locomotion are <code>Move</code>, <code>Rotate</code>, <code>S
 <tr><td>Collision Mode enable <td> Collision Mode disable
 <tr><td><img src="../images/5.2.4.1.png" alt="Collision Mode enable"><td><img src="../images/5.2.4.2.png" alt="Collision Mode disable">
 </td></td></tr></td></td></tr></table>
-</li>
-</ol>
 </article>
           </div>
           
