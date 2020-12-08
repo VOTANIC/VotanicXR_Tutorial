@@ -1,6 +1,27 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: detail-debugmode
+  name: Debug Mode
+  href: knowledgeBase/Debugmode.html
+- uid: detail-interactable
+  name: Detail of VGear Interactable
+  href: knowledgeBase/vGearInterctableDetail.html
+- uid: detail-media
+  name: Detail of Mediaplayers
+  href: knowledgeBase/vGearMediaplayerDetail.html
+- uid: detail-network
+  name: Detail of Network Manager
+  href: knowledgeBase/vGearNetworkManagerDetail.html
+- uid: detail-test3d
+  name: Test 3D mode
+  href: knowledgeBase/test3d.html
+- uid: detail-ui
+  name: Detail of UI Element
+  href: knowledgeBase/vGearUIDetail.html
+- uid: detail-vgear
+  name: Detail of VGear Components
+  href: knowledgeBase/vGearDetail.html
 - uid: tut01-quickstart
   name: Quick Start
   href: tutorials/tut01.html
@@ -11,26 +32,29 @@ references:
   name: Locomotion
   href: tutorials/tut03.html
 - uid: tut04-interaction
-  name: Interaction
+  name: Interact with Virtual World
   href: tutorials/tut04.html
 - uid: tut05-3dui
-  name: Dealing with 3D UI
+  name: Interact with 3D UI
   href: tutorials/tut05.html
 - uid: tut06-media
-  name: Adding Media
+  name: Add Media
   href: tutorials/tut06.html
 - uid: tut07-network
-  name: Network fearture
+  name: Multi-User Networking
   href: tutorials/tut07.html
 - uid: tut08-behavioursystem
-  name: Behaviour System
+  name: Using Behaviour System
   href: tutorials/tut08.html
 - uid: tut09-ingamemenu
-  name: Using In Game Menu
+  name: Using In-Game Menu
   href: tutorials/tut09.html
 - uid: tut10-ingametool
-  name: Using In Game Tool
+  name: Using In-Game Tools
   href: tutorials/tut10.html
 - uid: tut11-configurator
-  name: tut11-configurator
+  name: Using Configurator
   href: tutorials/tut11.html
+- uid: underconstructed
+  name: underconstructed
+  href: tutorials/UnderContructed.html

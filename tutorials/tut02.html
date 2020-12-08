@@ -8,7 +8,7 @@
     <title>Getting Cross-platform Input </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Getting Cross-platform Input ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -75,19 +75,20 @@
 <li><a class="xref" href="tut02.html#virtual-controller-input-system">Virtual Controller Input System</a></li>
 </ul>
 <h2 id="objective">Objective</h2>
-<p>VotanicXR has built up interfaces for the input system, and divided the input into several levels. This chapter introduces the first two levels, <strong>Command level</strong> and <strong>Virtual Controller level</strong>. <strong>Command level</strong></p>
+<p>VotanicXR has built up interfaces for the input system, and divided the input into several levels.
+This chapter introduces the first two levels, <strong>Command level</strong> and <strong>Virtual Controller level</strong>. <strong>Command level</strong></p>
 <h3 id="cross-platform-input-system">Cross-platform Input System</h3>
 <p>The <strong>Command Input System</strong> using <code>vGear.Cmd</code> class in <code>vGear</code> as command manager, to handle the <code>Send</code> and <code>Receive</code> of commands. The command can be sent by using api and inputting the button bound in the setting file.</p>
 <p>The <strong>Virtual Controller level</strong> using <code>vGear.Ctrl</code> class in <code>vGear</code>, to receive the button input with respect to the index saved in setting file.</p>
 <p>The setting file can be modified in <a class="xref" href="tut11.html">Configurator</a>.</p>
 <h3 id="set-up-tutorial-profile">Set up Tutorial Profile</h3>
 <h4 id="download-sample-json">Download sample json</h4>
-<p>// from package</p>
+<p>// wait configurator</p>
 <h4 id="using-configurator">Using Configurator</h4>
 <p>To modify the setting file, please go to <a class="xref" href="tut11.html">Configurator</a>.</p>
 <h4 id="open-sample-scene">Open Sample Scene</h4>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial02 </code> and open the demo scene provided to start the tutorial below.</p>
-<p>//Scene Capture</p>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial02 </code> and open the scene <code>Input System</code> provided.</p>
+<p>Add a gameObject named <code>TutorialController</code> and create a component named <code>Tutorial02Controller</code> for the code sample below.</p>
 <h2 id="command-input-system">Command Input System</h2>
 <h3 id="command-input-system-overview">Command Input System Overview</h3>
 <p><strong>Command Input System</strong> is a simple communication system to handle the <code>Send</code> and <code>Receive</code> of <code>Command</code>. The reference class is <code>vGear.Cmd</code>.</p>
@@ -96,11 +97,14 @@
 <h3 id="define-new-command">Define New Command</h3>
 <p>There are several ways to define a new command.</p>
 <h4 id="create-command-in-json--configurator">Create Command in json / Configurator</h4>
-<p>// w/ charles</p>
+<p>// w/ charles /wait configurator</p>
+<p>//with virtual controller below</p>
 <h4 id="map-device-button-to-command">Map Device Button to Command</h4>
-<p>// w/ charles</p>
+<p>// w/ charles /wait configurator</p>
 <h4 id="send-command-from-interactable">Send Command from Interactable</h4>
-<p><code>vGear Interactable</code> is a component provided by VotanicXR SDK to handle the gameObject Interaction. When the component is interacted by player, the command saved in the component will be sent to the Command System. Detail will be introduced at <a class="xref" href="tut04.html">Interact with Virtual World</a> and <a href="xref:doc03-interactable">Detail of vGear Interactable</a>.</p>
+<p><code>vGear Interactable</code> is a component provided by VotanicXR SDK to handle the gameObject Interaction.</p>
+<p>When the component is interacted by user, the command saved in the component will be sent to the Command System.</p>
+<p>Detail will be introduced at <a class="xref" href="tut04.html">Interact with Virtual World</a> and <a href="xref:doc03-interactable">Detail of vGear Interactable</a>.</p>
 <h3 id="send-and-receive-command">Send and Receive Command</h3>
 <p>The basic functions of <code>vGear.Cmd</code> class are <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Send_System_String_System_Single_System_Int32_System_Int32_Votanic_vXR_InteractorType_">Send</a></strong>, <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Received_System_String_">Received</a></strong> and <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_AllReceived">AllReceived</a></strong>.</p>
 <p><strong>Send</strong> sends a custom command to the command handler, the command sent can be received by <strong>Receive</strong> and <strong>AllReceived</strong>.</p>
@@ -108,70 +112,74 @@
 <h3 id="command-input-demo">Command Input Demo</h3>
 <p>The sample below shows the usage of <strong>Send</strong> and <strong>Receive</strong>. When the component is enabled, the command handler send a <code>&quot;Custom&quot;</code> command. The update function will check the command received by the command handler, once <code>&quot;Custom&quot;</code> command is received, will print the debug log.</p>
 <pre><code class="lang-cs">void Start()
-{
-    vGear.Cmd.Send(&quot;Custom&quot;);
-}
-
-void Update(){
-    if (vGear.Cmd.Received(&quot;Custom&quot;))
     {
-        Debug.Log(&quot;Custom command received!&quot;);
+        vGear.Cmd.Send(&quot;Custom&quot;);
     }
-}
-</code></pre>
-<p><img src="../images/4.2.2.png" alt="Console Result Send and Received"></p>
-<p>The sample below shows the usage of <strong>AllReceived</strong> and <strong>Value</strong>. The update function contains a foreach loop to get the command through <strong>AllReceived</strong>. For each command got from the handler, print out the float value of the command. If the command match <code>&quot;FunctionA&quot;</code>, call the Function <code>&quot;FunctionA&quot;</code>.</p>
-<pre><code class="lang-cs">void Update(){
-    foreach (string command in vGear.Cmd.AllReceived())
+
+    private void CheckCustomCommand()
     {
-        Debug.Log(&quot;The value of &quot; + command + &quot;command is &quot; + vGear.Cmd.Value(command));
-        switch (command)
+        //  CheckCustomCommand function in Update
+        if (vGear.Cmd.Received(&quot;Custom&quot;))
         {
-            case &quot;FunctionA&quot;:
-                FunctionA();
-                break;
+            Debug.Log(&quot;Custom command received!&quot;);
         }
     }
-}
+</code></pre>
+<p><img src="../images/4.2.2.png" alt="Console Result Send and Received"></p>
+<br>
+<p>The sample below shows the usage of <strong>AllReceived</strong> and <strong>Value</strong>. The update function contains a foreach loop to get the command through <strong>AllReceived</strong>. For each command got from the handler, print out the float value of the command. If the command match <code>&quot;FunctionA&quot;</code>, call the Function <code>&quot;FunctionA&quot;</code>.</p>
+<pre><code class="lang-cs">private void CheckAllCommand()
+    {
+        //  CheckAllCommand function in Update
+        foreach (string command in vGear.Cmd.AllReceived())
+        {
+            Debug.Log(&quot;The value of &quot; + command + &quot;command is &quot; + vGear.Cmd.Value(command));
+            switch (command)
+            {
+                case &quot;FunctionA&quot;:
+                    FunctionA();
+                    break;
+            }
+        }
+    }
 </code></pre>
 <p><img src="../images/4.2.4.png" alt="Console Result of AllReceived and Value"></p>
 <h2 id="virtual-controller-input-system">Virtual Controller Input System</h2>
 <h3 id="virtual-controller-input-system-overview">Virtual Controller Input System Overview</h3>
 <p><strong>Virtual Controller Input System</strong> is an input system to handle vCast controller. The reference class is <code>vGear.Ctrl</code>.</p>
-<p>By default, this component will bind with Buttons and Axes of the connected devices automatically. The bound mapping can be configurated in the <a class="xref" href="tut11.html">configurator</a>, and the mapping can be customized for user needs.</p>
-<h3 id="configure-virtual-controller">Configure Virtual Controller</h3>
-<h3 id="using-virtual-controller">Using Virtual Controller</h3>
+<p>By default, this component will bind with Buttons and Axes of the connected devices automatically. The bound mapping can be configurated in the <a class="xref" href="tut11.html">configurator</a>, and the mapping can be customized for developer needs.</p>
 <h3 id="virtual-controller-input-demo">Virtual Controller Input Demo</h3>
 <p>The sample below shows the input of button index 0 and axis index 0.</p>
-<pre><code class="lang-cs">void Update()
-{
-    if (vGear.Ctrl.ButtonDown(0))
+<pre><code class="lang-cs">private void CheckVirtualControllerInput()
     {
-        Debug.Log(&quot;Button 0 is down.&quot;);
-    }
-    if (vGear.Ctrl.ButtonHold(0))
-    {
-        Debug.Log(&quot;Button 0 is held for some time.&quot;);
-    }
-    if (vGear.Ctrl.ButtonPress(0))
-    {
-        Debug.Log(&quot;Button 0 is pressing.&quot;);
-    }
+        //  CheckVirtualControllerInput function in Update
+        if (vGear.Ctrl.ButtonDown(0))
+        {
+            Debug.Log(&quot;Button 0 is down.&quot;);
+        }
+        if (vGear.Ctrl.ButtonHold(0))
+        {
+            Debug.Log(&quot;Button 0 is held for some time.&quot;);
+        }
+        if (vGear.Ctrl.ButtonPress(0))
+        {
+            Debug.Log(&quot;Button 0 is pressing.&quot;);
+        }
 
-    if (vGear.Ctrl.AxisDown(0))
-    {
-        Debug.Log(&quot;Axis 0 is down.&quot;);
+        if (vGear.Ctrl.AxisDown(0))
+        {
+            Debug.Log(&quot;Axis 0 is down.&quot;);
+        }
+        if (vGear.Ctrl.AxisHold(0))
+        {
+            Debug.Log(&quot;Axis 0 is held for some time.&quot;);
+        }
+        if (vGear.Ctrl.AxisPress(0))
+        {
+            Debug.Log(&quot;Axis 0 is pressing with value &quot; +
+                vGear.Ctrl.AxisValue(0).ToString(&quot;F2&quot;) + &quot;.&quot;);
+        }
     }
-    if (vGear.Ctrl.AxisHold(0))
-    {
-        Debug.Log(&quot;Axis 0 is held for some time.&quot;);
-    }
-    if (vGear.Ctrl.AxisPress(0))
-    {
-        Debug.Log(&quot;Axis 0 is pressing with value &quot; + 
-            vGear.Ctrl.AxisValue(0).ToString(&quot;F2&quot;) + &quot;.&quot;);
-    }
-}
 </code></pre>
 <p><img src="../images/4.3.3.png" alt="Console Result of AllReceived and Value"></p>
 </article>

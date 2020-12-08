@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interaction </title>
+    <title>Interact with Virtual World </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interaction ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="title" content="Interact with Virtual World ">
+    <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -67,74 +67,156 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="tut04-interaction">
-<h1 id="interaction">Interaction</h1>
+<h1 id="interact-with-virtual-world">Interact with Virtual World</h1>
 
-<hr>
-<p>This page describes using VotanicXR to interact with objects.</p>
-<h2 id="interactable">Interactable</h2>
-<p>The basic component for Interactable is <code>V Gear_Interactables (Script)</code>, to interact between <code>interactable</code> gameobjects and the <code>interactors</code>. The default interactors are the <strong>Wand</strong> tool and <strong>Vision</strong>.</p>
-<p>Right Click and select <code>vGear &gt; Component &gt; Interactables+</code> to add the <code>V Gear_Interactables (Script)</code> component to a gameobject.</p>
-<h2 id="interaction-to-interactables">Interaction to Interactables</h2>
-<p>The interaction and condition can be set in the <code>Interaction</code> of <strong>[Settings]</strong>, with the interaction type and response type. The response can be sending a Command or calling a Unity Event.</p>
-<p>By default, you will see the color of the wand changed to green when it collides with interactable gameobjects, and changed to red when it is interacting, the wand setting can be edited through Unity Inspector and API, and is described in <a href="../knowledgeBase/vGearDetail.html">Detail of vGear Components</a>.</p>
-<p>The sample with printing <a class="xref" href="tut02.html">AllReceived()</a> is shown below.</p>
+<p>In this article</p>
+<ul>
+<li><a class="xref" href="tut04.html#set-up-interactable">Set up Interactable </a></li>
+<li><a class="xref" href="tut04.html#using-wand-interactions">Using Wand Interactions</a></li>
+<li><a class="xref" href="tut04.html#advance-interaction">Advance Interaction</a></li>
+</ul>
+<h2 id="objective">Objective</h2>
+<p>This chapter introduces the interaction features provided by VotanicXR.
+An interaction consists of an <code>interactor</code> and <code>interactable</code>, this chapter will introduces how to set up the interactables and the main interactor <code>Wand</code>, and simple introduce other interaction method.</p>
+<h3 id="interaction-in-votanicxr">Interaction in VotanicXR</h3>
+<p>The definition about interactiob in VotanicXR is defined below.</p>
+<p><code>interactable</code> is defined as a gameObject with <code>V Gear_Interactable (Script)</code> component, that can be interacted by the <code>interactors</code> with interaction method provided.
+<code>interactor</code> is defined as the gameObject with components that can interact the <code>Interactables</code>.</p>
+<p><code>Interaction</code> is defined as the reciprocal action between an <code>interactor</code> and <code>interactable</code>, the acted interaction can sends a command or invokes Unity Events.
+Basic interaction includes Trigger, Select, Grab, Pick, Climb.
+Detail will be introduces below.</p>
+<h3 id="set-up-interaction-sample-scene">Set up Interaction Sample Scene</h3>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial04 </code> and open the scene <code>Interaction</code> provided.</p>
+<p>GameObject <code>TutorialController</code> with script component <code>Tutorial04Controller</code> and GameObject list of props <code>Interactable gameObjects</code> is provided for the tutorial usage.</p>
+<h2 id="set-up-interactable">Set up Interactable</h2>
+<h3 id="add-interactable-component">Add Interactable Component</h3>
+<p>Right Click the <code>Rock</code> in the given gameObject <strong><code>Interactable gameObejects</code></strong> and select <code>vGear &gt; Component &gt; Interactables+</code> to add the <code>V Gear_Interactables (Script)</code> component .</p>
+<p>Note that the component required a collider, and check the Convex option of the gameobject if using Mesh Collider. And add a rigidbody component for the gameObject to apply physics.</p>
 <p><img src="../images/6.2.1.png" alt="Interaction with Interactable"></p>
-<p>To perform more interactions in one gameobject, you may set more interactions in Interactions in <strong>[Additional Setting]</strong>. The sample below print out the commands received in the Update function.</p>
-<p><img src="../images/6.3.1.png" alt="Multi interactions"></p>
-<h3 id="grabbing-interactables">Grabbing Interactables</h3>
-<p>Besides, grabbing an object and grab to interact with other objects is usual in VR development. You can follow the setting below to perform grabbing.</p>
+<h3 id="configure-interactable">Configure Interactable</h3>
+<p>The interaction and condition can be set in the <code>Interaction</code> of <strong>[Settings]</strong>, with the interaction type and response type. The response can be sending a Command or invoking a Unity Event.</p>
+<br>
+<p>The sample with printing <a class="xref" href="tut02.html">AllReceived()</a> and invoke Unity Event is shown below.</p>
 <ol>
-<li><p>Set Interaction Type into <code>Press</code> and Command in to <code>Grab</code> in vGear Interactables. (Some controller keys is mapped with this, you may bind it in configurator if you need. Grip button is mapped to Grab for Vive Controller by default.)</p>
+<li><p>Go to the <code>[Settings] &gt; Interaction</code> in component <code>V Gear_Interactables (Script)</code>.</p>
+</li>
+<li><p>Input the <code>Command</code> field, the command will be sent to the command handler when the interaction type is fulfilled.</p>
+</li>
+<li><p>Add an Unity Event in <code>Unity Event</code>, drag the <code>TutorialController</code> gameObject into the Object field, and select <code>Tutorial04Controller &gt; PrintHello ()</code>. The Unity Event will be invoked when the interaction type is fulfilled.</p>
+</li>
+</ol>
+<p><img src="../images/6.2.2.png" alt="Interaction with Interactable"></p>
+<h3 id="set-up-multiple-interaction">Set up Multiple Interaction</h3>
+<p>To perform more interactions in one gameobject, you may set more interactions in Interactions in <strong>[Additional Setting]</strong>. The sample below print out the commands received in the Update function.</p>
+<ol>
+<li><p>Go to the <code>[Additional Settings] &gt; Interactions</code> in component <code>V Gear_Interactables (Script)</code>.</p>
+</li>
+<li><p>Adding the size of the <code>Interactions</code>, we input 2 in the sample.</p>
+</li>
+<li><p>Add more event or commnad at the added interactions and change the interaction type for tests.</p>
+</li>
+</ol>
+<p><img src="../images/6.2.3.png" alt="Multi interactions"></p>
+<h2 id="using-wand-interactions">Using Wand Interactions</h2>
+<p>The <code>Wand</code> is basic interaction tool to of the <code>vGear</code>, and is the default tool of the vGear User.</p>
+<p>By default, the wand is a two meters ray beam with ray point.
+When the wand collides with a collider, the ray beam will becomes shorter to show the collision.</p>
+<p>The color of the wand changed to green when it collides with interactable gameObjects, and changed to red when it is interacting.
+The wand setting can be edited through Unity Inspector and API, and is described in <a href="../knowledgeBase/vGearDetail.html">Detail of vGear Components</a>.</p>
+<p>This paragraph will introduces some of the basic interaction types of Wand.</p>
+<h3 id="select">Select</h3>
+<p>Select is the action from user to the interactable gameObjects.
+Point the gameObject by using the wand, the color of the wand is changed from white to green, the <code>Selection</code> is performed.</p>
+<p>On <code>Select</code> is a kind of the interaction type, the relevant types are <code>Select Stay</code> and <code>Deseelct</code>.</p>
+<p><img src="../images/6.3.1.gif" alt="Select and deselect the interactable"></p>
+<h3 id="trigger">Trigger</h3>
+<p>Trigger is the interaction from user to the interactable gameObjects.
+By triggering an interactable gameObject, the <code>V Gear_Interactables (Script)</code> component will give response.</p>
+<p>To simply trigger a interactable gameObject, point the gameObject by using the wand and press <code>Trigger</code> button, the wand color will be changed from green to red.</p>
+<p>The relevent interaction types are <code>Down</code>, <code>Up</code>, <code>Press</code> and <code>Hold</code>, and the types with action <code>Grab</code> and <code>Pick</code> will be introduced below.</p>
+<p><img src="../images/6.3.2.gif" alt="Trigger the interactable"></p>
+<h3 id="grab">Grab</h3>
+<p>Grabbing an object and grab to interact with other objects is useful.
+Grabbing an object requires continuously receiving <code>Grab</code> commands, when the commands stop sending, the object will be drop down.</p>
+<p>The following setting performs grabbing.</p>
+<ol>
+<li><p>Right Click the <code>Chair</code> in the given gameObject <strong><code>Interactable gameObejects</code></strong> and add the <code>V Gear_Interactables (Script)</code> component .</p>
+</li>
+<li><p>Set Interaction Type into <code>Press</code> and Command into <code>Grab</code> in vGear Interactables.</p>
+<p>Note that Some controller keys is mapped with this, you may bind it in configurator if you need. By default Grip button is mapped to Grab for Vive Controller, and it is no need to set the command into <code>Grab</code>. The detail will be introduced in <a href="xref:tut11-confidurator">Configurator</a>.</p>
 </li>
 <li><p>Check the Grabbable option in the Grab Setting of <strong>[Setting]</strong>.</p>
-<p><img src="../images/6.4.1.png" alt="Grab object Settings"></p>
-</li>
-<li><p>Check the Convex option of the gameobject if using Mesh Collider.</p>
-</li>
-<li><p>Add the Rigidbody component to apply physic.</p>
-<p><img src="../images/6.4.2.png" alt="Grab object Settings2 and Result"></p>
+<p><img src="../images/6.3.3.1.png" alt="Grab object Settings"></p>
 </li>
 </ol>
-<h3 id="picking-interactables">Picking Interactables</h3>
-<p>vGear have provided feature to <code>Pick</code> interactable that is similar to <code>Grab</code>.</p>
-<p><code>Grab</code> should keep pressing the key (or keep receiving <code>Grab command</code>), and ungrab by release the key.</p>
-<p><code>Pick</code> only require a <code>Pick command</code> to attach the object to hand, and unpick by received a <code>Grab command</code> once.</p>
-<p><code>Pick</code> and <code>Grab</code> are capable for a gameobject, the below shows the setting with both <code>Grab</code> and <code>Pick</code>.</p>
-<p><img src="../images/6.4.3.png" alt="Grab object Settings2 and Result"></p>
-<p>Detail of Interactable will be described in <a href="../knowledgeBase/vGearInterctableDetail.html">Detail of vGear Interactable</a>.</p>
-<h3 id="climb-interactables">Climb Interactables</h3>
-<p>VGear Interactables have provided a climb feature, players can climb and implement games such as zipline and rock climbing. The sample is shown below.</p>
+<p>The result of grabbing is shown below.</p>
+<p><img src="../images/6.3.3.2.gif" alt="Grab object Demonstration"></p>
+<h3 id="pick">Pick</h3>
+<p><code>Pick</code> is carrying an Item and can be placed.
+<code>Pick</code> and <code>Grab</code> are capable for a gameobject, and <code>Pick</code> only requires receive one <code>Pick</code> command, and release by receive one <code>Grab</code> command.</p>
+<p>The following setting performs grabbing.</p>
 <ol>
-<li><p>Set Interaction Type into <code>Press</code> and Command in to <code>Grab</code> in vGear Interactables.</p>
+<li><p>Right Click the <code>Vase</code> in the given gameObject <strong><code>Interactable gameObejects</code></strong> and add the <code>V Gear_Interactables (Script)</code> component.</p>
 </li>
-<li><p>Check the Climb Object into true and corresponding x, y, z to be fixed in the <strong>[Climb Setting]</strong>.</p>
+<li><p>Set Interaction Type into <code>Up</code> and Command into <code>Pick</code> in vGear Interactables.</p>
 </li>
-<li><p>Check the Grabble option in Grab Setting of <strong>[Setting]</strong>.</p>
-<p><img src="../images/6.5.1.png" alt="Climb object Settings"></p>
-</li>
-<li><p>The script of the zipline. When the player is grabbing the moving zipline, player will be moved with the zipline.</p>
+<li><p>Check the Grabbable and Pickable option in the Grab Setting of <strong>[Setting]</strong>.</p>
+<p><img src="../images/6.3.4.1.png" alt="Grab object Settings2 and Result"></p>
 </li>
 </ol>
-<pre><code class="lang-csharp">public Transform Zipline;
-readonly KeyCode[] inputKeys 
-		= {	KeyCode.R, KeyCode.F
-		, 	KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
-readonly Vector3[] directions 
-		= {	Vector3.up, Vector3.down
-		, 	Vector3.forward, Vector3.left, Vector3.back, Vector3.right};
-
-private void Update()
-{
-	//	Using WASDRF to control the movement of zipline
-	for (int i = 0 ; i &lt; inputKeys.Length ; i++)
-	{
-		if (vGear.Input.KeyboardPress(inputKeys[i]))
-		{
-			Zipline.Translate(directions[i] * Time.deltaTime);
-		}
-	}
-}
-</code></pre>
+<p>The result of grabbing is shown below.</p>
+<p><img src="../images/6.3.5.2.gif" alt="Pick object Demonstration"></p>
+<p>Detail of Interactable will be described in <a href="../knowledgeBase/vGearInterctableDetail.html">Detail of vGear Interactable</a>.</p>
+<h3 id="climb">Climb</h3>
+<p><code>Climb</code> is an interaction to pull the user when user climbing.
+Developer can implements games such as zipline and rock climbing. The sample is shown below.</p>
+<p>The sample using a flying shield as zipline is shown below.</p>
+<ol>
+<li><p>Right Click the <code>Flying Shield</code> in the given gameObject <strong><code>Interactable gameObejects</code></strong> and add the <code>V Gear_Interactables (Script)</code> component. The gameObject is provided with flying animation.</p>
+</li>
+<li><p>Set Interaction Type into <code>Press</code> and Command into <code>Grab</code> in vGear Interactables if the controller is not mapped.</p>
+</li>
+<li><p>Check the <code>Climb Object</code> into true and corresponding x, y, z to be fixed in the <code>[Settings] &gt; [Climb Setting]</code>, here we fix x, y and z for the zipline implementation.</p>
+<p><img src="../images/6.3.6.1.png" alt="Climb object Settings"></p>
+</li>
+<li><p>When the player is grabbing the moving zipline, player will be moved with the zipline.</p>
+</li>
+</ol>
+<p><img src="../images/6.3.6.2.gif" alt="Zipline Demonstration"></p>
+<h2 id="advance-interaction">Advance Interaction</h2>
+<p>Except for using <code>Wand</code> as interactor, there are other <code>Interaction Types</code> which using <code>Vision</code> and <code>Collider</code>.</p>
+<h3 id="using-vision-interaction">Using Vision Interaction</h3>
+<p><code>Vision</code> can be triggered when the user transform facing the interactable.
+The relevant interaction types are <code>Look</code>, <code>Look Repeat</code>, <code>Look Stay</code> and <code>Look Exit</code>.</p>
+<p>The sample using Vision Interaction to check the user look at the bird house is shown below.</p>
+<ol>
+<li><p>Right Click the <code>Bird House</code> in the given gameObject <strong><code>Interactable gameObejects</code></strong> and add the <code>V Gear_Interactables (Script)</code> component.</p>
+</li>
+<li><p>Input the command field or add an Unity Event as responce.</p>
+</li>
+<li><p>Change the interaction type to <code>Look Repeat</code>.</p>
+</li>
+<li><p>The duration value of the <code>Hold</code> and <code>Look Repeat</code> can be modified in <code>[Settings] &gt; Custom Duration</code>.</p>
+</li>
+</ol>
+<p><img src="../images/6.4.1.1.png" alt="Vision Interaction Settings"></p>
+<h3 id="using-collider-interaction">Using Collider Interaction</h3>
+<p><code>Collider Interaction</code> can be triggered when the interactor collider collides with interactable collider.
+The relevant interaction types are <code>Collider Enter</code>, <code>Collider Stay</code> and <code>Collider Exit</code>.</p>
+<p>The sample using Collider Interaction to check any gameObject within an area is shown below.</p>
+<ol>
+<li><p>Right Click the <code>Area</code> in the given gameObject <strong><code>Interactable gameObejects</code></strong> and add the <code>V Gear_Interactables (Script)</code> component.</p>
+</li>
+<li><p>Input the command field or add an Unity Event as responce.</p>
+</li>
+<li><p>Change the interaction type to <code>Collider Stay</code>.</p>
+</li>
+<li><p>Go to <code>[Additional Settings] &gt; Collider Detection</code> and add the value to 1 in <code>Soulutions &gt; Size</code> and <code>Element 0 &gt; Conditions</code></p>
+</li>
+<li><p>Check the <code>Is Trigger</code> Option at the collider component to prevent the collision.</p>
+</li>
+</ol>
+<p><img src="../images/6.4.2.1.png" alt="Collider Interaction Settings"></p>
 </article>
           </div>
           

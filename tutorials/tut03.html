@@ -8,7 +8,7 @@
     <title>Locomotion </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Locomotion ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,94 +73,175 @@
 <ul>
 <li><a class="xref" href="tut03.html#teleport-tool">Teleport Tool</a></li>
 <li><a class="xref" href="tut03.html#artificial-movement">Artificial Movement</a></li>
-<li><a class="xref" href="tut03.html#movenent-for-input">Movement from Input</a></li>
+<li><a class="xref" href="tut03.html#movement-from-input">Movement from Input</a></li>
 </ul>
 <h2 id="objective">Objective</h2>
-<p>Locomotion is how to move the player through the virtual world, but simply move the player may lead to discomfort. This chapter introduces  some locotmotion features to move the player in comfort way provided by VotanicXR, include using <code>Commands</code> and using <code>Teleport</code> tool.  (more intro? using fade ?)</p>
+<p>This chapter introduces the <code>Locomotion</code> provided by VotanicXR.
+Locomotion is how to move the user through the virtual world, but simply move the user may lead to discomfort by vection.
+This chapter introduces some locotmotion features to move the user in comfort way provided by VotanicXR, include using <code>Commands</code> and using <code>Teleport</code> tool.</p>
 <h3 id="built-in-locomotion-option-in-votanicxr">Built-in Locomotion Option in VotanicXR</h3>
-<p>//tb</p>
+<p>The built-in locomotion option provided by VotanicXR mainly are <code>Movement from Input</code> and <code>Teleportation</code>.</p>
+<p><code>Movement from Input</code> is the locomotion that the user transform will be moved when the user input the movement commands.
+As the movement is inputed from user, they mind will be accept the movement easily and lead less discomfort.</p>
+<p><code>Teleportation</code> is the locomotion that the user transform will be instantly teleported or teleported with transportation when the user indicate a destination to teleport.
+As the destination is indicated, user will be ready to the teleportation and lead less discomfort.</p>
+<p>// ??</p>
 <h3 id="set-up-locomotion-sample-scene">Set up Locomotion Sample Scene</h3>
-<p>//tb</p>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial04 </code> and open the scene <code>Locomotion</code> provided.</p>
+<p>GameObject <code>TutorialController</code> with script component <code>Tutorial03Controller</code> is provided for the tutorial below.</p>
+<h2 id="movement-from-input">Movement from Input</h2>
+<h3 id="using-movement-commands">Using Movement Commands</h3>
+<p>As mentioned at previous chapter, VotanicXR SDK have provided mapped buttons and commands.
+The commands with locomotion are <code>Move</code>, <code>Rotate</code>, <code>Shift</code>, <code>Float</code>, <code>Turn</code> and <code>JumpSink</code>, detail of the movement commands will be introduced in <a class="xref" href="tut03.html#movement-in-traveler-mode">paragraph</a> below.</p>
+<p>The commands are bound with the controller button by <a class="xref" href="tut11.html">configurator</a>, when user press the corresponding button, the user transform will be translated with respect to the command.</p>
+<h3 id="movement-modes">Movement Modes</h3>
+<p>Movemenent mode can be set by the SDK manager <code>vGear</code> through API or <a class="xref" href="tut09.html">In-Game Menu</a>, to switch the movement mode for the user. The movement modes are <code>Traveler Mode</code> and <code>Soul Mode</code>.</p>
+<h4 id="traveler-mode-and-soul-mode-mode-by-charles">Traveler Mode and Soul Mode (Mode? by charles)</h4>
+<p><code>Traveler Mode</code> is a boolean to enable the navigation of the user transform.
+When <code>Traveler Mode</code> is enabled, user may navigate themself using movement commands.
+When <code>Traveler Mode</code> is disabled, user can not navigate themself through movement commands, but user are still able to move around themself without navigate the user transform based on the system they using, such as HMD and CAVE.</p>
+<p><code>Soul Mode</code> is a boolean to enable for ignoring free falling and object collisions of user.
+When <code>Soul Mode</code> is enabled, user will ignoring free falling and collision with colliders and vice versa.</p>
+<p>Note that two movement modes are independent.
+When both of them are enabled, user can navigate themself and ignore free falling and collision,
+and user are still able to interact to objects, example application is god mode to look around the environment.</p>
+<p>When both of them are disabled, user can not navigate themself and will be collided with environment, example application is dodge game.</p>
+<p>When only <code>Traveler Mode</code> is  enabled, user can navigate themself and will be collided with environment, example application is dodge game.</p>
+<h4 id="movement-in-traveler-mode">Movement in Traveler Mode</h4>
+<p>There are six movement commands predefined in VotanicXR, they are <code>Move</code>, <code>Rotate</code>, <code>Shift</code>, <code>Float</code>, <code>Turn</code> and <code>JumpSink</code>.
+The movement commands can be sent with a <code>Value</code> mentioned <a class="xref" href="tut02.html#send-and-receive-command">before</a>, the <code>Value</code> is a float value.
+With using the <code>Command Input System</code>, the command can be sent with <code>Value</code>.</p>
+<p><code>Move</code> is command to move the user transform forward and backward with the value received.
+The positive value received will move the user transform forward and backward for negative input with acceleration.
+The user transform will be moved with the product of the input value and the maximum move speed that can be set by the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast_User.html#Votanic_vXR_vCast_vCast_User_SetMoveSpeed_System_Single_">API</a>.</p>
+<p><img src="../images/5.1.1.gif" alt="Move command demonstration"></p>
+<p><code>Rotate</code> is command to rotate the user transform with the value received.
+The positive value received will rotate the user transform right and left for negative input with acceleration.
+The user transform will be moved with the product of the input value and the maximum rotate speed that can be set by the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast_User.html#Votanic_vXR_vCast_vCast_User_SetRotateSpeed_System_Single_">API</a>.</p>
+<p><img src="../images/5.1.2.gif" alt="Rotate command demonstration"></p>
+<p><code>Shift</code> is command to strafe the user transform side to side.
+The positive value received will strafe the user transform right and left for negative input with acceleration.
+The user transform will be moved with the product of the input value and the maximum move speed.</p>
+<p><img src="../images/5.1.3.gif" alt="Shift command demonstration"></p>
+<p><code>Float</code> is command to lift the user transform.
+The positive value received will lift the user transform up and down for negative input without acceleration.
+Lift down is only avaliable if the user transform is not at the ground, and it will lifts the user transform through the ground only when the soul mode is enabled.
+The user transform will be moved with the product of the input value and the maximum move speed.</p>
+<p><img src="../images/5.1.4.gif" alt="Float command demonstration"></p>
+<p><code>Turn</code> is command to turn the user transform in 90 degree.
+The positive value received will rotate the user transform right and left for negative input with acceleration.
+The user transform will be turned once for each <code>Turn</code> command is received, and the command will not be accumulated.</p>
+<p><img src="../images/5.1.5.gif" alt="Turn command demonstration"></p>
+<p><code>JumpSink</code> is commnad to jump and sink the user transform.
+The positive value received will jump the user transform up and negative value received will sink the user transform to the ground below.
+The user transform will be jump or sink once for each <code>JumpSink</code> command is received, and the command will not be accumulated.</p>
+<p><img src="../images/5.1.6.gif" alt="JumpSink command demonstration"></p>
 <h2 id="teleport-tool">Teleport Tool</h2>
-<p>Teleport is common navigation tool in VR application, VotanicXR have provided it with editable effects.</p>
+<p>Teleport is a popular navigation tool in VR application.
+The teleport tool usually marks a destination locomotion, and the user will be transported to the location when the teleportation is triggered.</p>
+<p>The location requires a <code>Ground</code>, which is a gameObject with collider and the layer is detectable by the teleport tool.</p>
 <p><img src="../images/5.2.0.gif" alt="The Teleport tool "></p>
 <h3 id="using-default-teleport-tool">Using Default Teleport Tool</h3>
 <h4 id="set-teleport-as-default-tool">Set Teleport as Default Tool</h4>
 <ol>
 <li><p>Go to <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code>, component <code>V Gear_Teleport (Script)</code> is shown at the inspector window, which manage the setting of the Teleport tool.</p>
 <p>And go to <code>vGear &gt; Frame &gt; Controller</code> to set the default tool into <code>Teleport</code> for testing.</p>
-<p><img src="../images/5.2.1.png" alt="set the default tool to Teleport"></p>
+<p><img src="../images/5.1.1.png" alt="set the default tool to Teleport"></p>
 </li>
 <li><p>Enter play mode, the default tool is changed into teleport.</p>
-<p>By pressing the Trigger button of the controller, or send the <code>Teleport</code> command through <a class="xref" href="tut02.html">Input System</a>, the vGear user will be teleported into the projection point.</p>
-<pre><code class="lang-cs">{
-	//	Press Space to Teleport
-	if (vGear.Input.KeyboardPress(KeyCode.Space))
+<p>By pressing the Trigger button of the controller, or send the <code>Teleport</code> command through <a class="xref" href="tut02.html">Input System</a>, the user will be teleported into the projection point.</p>
+<pre><code class="lang-cs">//	Press Space to Teleport
+if (vGear.Input.KeyboardPress(KeyCode.LeftShift))
 	vGear.Cmd.Send(&quot;Teleport&quot;);
-}
 </code></pre>
 </li>
 </ol>
 <h4 id="configure-teleport-tool">Configure Teleport Tool</h4>
-<p>//tb</p>
+<p>The <code>Teleport Tool</code> can be configured in the inspector and API.
+To configure, go to the component <code>V Gear_Teleport (Script)</code> of <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code>.
+The <strong>[Setting]</strong> and <strong>[Advanced]</strong> settings can be set for the need of VotanicXR SDK user, such as color and velocity of the projectile line.
+Further setting will be introduced below as advance teleportation.</p>
 <h3 id="advance-teleport">Advance Teleport</h3>
-<p>//tb</p>
+<p>By using the feature and settings of <code>Teleport Tool</code>, advanced teleportation can be implemented.</p>
+<h4 id="teleport-area">Teleport Area</h4>
+<p>The available location of teleport is determined by the Detect layer saved at <code>vGear &gt; Frame &gt; Controller &gt; [Settings]</code>, it also stores the controller related setting, will be further introduced in <a class="xref" href="tut10.html">In-Game Tool</a>.</p>
+<p>By using the layer of the floor gameObject, <code>Teleport Area</code> can be implemented.</p>
+<p>There are several methods to implement the teleport area feature.
+The sample with simple way is shown below.</p>
+<ol>
+<li><p>Create a empty gameObject named <code>Teleport area</code>, and create two 3d object <code>Plane</code> as child of it. Name the childs <code>Enable Area</code> and <code>Disable Area</code> respectively.</p>
+</li>
+<li><p>Resize and relocate the planes, the <code>Enable Area</code> is sightly higher than the <code>Disable Area</code> and the <code>Disable Area</code> is sightly higher than the ground.</p>
+</li>
+<li><p>Set the layer of <code>Enable Area</code> to layer 30: <code>vLayerFloor</code>, that accepted by the teleport tool.</p>
+<p><img src="../images/5.2.1.1.gif" alt="The Teleport Area Implementation"></p>
+</li>
+</ol>
 <h4 id="teleport-using-waypoints">Teleport using Waypoints</h4>
-<p>To make sure player teleport into a correct position, <code>Waypoint</code> can be used.</p>
+<p><code>Waypoint</code> can be used to symbolize position for user to teleport. By using waypoints, we can make sure the user will teleport to the desire position.
+Right click <code>vGear &gt; GameObjects &gt; Waypoint</code> and drag the prefab into desire position.</p>
 <p><img src="../images/5.2.2.gif" alt="The Teleport tool with Waypoint"></p>
-<ol>
-<li><p>Right click <code>vGear &gt; GameObjects &gt; Waypoint</code> and drag the prefab into desired position.</p>
-<p>To apply a custom rotation, you can enable the <code>Apply Rotation</code> with custom value of face angle and offset in <code>V Gear_Waypoint (Script)</code>.</p>
-<p><img src="../images/5.2.4.gif" alt="The Teleport tool with Waypoint applied rotation"></p>
-</li>
-</ol>
-<h4 id="teleport-using-collision-mode">Teleport using Collision Mode</h4>
-<h2 id="artificial-movement">Artificial Movement</h2>
-<h3 id="add-waypoints">Add Waypoints</h3>
-<h3 id="move-along-the-waypoints">Move Along the Waypoints</h3>
-<h2 id="movement-from-input">Movement from Input</h2>
-<h3 id="using-movement-commands">Using Movement Commands</h3>
-<p>As mentioned at previous chapter, VotanicXR SDK have provided mapped buttons and commands.
-The commands with locomotion are <code>Move</code>, <code>Rotate</code>, <code>Shift</code>, <code>Float</code>, <code>Turn</code> and <code>JumpSink</code>.</p>
-<h3 id="movement-modes">Movement Modes</h3>
-<h4 id="traveler-mode-vs-soul-mode">Traveler Mode vs Soul Mode</h4>
-<h4 id="movement-in-traveler-mode">Movement in Traveler Mode</h4>
-<hr>
-<p>before content</p>
-<h1 id="using-controller">Using Controller</h1>
-<ol>
-<li><p>Connected a controller accpeted by VotanicXR and open the scene created at previous chapter.</p>
-</li>
-<li><p>Click play to enter the play mode. Game window will be shown with the perspective view of the vGear user at the start point with the default wand tool.</p>
-</li>
-<li><p>Use directional pad to navigate forward, backward and rotate.</p>
-</li>
-</ol>
-<h3 id="using-inut-system">Using Inut System</h3>
-<p>Also, send the <code>Move</code> command and <code>Rotate</code> command with specified value through <a class="xref" href="tut02.html">Input System</a>, can navigate forward, backward and rotate.</p>
-<pre><code class="lang-cs">{
-//  Using Keyboard WASD through DirectInput to move
-    if (vGear.Input.KeyboardPress(KeyCode.W))
-        vGear.Cmd.Send(&quot;Move&quot;, 1);
-    if (vGear.Input.KeyboardPress(KeyCode.S))
-        vGear.Cmd.Send(&quot;Move&quot;, -1);
-    if (vGear.Input.KeyboardPress(KeyCode.D))
-        vGear.Cmd.Send(&quot;Rotate&quot;, 1);
-    if (vGear.Input.KeyboardPress(KeyCode.A))
-        vGear.Cmd.Send(&quot;Rotate&quot;, -1);
-}
-</code></pre>
-<p>To use the teleport function in different ways, we can set different modes in setting <strong>[Advance]</strong> of component <code>V Gear_Teleport (Script)</code>.</p>
+<p>Developer may toggle the <code>Teleport Waypoint</code> setting in the <code>V Gear_Teleport (Script)</code> component or through API, it offers the advance options to use waypoint, the options are <code>Detect</code>, <code>Ignore</code> and <code>Waypoint Only</code>.
+<code>Detect</code> will detect waypoint, <code>Ignore</code> will ignore waypoint, and <code>WaypointOnly</code> only detect waypoint for teleportation.</p>
 <table width="100%">
-	<caption><b>[Advanced]</b></caption>
-	<tr><td>Teleport Waypoint			<td>Waypoint detection setting.<br><b>Detect</b> will detect waypoint, <b>Ignore</b> will ignore waypoint, <br>and <b>WaypointOnly</b> only detect waypoint for teleportation.
-	<tr><td>Collision Mode				<td><b>Enable</b> to detect collisions to prevent teleportation, <br>else only teleport to the ground level.
+<tr><td>Teleport Waypoint: WaypointOnly <td> Teleport Waypoint: Ignore
+<tr><td><img src="../images/5.3.1.1.gif" alt="Collision Mode enable"><td><img src="../images/5.3.1.2.gif" alt="Collision Mode disable">
 </td></td></tr></td></td></tr></table>
-<p><img src="../images/5.2.2.2.png" alt="Advanced setting of V Gear_Teleport (Script)"></p>
+<p>Waypoints can be customized with different settings, including face angle and offset, to force the user facing at desire angle and position.
+Developer can enable the <code>Apply Rotation</code> with custom value of face angle and offset in <code>V Gear_Waypoint (Script)</code> component of the waypoint prefab.</p>
+<p><img src="../images/5.3.1.3.gif" alt="The Teleport tool with Waypoint applied rotation"></p>
+<h4 id="teleport-using-collision-mode">Teleport using Collision Mode</h4>
+<p>The <code>Collision Mode</code> setting in the <code>V Gear_Teleport (Script)</code> component switches the detection of colliders.
+Developer may toggle the collision mode at run time through API for the desire effects.</p>
 <table width="100%">
 <tr><td>Collision Mode enable <td> Collision Mode disable
-<tr><td><img src="../images/5.2.4.1.png" alt="Collision Mode enable"><td><img src="../images/5.2.4.2.png" alt="Collision Mode disable">
+<tr><td><img src="../images/5.3.2.1.png" alt="Collision Mode enable"><td><img src="../images/5.3.2.2.png" alt="Collision Mode disable">
 </td></td></tr></td></td></tr></table>
+<h2 id="transformation">Transformation</h2>
+<p>This paragraph introduces an API function can be used with teleport tool to perform nice locomotion.</p>
+<h3 id="customize-setting-for-teleport-tool">Customize Setting for Teleport Tool</h3>
+<p>Teleport tool is one of the method to transite the user transform.
+Other Transition includes <code>Turn</code>.
+The transition detail can be set in the <code>[Setting] &gt; Transition</code> of component <code>V Gear_User (Script)</code> in the <code>vGear &gt; Frame &gt; User</code>.</p>
+<p>Transition method options are <code>Translation</code> and <code>Fade</code>, with the parameters to adjust the detail of transition, such as the time or acceleration of the <code>Translation</code> method, or the fade in color of the <code>Fade</code> method.</p>
+<p><img src="../images/5.4.1.gif" alt="Teleport Using Fade"></p>
+<h3 id="move-along-using-transformation">Move Along using Transformation</h3>
+<p>Developer may transite the user transform using API function, the user will be transform to the parameter passed.
+The sample to use the API function is shown below, when the user click the space key, the user transform will be transite into the next transform of the target list.</p>
+<pre><code class="lang-cs">public GameObject targetList;
+private List&lt;Transform&gt; targets = new List&lt;Transform&gt;();
+private int currentTargetIndex = 0;
+
+private void Start()
+{
+	//	Load the Target List into the list 
+	foreach( Transform t in targetList.transform)
+	{
+		targets.Add(t);
+	}
+
+}
+
+void Update()
+{
+	if (vGear.Input.KeyboardUp(KeyCode.Space))
+	{
+		//	Transform user transform to the target
+		vGear.user.Transform(targets[currentTargetIndex]);
+		
+		if (currentTargetIndex + 1 == targets.Count )
+		{
+			currentTargetIndex = 0;
+		}
+		else
+		{
+			currentTargetIndex++;
+		}
+
+	}
+}
+</code></pre>
+<p><img src="../images/5.4.2.gif" alt="Teleport to the target list using Transform"></p>
 </article>
           </div>
           

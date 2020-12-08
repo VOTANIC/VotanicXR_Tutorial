@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Network fearture </title>
+    <title>Multi-User Networking </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Network fearture ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="title" content="Multi-User Networking ">
+    <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -67,54 +67,106 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="tut07-network">
-<h1 id="network-fearture">Network fearture</h1>
+<h1 id="multi-user-networking">Multi-User Networking</h1>
 
-<hr>
-<p>VotanicXR have provided networking module with multiplayer feature.</p>
-<h2 id="before-start">Before Start</h2>
-<p>If you are using Unity with Version 2018, please pass this part.</p>
-<p>For those who are using Unity 2019, please use the following setting.</p>
+<p>In this article</p>
+<ul>
+<li><a class="xref" href="tut07.html#set-up-multi-user-networking-sample-scene">Set up Multi-User Networking Sample Scene</a></li>
+<li><a href="xref:tut07-networkusing-xr-networking-manager">Using XR Networking Manager</a></li>
+</ul>
+<h2 id="objective">Objective</h2>
+<p>This chapter introduces the Multi-User Networking module provided by VotanicXR.
+By using the provided networking manager, synchronize application can be easier to implement.</p>
+<h3 id="multi-user-networking-features-in-votanicxr">Multi-User Networking Features in VotanicXR</h3>
+<p>In addition to the traditional networking, <code>XR Network Manager</code> provides the <code>Entity Synchronization</code> feature.
+Users can see each other with the entity models in the multi-user application, the entity models will be synchronized.</p>
+<h3 id="set-up-multi-user-networking-sample-scene">Set up Multi-User Networking Sample Scene</h3>
+<h4 id="open-sample-scene">Open Sample Scene</h4>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial04 </code> and open the scene <code>MultiUserNetworking</code> provided.</p>
+<h4 id="install-multiplayer-hlapi-for-unity-2019">Install Multiplayer HLAPI (for Unity 2019)</h4>
+<p>If you are using Unity Editor with version 2018, please skip this part.</p>
+<p>If you are using Unity Editor with version 2019 or above, please use the configuration below.</p>
 <ol>
-<li><p>Before import the Votanic SDK package, go to Package Manager and install <code>Multiplayer HLAPI</code>.</p>
+<li><p>Go to Package Manager and install <code>Multiplayer HLAPI</code> before import the VotanicXR SDK Package.</p>
 <p><img src="../images/9.0.1.png" alt="Multiplayer HLAPI from Package Manager"></p>
 </li>
-<li><p>Import the Votanic SDK package with Net feature, with format <code>VotanicXR_{SDK Version} for {Unity Version} [Net].unitypackage</code>.</p>
+<li><p>Import the Votanic SDK package with Net feature, with format <code>VotanicXR_2020.5.12f2 for 2019.2+ [Net].unitypackage</code>.</p>
 </li>
 </ol>
-<h2 id="xr-network-manager">XR Network Manager</h2>
+<h2 id="using-xr-networking-manager">Using XR Networking Manager</h2>
+<p><code>XR Network Manager</code> provides traditional networking features and the <code>Entity Synchronization</code> feature, to implement the multi-user application.</p>
+<h3 id="add-xr-network-manager">Add XR Network Manager</h3>
+<p>The <code>XR Network Manager</code> Prefab is a gameObject with the <code>V Gear_Networking (Script)</code> component only.</p>
+<p>To add the <code>XR Network Manager</code> Prefab,</p>
 <ol>
-<li><p>Right-click <code>vGear &gt; GameObject &gt; XRNetworkManager</code> to add the prefab <code>XRNetworkManager</code>.</p>
+<li><p>Right-click <code>vGear &gt; GameObject &gt; XR Network Manager</code>.</p>
+<p><img src="../images/9.1.1.png" alt="The XR Network Manager Prefab."></p>
 </li>
-<li><p>Go to the <code>V Gear_Networking(Script)</code> component of <code>XRNetworkManager</code>, there are the default settings for the server host using localhost.</p>
-<p><img src="../images/9.1.1.png" alt="V Gear_Networking(Script) component"></p>
+<li><p>Build the application and name the application <code>Server Client</code> for the test later.</p>
 </li>
-<li><p>Enter Play Mode, the server is hosted by Unity Editor. Server host message will be sent with the message in <strong>[Host]</strong>, similarly server client will send the join message with <strong>[Client]</strong>.</p>
-<p><img src="../images/9.1.2.png" alt="Server host message."></p>
-<p>Build the project and join the server held by Unity Editor, you may test the connection with locolhost. Note that adjust the firewall setting for the connection of localhost, and there will be conflict to enter the game with using the same role system.</p>
-<p>We recommand to use the same build for the synchronization between host and client interactions.</p>
-</li>
-<li><p>Setting will be described in <a href="../knowledgeBase/vGearNetworkManagerDetail.html">Detail of Network Manager</a>.</p>
-<p>The format of the <code>Networking Data</code> should be same as below, the first 7 lines corresponding to <code>[Settings]</code> and remaining corresponding to <code>[XR Setting]</code>:</p>
-<pre><code class="Json">{
-"Type": "Client",
-"IP": "localhost",
-"Port": 7777,
-"UserName": "UserName",
-"AutoConnect": true,
-"Reconnect": 5,
-"Buffer": 3.0,
-"Head": 0,
-"RightHand": 0,
-"LeftHand": 0,
-"HeadEntity": "Head",
-"RightHandEntity": "Hand",
-"LeftHandEntity": "Hand2",
-"EntityDisplay": "OthersEntities",
-"IdentityDisplay": "OthersName"
+</ol>
+<h3 id="configure-network-manager">Configure Network Manager</h3>
+<p>To configure the <code>XR Network Manager</code>, we can configure the settings in inspecter or through the <code>Networking Json</code>.</p>
+<p>The <code>V Gear_Networking(Script)</code> component of <code>XRNetworkManager</code></p>
+<p><img src="../images/9.1.2.png" alt="V Gear_Networking(Script) component"></p>
+<p>The <code>V Gear_Networking(Script)</code> component can be divided into six main parts.</p>
+<p><code>[Settings]</code> stores the server hosting related settings, including ip address, connections.etc.</p>
+<p><code>[Host]</code>  and <code>[Client]</code>  store the messages of the host and client sent when they participate into the server.</p>
+<p>///?
+<code>[Components]</code>  stores the prefab of the user when they are joining to the server.</p>
+<p><code>[Status]</code>  stores the status of the server, can be called through API.</p>
+<p><code>[XR Settings]</code>  stores the Data Path of the <code>Networking Json</code> and the <code>Entity</code> related settings.</p>
+<p><code>[XR Components]</code>  stores the prefab of the entity to be dispalyed.</p>
+<h4 id="networking-json">Networking Json</h4>
+<p>The <code>Networking Json</code> is a setting json file to save the networking settings for a built application.</p>
+<p>After the application built, create a folder named <code>Resources</code> next to the build folder, and save the provided <code>Networking.json</code> file into the resources folder.</p>
+<p>The built executable will read the <code>Networking Json</code> of the corresponding file path saved in the <code>V Gear_Networking(Script)</code> component.</p>
+<p>For the server host application, remain the json content.</p>
+<p>For the server client application, change the json content into following.</p>
+<pre><code class="lang-json">{
+&quot;Type&quot;: &quot;Client&quot;,
+&quot;IP&quot;: &quot;localhost&quot;,
+&quot;Port&quot;: 7777,
+&quot;UserName&quot;: &quot;Client&quot;,
+&quot;AutoConnect&quot;: true,
+&quot;Reconnect&quot;: 5,
+&quot;Buffer&quot;: 3.0,
+&quot;Head&quot;: 1,
+&quot;RightHand&quot;: 1,
+&quot;LeftHand&quot;: 2,
+&quot;HeadEntity&quot;: &quot;Head&quot;,
+&quot;RightHandEntity&quot;: &quot;Hand&quot;,
+&quot;LeftHandEntity&quot;: &quot;Hand2&quot;,
+&quot;EntityDisplay&quot;: &quot;OthersEntities&quot;,
+&quot;IdentityDisplay&quot;: &quot;OthersName&quot;
 }
 </code></pre>
+<p>The first 7 lines corresponding to <code>[Settings]</code> and remaining corresponding to <code>[XR Setting]</code>, detail will be described in <a href="../knowledgeBase/vGearNetworkManagerDetail.html">Detail of Network Manager</a>.</p>
+<h4 id="network-setting">Network Setting</h4>
+<p>The <code>[Settings]</code> stores the server hosting related settings.
+Developer can set the ip address and port for the server, the network name, maximum connections and the connecting setting of the application.</p>
+<p>Some of the settings of <code>Network Setting</code> can be configured in the <code>Networking Json</code>, thus re-build is not needed for configuring the Network Setting.</p>
+<h4 id="network-host-vs-client">Network Host vs Client</h4>
+<p>A <code>Multi-User Networking Application</code> should be held with a server host for the client.</p>
+<p>To test for the multi-user application connection, the sample of using localhost is shown below:</p>
+<ol>
+<li><p>Enter Play Mode, the server is hosted by Unity Editor.</p>
+<p>Server host message will be sent with the message in <strong>[Host]</strong>, similarly server client will send the join message with <strong>[Client]</strong>.</p>
+<p><img src="../images/9.1.3.png" alt="Server host message."></p>
+<p>Use the project built <a class="xref" href="tut07.html#add-xr-network-manager">above</a> with configured <a class="xref" href="tut07.html#networking-json">networking json</a>, the connection can be tested with locolhost.</p>
+<p>Note that adjust the firewall setting for the connection of localhost, and there will be conflict to enter the game with using the same role system.</p>
+<p>We recommand to use the same build for the synchronization between host and client interactions.</p>
 </li>
 </ol>
+<h4 id="network-entities">Network Entities</h4>
+<p>The <code>Network Entities</code> are the entities to be seen by the user in the server.
+The default entities to be shown are <code>Head</code>, <code>Right Hand</code> and <code>Left Hand</code>.</p>
+<p>The entity prefabs is stored <code>[XR Components]</code> lists and can be configured at the <code>Networking Json</code> with corresponding index.
+The sample networking json <a class="xref" href="tut07.html#networking-json">above</a> uses the second head prefab at the <code>Head</code> list, second right-hand prefab at the <code>Right Hand</code> list and the third left-hand prefab at the <code>Left Hand</code> list.</p>
+<h3 id="add-networked-objects">Add Networked Objects</h3>
+<p>???</p>
+<h3 id="send--receive-networked-command">Send &amp; Receive Networked Command</h3>
+<p>Beside the additional setting provided by VotanicXR, this part introduces the traditional network feature, <code>Send</code> and <code>Receive</code> commands between Server and Client.</p>
 </article>
           </div>
           

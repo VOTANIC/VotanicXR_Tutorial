@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Using In Game Menu </title>
+    <title>Using In-Game Menu </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Using In Game Menu ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="title" content="Using In-Game Menu ">
+    <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -67,81 +67,111 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="tut09-ingamemenu">
-<h1 id="using-in-game-menu">Using In Game Menu</h1>
+<h1 id="using-in-game-menu">Using In-Game Menu</h1>
 
-<p>This page describes the <code>In-Game Menu</code> provided by VotanicXR SDK and how to edit the content of the <code>Menu</code>.</p>
-<h2 id="use-given-menu">Use Given Menu</h2>
+<p>In this article</p>
+<ul>
+<li><a class="xref" href="tut09.html#using-in-game-menu">Using In-Game Menu</a></li>
+<li><a class="xref" href="tut09.html#customizing-in-game-menu">Customizing In-Game Menu</a></li>
+</ul>
+<h2 id="objective">Objective</h2>
+<p>This chapter introduces the <code>In-Game Menu</code> feature provided by VotanicXR.
+The basic usage and configuration will be introduced.</p>
+<h3 id="in-game-menu-in-votanicxr">In-Game Menu in VotanicXR</h3>
 <p>The given <code>In-Game Menu</code> can be called by receiving <code>Menu</code> command, or hold the key with <code>index 2</code> of the controller.</p>
 <p><img src="../images/11.1.1.gif" alt="The Default In-Game Menu"></p>
 <p>Player can adjust the game setting such as game attribute and quality.</p>
 <p><img src="../images/11.1.2.png" alt="The quality setting in In-Game Menu"></p>
-<h2 id="edit-the-icons-of-menu">Edit the Icons of Menu</h2>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Materials &gt; Prefabs</code> in Project window and double click the <code>Menu</code> Prefab, which is a prefab made with <a class="xref" href="tut05.html">UI Elements</a> and <a class="xref" href="tut02.html">Input System</a>.</p>
-<p><code>V Gear_Menu (Script)</code> component is to manage the <code>In-Game Menu</code>, you may edit the icons by save the sprite into the <code>Icons</code> expansion of <strong>[Built-in Menu]</strong>.</p>
-<p><img src="../images/11.2.1.png" alt="The V Gear_Menu (Script) component"></p>
-<h2 id="edit-the-item-of-menu">Edit the Item of Menu</h2>
-<p>Open the file <code>Option.vxro</code> in <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; System &gt; Options</code>, it stores the additional option data for <code>vGear</code>.</p>
+<h3 id="set-up-in-game-menu-sample-scene">Set up In-Game Menu Sample Scene</h3>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial09 </code> and open the scene <code>In Game Menu</code> provided.</p>
+<p>This chapter focus on the <code>In-Game Menu</code> Editing, no sample scene  but sample json <code>option.vxrc</code> is provided.</p>
+<h2 id="using-in-game-menu-1">Using In-Game Menu</h2>
+<p>The default pages on In-Game Menu are <code>Info</code>, <code>Attribute</code>, <code>Tool</code>, <code>Reset</code>, <code>Quality</code> and <code>Apps</code>.</p>
+<p><code>Info</code> manages the in-game informations provided by VotanicXR, such as message, fps display and log displaying.</p>
+<p><code>Attribute</code> manages the vGear attributes, including the <a class="xref" href="tut03.html#movement-modes"><code>Traveler Mode</code></a>, <a class="xref" href="tut03.html#movement-modes"><code>Soul Mode</code></a>, <a class="xref" href="../knowledgeBase/Debugmode.html"><code>Debug Mode</code></a>, <code>Tracking</code>, <code>Stereo</code> and <a class="xref" href="../knowledgeBase/test3d.html"><code>Test3D</code></a>.</p>
+<p><code>Tool</code> manages the in-game tools, detail will be introduced in <a class="xref" href="tut10.html">next chapter</a>.</p>
+<p><code>Quality</code> manages the quality settings, such as anisotropic, anti-aliasing, shadows and shadow resolution.</p>
+<p><code>Apps</code> manages the current application, such as quit the current application.</p>
+<br>
+<p>The detail of the in-game menu is saved in the json file <code>Option.vxro</code>.
+Open the file <code>Option.vxro</code> in <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; System &gt; Options</code>, it stores the additional option data for <code>vGear</code>.</p>
 <p><code>Menu</code> in the data file stores the transition effects of the Menu and the structure of pages and items. <code>Main</code> is the first level of the Menu, and the remaining are the second level.</p>
 <p><img src="../images/11.3.1.png" alt="The structure of the Menu data"></p>
 <p>For each <code>Panel</code> item, it contains following data, including a set of buttons.</p>
 <p><img src="../images/11.3.2.png" alt="The structure of the Panel item"></p>
 <p>For the <code>Button</code> , it stores a set of button values as follow.</p>
 <p><img src="../images/11.3.3.png" alt="The structure of the Button and display"></p>
+<h2 id="customizing-in-game-menu">Customizing In-Game Menu</h2>
+<p>The <code>In-Game Menu</code> can be cutomized for the developer need, including <code>Panel</code>, <code>Panel Item</code> and <code>Item Icon</code>.</p>
+<h3 id="customize-menu-item-icon">Customize Menu Item Icon</h3>
+<ol>
+<li><p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Materials &gt; Prefabs &gt; Menu</code> Prefab, which is a prefab made with <a class="xref" href="tut05.html">UI Elements</a> and <a class="xref" href="tut02.html">Input System</a>.</p>
+<p><code>V Gear_Menu (Script)</code> component is to manage the <code>In-Game Menu</code>, you may edit the icons by save the sprite into the <code>Icons</code> expansion of <strong>[Built-in Menu]</strong>.</p>
+<p><img src="../images/11.2.1.png" alt="The V Gear_Menu (Script) component"></p>
+</li>
+</ol>
+<h3 id="add-new-in-game-menu-panel">Add New In-Game Menu Panel</h3>
 <p>To add a new page, that is add a new item in main page of menu and add create a new.</p>
 <ol>
 <li><p>Add the follow data to the <code>Button</code> of main page in <code>Menu &gt; Panel &gt; Main</code>.</p>
-<pre><code class="Json">{
-"Name": "New Page",
-"Icon": 3,
-"InteractionType": "Up",
-"Command": "Menu=6",
-"Value": 1.0,
-"Target": -1,
-"Commands": []
+<pre><code class="lang-json">{
+&quot;Name&quot;: &quot;New Page&quot;,
+&quot;Icon&quot;: 3,
+&quot;InteractionType&quot;: &quot;Up&quot;,
+&quot;Command&quot;: &quot;Menu=6&quot;,
+&quot;Value&quot;: 1.0,
+&quot;Target&quot;: -1,
+&quot;Commands&quot;: []
 }
 </code></pre>
-<p>The example above use the <code>Icon</code> of index 3 with respect to the icons saved in the prefab of previous section, index -1 refer to no icon, and index <code>-10i</code> refer to using the default icon with index <code>i</code>th stored in the prefab. The <code>Command</code> is using <strong><code>Menu=i</code></strong> to transfer between pages. Note that the index 0 to 5 is preserved.</p>
+<p>The example above use the <code>Icon</code> of index 3 with respect to the icons saved in the prefab of previous section, index -1 refers to no icon, and index <code>-10i</code> refers to using the default icon with index <code>i</code>th stored in the prefab.</p>
+<p>The <code>Command</code> is using <strong><code>Menu=i</code></strong> to transfer between pages. Note that the index 0 to 5 is preserved.</p>
 <p><img src="../images/11.3.4.png" alt="The example of create new page"></p>
 </li>
+</ol>
+<h3 id="add-menu-panel-item">Add Menu Panel Item</h3>
+<ol>
 <li><p>Add the follow data to the <code>Panel</code> of the menu data in <code>Menu &gt; Panel</code>.</p>
-<pre><code class="Json">{
-"Name": "New Page",
-"Level": 1,
-"Grabbable": true,
-"Button": [
+<pre><code class="lang-json">{
+&quot;Name&quot;: &quot;New Page&quot;,
+&quot;Level&quot;: 1,
+&quot;Grabbable&quot;: true,
+&quot;Button&quot;: [
     {
-        "Name": "Button A",
-        "Icon": -1,
-        "InteractionType": "Up",
-        "Command": "FunctionA",
-        "Value": 1.0,
-        "Target": -1,
-        "Commands": []
+        &quot;Name&quot;: &quot;Button A&quot;,
+        &quot;Icon&quot;: -1,
+        &quot;InteractionType&quot;: &quot;Up&quot;,
+        &quot;Command&quot;: &quot;FunctionA&quot;,
+        &quot;Value&quot;: 1.0,
+        &quot;Target&quot;: -1,
+        &quot;Commands&quot;: []
     },{
-        "Name": "Button B",
-        "Icon": -1,
-        "InteractionType": "Up",
-        "Command": "FunctionB",
-        "Value": 1.0,
-        "Target": -1,
-        "Commands": []
+        &quot;Name&quot;: &quot;Button B&quot;,
+        &quot;Icon&quot;: -1,
+        &quot;InteractionType&quot;: &quot;Up&quot;,
+        &quot;Command&quot;: &quot;FunctionB&quot;,
+        &quot;Value&quot;: 1.0,
+        &quot;Target&quot;: -1,
+        &quot;Commands&quot;: []
     },{
-        "Name": "Back",
-        "Icon": -101,
-        "InteractionType": "Up",
-        "Command": "Menu=0",
-        "Value": 1.0,
-        "Target": -1,
-        "Commands": []
+        &quot;Name&quot;: &quot;Back&quot;,
+        &quot;Icon&quot;: -101,
+        &quot;InteractionType&quot;: &quot;Up&quot;,
+        &quot;Command&quot;: &quot;Menu=0&quot;,
+        &quot;Value&quot;: 1.0,
+        &quot;Target&quot;: -1,
+        &quot;Commands&quot;: []
     }
     ]
 }
 </code></pre>
 <p>The example above creates two buttons and a <code>Back</code> button to go back to the main menu. The buttons will send the command to the <code>SDK Manager</code> when the item is interacted, and the command can be handled by using <code>vGear.Cmd.Received(command)</code> or <code>vGear.Cmd.AllReceived()</code> described in <a class="xref" href="tut02.html">Input System</a>.</p>
 <p><img src="../images/11.3.5.png" alt="The example of new page"></p>
-<p>The editing of the option will be enhanced using <code>Configurator</code> future.</p>
+<p>The editing of the option will be enhanced using Configurator future.</p>
 </li>
 </ol>
+<h3 id="switch-between-menu-panels">Switch Between Menu Panels</h3>
+<p>/// as mentioned at above, using command menu=i</p>
 </article>
           </div>
           

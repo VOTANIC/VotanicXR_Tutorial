@@ -8,7 +8,7 @@
     <title>Interaction </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interaction ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -76,23 +76,23 @@
 <p>Right Click and select <code>vGear &gt; Component &gt; Interactables+</code> to add the <code>V Gear_Interactables (Script)</code> component to a gameobject.</p>
 <h2 id="interaction-to-interactables">Interaction to Interactables</h2>
 <p>The interaction and condition can be set in the <code>Interaction</code> of <strong>[Settings]</strong>, with the interaction type and response type. The response can be sending a Command or calling a Unity Event.</p>
-<p>By default, you will see the color of the wand changed to green when it collides with interactable gameobjects, and changed to red when it is interacting, the wand setting can be edited through Unity Inspector and API, and is described in <a href="../knowledgeBase/vGearDetail.html">Detail of vGear Components</a>.</p>
+<p>By default, you will see the color of the wand changed to green when it collides with interactable gameobjects, and changed to red when it is interacting, the wand setting can be edited through Unity Inspector and API, and is described in <a href="../articles/vGearDetail.md">Detail of vGear Components</a>.</p>
 <p>The sample with printing <a href="InputSystem.html">AllReceived()</a> is shown below.</p>
 <p><img src="../images/6.2.1.png" alt="Interaction with Interactable"></p>
 <p>To perform more interactions in one gameobject, you may set more interactions in Interactions in <strong>[Additional Setting]</strong>. The sample below print out the commands received in the Update function.</p>
-<p><img src="../images/6.3.1.png" alt="Multi interactions"></p>
+<p><img src="../Images/6.3.1.png" alt="Multi interactions"></p>
 <h3 id="grabbing-interactables">Grabbing Interactables</h3>
 <p>Besides, grabbing an object and grab to interact with other objects is usual in VR development. You can follow the setting below to perform grabbing.</p>
 <ol>
 <li><p>Set Interaction Type into <code>Press</code> and Command in to <code>Grab</code> in vGear Interactables. (Some controller keys is mapped with this, you may bind it in configurator if you need. Grip button is mapped to Grab for Vive Controller by default.)</p>
 </li>
 <li><p>Check the Grabbable option in the Grab Setting of <strong>[Setting]</strong>.</p>
-<p><img src="../images/6.4.1.png" alt="Grab object Settings"></p>
+<p><img src="../Images/6.4.1.png" alt="Grab object Settings"></p>
 </li>
 <li><p>Check the Convex option of the gameobject if using Mesh Collider.</p>
 </li>
 <li><p>Add the Rigidbody component to apply physic.</p>
-<p><img src="../images/6.4.2.png" alt="Grab object Settings2 and Result"></p>
+<p><img src="../Images/6.4.2.png" alt="Grab object Settings2 and Result"></p>
 </li>
 </ol>
 <h3 id="picking-interactables">Picking Interactables</h3>
@@ -100,8 +100,8 @@
 <p><code>Grab</code> should keep pressing the key (or keep receiving <code>Grab command</code>), and ungrab by release the key.</p>
 <p><code>Pick</code> only require a <code>Pick command</code> to attach the object to hand, and unpick by received a <code>Grab command</code> once.</p>
 <p><code>Pick</code> and <code>Grab</code> are capable for a gameobject, the below shows the setting with both <code>Grab</code> and <code>Pick</code>.</p>
-<p><img src="../images/6.4.3.png" alt="Grab object Settings2 and Result"></p>
-<p>Detail of Interactable will be described in <a href="../knowledgeBase/vGearInterctableDetail.html">Detail of vGear Interactable</a>.</p>
+<p><img src="../Images/6.4.3.png" alt="Grab object Settings2 and Result"></p>
+<p>Detail of Interactable will be described in <a href="../articles/vGearInterctableDetail.md">Detail of vGear Interactable</a>.</p>
 <h3 id="climb-interactables">Climb Interactables</h3>
 <p>VGear Interactables have provided a climb feature, players can climb and implement games such as zipline and rock climbing. The sample is shown below.</p>
 <ol>
@@ -110,7 +110,7 @@
 <li><p>Check the Climb Object into true and corresponding x, y, z to be fixed in the <strong>[Climb Setting]</strong>.</p>
 </li>
 <li><p>Check the Grabble option in Grab Setting of <strong>[Setting]</strong>.</p>
-<p><img src="../images/6.5.1.png" alt="Climb object Settings"></p>
+<p><img src="../Images/6.5.1.png" alt="Climb object Settings"></p>
 </li>
 <li><p>The script of the zipline. When the player is grabbing the moving zipline, player will be moved with the zipline.</p>
 </li>
