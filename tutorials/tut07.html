@@ -72,7 +72,7 @@
 <p>In this article</p>
 <ul>
 <li><a class="xref" href="tut07.html#set-up-multi-user-networking-sample-scene">Set up Multi-User Networking Sample Scene</a></li>
-<li><a href="xref:tut07-networkusing-xr-networking-manager">Using XR Networking Manager</a></li>
+<li><a class="xref" href="tut07.html#using-xr-networking-manager">Using XR Networking Manager</a></li>
 </ul>
 <h2 id="objective">Objective</h2>
 <p>This chapter introduces the Multi-User Networking module provided by VotanicXR.
@@ -112,8 +112,7 @@ Users can see each other with the entity models in the multi-user application, t
 <p>The <code>V Gear_Networking(Script)</code> component can be divided into six main parts.</p>
 <p><code>[Settings]</code> stores the server hosting related settings, including ip address, connections.etc.</p>
 <p><code>[Host]</code>  and <code>[Client]</code>  store the messages of the host and client sent when they participate into the server.</p>
-<p>///?
-<code>[Components]</code>  stores the prefab of the user when they are joining to the server.</p>
+<p><code>[Components]</code>  stores the prefab of the user when they are joining to the server.</p>
 <p><code>[Status]</code>  stores the status of the server, can be called through API.</p>
 <p><code>[XR Settings]</code>  stores the Data Path of the <code>Networking Json</code> and the <code>Entity</code> related settings.</p>
 <p><code>[XR Components]</code>  stores the prefab of the entity to be dispalyed.</p>
@@ -139,13 +138,14 @@ Users can see each other with the entity models in the multi-user application, t
 &quot;LeftHandEntity&quot;: &quot;Hand2&quot;,
 &quot;EntityDisplay&quot;: &quot;OthersEntities&quot;,
 &quot;IdentityDisplay&quot;: &quot;OthersName&quot;
-}
+} 
 </code></pre>
-<p>The first 7 lines corresponding to <code>[Settings]</code> and remaining corresponding to <code>[XR Setting]</code>, detail will be described in <a href="../knowledgeBase/vGearNetworkManagerDetail.html">Detail of Network Manager</a>.</p>
+<p>The first 7 lines corresponding to <code>[Settings]</code> and remaining corresponding to <code>[XR Setting]</code>, detail will be described in <a href="../knowledgeBase/vGearNetworkManagerDetail.md">Detail of Network Manager</a>.</p>
 <h4 id="network-setting">Network Setting</h4>
 <p>The <code>[Settings]</code> stores the server hosting related settings.
 Developer can set the ip address and port for the server, the network name, maximum connections and the connecting setting of the application.</p>
 <p>Some of the settings of <code>Network Setting</code> can be configured in the <code>Networking Json</code>, thus re-build is not needed for configuring the Network Setting.</p>
+<p>Here, set the <code>Network Name</code> to <code>Host</code> for the later sections.</p>
 <h4 id="network-host-vs-client">Network Host vs Client</h4>
 <p>A <code>Multi-User Networking Application</code> should be held with a server host for the client.</p>
 <p>To test for the multi-user application connection, the sample of using localhost is shown below:</p>
@@ -163,10 +163,58 @@ Developer can set the ip address and port for the server, the network name, maxi
 The default entities to be shown are <code>Head</code>, <code>Right Hand</code> and <code>Left Hand</code>.</p>
 <p>The entity prefabs is stored <code>[XR Components]</code> lists and can be configured at the <code>Networking Json</code> with corresponding index.
 The sample networking json <a class="xref" href="tut07.html#networking-json">above</a> uses the second head prefab at the <code>Head</code> list, second right-hand prefab at the <code>Right Hand</code> list and the third left-hand prefab at the <code>Left Hand</code> list.</p>
+<p><img src="../images/9.1.4.gif" alt="Enitity display"></p>
 <h3 id="add-networked-objects">Add Networked Objects</h3>
-<p>???</p>
+<p>The gameObjects will be synchronized with using <code>Network Object</code> class.
+To add the <code>Network Object (Script)</code> Component.</p>
+<ol>
+<li><p>Right click the gameObject <code>Networked Cube</code>, <code>vGear &gt; Component &gt; NetworkObject</code>.</p>
+<p>Two components is added into the gameObject, they are <code>Network Identity (Script) (Deprecated)</code> and <code>Networked Object (Script)</code>.
+<img src="../images/9.2.2.png" alt="Network object "></p>
+</li>
+<li><p>To enable the accesibility of client, enable the <code>Local Player Authority</code> option of <code>Network Identity (Script) (Deprecated)</code>.</p>
+</li>
+<li><p>Setting of <code>Networked Object</code> class can be set in the <code>Networked Object (Script)</code> or through <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vNet.Networking.NetworkObject.html">API</a>.</p>
+</li>
+<li><p>Add <code>V Gear_Interactable (Script)</code> component to the gameObject <code>Networked Cube</code> and enable option <code>Grabbable</code>.</p>
+</li>
+</ol>
+<p>The result of the synchronize object is shown below.</p>
+<p><img src="../images/9.2.1.gif" alt="Server host message."></p>
 <h3 id="send--receive-networked-command">Send &amp; Receive Networked Command</h3>
 <p>Beside the additional setting provided by VotanicXR, this part introduces the traditional network feature, <code>Send</code> and <code>Receive</code> commands between Server and Client.</p>
+<p>The following simple sample sends the message from client to the server, the server prints the message when it receives message.</p>
+<p>The script below send a message when the client press space.</p>
+<pre><code class="lang-csharp">void Update()
+{
+	if (vGear.Cmd.Received(&quot;PressSpace&quot;) &amp;&amp; manager.networkName.Equals(&quot;Client&quot;))
+	{
+		manager.Send(&quot;Client said hi!&quot;);
+	}
+}
+</code></pre>
+<p>The message will be printed when the network manager received a message by default.</p>
+<p><img src="../images/9.3.1.png" alt="Default receive message log"></p>
+<p>The script below print the message with prefix <code>Delegate :</code> when the manager of server host received a message into the delegate funtion.</p>
+<p><code>vGear_Networking.ReceivedMessage</code> is the delegate function on the message received, declaration is introduced at <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vNet.Networking.NetworkManager.html#Votanic_vNet_Networking_NetworkManager_ReceivedMessage">API</a>.</p>
+<pre><code class="lang-csharp">public vGear_Networking manager;
+
+private void Start()
+{
+	manager.ReceivedMessage = PrintReceive;
+}
+
+void PrintReceive(string message)
+{
+	if (manager.networkName.Equals(&quot;Host&quot;))
+	{
+		Debug.Log(&quot;Delegate :&quot; + message);
+	}
+	
+}
+</code></pre>
+<p>The log printed will be as shown below.</p>
+<p><img src="../images/9.3.2.png" alt="Receive message log with delegate"></p>
 </article>
           </div>
           

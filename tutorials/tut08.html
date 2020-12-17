@@ -81,7 +81,6 @@
 This chapter introduces the use of <code>Behaviour System</code> by using simple examples of scenario.</p>
 <h3 id="behaviour-system-in-votanicxr">Behaviour System in VotanicXR</h3>
 <p><code>Behaviour System</code> is a system to manage the child <code>Behaviour</code>, the <code>Behaviour</code> is to implement the simple logic with conditions.</p>
-<p>/// same as above ??</p>
 <h3 id="set-up-behaviour-system-sample-scene">Set up Behaviour System Sample Scene</h3>
 <p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial08 </code> and open the scene <code>BehaviourSystem</code> provided.</p>
 <p>The scene contains gameObject <code>Behaviour gameObjects</code> and gameObject <code>Chained Behaviour gameObjects</code>, are list of gameObjects for the two sections below.</p>
@@ -127,13 +126,16 @@ A <code>Behaviour</code> consists of branches, each branch consists of condition
 </li>
 </ol>
 <h3 id="create-complex-chained-behaviour">Create Complex Chained Behaviour</h3>
-<p>By using <code>Behaviour Manager</code>, we can perform scenario without coding. The following example is a simple scenario, when the box is interacted or we wait in front of the box for five seconds, a shield is found and can be rotate.</p>
+<p>By using <code>Behaviour Manager</code>, we can perform scenario without coding.</p>
+<p>The following example is a simple scenario, when the box is interacted or we wait in front of the box for five seconds, a shield is found and can be rotate.</p>
+<p>The flowchart below shows the logic of the scenario in this section.</p>
+<p><img src="../images/10.2.0.png" alt="logic flowchart"></p>
 <ol>
 <li><p>The gameObject <code>Chained Behaviour gameObjects</code> provides the gameObjects needed in this section, includes three models and one collisioner.</p>
 <p><img src="../images/10.2.1.png" alt="Chained Behaviour gameObjects"></p>
 </li>
 <li><p>Here will be two behaviour in this scenario, one to open the box with shield, arrow button and its function, another to rotate the shield.</p>
-<p><img src="../images/10.2.2.1.png" alt=""></p>
+<p><img src="../images/10.2.2.1.png" alt="Prop for chained behaviour"></p>
 </li>
 <li><p>The first behaviour shows the functions in the branch. If one of the <code>Trigger</code> is triggered, the <code>Plan</code> in the branch will be executed.</p>
 <p>For multiple <code>Plans</code>, one of it will be excuted. The sum of their probability will be 100% automatically.</p>

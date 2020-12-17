@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IO System </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="IO System ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="theory04">
+<h1 id="io-system">IO System</h1>
+
+<p>VotanicXR IO System is a very helpful system for cross platform XR development. User can easy to modify the controls of application without rebuilding the project.</p>
+<h2 id="command-handler-the-highest-level">Command Handler (The highest level)</h2>
+<p>You can map any types of conditions and inputs to a command. If your actions fulfil the command, the command handler will receive this command at the current frame. Besides, you can also send command by scripting or interactions and the handler will receive the command. The API example of command is vCast.Cmd.Received(“CommandName”);</p>
+<h2 id="controller-the-second-level">Controller (The second level)</h2>
+<p>When you have set a Buttons and an Axes to the controller, you can get control by the button and axis index you mapped. The API example of command is vCast.Ctrl.ButtonUp(0);</p>
+<h2 id="device-manager-the-third-level">Device Manager (The third level)</h2>
+<p>The manager will store all devices ordered by the scan order of device classes you have set in config file. The index of devices will be automatically arranged after scanning device. For example, if you set the scan order is VInput, VRPN and then OpenVR, then the index of devices may be 0-1 (2 VInput controllers), 2 (1 VRPN device) and 3-6 (4 OpenVR controllers). The API example of command is vCast.Input.KeyboardUp(Keycode.Space);</p>
+<h2 id="device-handlers-the-lowest-level">Device Handlers (The lowest level)</h2>
+<p>Each class of handler will handle its own devices. All handlers are included in device manager. The API example of command is vCast.Input.VInput.ButtonUp(0);</p>
+<h2 id="input-types">Input types</h2>
+<p>The main input types are Button Down, Press, Up, Hold and Touch, Axis Value, Down, Press, Up and Hold. The advanced input types are Combo and Count which are the combination of main inputs. These two combination inputs should be set as a command from Setting file.</p>
+<h2 id="tracker">Tracker</h2>
+<p>Only VRPN and OpenVR have tracker device. Tracker is used for tracing entity position and rotation such as user head and hand.</p>
+<h2 id="vibration">Vibration</h2>
+<p>Only some of VInput and OpenVR devices support vibration. This is a device output.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

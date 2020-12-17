@@ -71,8 +71,8 @@
 
 <p>In this article</p>
 <ul>
-<li><a href="xref:tut03-media#media-player">Media Player</a></li>
-<li><a href="xref:tut03-media#360-media-player">360 Media Player</a></li>
+<li><a class="xref" href="tut06.html#media-player">Media Player</a></li>
+<li><a class="xref" href="tut06.html#360-media-player">360 Media Player</a></li>
 </ul>
 <h2 id="objective">Objective</h2>
 <p>This chapter introduces the Media Player features provided by VotanicXR.
@@ -88,7 +88,7 @@ By using the provided media players, media can be easily added into the applicat
 <table width="100%">
 <tr><td>Audio:	<td>.wav, .ogg, 
 <tr><td>Image:	<td>.jpg, .png, .tga, .exr, 
-<tr><td>Video:	<td>.mp4, .mov, .avi, .mkv, .asf, .webm
+<tr><td>Video:	<td>Refer to <a href="https://docs.unity3d.com/Manual/VideoSources-FileCompatibility.html"> Unity Video File Compatibility</a>.
 </td></td></tr></td></td></tr></td></td></tr></table>
 <h3 id="add-media-player-prefab">Add Media Player Prefab</h3>
 <p>To add the Media Player Prefab,</p>
@@ -118,22 +118,42 @@ By using the provided media players, media can be easily added into the applicat
 <p><img src="../images/8.1.3.3.png" alt="external resources for media file path of MediaPlayer"></p>
 </li>
 </ol>
-<p>Details of the Settings will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.html">Detail of MediaPlayers</a>.</p>
+<p>Details of the Settings will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.md">Detail of MediaPlayers</a>.</p>
 <h2 id="360-media-player">360 Media Player</h2>
 <p>VGear have provided <code>MediaPlayer360</code> for the 360 degree video and Images.
-The <code>MediaPlayer360</code> is a huge sphere-shaped mesh, and apply the 360 media into the mesh to have 360 view.</p>
+The <code>MediaPlayer360</code> is a huge spherical mesh, and apply the 360 media into the mesh to have 360 view.</p>
+<p>The media format supported by <code>MediaPlayer360</code> is shown below.</p>
+<table width="100%">
+<tr><td>Audio:	<td>.wav, .ogg, 
+<tr><td>Image:	<td>.jpg, .png, .tga, .exr, 
+<tr><td>Video:	<td>.mp4, .mov, .avi, .mkv, .asf, .webm
+</td></td></tr></td></td></tr></td></td></tr></table>
 <h3 id="add-media-player-360-prefab">Add Media Player 360 Prefab</h3>
 <p>To add the  <code>MediaPlayer360</code> prefab.</p>
 <ol>
 <li><p>Right-click <code>vGear &gt; GameObject &gt; MediaPlayer360</code>.</p>
 <p><img src="../images/8.2.1.png" alt="MediaPlayer360 prefab"></p>
 </li>
+<li><p>Copy the file path of the 360 video <code>Assets/VotanicXR_Tutorial/Tutorial06/Resources/360.mp4</code> into the <code>[Settings] &gt; Media &gt; Element 0 &gt; Path </code> for the result.</p>
+</li>
 </ol>
+<p>The 360 video will be played like the following at the Scene Window.</p>
+<p><img src="../images/8.2.3.png" alt="360 video using MediaPlayer360"></p>
 <h3 id="additional-configuration-in-media-player-360">Additional Configuration in Media Player 360</h3>
 <p>Most components of the MediaPlayer360 is the same as MediaPlayer,
-Settings of <code>[360]</code> about the 360 media is shown below.</p>
-<p>The important settings for developer are <code>Scale, </code>Zoom<code>related settings and</code>Rotation` related settings.</p>
-<p>Detail will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.html">Detail of MediaPlayers</a>.</p>
+Settings of <code>[360]</code> about the 360 media will be shown below.</p>
+<p>For Stereo 360 video, the <code>StereoType</code> can be changed by API function <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vMedia.MediaPlayer.MediaPlayer360.html#Votanic_vMedia_MediaPlayer_MediaPlayer360_SetStereoType_Votanic_vMedia_MediaPlayer_StereoType_">SetStereoType</a>.</p>
+<table width="100%">
+<tr>
+<td>Stereo 360 video with type DownUp
+<td>The video merged for the stereogram
+<td>The video mapped into the spherical player
+<tr>
+<td> <img src="../images/8.2.4.1.png">
+<td valign="center" align="center"> <img src="../images/8.2.4.2.png"> </td>
+<td> <img src="../images/8.2.4.3.png">
+</td></td></tr></td></td></td></tr></table>
+<p>Detail will be described in <a href="../knowledgeBase/vGearMediaplayerDetail.md">Detail of MediaPlayers</a>.</p>
 <p><img src="../images/8.2.2.png" alt="MediaPlayer360 settings"></p>
 </article>
           </div>

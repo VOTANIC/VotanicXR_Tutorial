@@ -92,10 +92,15 @@ The design concept of User Interface in virtual world is easy to read and leadin
 <ol>
 <li><p>Create an canvas gameobject of Unity, we use Image for the demonstration.</p>
 </li>
-<li><p>Set the corresponding canvas render mode into world space, and tune the rect transform in suitable parameter that easy be reached for user.</p>
+<li><p>Set the corresponding canvas <code>Render Mode</code> into <code>World Space</code>, and tune the rect transform in suitable parameter that easy be reached for user.</p>
+<p>We suggest the scle of the Rect Transform is (0.001, 0.001, 0.001), for the pixel correspondence amd precision.
+Note that 1 unit in Unty Editor is corresponding to 1 meter in virtual world and real world.
+In this sample, 0.001 scale with 1000 width corresponds to 1mm per pixel.</p>
 <p><img src="../images/7.1.1.png" alt="Set the rect transform of canvas into suitable size."></p>
+<p>Also tune the Image into the suitable size.</p>
+<p><img src="../images/7.1.2.png" alt="Set the rect transform of image into suitable size."></p>
 <p>Robot dummy provided by StartPOint prefab can be a reference of size.</p>
-<p><img src="../images/7.1.2.png" alt="Set the rect transform of canvas into suitable size."></p>
+<p><img src="../images/7.1.3.png" alt="Reference with the robot dummy"></p>
 </li>
 </ol>
 <h2 id="interact-with-vgear-button">Interact with vGear Button</h2>
@@ -104,7 +109,7 @@ It may set the transition effect into this interactable, the transition happened
 <h3 id="add-vgear-button-component">Add vGear Button Component</h3>
 <p>The sample of add vGear Button is shown below.</p>
 <ol>
-<li><p>Add the vGear Button component by <code>vGear &gt; Component &gt; Button</code>, the gameobject is wrapped and parented to <code>{gameobject.name}.Grabbables</code>.</p>
+<li><p>Add the vGear Button component by <code>vGear &gt; Component &gt; Button</code> to the image gameObject in previous section, the gameobject is wrapped and parented to <code>{gameobject.name}.Grabbables</code>.</p>
 <p>The parent is a gameobject with Transform <strong><code>for</code></strong> the <code>V Gear_Button (Script)</code> component, and the gameobject <strong><code>with</code></strong> the <code>Canvas</code> and <code>V Gear_Button (Script)</code> component will be the child.
 The structure is to separate the management of the transform function and rect transform function .</p>
 <table width="100%">
@@ -136,7 +141,7 @@ We take the default value, that is using time and 0.25 seconds as Transition Fac
 <tr><td>Editor Mode<td>Play Mode
 <tr><td> <img src="../images/7.3.3.1.png"><td> <img src="../images/7.3.3.2.png">
 </td></td></tr></td></td></tr></table>
-<p>Detail of the <code>Transition Effects</code> will be described in <a href="../knowledgeBase/vGearDetail.html">Detail of UI Element</a>.</p>
+<p>Detail of the <code>Transition Effects</code> will be described in <a href="../knowledgeBase/vGearDetail.md">Detail of UI Element</a>.</p>
 <h2 id="using-vgear-panel">Using vGear Panel</h2>
 <p><code>vGear_Panel</code>, inherited from <code>vGear_Button</code> class, manages the display of itself and its child gameobjects.
 it can be added into both 3D gameobjects or UI Element of Canvas.</p>
@@ -160,7 +165,9 @@ The setting below is the preset Unity Event of the button in the prefab.</p>
 <p>In addition to the transition effects, <code>vGear Panel</code> class provides features to manage the child gameObject as the setting <code>Panel Settings</code> below.</p>
 <p><img src="../images/7.4.2.1.png" alt="The Panel Settings"></p>
 <p>The field <code>Grab With Buttons</code> will overrides child buttons grab setting if true.
-Besides, the provided functions of <code>vGear Panel</code> class will affects the child gameObjects, such as the function <code>vGear_Panel.Close</code> in the preset Unity Event, it closes the panel and the child gameObjects, instead of only close the panel only.</p>
+Besides, the provided functions of <code>vGear Panel</code> class will affects the child gameObjects.</p>
+<p>For example in previous section, the function <code>vGear_Panel.Close</code> in the preset Unity Event, it closes the panel and the child gameObjects, instead of only close the panel only.</p>
+<p>The relevant functions are <code>Open</code>, <code>Enable</code>, <code>Disable</code>.etc , detail will be introduced in the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Panel.html">API</a>.</p>
 <h2 id="using-vgear-slider">Using vGear Slider</h2>
 <p><code>V Gear_Panel (Script)</code>, inherited from <code>vGear_Button</code> class, manages the child canvas gameobjects by the slider using <strong>triggering</strong>.
 It can be added into both 3D gameobjects or UI Element of Canvas to implement slidable features.</p>
@@ -187,7 +194,7 @@ The preset of <code>Inertia</code> in the child <code>ScrollButton [ContentSlide
 <tr><td>ScrollButton [ContentSlider]<td><img src="../images/7.5.2.2.png">
 <tr><td>Slider <td> <img src="../images/7.5.2.1.png">
 </td></td></tr></td></td></tr></table>
-<p>The detail of the UI elements will be introduced in <a class="xref" href="../knowledgeBase/vGearUIDetail.html">Detail of UI Element</a>.</p>
+<p>The detail of the UI elements will be introduced in <a class="xref" href="../documentation/vGearUIDetail.html">Detail of UI Element</a>.</p>
 </article>
           </div>
           

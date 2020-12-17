@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Theory - XR Structure </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Theory - XR Structure ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="theory01">
+<h1 id="theory---xr-structure">Theory - XR Structure</h1>
+
+<ol>
+<li><p>SDK Manager</p>
+<p>The top-level gameObject on Hierarchy Window. This gameObject should not be moved. We recommend you <strong>keep the transform unchanged</strong>. Most of the environment setting are set by SDK manager, such as Editor Config, Performance, Camera Reference and Default Mode.</p>
+</li>
+<li><p>Camera Reference</p>
+<p>This is an optional setting of a project. The components on the camera reference will be copied to all XR cameras.</p>
+</li>
+<li><p>Attribute</p>
+<p>There are 6 attributes in the XR world. If you <strong>enable</strong> on the Inspector Window, the mode will <strong>default enable</strong> on start.</p>
+<table width="100%">
+<tr> <td>Traveler<td>Allow user to <b>move</b> and <b>rotate</b>
+<tr> <td>Soul<td>Allow user to ignore <b>physics related to SDK</b>
+<tr> <td>Debug<td>Allow user to have debug mode control and check <b>debug message</b>
+<tr> <td>Tracking<td>Allow tracker <b>tracking</b> of entities position and rotation 
+<tr> <td>Stereo<td>Allow <b>display 3D</b> images, note that HMD always on
+<tr> <td>Test3D<td>Display <b>left right eye testing</b> image for checking inverting eyes problem
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></table>
+</li>
+<li><p>User Level</p>
+<p>There are 6 user levels used to lock controls and custom use by default. The main purpose is to prevent mistakenly pressing the shortcut of controls by different types of user. Most of the <strong>default controls</strong> are set on <strong>Level 3</strong>.</p>
+<p>Note that the user level will be <strong>reset to Level 0 every frame</strong>. If you want the keep user level, you can enable the User <strong>Level Lock</strong>. The default use of level lock is <strong>Keyboard Mode</strong>.
+ </p>
+</li>
+<li><p>Frame</p>
+<p>This is the real environment center point of XR world. For example, if you are using CAVE, then CAVE is the frame. Besides, you can set the custom frame parent and start point on Inspector Window.</p>
+</li>
+<li><p>Users</p>
+<p>Inside the frame, there should be <strong>at least one user</strong>. Each user can have their own navigation by using the <strong>vCast Controller</strong>. There are more than 1 way to navigate such as <strong>movement and teleport</strong>. You can also adjust the parameters on the Inspector Window.</p>
+</li>
+<li><p>Head and Hand</p>
+<p>These 2 entities are the <strong>minimum required entities</strong> of a user. <strong>Head</strong> should be the synchronizer of user to track user actual position and rotation on XR world. <strong>Hand</strong> should be the navigator for user to navigate to the correct direction.</p>
+</li>
+<li><p>Controller and Sensor</p>
+<p>The <strong>vCast devices</strong> of entity.</p>
+</li>
+<li><p>Boundary</p>
+<p>In the XR system, there are 2 types of boundary.
+The main purpose of boundary is to prevent user stand and walk on wrong place.
+Each boundary has their own layer to detect collision and ray cast.</p>
+<p>You have at least 2 ways to create Behaviour Manager:</p>
+<ol>
+<li>Menu Bar <code>VotanicXR &gt; vCast &gt;</code></li>
+<li>Right Click on Hierarchy Window, select <code>vCast &gt; GameObject &gt;</code></li>
+</ol>
+<p>Ground:	Detect user correct position <strong>Y</strong> and allow <strong>free falling</strong> and <strong>raising</strong>. The default ground prefab has a red mark for user to adjust the height level, and it will remove on play mode.
+Wall:		Detect user correct position <strong>X</strong> and <strong>Z</strong>, <strong>block</strong> user navigation.</p>
+<p>Note that the boundary can be collider or trigger. The effect of them are different. Collider will <strong>totally</strong> block your movement.</p>
+</li>
+<li><p>Start Point</p>
+<p>The <strong>automatically generated</strong> gameObject when the SDK manager is <strong>first time</strong> put in the scene. This is the <strong>default</strong> start point of frame, you can just <strong>change</strong> the <strong>transform</strong> of <strong>this</strong> gameObject to adjust the start point <strong>position</strong> and <strong>rotation</strong>. The object under start point are the reference for you to check objects actual size, height of start point and the start point image you should view.</p>
+<p>Note that if the parameter <code>Start as Ground</code> of user is set to be true and there is no ground detected, the user will automatically adjust the height level to start point.</p>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

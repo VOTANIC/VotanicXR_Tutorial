@@ -112,74 +112,75 @@ This chapter introduces the first two levels, <strong>Command level</strong> and
 <h3 id="command-input-demo">Command Input Demo</h3>
 <p>The sample below shows the usage of <strong>Send</strong> and <strong>Receive</strong>. When the component is enabled, the command handler send a <code>&quot;Custom&quot;</code> command. The update function will check the command received by the command handler, once <code>&quot;Custom&quot;</code> command is received, will print the debug log.</p>
 <pre><code class="lang-cs">void Start()
-    {
-        vGear.Cmd.Send(&quot;Custom&quot;);
-    }
+{
+    vGear.Cmd.Send(&quot;Custom&quot;);
+}
 
-    private void CheckCustomCommand()
+private void CheckCustomCommand()
+{
+    //  CheckCustomCommand function in Update
+    if (vGear.Cmd.Received(&quot;Custom&quot;))
     {
-        //  CheckCustomCommand function in Update
-        if (vGear.Cmd.Received(&quot;Custom&quot;))
-        {
-            Debug.Log(&quot;Custom command received!&quot;);
-        }
+        Debug.Log(&quot;Custom command received!&quot;);
     }
+}
 </code></pre>
 <p><img src="../images/4.2.2.png" alt="Console Result Send and Received"></p>
 <br>
 <p>The sample below shows the usage of <strong>AllReceived</strong> and <strong>Value</strong>. The update function contains a foreach loop to get the command through <strong>AllReceived</strong>. For each command got from the handler, print out the float value of the command. If the command match <code>&quot;FunctionA&quot;</code>, call the Function <code>&quot;FunctionA&quot;</code>.</p>
 <pre><code class="lang-cs">private void CheckAllCommand()
+{
+    //  CheckAllCommand function in Update
+    foreach (string command in vGear.Cmd.AllReceived())
     {
-        //  CheckAllCommand function in Update
-        foreach (string command in vGear.Cmd.AllReceived())
+        Debug.Log(&quot;The value of &quot; + command + &quot; command is &quot; + vGear.Cmd.Value(command));
+        switch (command)
         {
-            Debug.Log(&quot;The value of &quot; + command + &quot;command is &quot; + vGear.Cmd.Value(command));
-            switch (command)
-            {
-                case &quot;FunctionA&quot;:
-                    FunctionA();
-                    break;
-            }
+            case &quot;FunctionA&quot;:
+                FunctionA();
+                break;
         }
     }
+}
 </code></pre>
 <p><img src="../images/4.2.4.png" alt="Console Result of AllReceived and Value"></p>
 <h2 id="virtual-controller-input-system">Virtual Controller Input System</h2>
 <h3 id="virtual-controller-input-system-overview">Virtual Controller Input System Overview</h3>
 <p><strong>Virtual Controller Input System</strong> is an input system to handle vCast controller. The reference class is <code>vGear.Ctrl</code>.</p>
 <p>By default, this component will bind with Buttons and Axes of the connected devices automatically. The bound mapping can be configurated in the <a class="xref" href="tut11.html">configurator</a>, and the mapping can be customized for developer needs.</p>
+<h3 id="configure-virtual-controller">Configure Virtual Controller</h3>
 <h3 id="virtual-controller-input-demo">Virtual Controller Input Demo</h3>
 <p>The sample below shows the input of button index 0 and axis index 0.</p>
 <pre><code class="lang-cs">private void CheckVirtualControllerInput()
+{
+    //  CheckVirtualControllerInput function in Update
+    if (vGear.Ctrl.ButtonDown(0))
     {
-        //  CheckVirtualControllerInput function in Update
-        if (vGear.Ctrl.ButtonDown(0))
-        {
-            Debug.Log(&quot;Button 0 is down.&quot;);
-        }
-        if (vGear.Ctrl.ButtonHold(0))
-        {
-            Debug.Log(&quot;Button 0 is held for some time.&quot;);
-        }
-        if (vGear.Ctrl.ButtonPress(0))
-        {
-            Debug.Log(&quot;Button 0 is pressing.&quot;);
-        }
-
-        if (vGear.Ctrl.AxisDown(0))
-        {
-            Debug.Log(&quot;Axis 0 is down.&quot;);
-        }
-        if (vGear.Ctrl.AxisHold(0))
-        {
-            Debug.Log(&quot;Axis 0 is held for some time.&quot;);
-        }
-        if (vGear.Ctrl.AxisPress(0))
-        {
-            Debug.Log(&quot;Axis 0 is pressing with value &quot; +
-                vGear.Ctrl.AxisValue(0).ToString(&quot;F2&quot;) + &quot;.&quot;);
-        }
+        Debug.Log(&quot;Button 0 is down.&quot;);
     }
+    if (vGear.Ctrl.ButtonHold(0))
+    {
+        Debug.Log(&quot;Button 0 is held for some time.&quot;);
+    }
+    if (vGear.Ctrl.ButtonPress(0))
+    {
+        Debug.Log(&quot;Button 0 is pressing.&quot;);
+    }
+
+    if (vGear.Ctrl.AxisDown(0))
+    {
+        Debug.Log(&quot;Axis 0 is down.&quot;);
+    }
+    if (vGear.Ctrl.AxisHold(0))
+    {
+        Debug.Log(&quot;Axis 0 is held for some time.&quot;);
+    }
+    if (vGear.Ctrl.AxisPress(0))
+    {
+        Debug.Log(&quot;Axis 0 is pressing with value &quot; +
+            vGear.Ctrl.AxisValue(0).ToString(&quot;F2&quot;) + &quot;.&quot;);
+    }
+}
 </code></pre>
 <p><img src="../images/4.3.3.png" alt="Console Result of AllReceived and Value"></p>
 </article>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>XR Devices </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="XR Devices ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="theory03">
+<h1 id="xr-devices">XR Devices</h1>
+
+<p>VotanicXR supports 3 classes of real device and 2 types of virtual device. The real device classes are VInput, VRPN and OpenVR. A real device could be divided to Buttons device, Axes device and Tracker device. The button and axis index are arranged by the IO system. And the virtual device (also called vCast device) types are vCast Controller and vCast Sensor.</p>
+<h2 id="vinput">VInput</h2>
+<p>Modified and combined from DirectInput and XInput. All windows support devices can be a VInput device but not all devices button and axis index are arranged. VInput also has DPad input. The default button and axis number are 32 and 8 plus DPad input.</p>
+<h2 id="vrpn">VRPN</h2>
+<p>Received all registered correct address and channel VRPN devices. VRPN devices are original Buttons, Axes and Tracker devices.</p>
+<h2 id="openvr">OpenVR</h2>
+<p>Work with SteamVR, you should install and launch SteamVR VR Monitor before using OpenVR devices. The current version includes HTC, Valve, Oculus and WindowsMR devices.</p>
+<h2 id="controller">Controller</h2>
+<p>It is a device that require to bind real devices to control. Each controller has Buttons device and Axes device parts so that you can bind different real devices to a controller. Also, you can map custom button and axis index of real device to the controller. Note that each controller can bind more than one Buttons device and Axes device from real devices. But only can set 1 Buttons and 1 Axes as the current Buttons and Axes to the controller each time. The controller input may be received by the controller tools of controller to take actions. The default tools inside a controller are called Wand and Teleport.</p>
+<h2 id="sensor">Sensor</h2>
+<p>It is a device that without any real device input output. Each sensor can have more than one sensor parts to detect actions. The default sensor part inside a sensor is called Vision which is used to check user viewing.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

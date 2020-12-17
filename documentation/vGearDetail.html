@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Detail of VGear Components </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Detail of VGear Components ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="detail-vgear">
+<h1 id="detail-of-vgear-components">Detail of VGear Components</h1>
+
+<p>Here will introduce the setting of components of the <code>vGear</code> prefab and its child.</p>
+<h3 id="v-gear">V Gear</h3>
+<p>Click the gameobject <code>vGear</code> in the Hierarchy window, component <code>V Gear (Script)</code> is shown at the inspector window, which manage the setting of the vGear system.</p>
+<table width="100%">
+<caption><b>[System]				
+<tr><td>Config Path				<td>The path of reading the system config in Unity Engine Editor.
+<tr><td>Setting Path			<td>The path of reading the system settings in Unity Engine Editor.
+<tr><td>Reference Config		<td>The path of config read for screen reference. <br>The screen reference is useful for attaching gameobjects in the screens.
+<tr><td>Show Reference			<td>Select the mode to show the screen gameobject reference.
+<tr><td>GCCollect				<td>Manual GC Collect option.
+<tr><td>XR Support				<td>Enable to support OpenVR, <br>"Standard Mode" for HTC Vive and "Role Mode" for SteamVR Role Mode.
+<tr><td>InitialFading			<td>Initial fade setting.
+<tr><td>LauncherCommand			<td>Receive commands from launcher.
+<tr><td>UseEditorSetting		<td>Override some settings from scene instead of json file when running in editor.
+<tr><td>AutoApplySetting		<td>Auto save current setting when building project.
+<tr><td>ScenesInBuild			<td>Enable this to save and load scenes in build setting by scene path, not the common setting.
+<tr><td>ScenesInBuild			<td>Enable this to save and load scenes in build setting by scene path, not the common setting.
+<tr><td>Batches					<td>The batch files setting for building the project.
+<tr><td>ConsoleMode				<td>Console mode setting of XR system.
+</td></td></tr>
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">
+<caption><b>[Performance]
+<tr><td>Force Quality			<td>Enable to set the quality settings by setting file.
+<tr><td>Refresh Rate			<td>The refresh rate for the function that no need to update each frame.
+<tr><td>Target Frame Rate		<td>Target Frame Per Seconds. <br>Recommended 120 for VotanicXR SDK physics.
+<tr><td>AutoReceiveCommand		<td>Auto receive command option.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">
+<caption><b>[Elements]
+<tr><td>Layer					<td>All layers of the XR system.
+<tr><td>Essential				<td>Essential elements to initialize the XR system.
+<tr><td>DestroyOnStart			<td>The objects will be destroyed on start.
+</td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">	
+<caption><b>[Status]	
+<tr><td>Initialized				<td>Return true if the XR system is initialized.
+<tr><td>Attribute				<td>All attributes of the XR system.
+<tr><td>-Traveler				<td>Enable Traveler for user navigation by controller.
+								<br>Usually disable during scene transition or playing animation.
+<tr><td>-Soul					<td>Enable Soul for ignoring user free falling and wall collisions.
+								<br>Usually disable during flying or looking around the scene.
+<tr><td>-Debug					<td>Enable Debug for custom uses and showing debug message.
+<tr><td>-Tracking				<td>Enable Tracking for tracing trackers.
+<tr><td>-Stereo					<td>Enable Stereo for displaying stereo image.
+<tr><td>-Test3D					<td>Enable Test3D for checking XR camera eyes image.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">	
+<caption><b>[Advanced]	
+<tr><td>Option Path 			<td>The path for reading the optional project setting file.
+<tr><td>Advanced				<td>Additional elements to initialize the system.
+<tr><td>-Apply Landing Menu		<td>Apply the landing menu if true.
+<tr><td>-Max Store Point		<td>Number of teleported points can be stored.
+<tr><td>-Landing Menu Prefab	<td>Prefab of landing menu. Can be null.
+<tr><td>-Waypoint Prefab		<td>Prefab of waypoint. Can be null.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">	
+<caption><b>[Project]	
+<tr><td>On Start Watermark		<td>Click to toggle the watermark.
+</td></td></tr></b></caption></table>
+<table width="100%">	
+<caption><b>[Quick Access]	
+<tr><td>Head					<td><b>Debug Use</b>.<br>Click to select Head GameObject. 
+<tr><td>Hand					<td><b>Debug Use</b>.<br>Click to select Hand GameObject.
+</td></td></tr></td></td></tr></b></caption></table>
+<p><img src="../images/3.2.1.1.png" alt="vGear component"></p>
+<h3 id="v-gear-controller">V Gear Controller</h3>
+<p>Go to <code>vGear &gt; Frame &gt; Controller</code>, component <strong>V Gear_Controller (Script)</strong> is shown at the inspector window, which manages the setting of controller. API provided functions to get/set the controller gameobject and settings.</p>
+<table width="100%">	
+<caption><b>[Settings]
+<tr><td>Default Tool			<td>The name of default tool of controller. <br>Note that the tool name should be the same as the Tools below.
+<tr><td>Tools					<td>Tools list of controller, the expansion stores the setting to change between tools. <br>This component control the common settings for all tools.<br>There will be different settings for each tool, will be introduced below.
+<tr><td>-Auto Switch			<td>When current tool is this tool, <br>all the tools which apply <b>Enable Scan</b> will scan objects and auto switch to the first detected tool.
+<tr><td>-Enable Scan			<td>When current tool applies <b>Auto Switch</b>, <br>scan objects and determine this tool should be switched on or not.
+<tr><td>-Scan length			<td>Tool detection scan distance.
+<tr><td>-Detect Layers			<td>The layer related to this tool for scanning.
+<tr><td>-Ignore Layers			<td>The layer ignored to this tool for scanning.
+								<br>The meaning of layer ignored is based on the tool.
+<tr><td>-Position				<td>The relative position on controller.
+<tr><td>-Rotation				<td>The relative rotation on controller.
+<tr><td>-Wand Ray				<td>Wand ray setting of this tool.
+								<br>Can be enabled with the tool.
+<tr><td>-Glove					<td>Glove setting of this tool.
+								<br>Can be enabled with the tool.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">	
+<caption><b>[Status]	
+<tr><td>Current Tool				<td>The current tool of controller.
+<tr><td>Select Object				<td>The interactables currently selecting. 
+									<br><b>Selecting</b> mean the interactable is selected but not received <b>Trigger</b> command. 
+<tr><td>Grabbed Object				<td>The interactables currently grabbing.
+									<br><b>Grabbing</b> mean the interactable is selected and  receiving <b>Grab </b>command.
+<tr><td>Triggered Object			<td>The interactables currently triggering.
+									<br><b>Triggering</b> mean the interactable is selected and receiving <b>Trigger </b>command.
+<tr><td>Item Container				<td>The container of item data for inventory system.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>		
+<p><img src="../images/3.2.2.1b.png" alt="vGear component"></p>
+<h3 id="v-gear-wand">V Gear Wand</h3>
+<p>Go to <code>vGear &gt; Frame &gt; Controller &gt; Wand</code>, component <strong>V Gear_Wand (Script)</strong> is shown at the inspector window, which manages the setting of the wand tool.</p>
+<p>Wand is the basic tool to interact the gameobjects with Interactables that will be described in chapter <a class="xref" href="../tutorials/tut04.html">Interactable</a>. API provided functions to get/set the wand gameobject and settings.</p>
+<table width="100%">	
+<caption><b>[Components]
+<tr><td>RayBeam					<td>The transform of the Beam gameobject.
+<tr><td>Ray Point				<td>The transform of the Point gameobject.
+<tr><td>Ray						<td>Stored the settings of the ray, such as color, length.
+<tr><td>-Enable					<td>Enable the wand ray.
+<tr><td>-Interactive				<td>Set wand ray is interactive or not.
+<tr><td>-Display					<td>Enable to display the wand ray.
+<tr><td>-Length					<td>The length of the wand ray.
+<tr><td>-Normal Display<br>-Select Display	<br>-Press Display<br>-Disable Display<br>
+<td> WandRayDisplay structure.<br>Structure to save different Display detail for different states. 
+<br>The field included a color and an onTopAlpha.
+<tr><td>-Position				<td>Relative position on controller of wand when using other tools.
+<tr><td>-Rotation				<td>Relative euler angles on controller of wand when using other tools.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<p><img src="../images/3.2.2.2.png" alt="vGear component"></p>
+<h3 id="v-gear-user">V Gear User</h3>
+<p>Go to <code>vGear &gt; Frame &gt; User</code>, component <strong>V Gear_User (Script)</strong> is shown at the inspector window, which manages the setting of the user. API provided functions to get the gameobject and settings.</p>
+<p>During play mode, it will instantiate corresponding gameobjects based on config reads, such as head and hands.</p>
+<p>Note that the <strong>Controller</strong> gameobject will become the child gameobject of the Hand.</p>
+<table width="100%">	
+<tr><td width="50%">Editor Mode			<td width="50%">Play Mode
+<tr><td><img src="../images/3.2.2.3.png" alt="Italian Trulli">
+<td><img src="../images/3.2.2.4.png" alt="Italian Trulli">
+</td></td></tr></td></td></tr></table>
+<table width="100%">	
+<caption><b>[Settings]
+<tr><td>Enable Raising					<td>User can auto raise to upper touched floor if true.
+<tr><td>Enable Slinking					<td>User can sink to lower floor by controller if true.
+<tr><td>Start As Ground					<td>Determine start point height as ground if no floor is detected.
+<tr><td>Navigate In Wall				<td>User can navigate by controller in wall if true.
+<tr><td>Unscaled Dealta Time			<td>Using unscaled delta time for height calculation if true.
+<tr><td>Synchronizer Setting			<td>Synchronizer setting.
+<tr><td>Navigator Setting				<td>Navigator setting.
+<tr><td>Transition						<td>Transition of user transformation.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">	
+<caption><b>[Components]
+<tr><td>Synchronizer					<td>The transform for checking user position and euler angles.
+<tr><td>Navigator						<td>The transform for checking user navigation direction.
+</td></td></tr></td></td></tr></b></caption></table>
+<table width="100%">	
+<caption><b>[Status]
+<tr><td>Control							<td>User control data.
+<tr><td>Is Transforming					<td>Return true if user is transforming.
+<tr><td>Is Paused						<td>Return true if the transformation is paused.
+<tr><td>Walls							<td>The walls touched by user.
+<tr><td>Max Store Point					<td>Number of teleported points can be stored.
+<tr><td>Current							<td>Current store point.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></b></caption></table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
