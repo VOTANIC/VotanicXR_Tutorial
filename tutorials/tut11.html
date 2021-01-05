@@ -71,69 +71,287 @@
 
 <p>In this article</p>
 <ul>
-<li><a class="xref" href="tut11.html">Using Configurator</a></li>
+<li><a class="xref" href="tut11.html#configurator-hierarchy">Configurator Hierarchy</a></li>
+<li><a class="xref" href="tut11.html#application-settings">Application Settings</a></li>
+<li><a class="xref" href="tut11.html#optional-application-settings">Optional Application Settings</a></li>
+<li><a class="xref" href="tut11.html#environment-configuration-settings">Environment Configuration Settings</a></li>
 </ul>
-<p><strong>Under Construction</strong></p>
 <h2 id="objective">Objective</h2>
-<p>Configurator is an application provided by VotanicXR, to configure the settings for VotanicXR applications.</p>
+<p>Configurator is an application provided by VotanicXR, to configure the settings for VotanicXR applications.
+Developer may open the configuration files via configurator, or create a new configuration file by configurator.</p>
 <p><img src="../images/13.0.1.png" alt="opening of configurator"></p>
 <h3 id="configurator-hierarchy">Configurator Hierarchy</h3>
+<p>The configurator can be classified into two main part, <code>Application</code> configuration and <code>Environment</code> configuration.</p>
+<p>There are four menu buttons, <code>File</code>, <code>Edit</code>, <code>View</code> and <code>About</code>.</p>
+<p><code>File</code> button is to manage the configuration files, including create, open, and save the configuration files.
+The configuration files created are the template with usable standard.</p>
+<p><code>Edit</code> is to manage the change of the configuration files, including revert the changes.</p>
+<p><code>View</code> is to manage the display of the configurator. including change the theme.</p>
+<p><code>About</code> is to display the information of the configurator.</p>
+<p><img src="../images/13.0.3.png" alt=""></p>
 <h3 id="configurations-in-votanicxr">Configurations in VotanicXR</h3>
+<p>The configuration files are stored into three main types of files, including <code>Config</code> file, <code>Setting</code> file, and <code>Option</code> file.</p>
+<p>The path of the configuration files will be stored at <code>Assets/Votanic/VotanicXR/vGear/System</code> of the Unity Project, and <code>Build/VotanicXR</code> of the built folder.</p>
+<p><img src="../images/13.0.2.png" alt=""></p>
 <h4 id="config-file"><code>Config</code> File</h4>
+<p>The <code>Config</code> files store the environment setting of the project.
+The file is using json structure with <code>vxrc</code> file format.</p>
+<p>By default, the <code>Config</code> files correspond to the environment.
+For <code>HMD</code>, the config file of it is <code>ConfigHMD.vxrc</code>.</p>
 <h4 id="setting-file"><code>Setting</code> File</h4>
+<p>The <code>Setting</code> files store the main application setting of the project.
+The file is using json structure with <code>vxrs</code> file format.</p>
 <h4 id="option-file"><code>Option</code> File</h4>
+<p>The <code>Option</code> files store the optional application setting of the project.
+The file is using json structure with <code>vxro</code> file format.</p>
 <h2 id="application-settings">Application Settings</h2>
-<p>The application settings are the settings for application, it is divided into main settings and optional settings.</p>
+<p>The application settings are the settings for application, it is classified into main settings and optional settings.</p>
 <h3 id="main-application-settings">Main Application Settings</h3>
-<p>The main application settings includes the <code>XR Attributes</code>, <code>Performances</code>, <code>Frame &amp; Users</code>, <code>Controllers</code> and <code>Commands</code>.</p>
-<p>-Generic / Scene base</p>
+<p>The main application settings includes the <code>XR Attributes</code>, <code>Performances</code>, <code>Frame &amp; Users</code>, <code>Controllers</code> and <code>Commands</code>.
+The first three tabs are the application related to vGear, detail will be introduced in <a class="xref" href="tut03.html#movement-modes">XR Attribute</a> and <a class="xref" href="../documentation/vGearDetail.html">vGear Detail</a>.
+The later section will focus on the <code>Controllers</code> and <code>Commands</code></p>
+<p><img src="../images/13.1.1.png" alt="Main Application Settings"></p>
+<p>In the application settings view, the left side is to manage the scene.
+When the scene is selected, the configuration stored at right side will be saved for the selected scene.
+<code>Generic</code> is the generic setting stored for the scene, if the scene is not specified.</p>
+<p>To specify a scene, click the <code>+</code> button and select the added scene.
+Change the scene path below for the specified scene.</p>
+<p><img src="../images/13.1.2.png" alt="Main Application Settings"></p>
 <h4 id="controllers-setting">Controllers Setting</h4>
+<p>For the <code>Controller</code> tab, it stores the controller setting for the corresponding scene.</p>
 <h5 id="controller-properties">Controller Properties</h5>
+<p>Controller properties stores the properties related to the controller, including <code>Name</code>, <code>Bind Buttons</code>, <code>Bind Axes</code> and <code>Default Tool</code>.</p>
+<p>By default, the <code>Bind Buttons</code> will be empty and the <code>Auto Find Buttons</code> will be enabled.
+Similarly, the <code>Bind Axes</code> will be empty and the <code>Auto Find Axes</code> will be enabled.</p>
+<p>New controller can be set by click the <code>+</code> button next to the <code>Controller</code> title.</p>
+<p><img src="../images/13.1.3.1.png" alt="Main Application Settings"></p>
 <h5 id="tools-of-controller">Tools of Controller</h5>
+<p>The selected controller properties stores the properties of the tool related to the controller, such as <a class="xref" href="tut10.html#configuring-in-game-tools">Tool switching</a>, Wand and Glove Interactive.</p>
+<p><img src="../images/13.1.3.2.png" alt="Tools of Controller"></p>
+<p>The tool list is empty for the new added controller, developer may add and delete the tools.</p>
+<p><img src="../images/13.1.3.3.png" alt="Add new tool for the list"></p>
 <h4 id="commands-setting">Commands Setting</h4>
+<p>The <code>Commands</code> tab stores the command for the application.
+The commands created by configurator can be sent from the bound controller input, and received by the <a class="xref" href="tut02.html#command-input-system">command handler</a>.</p>
+<p><img src="../images/13.1.4.1.png" alt="Command Settings"></p>
 <h5 id="built-in-commands">Built-in Commands</h5>
+<p>By default, there are lot of commands are built-in, including <a class="xref" href="tut03.html#using-movement-commands">movement commands</a>, tool commands and applcation commands.</p>
+<p><img src="../images/13.1.4.2.png" alt="Built-in Commands"></p>
+<p>Some commands described in previous chapters, are not stored in the built-in command, such as <code>Pick</code>, can be added with click the <code>+</code> button next to the <code>Built-in Commands</code> title.
+The command properties will be described in next section.</p>
 <h5 id="command-properties">Command Properties</h5>
-<p>-return values
---Name
---Value
---Target</p>
-<p>-conditions
---pre conditions
---pre condition properties
---trigger
---trigger properties</p>
-<p>-input
---input controller
---input method
---input properties</p>
+<p>The command properties can be classified into three main fields, condition, input, and value.
+The command properties of the built-in commands can be used as reference to create custom commands, the below will take built-in command <code>Move</code> as example.</p>
+<h6 id="condition">Condition</h6>
+<p>Condition can be pre-condition of the command and the condition of the input trigger.
+Condition of a command can be multipled, the pre-conditions of <code>Move</code> commands are <code>Traveler</code> and <code>Context</code> with mode index zero.</p>
+<p><img src="../images/13.1.4.4.1.png" alt="Condition of Move"></p>
+<p>For the conditions, there are some options to be choosen, can be divided into several main groups, will be introduced in the table below.</p>
+<table width="100%">
+<tr><td>Attribute
+<td>The condition related to <a href="../documentation/vGearDetail.html">vGear Attribute.</a>
+<br>
+Includes Traveler, Soul, Debug, Tracking, Stereo, Test3D,NonTraveler, NonSoul, NonDebug, NonTracking, NonStereo, NonTest3D.
+<tr><td>Userlevel
+<td>Userlevel is a status for the shortcut of different kind of user. 
+<br>Detail is introduced in <a href="../knowledgeBase/TheoryXRStructure.html">Structure</a>.
+<br>Parameters includes <b>User Index</b> and <b>user level</b>.
+<tr><td>Context
+<td>Context mode is a variable provided by <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Context_System_Int32_">API</a>, the condition will be satisfied when the context mode stored is the same as the context mode variable.
+<tr><td>Tool
+<td>The parameters of tool codition includes the <b>Controller Index</b> and <b>Tool Name</b>.
+<br>When the current of the correponding controller match this field, it fulfills the condition.
+<tr><td>Object
+<td>Object condition includes NoObject, SelectObject, TriggerObject and GrabObject.
+<br>When the controller with the input <b>Controller Index</b> is not interacting with objects or is selecting, triggering, grabbing objects, it fulfills the condition.
+<tr><td>Device
+<td>The condition is satisfied when using the controller with <b>Controller Index</b> to input.
+<tr><td>Environment
+<td>The condition reads the environment the application using, the input <b>Environment Type</b> can be string of the following, PC, CAVE, HMD and DOME.
+<tr><td>CommandReceived
+<td>The condition reads the command handler, when the input <b>Command Name</b> is read by the handler, it fulfills the condition.
+</td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></td></td></tr></table>
+<h6 id="inputs">Inputs</h6>
+<p>Input of the Command is named <code>Trigger</code>.
+Trigger can be set with condition, then the input will only be read when
+Trigger can be multipled, command will be sent if one of the trigger is triggered.</p>
+<p><img src="../images/13.1.4.4.3.png" alt="condition of trigger"></p>
+<p>For the field about the inputs, there are <strong>Input Controller</strong>, <strong>Input Method</strong>, <strong>Inputs</strong> and <strong>Selected Input Properties</strong>.</p>
+<p>The <strong>Input Controller</strong> stores the controller index.</p>
+<p><strong>Input Method</strong> are <code>Single</code>, <code>Double</code>, <code>Triple</code>, <code>Multiple</code> and <code>Combo</code>.
+<code>Single</code>, <code>Double</code>, <code>Triple</code>, <code>Multiple</code> are the count of defined input within certain period.
+<code>Combo</code> is inputting the consecutive inputs within certain period.</p>
+<p><strong>Inputs</strong> is the avalible inputs of the command, the name of the input at the list will be renamed automatically with corresponding input property Type.</p>
+<p><strong>Selected Input Properties</strong> stores the property of the selected input, there are <strong>Type</strong>, <strong>Key</strong> and <strong>Reverse</strong>.</p>
+<p><strong>Type</strong> includes the device interaction(Press, Up, Down and Hold, and value for axes) of devices, includes Mouse and Keyboard for PC, Button and Axis for controller.</p>
+<p><strong>Key</strong> stores the corresponding index of key.</p>
+<p><strong>Reverse</strong> stores a boolean, when it is enabled, the command will not be sent when the key is interacting, but it sends the command when the key is not interacting.</p>
+<p><img src="../images/13.1.4.4.4.png" alt="input"></p>
+<p>For example in the built-in command <code>Move</code>, there are four triggers.</p>
+<p>The <code>Trigger 1</code> accepts the <code>AxisValue</code> with axis index 1 of input controller 0 with disabled reverse, this trigger works without condition.</p>
+<p>The <code>Trigger 2</code> is similar to <code>Trigger 1</code> with input controller 1.</p>
+<p>The <code>Trigger 3</code> accepts <code>KeyboardPress</code> of keyboard (input controller with index -1) input <code>S and W</code>, this trigger works when the user level is 3.</p>
+<p>The <code>Trigger 4</code> is similar to <code>Trigger 3</code> with the Environment PC.</p>
+<h6 id="return-values">Return Values</h6>
+<p>This part stores the cofiguration related to the return value.
+There will be three values to be returned, <code>Name</code>, <code>Value</code> and <code>Target</code>.</p>
+<p><code>Name</code> is the command string to be sent.</p>
+<p><code>Value</code> is the float value to be sent, if the command is triggered by the axis, it will return the mapped</p>
+<p><code>Target</code> is a integer value to be sent.</p>
+<p><img src="../images/13.1.4.4.5.png" alt="Return values"></p>
 <h3 id="optional-application-settings">Optional Application Settings</h3>
 <p>The optional application settings includes the <code>In Game Menu</code>, <code>Landing Menu</code> and <code>Waypoints</code>.</p>
+<p>We will focus on <code>In Game Menu</code> in this tutorial.</p>
 <h4 id="in-game-menu-settings">In Game Menu Settings</h4>
-<p>-Global Settings</p>
-<p>-Menus
---Menu properties</p>
-<p>-Button
---Button properties</p>
-<h2 id="environment-configs">Environment Configs</h2>
+<p>The usage of In Game Menu is introduced <a class="xref" href="tut09.html">before</a>.
+This section introdices the setting of the In Game Menu Settings and the way to add item to the In Game Menu.</p>
+<p><img src="../images/13.2.1.png" alt="In Game Menu"></p>
+<h5 id="global-settings">Global Settings</h5>
+<p>This properties controls the display and transition settings of the In Game Menu.
+The relative calculation of 3D UI is introduced in <a class="xref" href="tut05.html">Interact with 3D UI</a>.</p>
+<h5 id="menus">Menus</h5>
+<p>Each menu contains three properties, <code>Panel Name</code>, <code>Level</code> and <code>Grabbable</code>.</p>
+<p><code>Level</code> refers to the level of hierarchy of the page, level 0 is the root of the menu called <code>Main</code>.
+Other predefined menus are level 1.</p>
+<p><code>Grabbable</code> is a boolean to toggle the grabbability of the sub menu of the page.</p>
+<p>To add a new page, click the <code>+</code> button next to <code>Menus</code> title, and edit the corresponding properties.</p>
+<p><img src="../images/13.2.2.png" alt="In game menu - menu"></p>
+<h5 id="button">Button</h5>
+<p>Each button contains four properties, <code>Button Name</code>, <code>Icon Index</code> , <code>Interaction Type</code> and <code>Command to send</code>.</p>
+<p><code>Icon Index</code> stores the index for the icon display next to the button, detail is introduced in <a class="xref" href="tut09.html#customize-menu-item-icon">Customize Menu Item Icon</a>.</p>
+<p><code>Interaction Type</code> is the type of interaction corresponds to the interaction type of <a class="xref" href="tut04.html">vgear Interactable</a>.</p>
+<p><code>Command to send</code> stores the <code>command</code>, <code>Value</code> and <code>Target</code>, when the button is interacted, the command with the values will be sent.</p>
+<p>To add a new page, click the <code>+</code> button next to <code>Buttons on Menu</code> title, and edit the corresponding properties.</p>
+<p><img src="../images/13.2.3.png" alt="in game menu - button"></p>
+<h2 id="environment-configuration-settings">Environment Configuration Settings</h2>
 <p>The environment configs are the configuration for different environments, including <code>PC</code>, <code>HMD</code>, <code>CAVE</code> and <code>DOME</code>.</p>
 <p>The environment configs including <code>System</code>, <code>Devices</code>, <code>XR Objects</code>, <code>Display</code> and <code>Info Wall</code>.</p>
-<h3 id="device-setting">Device Setting</h3>
+<p>The left side of the window is the <code>3D Space View</code> and <code>Viewports Diagram</code>.
+The view windows can be clicked to enlarge and change the viewing angle using mouse keys.
+<code>3D Space View</code> is the view for the reference the <code>XR Objects</code>, will be introduced below.
+<code>Viewports Diagram</code> is the diagram for the reference display viewports, will be introduced in <code>Display Setting</code> below.</p>
+<p><img src="../images/13.3.1.png" alt="Configs"></p>
+<h3 id="system">System</h3>
+<p>There are two settings stored in <code>System</code>.</p>
+<p><code>Environment</code> is an option to set the current config for the environment, option including <code>PC</code>, <code>HMD</code>, <code>CAVE</code> and <code>DOME</code>.</p>
+<p><code>Application Directory</code> is the directory stored for the global application.</p>
+<p><img src="../images/13.3.2.png" alt="System"></p>
+<h3 id="device">Device</h3>
+<p>This section stores the devices setting and provides the input test for the devices.</p>
 <h4 id="general-setting">General Setting</h4>
+<p>It stores three properties, including <code>Holding Duration</code>, <code>Axes Dead Zone</code> and <code>Axes Press Detect Value</code>.</p>
+<p><code>Holding Duration</code> is the holding time for the <code>Hold</code> interaction related to vGear.</p>
+<p><code>Axes Dead Zone</code> is the dead zone for the controller axes, input before the dead zone will not be counted.</p>
+<p><code>Axes Press Detect Value</code> is the value to detect the responce of axis pressing.</p>
+<p><img src="../images/13.3.3.1.png" alt=""></p>
 <h4 id="device-type">Device Type</h4>
-<h5 id="vrpn-buttons">VRPN Buttons</h5>
-<h5 id="tracker">Tracker</h5>
-<h5 id="virtual-tracker">Virtual Tracker</h5>
+<p>There are three device types supported by VotanicXR SDK, they are <code>VRPN</code>, <code>VInput</code> and <code>OpenVR Device</code>.</p>
+<h5 id="vrpn">VRPN</h5>
+<p>VRPN stands for Virtual-Reality Peripheral Network, is a device-independent, network-based interface.
+There are three types of VRPN Devices in VotanicXR, simply classified into <code>VRPN Buttons</code>, <code>VRPN Axes</code> and <code>Trackers</code>,
+By default, there are nine VRPN devices provided in the template, and the tracker are supported with the <code>XR Objects</code> of VotanicXR SDK.</p>
+<p>The VRPN Devices have some common device properties, <code>Name</code> and <code>Address</code>.
+<code>Name</code> is the device name for the recognizition of other configuration.
+<code>Address</code> is the network address of the corresponding device.</p>
+<p>For the device properties of <code>VRPN Buttons</code>, it stores the <code>Number of Buttons</code>.
+The buttons can be tested at the below window <code>Selected Device Input Test</code>.</p>
+<p><img src="../images/13.3.3.2.png" alt=""></p>
+<p>For the device properties of <code>VRPN Axes</code>, it stores the <code>Number of Axis</code>.
+The axes can be tested at the below window <code>Selected Device Input Test</code>.
+Other properties, <code>Holding Duration</code>, <code>Dead Zone</code> and <code>Press Detect Value</code>, can be configurated for the specific value.</p>
+<p><img src="../images/13.3.3.3.png" alt=""></p>
+<p>For the device properties of <code>Tracker</code>, it stores <code>Channel</code> and the direction of the tracker.
+<code>Channel</code> is the channel for the real peripheral trackers, to distinguish the real trackers if the application connected more than one set.
+The direction, <code>Forward</code>, <code>Up</code> and <code>Right</code>, are the relative direction for the tracker to the virtual world.
+The options of the direction are <code>±X</code>, <code>±Y</code>, <code>±Z</code> with respect to the virtual world, and <code>Auto</code> for the auto selection.</p>
+<p><img src="../images/13.3.3.4.png" alt=""></p>
+<p>To create more VRPN Devices, click the <code>+</code> button next to the above the device hierarchy, and input the name, address and device type.</p>
+<p><img src="../images/13.3.3.2.1.png" alt=""></p>
+<h5 id="vinput">VInput</h5>
+<p>VInput is the API of VotanicXR SDK using DirectInput and XInput, to transfer the input of devices connected into the application.
+The VInput devices will be auto conntected, and can be tested at the below window <code>Selected Device Input Test</code>.</p>
+<p>The properties are similar, they are <code>Holding Duration</code>, <code>Axes Dead Zone</code> and <code>Axes Press Detect Value</code>.</p>
+<p><img src="../images/13.3.3.5.png" alt=""></p>
+<h5 id="openvr-device">OpenVR Device</h5>
 <h3 id="xr-objects-setting">XR Objects Setting</h3>
-<h4 id="xr-objects-structure">XR Objects Structure</h4>
+<p>This section stores the setting related to the XR objects.
+Remind that this part has different structure for different environments.</p>
+<p><img src="../images/13.3.4.png" alt=""></p>
+<p>The XR Objects will be shown at the <code>3D Space View</code> window, the below is the view of the <code>CAVE</code> environment.</p>
+<p><img src="../images/13.3.4.0.png" alt=""></p>
 <h4 id="node-types">Node Types</h4>
-<h5 id="entity">Entity</h5>
-<h5 id="screen">Screen</h5>
-<h5 id="camera">Camera</h5>
-<h3 id="display-setting">Display Setting</h3>
-<p>-Preview</p>
-<h4 id="display">Display</h4>
-<h4 id="viewports-of-monitor">Viewports of Monitor</h4>
-<h3 id="info-wall-setting">Info Wall Setting</h3>
+<p>There are four types of node, <code>Node</code>, <code>Entity</code>, <code>Screen</code> and <code>Camera</code>.</p>
+<p>The common properties of the nodes are <code>Name</code> and <code>Parent</code>.
+<code>Parent</code> is the parent of the current node to inherit the parent position and euler angle.</p>
+<p><code>Node</code> is the node without other properties, for the structure of other nodes.</p>
+<p><img src="../images/13.3.4.1.png" alt=""></p>
+<p><code>Entity</code> is the entity linked with corresponding tracker and device.
+<code>Linked Tracker</code> stores the tracker name stored in <code>Device</code> page.
+<code>Linked Virtual Device</code> is the virtual device name for the input control.
+<code>Tracking Mode</code> can be set for different tracking mode, to enable the position tracking and rotation tracking.
+<code>Tracking Position Offset</code> and <code>Tracking Euler Angles Offset</code> are the offset for the tracking.
+<code>Lost Tracking Action</code> is the action if the tracking is lost, by default it will <code>Keep Idle</code>, the action will retry for the <code>Retry times</code> with the <code>Custom Position</code> and <code>Custom Euler Angles</code>.</p>
+<p><img src="../images/13.3.4.2.png" alt=""></p>
+<p><code>Screen</code> is the screen for the projection of camera.
+<code>Size</code> is the actual size of the screen.
+<code>Too Close Warning</code> is the warning if the user is too close to the screen with <code>Warning Maximum Distance</code>.</p>
+<p><img src="../images/13.3.4.3.png" alt=""></p>
+<p><code>Camera</code> is the camera to project the view of virtual world to the screen.
+<code>Project Screen</code> is the screen to project.
+<code>Display Index in Unity</code> is the corresponding display index in Unity scene.
+<code>Is Stereo</code> and <code>Is Inverted Eye</code> are the boolean to toggle the stereo mode for the camera and invert the eye for the camera.
+<code>Is Stabilizer</code> is the boolean to convert the camera into stabilizer, it is to stabilize the camera to decrease the extent of discomfort.
+<code>Enable On Start</code> is boolean to enable the stabilizer on the application start.
+<code>Sync Target</code> is the target to synchoronize for the stabilizer.
+<code>Position Axes</code> and <code>Rotation Axes</code> are the axes to synchoronize.
+<code>Lerp Factor</code> is the factor for the stabilizer to perform lerping.
+<code>Minimum Sync Distance</code> and <code>Minimum Sync Angle</code> are the minimum value for the stabilizer to start synchoronize.
+<code>First Person</code> is the boolean to set the stabilizer is for first person or not, it will synchoronize with <code>Position Offset</code> and <code>Rotation Offset</code> with first person method if true.</p>
+<p><img src="../images/13.3.4.4.png" alt=""></p>
+<p>To create a new node, click the <code>+</code> button next to Hierarchy title, input name and select parent and node type.</p>
+<p>Note that all of the reference is reference by name.</p>
+<h4 id="xr-objects-structure">XR Objects Structure</h4>
+<p>There are different default structure for <code>PC</code>, <code>HMD</code>, <code>CAVE</code> and <code>DOME</code>.
+The <code>User</code> is the root node for all the structure of single user application.</p>
+<p>For <code>PC</code>, the <code>Screens</code> and <code>Head</code> follow the <code>User</code> node, and the <code>MainCamera</code>, <code>Hand</code> and <code>Hand2</code> follow the <code>Head</code>.</p>
+<p><code>PC</code> application is displayed in the main monitor, so most of the entities are separated with the <code>Screens</code>, and no screen is required.</p>
+<p><img src="../images/13.3.4.5.png" alt=""></p>
+<p>For <code>HMD</code>, the <code>Screens</code>, <code>Head</code>, <code>Hand</code> and <code>Hand2</code> follow the <code>User</code> node, <code>MainCamera</code> follows the <code>Head</code> and <code>RightScreen</code> follow the <code>Screens</code>.
+Another root camera node <code>Stablizer</code> is independent from the User.</p>
+<p>In <code>HMD</code> application, the camera follows the head with HMD tracker, and the hands are using independent trackers.
+The screen is mainly used for the info wall, will be introduced in later section.</p>
+<p><img src="../images/13.3.4.6.png" alt=""></p>
+<p>For <code>CAVE</code>, the <code>Screens</code>, <code>Head</code>, <code>Hand</code> and <code>Hand2</code> follow the <code>User</code> node, <code>LeftScreen</code>, <code>FronScreen</code>, <code>RightScreen</code> and <code>FloorScreen</code> follow the <code>Screens</code>, and <code>LeftScreenCamera</code>, <code>FronScreenCamera</code>, <code>RightScreenCamera</code> and <code>FloorScreenCamera</code> follow the <code>Head</code>.
+In <code>CAVE</code> applcation, the cameras follow the head with head tracker and project to the screens, and hands are using independent trackers.
+The application usually is displayed in the four monitors, will be introduced in later section.</p>
+<p><img src="../images/13.3.4.7.png" alt=""></p>
+<p>For <code>DOME</code>, the <code>Screen</code>, <code>Head</code>, <code>Hand</code> and <code>Hand2</code> follow the <code>User</code> node, and the <code>MainCamera</code> follows the <code>Head</code>.</p>
+<p><code>DOME</code> application is displayed in the DOME, the viewport will be projected into DOME Screens, and hands are using independent trackers.</p>
+<p><img src="../images/13.3.4.8.png" alt=""></p>
+<h3 id="display">Display</h3>
+<p>This section stores the setting of display monitor, the display can be preview in <code>3D Space View</code> window and <code>Viewports Diagram</code> window.</p>
+<p><img src="../images/13.3.5.png" alt=""></p>
+<p><code>Display</code> is the display monitor for the user to display the application.
+<code>Monitor Index</code> is the corresponding monitor index in the computer system.
+<code>Size</code> is the size of application in pixel.
+<code>Position</code> is the position of application in pixel.</p>
+<p><img src="../images/13.3.5.1.png" alt=""></p>
+<p><code>Viewports of Monitor</code> is the viewports to convert the camera view into the application screen.
+<code>Size</code> is the size of corresponding viewport in pixel.
+<code>Position</code> is the position of corresponding viewport with respect to the application in pixel.
+<code>Camera</code> is the corresponding camera for the <code>XR Objects</code> with the specific <code>Eye Side</code>.</p>
+<p><img src="../images/13.3.5.2.png" alt=""></p>
+<p>The viewports can be visualized in <code>Viewports Diagram</code> window, below is the viewport of the <code>CAVE</code> environment.</p>
+<p><img src="../images/13.3.5.3.png" alt=""></p>
+<h3 id="info-wall">Info Wall</h3>
+<p>Info wall is a canvas to display the information related to the SDK Manager of the application.
+It mainly displays the watermark and text.</p>
+<p><img src="../images/13.3.6.png" alt=""></p>
+<p><code>Display Info Wall</code> is boolean to toggle the visibility of info wall.
+<code>Mount Screen</code> is option to choose which screen to display the info wall.
+<code>Alignment</code> is the alignment for the info wall.
+<code>Display Water Mark</code> is boolean to toggle the visibility of watermark, and display the watermark with <code>Size</code>, <code>Offset</code> and <code>Color</code>.
+<code>Display Text</code> is boolean to toggle visibility of the text, and display the FPS if <code>Display FPS</code> is on with <code>FontSize</code>, <code>Size</code>, <code>Offset</code> and <code>Color</code>.</p>
 </article>
           </div>
           

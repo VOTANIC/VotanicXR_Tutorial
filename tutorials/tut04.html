@@ -122,7 +122,7 @@ Detail will be introduces below.</p>
 <p>By default, the wand is a two meters ray beam with ray point.
 When the wand collides with a collider, the ray beam will becomes shorter to show the collision.</p>
 <p>The color of the wand changed to green when it collides with interactable gameObjects, and changed to red when it is interacting.
-The wand setting can be edited through Unity Inspector and API, and is described in <a href="../knowledgeBase/vGearDetail.md">Detail of vGear Components</a>.</p>
+The wand setting can be edited through Unity Inspector and API, and is described in <a href="../documentation/vGearDetail.html">Detail of vGear Components</a>.</p>
 <p>This paragraph will introduces some of the basic interaction types of Wand.</p>
 <h3 id="select">Select</h3>
 <p>Select is the action from user to the interactable gameObjects.
@@ -143,7 +143,7 @@ Grabbing an object requires continuously receiving <code>Grab</code> commands, w
 <li><p>Right Click the <code>Chair</code> in the given gameObject <strong><code>Interactable gameObejects</code></strong> and add the <code>V Gear_Interactables (Script)</code> component .</p>
 </li>
 <li><p>Set Interaction Type into <code>Press</code> and Command into <code>Grab</code> in vGear Interactables.</p>
-<p>Note that Some controller keys is mapped with this, you may bind it in configurator if you need. By default Grip button is mapped to Grab for Vive Controller, and it is no need to set the command into <code>Grab</code>. The detail will be introduced in <a class="xref" href="tut11.html">Configurator</a>.</p>
+<p>Note that Some controller keys is mapped with this, you may bind it in configurator if you need. By default Grip button is mapped to Grab for Vive Controller, and it is no need to set the command into <code>Grab</code>. The detail will be introduced in <a class="xref" href="tut11.html#commands-setting">Configurator</a>.</p>
 </li>
 <li><p>Check the Grabbable option in the Grab Setting of <strong>[Setting]</strong>.</p>
 <p><img src="../images/6.3.3.1.png" alt="Grab object Settings"></p>
@@ -166,7 +166,7 @@ Grabbing an object requires continuously receiving <code>Grab</code> commands, w
 </ol>
 <p>The result of grabbing is shown below.</p>
 <p><img src="../images/6.3.5.2.gif" alt="Pick object Demonstration"></p>
-<p>Detail of Interactable will be described in <a href="../knowledgeBase/vGearInterctableDetail.md">Detail of vGear Interactable</a>.</p>
+<p>Detail of Interactable will be described in <a href="../documentation/vGearInterctableDetail.html">Detail of vGear Interactable</a>.</p>
 <h3 id="climb">Climb</h3>
 <p><code>Climb</code> is an interaction to pull the user when user climbing.
 Developer can implements games such as zipline and rock climbing. The sample is shown below.</p>

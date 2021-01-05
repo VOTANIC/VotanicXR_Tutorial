@@ -95,13 +95,13 @@ This chapter introduces the first two levels, <strong>Command level</strong> and
 <h3 id="define-new-command">Define New Command</h3>
 <p>There are several ways to define a new command.</p>
 <h4 id="create-command-in-configurator">Create Command in Configurator</h4>
-<p>To create command in configurator, please go to <a class="xref" href="tut11.html">Configurator</a>.</p>
+<p>To create command in configurator, please go to <a class="xref" href="tut11.html#commands-setting">Command Setting of Configurator</a>.</p>
 <h4 id="map-device-button-to-command">Map Device Button to Command</h4>
-<p>To map device button to command, please go to <a class="xref" href="tut11.html">Configurator</a>.</p>
+<p>To map device button to command, please go to <a class="xref" href="tut11.html#commands-setting">Command Setting of Configurator</a>.</p>
 <h4 id="send-command-from-interactable">Send Command from Interactable</h4>
 <p><code>vGear Interactable</code> is a component provided by VotanicXR SDK to handle the gameObject Interaction.</p>
 <p>When the component is interacted by user, the command saved in the component will be sent to the Command System.</p>
-<p>Detail will be introduced at <a class="xref" href="tut04.html">Interact with Virtual World</a> and <a href="xref:doc03-interactable">Detail of vGear Interactable</a>.</p>
+<p>Detail will be introduced at <a class="xref" href="tut04.html">Interact with Virtual World</a> and <a class="xref" href="../documentation/vGearInterctableDetail.html">Detail of vGear Interactable</a>.</p>
 <h3 id="send-and-receive-command">Send and Receive Command</h3>
 <p>The basic functions of <code>vGear.Cmd</code> class are <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Send_System_String_System_Single_System_Int32_System_Int32_Votanic_vXR_InteractorType_">Send</a></strong>, <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Received_System_String_">Received</a></strong> and <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_AllReceived">AllReceived</a></strong>.</p>
 <p><strong>Send</strong> sends a custom command to the command handler, the command sent can be received by <strong>Receive</strong> and <strong>AllReceived</strong>.</p>
@@ -143,8 +143,10 @@ private void CheckCustomCommand()
 <p><img src="../images/4.2.4.png" alt="Console Result of AllReceived and Value"></p>
 <h2 id="virtual-controller-input-system">Virtual Controller Input System</h2>
 <h3 id="virtual-controller-input-system-overview">Virtual Controller Input System Overview</h3>
-<p><strong>Virtual Controller Input System</strong> is an input system to handle vCast controller. The reference class is <code>vGear.Ctrl</code>.</p>
-<p>By default, this component will bind with Buttons and Axes of the connected devices automatically. The bound mapping can be configurated in the <a class="xref" href="tut11.html">configurator</a>, and the mapping can be customized for developer needs.</p>
+<p><strong>Virtual Controller Input System</strong> is an input system to handle vCast controller.
+The reference class is <code>vGear.Ctrl</code>.</p>
+<p>By default, this component will bind with Buttons and Axes of the connected devices automatically.
+The bound mapping can be configurated in the <a class="xref" href="tut11.html#controllers-setting">Controller Setting in Configurator</a>, and the mapping can be customized for developer needs.</p>
 <h3 id="configure-virtual-controller">Configure Virtual Controller</h3>
 <h3 id="virtual-controller-input-demo">Virtual Controller Input Demo</h3>
 <p>The sample below shows the input of button index 0 and axis index 0.</p>

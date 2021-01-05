@@ -112,65 +112,7 @@ Open the file <code>Option.vxro</code> in <code>Assets &gt; Votanic &gt; Votanic
 </li>
 </ol>
 <h3 id="add-new-in-game-menu-panel">Add New In-Game Menu Panel</h3>
-<p>To add a new page, that is add a new item in main page of menu and add create a new.</p>
-<ol>
-<li><p>Add the follow data to the <code>Button</code> of main page in <code>Menu &gt; Panel &gt; Main</code>.</p>
-<pre><code class="lang-json">{
-&quot;Name&quot;: &quot;New Page&quot;,
-&quot;Icon&quot;: 3,
-&quot;InteractionType&quot;: &quot;Up&quot;,
-&quot;Command&quot;: &quot;Menu=6&quot;,
-&quot;Value&quot;: 1.0,
-&quot;Target&quot;: -1,
-&quot;Commands&quot;: []
-}
-</code></pre>
-<p>The example above use the <code>Icon</code> of index 3 with respect to the icons saved in the prefab of previous section, index -1 refers to no icon, and index <code>-10i</code> refers to using the default icon with index <code>i</code>th stored in the prefab.</p>
-<p>The <code>Command</code> is using <strong><code>Menu=i</code></strong> to transfer between pages. Note that the index 0 to 5 is preserved.</p>
-<p><img src="../images/11.3.4.png" alt="The example of create new page"></p>
-</li>
-</ol>
-<h3 id="add-menu-panel-item">Add Menu Panel Item</h3>
-<ol>
-<li><p>Add the follow data to the <code>Panel</code> of the menu data in <code>Menu &gt; Panel</code>.</p>
-<pre><code class="lang-json">{
-&quot;Name&quot;: &quot;New Page&quot;,
-&quot;Level&quot;: 1,
-&quot;Grabbable&quot;: true,
-&quot;Button&quot;: [
-    {
-        &quot;Name&quot;: &quot;Button A&quot;,
-        &quot;Icon&quot;: -1,
-        &quot;InteractionType&quot;: &quot;Up&quot;,
-        &quot;Command&quot;: &quot;FunctionA&quot;,
-        &quot;Value&quot;: 1.0,
-        &quot;Target&quot;: -1,
-        &quot;Commands&quot;: []
-    },{
-        &quot;Name&quot;: &quot;Button B&quot;,
-        &quot;Icon&quot;: -1,
-        &quot;InteractionType&quot;: &quot;Up&quot;,
-        &quot;Command&quot;: &quot;FunctionB&quot;,
-        &quot;Value&quot;: 1.0,
-        &quot;Target&quot;: -1,
-        &quot;Commands&quot;: []
-    },{
-        &quot;Name&quot;: &quot;Back&quot;,
-        &quot;Icon&quot;: -101,
-        &quot;InteractionType&quot;: &quot;Up&quot;,
-        &quot;Command&quot;: &quot;Menu=0&quot;,
-        &quot;Value&quot;: 1.0,
-        &quot;Target&quot;: -1,
-        &quot;Commands&quot;: []
-    }
-    ]
-}
-</code></pre>
-<p>The example above creates two buttons and a <code>Back</code> button to go back to the main menu. The buttons will send the command to the <code>SDK Manager</code> when the item is interacted, and the command can be handled by using <code>vGear.Cmd.Received(command)</code> or <code>vGear.Cmd.AllReceived()</code> described in <a class="xref" href="tut02.html">Input System</a>.</p>
-<p><img src="../images/11.3.5.png" alt="The example of new page"></p>
-<p>The editing of the option will be enhanced using Configurator future.</p>
-</li>
-</ol>
+<p>To create a new page or a new button into the In-Game Menu, please follow the tutorial in <a class="xref" href="tut11.html#in-game-menu-settings">In Game Menu Settings in Configurator</a>.</p>
 </article>
           </div>
           
