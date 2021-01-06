@@ -1318,6 +1318,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/13.3.3.6.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/13.3.3.6.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/13.3.4.0.png",
       "output": {
         "resource": {
@@ -2758,7 +2769,7 @@
           "hash": "Lj+pqYyHACijSKmqkM9qxg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2950,7 +2961,7 @@
           "hash": "QpZraFv9NpbNQvs+4Us0gA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2986,7 +2997,7 @@
           "hash": "1rSBwGyrpkrovmo/m/LaXA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2998,7 +3009,7 @@
           "hash": "DdXVsjjjNiopkcv7jhMnpg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3010,7 +3021,7 @@
           "hash": "7G9LhDyVoFPhPqhxZNeeng=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3073,7 +3084,7 @@
           "hash": "wHvYh57eeS0Kp0TuIr81Pw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3085,7 +3096,7 @@
           "hash": "pk3gVPQHii9gdI7G45Sn+Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3094,10 +3105,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut11.html",
-          "hash": "nByj3yuABnsEyP5P8H5ZnA=="
+          "hash": "VKI8J/wCll/gDMQkkIeXVw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     }
   ],
@@ -3114,7 +3125,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 42,
-          "skipped_file_count": 42
+          "skipped_file_count": 41
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
