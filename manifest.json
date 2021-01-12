@@ -5,6 +5,17 @@
   "files": [
     {
       "type": "Resource",
+      "source_relative_path": "Resources/VotanicXR_Tutorial.unitypackage",
+      "output": {
+        "resource": {
+          "relative_path": "Resources/VotanicXR_Tutorial.unitypackage"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Resources/package.zip",
       "output": {
         "resource": {
@@ -2594,6 +2605,28 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/VXR_Logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/VXR_Logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/doc01.2.1.png",
       "output": {
         "resource": {
@@ -2725,15 +2758,162 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index copy.md",
+      "output": {
+        ".html": {
+          "relative_path": "index copy.html",
+          "hash": "wr87KwWsIur3ock93bG9wg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "AO2Rl9yYc42fzllSjd7U4w=="
+          "hash": "Qjw+WF2hz+BWTDwo58X7wA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/icon1.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/icon1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/installer1.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/installer1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/installer2.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/installer2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/installer3.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/installer3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/installer4.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/installer4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/installer5.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/installer5.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/manager1.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/manager1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/manager2.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/manager2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/manager3.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/manager3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/suite1.jpeg",
+      "output": {
+        "resource": {
+          "relative_path": "install/suite1.jpeg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/suite2.jpeg",
+      "output": {
+        "resource": {
+          "relative_path": "install/suite2.jpeg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/suite3.jpeg",
+      "output": {
+        "resource": {
+          "relative_path": "install/suite3.jpeg"
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2769,7 +2949,7 @@
           "hash": "Lj+pqYyHACijSKmqkM9qxg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -2862,7 +3042,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/index.html",
-          "hash": "I6FmtP8v11JYcQ6t1qfXhA=="
+          "hash": "oK4UQt2NOD1QeCKCUbV9og=="
         }
       },
       "is_incremental": true,
@@ -2874,7 +3054,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview01.html",
-          "hash": "M9YKLp488lSIRqtceytTXw=="
+          "hash": "Gbn/u5naxXTEu1cqIQhqfA=="
         }
       },
       "is_incremental": true,
@@ -2886,7 +3066,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview02.html",
-          "hash": "DYi6yTmBbGKJfgUzSFHwcA=="
+          "hash": "fPHG9ryZHQdQXveBAzan5Q=="
         }
       },
       "is_incremental": true,
@@ -2898,7 +3078,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview03.html",
-          "hash": "AXXg2j1pWOU2ddAH4tdj6A=="
+          "hash": "QLIHmn78j+6KzFAKMaK2ow=="
         }
       },
       "is_incremental": true,
@@ -2910,7 +3090,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview04.html",
-          "hash": "RyzYciCgAATPtmtHgJ5YBw=="
+          "hash": "ywkVcNG6O8buueqKk75l9w=="
         }
       },
       "is_incremental": true,
@@ -2922,7 +3102,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/toc.html",
-          "hash": "EaZ3CvCss3GjlzYti0jOyw=="
+          "hash": "i8Bhd7oAfAbIK3qM2kbRfA=="
         }
       },
       "is_incremental": false,
@@ -2961,7 +3141,7 @@
           "hash": "QpZraFv9NpbNQvs+4Us0gA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -2982,7 +3162,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut01.html",
-          "hash": "cXZLiu/ZVAc2h1QgzcLmBw=="
+          "hash": "s2FzHcXKknF9FcdUXjAp7Q=="
         }
       },
       "is_incremental": true,
@@ -2994,10 +3174,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut02.html",
-          "hash": "1rSBwGyrpkrovmo/m/LaXA=="
+          "hash": "sXwBSAzKT9aigwmgVVaisw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -3006,10 +3186,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut03.html",
-          "hash": "DdXVsjjjNiopkcv7jhMnpg=="
+          "hash": "U2akE5V/Vnhm+5cCh2+XbA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -3018,10 +3198,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut04.html",
-          "hash": "7G9LhDyVoFPhPqhxZNeeng=="
+          "hash": "JMi8WABmxiHVjfP34wAj2w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -3030,7 +3210,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut05.html",
-          "hash": "h+e5AU63BsYeYLLwA0luRA=="
+          "hash": "Ve3r+9o2+Fu+NEwOOoqdfw=="
         }
       },
       "is_incremental": true,
@@ -3042,7 +3222,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut06.html",
-          "hash": "g9RjbWyPGmUnsaXzUolMog=="
+          "hash": "aYsBZu+kxNtYWkeyCVMjQg=="
         }
       },
       "is_incremental": true,
@@ -3054,7 +3234,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut07.html",
-          "hash": "OHqcZpUtpxc3KGVLOPQ6Pg=="
+          "hash": "6ajsNZZts48AEWHrFAmyWA=="
         }
       },
       "is_incremental": true,
@@ -3066,7 +3246,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut08.html",
-          "hash": "zbqzuQc+fwK5MiEnX3zzIw=="
+          "hash": "DVx0bkuhWKDHjVv7lgIIuQ=="
         }
       },
       "is_incremental": true,
@@ -3081,10 +3261,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut09.html",
-          "hash": "wHvYh57eeS0Kp0TuIr81Pw=="
+          "hash": "kZUS5s3wNcJZ8Xpj+c9j7A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -3093,10 +3273,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut10.html",
-          "hash": "pk3gVPQHii9gdI7G45Sn+Q=="
+          "hash": "danQ64IjPvliCapfZNnKqQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -3105,10 +3285,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut11.html",
-          "hash": "VKI8J/wCll/gDMQkkIeXVw=="
+          "hash": "Elm3b1ABFyoG4pMy+7mrmQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     }
   ],
@@ -3124,8 +3304,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 42,
-          "skipped_file_count": 41
+          "total_file_count": 43,
+          "skipped_file_count": 42
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

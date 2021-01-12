@@ -100,9 +100,10 @@ The class will be shown in Unity Inspector with its convention as script compone
 </ul>
 <h2 id="set-up-tutorial-project">Set Up Tutorial Project</h2>
 <h3 id="download-tutorial-package">Download Tutorial Package</h3>
-<p>Click <a href="../Resources/package.zip">here</a> to download the Tutorial Package, the package includes the material of the tutorial and the sample scene.</p>
+<p>Click <a href="../Resources/VotanicXR_Tutorial.unitypackage">here</a> to download the Tutorial Package, the package includes the material of the tutorial and the sample scene.</p>
 <p>For each chapter of the tutorial, there are a folder of the corresponding materials.
 The material includes a scene named the same as the tutorial, for the practice of tutorial reader, a <code>Sample</code> folder for the sample scene, and some of them have resources.</p>
+<p>Setting and configuration files are provided for the tutorial package in <code>Common Resources</code> folder.</p>
 <h3 id="configure-unity">Configure Unity</h3>
 <p>Configure the following settings before import the VotanicXR SDK:</p>
 <ol>
@@ -120,9 +121,9 @@ The material includes a scene named the same as the tutorial, for the practice o
 <p>Import the VotanicXR SDK for Unity:</p>
 <ol>
 <li><p>Right-click in Project <code>Assets &gt; Import Package &gt; Custom Package</code>, and select the SDK package download.</p>
-<p>If you are using Unity Editor with version 2018.2, please import <code>VotanicXR_2020.5.12f2 for 2018.2.unitypackage</code>.</p>
-<p>If you are using Unity Editor with version 2018.4, please import <code>VotanicXR_2020.5.12f2 for 2018.4.unitypackage</code>.</p>
-<p>If you are using Unity Editor with version 2019.2 or above, please import <code>VotanicXR_2020.5.12f2 for 2019.2+ [Net].unitypackage</code>.</p>
+<p>If you are using Unity Editor with version 2018.2, please import <code>VotanicXR_2020.6.0f6 for 2018.2.unitypackage</code>.</p>
+<p>If you are using Unity Editor with version 2018.4, please import <code>VotanicXR_2020.6.0f6 for 2018.4.unitypackage</code>.</p>
+<p>If you are using Unity Editor with version 2019.2 or above, please import <code>VotanicXR_2020.6.0f6 for 2019.2+ [Net].unitypackage</code>.</p>
 </li>
 <li><p>In the Importing Package dialog, make sure that all package options are selected and click Import.</p>
 </li>
@@ -136,7 +137,7 @@ The material includes a scene named the same as the tutorial, for the practice o
 <p>Please import the package after import the VotanicXR Package, for the requirement of the package contents.</p>
 <h2 id="add-votanicxr-manager-to-scene">Add VotanicXR Manager to Scene</h2>
 <h3 id="open-sample-scene">Open Sample Scene</h3>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial01 </code> and open the demo scene provided.</p>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial01_Demo </code> and open the scene <code>Demo</code> provided.</p>
 <p><img src="../images/1.3.0.png" alt="Demo Scene"></p>
 <h3 id="add-vgear">Add vGear</h3>
 <p>Add the SDK Manager of VotanicXR <code>vGear</code> to the scene:</p>
@@ -150,7 +151,8 @@ The material includes a scene named the same as the tutorial, for the practice o
 <p><code>vGear</code> is the SDK Manager of the VotanicXR system, and the child gameobjects are the features of the the system.</p>
 <p><code>StartPoint</code> is a gameobject to coordinate the start point of the user.</p>
 </li>
-<li><p>If you are using controllers with <code>Role System</code>, please select <code>Role System</code> at the <code>[Settings] &gt; XR Support</code> in component <code>V Gear (Script)</code> of vGear prefab. We will use the Vive controller and HMD with <code>Role System</code> as VR controller in this series of tutorial.</p>
+<li><p>If you are using controllers with <code>Role System</code>, please select <code>Role System</code> at the <code>[Settings] &gt; XR Support</code> in component <code>V Gear (Script)</code> of vGear prefab.
+We will use the Vive controller and HMD with <code>Role System</code> as VR controller in this series of tutorial, the default value of <code>XR Support</code> option will be <code>Role System</code> for the template scenes.</p>
 <p><img src="../images/1.3.3.png" alt="Role System"></p>
 </li>
 </ol>

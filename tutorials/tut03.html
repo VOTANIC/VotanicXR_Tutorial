@@ -86,7 +86,7 @@ As the movement is inputed from user, they mind will be accept the movement easi
 <p><code>Teleportation</code> is the locomotion that the user transform will be instantly teleported or teleported with transportation when the user indicate a destination to teleport.
 As the destination is indicated, user will be ready to the teleportation and lead less discomfort.</p>
 <h3 id="set-up-locomotion-sample-scene">Set up Locomotion Sample Scene</h3>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial04 </code> and open the scene <code>Locomotion</code> provided.</p>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial03_Locomotion </code> and open the scene <code>Locomotion</code> provided.</p>
 <p>GameObject <code>TutorialController</code> with script component <code>Tutorial03Controller</code> is provided for the tutorial below.</p>
 <h2 id="movement-from-input">Movement from Input</h2>
 <h3 id="using-movement-commands">Using Movement Commands</h3>
@@ -149,8 +149,8 @@ The teleport tool usually marks a destination locomotion, and the user will be t
 </li>
 <li><p>Enter play mode, the default tool is changed into teleport.</p>
 <p>By pressing the Trigger button of the controller, or send the <code>Teleport</code> command through <a class="xref" href="tut02.html">Input System</a>, the user will be teleported into the projection point.</p>
-<pre><code class="lang-cs">//	Press Space to Teleport
-if (vGear.Input.KeyboardPress(KeyCode.LeftShift))
+<pre><code class="lang-cs">//	Press Y to Teleport with provided command
+if (vGear.Cmd.Received(&quot;PressY&quot;))
 	vGear.Cmd.Send(&quot;Teleport&quot;);
 </code></pre>
 </li>
@@ -206,7 +206,7 @@ The transition detail can be set in the <code>[Setting] &gt; Transition</code> o
 <p><img src="../images/5.4.1.gif" alt="Teleport Using Fade"></p>
 <h3 id="move-along-using-transformation">Move Along using Transformation</h3>
 <p>Developer may transite the user transform using API function, the user will be transform to the parameter passed.
-The sample to use the API function is shown below, when the user click the space key, the user transform will be transite into the next transform of the target list.</p>
+The sample to use the API function is shown below, when the user click the Y key, the user transform will be transite into the next transform of the target list.</p>
 <pre><code class="lang-cs">public GameObject targetList;
 private List&lt;Transform&gt; targets = new List&lt;Transform&gt;();
 private int currentTargetIndex = 0;
@@ -223,7 +223,8 @@ private void Start()
 
 void Update()
 {
-	if (vGear.Input.KeyboardUp(KeyCode.Space))
+	//	Press Y to Teleport around targets with provided command
+	if (vGear.Cmd.Received(&quot;PressY&quot;))
 	{
 		//	Transform user transform to the target
 		vGear.user.Transform(targets[currentTargetIndex]);

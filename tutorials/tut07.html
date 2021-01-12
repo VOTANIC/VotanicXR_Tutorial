@@ -82,7 +82,7 @@ By using the provided networking manager, synchronize application can be easier 
 Users can see each other with the entity models in the multi-user application, the entity models will be synchronized.</p>
 <h3 id="set-up-multi-user-networking-sample-scene">Set up Multi-User Networking Sample Scene</h3>
 <h4 id="open-sample-scene">Open Sample Scene</h4>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial04 </code> and open the scene <code>MultiUserNetworking</code> provided.</p>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial07_Networking </code> and open the scene <code>MultiUserNetworking</code> provided.</p>
 <h4 id="install-multiplayer-hlapi-for-unity-2019">Install Multiplayer HLAPI (for Unity 2019)</h4>
 <p>If you are using Unity Editor with version 2018, please skip this part.</p>
 <p>If you are using Unity Editor with version 2019 or above, please use the configuration below.</p>
@@ -115,7 +115,7 @@ Users can see each other with the entity models in the multi-user application, t
 <p><code>[Components]</code>  stores the prefab of the user when they are joining to the server.</p>
 <p><code>[Status]</code>  stores the status of the server, can be called through API.</p>
 <p><code>[XR Settings]</code>  stores the Data Path of the <code>Networking Json</code> and the <code>Entity</code> related settings.</p>
-<p><code>[XR Components]</code>  stores the prefab of the entity to be dispalyed.</p>
+<p><code>[XR Components]</code>  stores the prefab of the entity to be displayed.</p>
 <h4 id="networking-json">Networking Json</h4>
 <p>The <code>Networking Json</code> is a setting json file to save the networking settings for a built application.</p>
 <p>After the application built, create a folder named <code>Resources</code> next to the build folder, and save the provided <code>Networking.json</code> file into the resources folder.</p>
@@ -184,10 +184,10 @@ To add the <code>Network Object (Script)</code> Component.</p>
 <h3 id="send--receive-networked-command">Send &amp; Receive Networked Command</h3>
 <p>Beside the additional setting provided by VotanicXR, this part introduces the traditional network feature, <code>Send</code> and <code>Receive</code> commands between Server and Client.</p>
 <p>The following simple sample sends the message from client to the server, the server prints the message when it receives message.</p>
-<p>The script below send a message when the client press space.</p>
+<p>The script below send a message when the client press Y.</p>
 <pre><code class="lang-csharp">void Update()
 {
-	if (vGear.Cmd.Received(&quot;PressSpace&quot;) &amp;&amp; manager.networkName.Equals(&quot;Client&quot;))
+	if (vGear.Cmd.Received(&quot;PressY&quot;) &amp;&amp; manager.networkName.Equals(&quot;Client&quot;))
 	{
 		manager.Send(&quot;Client said hi!&quot;);
 	}

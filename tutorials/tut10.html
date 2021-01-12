@@ -82,7 +82,7 @@ The basic introduction, loading and configuration setting will be introduced.</p
 They are</p>
 <p>Detail usage will be described at <a class="xref" href="tut10.html#introduction-to-in-game-tools">below</a>.</p>
 <h3 id="set-up-in-game-tools-sample-scene">Set up In-Game Tools Sample Scene</h3>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial10 </code> and open the scene <code>In Game Tool</code> provided.</p>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial10_InGameTools </code> and open the scene <code>In Game Tool</code> provided.</p>
 <h2 id="using-in-game-tools-1">Using In-Game Tools</h2>
 <h3 id="load-in-game-tool-using-in-game-menu">Load In-Game Tool using In-Game Menu</h3>
 <p>Player may choose different tools in the <a class="xref" href="tut09.html">In-Game Menu</a>.</p>
@@ -90,8 +90,8 @@ They are</p>
 <h3 id="load-in-game-tool-using-script">Load In-Game Tool using Script</h3>
 <p>Without using the <code>In-Game Menu</code>, the tool can be changed through API as below.</p>
 <pre><code class="lang-csharp">void Update(){
-//	Set the tool into Brush when key B is up
-    if (vGear.Input.KeyboardUp(KeyCode.B))
+//	Set the tool into Brush when PressY is received
+    if (vGear.Cmd.Received(&quot;PressY&quot;))
     {
         vGear.controller.SetTool(&quot;Brush&quot;);
     }
