@@ -88,7 +88,7 @@ Users can see each other with the entity models in the multi-user application, t
 <p>If you are using Unity Editor with version 2019 or above, please use the configuration below.</p>
 <ol>
 <li><p>Go to Package Manager and install <code>Multiplayer HLAPI</code> before import the VotanicXR SDK Package.</p>
-<p><img src="../images/9.0.1.png" alt="Multiplayer HLAPI from Package Manager"></p>
+<p><img src="../Images/9.0.1.png" alt="Multiplayer HLAPI from Package Manager"></p>
 </li>
 <li><p>Import the Votanic SDK package with Net feature, with format <code>VotanicXR_2020.5.12f2 for 2019.2+ [Net].unitypackage</code>.</p>
 </li>
@@ -100,7 +100,7 @@ Users can see each other with the entity models in the multi-user application, t
 <p>To add the <code>XR Network Manager</code> Prefab,</p>
 <ol>
 <li><p>Right-click <code>vGear &gt; GameObject &gt; XR Network Manager</code>.</p>
-<p><img src="../images/9.1.1.png" alt="The XR Network Manager Prefab."></p>
+<p><img src="../Images/9.1.1.png" alt="The XR Network Manager Prefab."></p>
 </li>
 <li><p>Build the application and name the application <code>Server Client</code> for the test later.</p>
 </li>
@@ -108,7 +108,7 @@ Users can see each other with the entity models in the multi-user application, t
 <h3 id="configure-network-manager">Configure Network Manager</h3>
 <p>To configure the <code>XR Network Manager</code>, we can configure the settings in inspecter or through the <code>Networking Json</code>.</p>
 <p>The <code>V Gear_Networking(Script)</code> component of <code>XRNetworkManager</code></p>
-<p><img src="../images/9.1.2.png" alt="V Gear_Networking(Script) component"></p>
+<p><img src="../Images/9.1.2.png" alt="V Gear_Networking(Script) component"></p>
 <p>The <code>V Gear_Networking(Script)</code> component can be classified into six main parts.</p>
 <p><code>[Settings]</code> stores the server hosting related settings, including ip address, connections.etc.</p>
 <p><code>[Host]</code>  and <code>[Client]</code>  store the messages of the host and client sent when they participate into the server.</p>
@@ -152,7 +152,7 @@ Developer can set the ip address and port for the server, the network name, maxi
 <ol>
 <li><p>Enter Play Mode, the server is hosted by Unity Editor.</p>
 <p>Server host message will be sent with the message in <strong>[Host]</strong>, similarly server client will send the join message with <strong>[Client]</strong>.</p>
-<p><img src="../images/9.1.3.png" alt="Server host message."></p>
+<p><img src="../Images/9.1.3.png" alt="Server host message."></p>
 <p>Use the project built <a class="xref" href="tut07.html#add-xr-network-manager">above</a> with configured <a class="xref" href="tut07.html#networking-json">networking json</a>, the connection can be tested with locolhost.</p>
 <p>Note that adjust the firewall setting for the connection of localhost, and there will be conflict to enter the game with using the same role system.</p>
 <p>We recommand to use the same build for the synchronization between host and client interactions.</p>
@@ -163,14 +163,14 @@ Developer can set the ip address and port for the server, the network name, maxi
 The default entities to be shown are <code>Head</code>, <code>Right Hand</code> and <code>Left Hand</code>.</p>
 <p>The entity prefabs is stored <code>[XR Components]</code> lists and can be configured at the <code>Networking Json</code> with corresponding index.
 The sample networking json <a class="xref" href="tut07.html#networking-json">above</a> uses the second head prefab at the <code>Head</code> list, second right-hand prefab at the <code>Right Hand</code> list and the third left-hand prefab at the <code>Left Hand</code> list.</p>
-<p><img src="../images/9.1.4.gif" alt="Enitity display"></p>
+<p><img src="../Images/9.1.4.gif" alt="Enitity display"></p>
 <h3 id="add-networked-objects">Add Networked Objects</h3>
 <p>The gameObjects will be synchronized with using <code>Network Object</code> class.
 To add the <code>Network Object (Script)</code> Component.</p>
 <ol>
 <li><p>Right click the gameObject <code>Networked Cube</code>, <code>vGear &gt; Component &gt; NetworkObject</code>.</p>
 <p>Two components is added into the gameObject, they are <code>Network Identity (Script) (Deprecated)</code> and <code>Networked Object (Script)</code>.
-<img src="../images/9.2.2.png" alt="Network object "></p>
+<img src="../Images/9.2.2.png" alt="Network object "></p>
 </li>
 <li><p>To enable the accesibility of client, enable the <code>Local Player Authority</code> option of <code>Network Identity (Script) (Deprecated)</code>.</p>
 </li>
@@ -179,8 +179,8 @@ To add the <code>Network Object (Script)</code> Component.</p>
 <li><p>Add <code>V Gear_Interactable (Script)</code> component to the gameObject <code>Networked Cube</code> and enable option <code>Grabbable</code>.</p>
 </li>
 </ol>
-<p>The result of the synchronize object is shown below.</p>
-<p><img src="../images/9.2.1.gif" alt="Server host message."></p>
+<p>The result of the synchronize object of the built projects is shown below.</p>
+<p><img src="../Images/9.2.1.gif" alt="Server host message."></p>
 <h3 id="send--receive-networked-command">Send &amp; Receive Networked Command</h3>
 <p>Beside the additional setting provided by VotanicXR, this part introduces the traditional network feature, <code>Send</code> and <code>Receive</code> commands between Server and Client.</p>
 <p>The following simple sample sends the message from client to the server, the server prints the message when it receives message.</p>

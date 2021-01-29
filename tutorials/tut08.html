@@ -95,7 +95,7 @@ A <code>Behaviour</code> consists of branches, each branch consists of condition
 <p>To add the <code>Behaviour Manager</code> Prefab,</p>
 <ol>
 <li><p>Right-click <code>vGear &gt; GameObject &gt; Behaviour Manager</code>.</p>
-<p><img src="../images/10.1.0.png" alt="The Behaviour Manager Prefab."></p>
+<p><img src="../Images/10.1.0.png" alt="The Behaviour Manager Prefab."></p>
 </li>
 </ol>
 <h3 id="create-behaviour">Create Behaviour</h3>
@@ -103,45 +103,46 @@ A <code>Behaviour</code> consists of branches, each branch consists of condition
 <p>To add a <code>Behaviour</code>,</p>
 <ol>
 <li><p>Click <code>Add Behaviour</code> of the manager, a new gameobject is added in <strong>[Behaviour]</strong>, and added into Hierarchy as a child of <code>Behaviour Manager</code>.</p>
-<p><img src="../images/10.1.1.1.png" alt="The Behaviour GameObject"></p>
-<p><img src="../images/10.1.1.2.png" alt="The V Gear_Behaviour (Script)"></p>
+<p><img src="../Images/10.1.1.1.png" alt="The Behaviour GameObject"></p>
+<p><img src="../Images/10.1.1.2.png" alt="The V Gear_Behaviour (Script)"></p>
 </li>
 <li><p>Select the <code>Behaviour (0)</code> generated, click <code>Add Condition</code> in the <code>V Gear Behaiour (Script)</code> component. Then click <code>Condition 1</code> of the <code>Branch 1</code>, it will bring you to the <code>Condition Edit Window</code>.</p>
 <p>There are different types of condition with parameter to choose.</p>
-<p><img src="../images/10.1.2.png" alt="The Condition window."></p>
+<p><img src="../Images/10.1.2.png" alt="The Condition window."></p>
 </li>
 <li><p>Rename and set the Condition Type to <code>Interaction</code> as follow.</p>
 <p>Attach the <code>box_wood_01</code> prefab into the <code>Condition 1</code> .</p>
-<p><img src="../images/10.1.3.png" alt="The Condition window with Interaction type."></p>
+<p><img src="../Images/10.1.3.png" alt="The Condition window with Interaction type."></p>
 </li>
 <li><p>Click <code>Add Action</code> in the <code>Behaviour</code> component, <code>Action</code> window is brought out with different types of action.</p>
-<p><img src="../images/10.1.4.png" alt="The Action window."></p>
+<p><img src="../Images/10.1.4.png" alt="The Action window."></p>
 </li>
 <li><p>Rename and set the Action Type to <code>Enable</code> as follow.</p>
 <p>Disable the <code>vase_01</code> prefab and attach it into the <code>Action 1</code>.</p>
-<p><img src="../images/10.1.5.png" alt="The Action window with enable vase."></p>
+<p><img src="../Images/10.1.5.png" alt="The Action window with enable vase."></p>
 </li>
 <li><p>The result of this example will be as follow, when the box is selected, the vase appears!</p>
-<p><img src="../images/10.1.6.gif" alt="Click to enable vase"></p>
+<p><img src="../Images/10.1.6.gif" alt="Click to enable vase"></p>
 </li>
 </ol>
 <h3 id="create-complex-chained-behaviour">Create Complex Chained Behaviour</h3>
 <p>By using <code>Behaviour Manager</code>, we can perform scenario without coding.</p>
 <p>The following example is a simple scenario, when the box is interacted or we wait in front of the box for five seconds, a shield is found and can be rotate.</p>
 <p>The flowchart below shows the logic of the scenario in this section.</p>
-<p><img src="../images/10.2.0.png" alt="logic flowchart"></p>
+<p><img src="../Images/10.2.0.png" alt="logic flowchart"></p>
 <ol>
 <li><p>The gameObject <code>Chained Behaviour gameObjects</code> provides the gameObjects needed in this section, includes three models and one collisioner.</p>
-<p><img src="../images/10.2.1.png" alt="Chained Behaviour gameObjects"></p>
+<p>Disable the <code>Shield</code> and <code>Arrow</code> gameObjects.</p>
+<p><img src="../Images/10.2.1.png" alt="Chained Behaviour gameObjects"></p>
 </li>
 <li><p>Here will be two behaviour in this scenario, one to open the box with shield, arrow button and its function, another to rotate the shield.</p>
-<p><img src="../images/10.2.2.1.png" alt="Prop for chained behaviour"></p>
+<p><img src="../Images/10.2.2.1.png" alt="Prop for chained behaviour"></p>
 </li>
 <li><p>The first behaviour shows the functions in the branch. If one of the <code>Trigger</code> is triggered, the <code>Plan</code> in the branch will be executed.</p>
 <p>For multiple <code>Plans</code>, one of it will be excuted. The sum of their probability will be 100% automatically.</p>
 <p>For no <code>Trigger</code>, the <code>Plan</code> will be directly executed.</p>
 <p>If none of the <code>Trigger</code> is triggered, the Behaviour will go to next branch.</p>
-<p><img src="../images/10.2.2.2.png" alt="Detail of the first behaviour"></p>
+<p><img src="../Images/10.2.2.2.png" alt="Detail of the first behaviour"></p>
 <p>Below are the detail of the first behaviour, please attach the corresponding gameObject into condition and action fieldss.</p>
 <p>It performs <code>logical AND</code> in the <code>Trigger</code> <code>Wait in front of box for 5 seconds</code>, and <code>logical OR</code> between the <code>Trigger</code> <code>Wait in front of box for 5 seconds</code> and the <code>Trigger</code> <code>Interact with the box</code>.</p>
 <p>To perform <code>logical AND</code> with two conditions in a <code>Trigger</code>, press the <code>+</code> button next to the first condition.</p>
@@ -156,7 +157,7 @@ A <code>Behaviour</code> consists of branches, each branch consists of condition
 <p>Check the option <code>Loop Always</code> to loop the behaviour forever when it being triggered.</p>
 <p>Below is the detail of the second behaviour.</p>
 <p>It performs loop feature when the first <code>Trigger</code> is satisfied. When the <code>Trigger</code> <code>Press Arrow Button</code> is triggered, the Plan <code>Rotate the Shield</code> will be executed.</p>
-<p><img src="../images/10.2.2.3.png" alt="Detail of second behaviour"></p>
+<p><img src="../Images/10.2.2.3.png" alt="Detail of second behaviour"></p>
 <table width="100%">
 <tr><td><img src="../images/10.2.2.6.1.png"><td><img src="../images/10.2.2.6.2.png">
 </td></td></tr></table>

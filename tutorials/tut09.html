@@ -79,12 +79,12 @@
 The basic usage and configuration will be introduced.</p>
 <h3 id="in-game-menu-in-votanicxr">In-Game Menu in VotanicXR</h3>
 <p>The given <code>In-Game Menu</code> can be called by receiving <code>Menu</code> command, or hold the key with <code>index 2</code> of the controller.</p>
-<p><img src="../images/11.1.1.gif" alt="The Default In-Game Menu"></p>
+<p><img src="../Images/11.1.1.gif" alt="The Default In-Game Menu"></p>
 <p>Player can adjust the game setting such as game attribute and quality.</p>
-<p><img src="../images/11.1.2.png" alt="The quality setting in In-Game Menu"></p>
+<p><img src="../Images/11.1.2.png" alt="The quality setting in In-Game Menu"></p>
 <h3 id="set-up-in-game-menu-sample-scene">Set up In-Game Menu Sample Scene</h3>
 <p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial09_InGameMenu </code> and open the scene <code>In Game Menu</code> provided.</p>
-<p>This chapter focus on the <code>In-Game Menu</code> Editing, no sample scene  but sample json <code>option.vxrc</code> is provided.</p>
+<p>This chapter focus on the <code>In-Game Menu</code> Editing, no sample scene but sample json <code>Option sample.vxrc</code> is provided for reference.</p>
 <h2 id="using-in-game-menu-1">Using In-Game Menu</h2>
 <p>The default pages on In-Game Menu are <code>Info</code>, <code>Attribute</code>, <code>Tool</code>, <code>Reset</code>, <code>Quality</code> and <code>Apps</code>.</p>
 <p><code>Info</code> manages the in-game informations provided by VotanicXR, such as message, fps display and log displaying.</p>
@@ -96,11 +96,11 @@ The basic usage and configuration will be introduced.</p>
 <p>The detail of the in-game menu is saved in the json file <code>Option.vxro</code>.
 Open the file <code>Option.vxro</code> in <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; System &gt; Options</code>, it stores the additional option data for <code>vGear</code>.</p>
 <p><code>Menu</code> in the data file stores the transition effects of the Menu and the structure of pages and items. <code>Main</code> is the first level of the Menu, and the remaining are the second level.</p>
-<p><img src="../images/11.3.1.png" alt="The structure of the Menu data"></p>
+<p><img src="../Images/11.3.1.png" alt="The structure of the Menu data"></p>
 <p>For each <code>Panel</code> item, it contains following data, including a set of buttons.</p>
-<p><img src="../images/11.3.2.png" alt="The structure of the Panel item"></p>
+<p><img src="../Images/11.3.2.png" alt="The structure of the Panel item"></p>
 <p>For the <code>Button</code> , it stores a set of button values as follow.</p>
-<p><img src="../images/11.3.3.png" alt="The structure of the Button and display"></p>
+<p><img src="../Images/11.3.3.png" alt="The structure of the Button and display"></p>
 <h2 id="customizing-in-game-menu">Customizing In-Game Menu</h2>
 <p>The <code>In-Game Menu</code> can be cutomized for the developer need, including <code>Panel</code>, <code>Panel Item</code> and <code>Item Icon</code>.</p>
 <p>VotanicXR has provided configurator to custimize the In-Game Menu easily, detail will be introduced in <a class="xref" href="tut11.html">configurator</a>.</p>
@@ -108,7 +108,7 @@ Open the file <code>Option.vxro</code> in <code>Assets &gt; Votanic &gt; Votanic
 <ol>
 <li><p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Materials &gt; Prefabs &gt; Menu</code> Prefab, which is a prefab made with <a class="xref" href="tut05.html">UI Elements</a> and <a class="xref" href="tut02.html">Input System</a>.</p>
 <p><code>V Gear_Menu (Script)</code> component is to manage the <code>In-Game Menu</code>, you may edit the icons by save the sprite into the <code>Icons</code> expansion of <strong>[Built-in Menu]</strong>.</p>
-<p><img src="../images/11.2.1.png" alt="The V Gear_Menu (Script) component"></p>
+<p><img src="../Images/11.2.1.png" alt="The V Gear_Menu (Script) component"></p>
 </li>
 </ol>
 <h3 id="add-new-in-game-menu-panel">Add New In-Game Menu Panel</h3>

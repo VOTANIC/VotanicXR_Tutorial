@@ -140,7 +140,7 @@ Similarly, the <code>Bind Axes</code> will be empty and the <code>Auto Find Axes
 The commands created by configurator can be sent from the bound controller input, and received by the <a class="xref" href="tut02.html#command-input-system">command handler</a>.</p>
 <p><img src="../images/13.1.4.1.png" alt="Command Settings"></p>
 <h5 id="built-in-commands">Built-in Commands</h5>
-<p>By default, there are lot of commands are built-in, including <a class="xref" href="tut03.html#using-movement-commands">movement commands</a>, tool commands and applcation commands.</p>
+<p>By default, there are lot of commands are built-in, including <a class="xref" href="tut03.html#movement-basic">movement commands</a>, tool commands and applcation commands.</p>
 <p><img src="../images/13.1.4.2.png" alt="Built-in Commands"></p>
 <p>Some commands described in previous chapters, are not stored in the built-in command, such as <code>Pick</code>, can be added with click the <code>+</code> button next to the <code>Built-in Commands</code> title.
 The command properties will be described in next section.</p>
@@ -273,8 +273,10 @@ The options of the direction are <code>±X</code>, <code>±Y</code>, <code>±Z</
 <p>To create more VRPN Devices, click the <code>+</code> button next to the above the device hierarchy, and input the name, address and device type.</p>
 <p><img src="../images/13.3.3.2.1.png" alt=""></p>
 <h5 id="vinput">VInput</h5>
-<p>VInput is the API of VotanicXR SDK using DirectInput and XInput, to transfer the input of devices connected into the application.
+<p>VInput is the API of VotanicXR SDK using DirectInput, Virtual Tracker and XInput, to transfer the input of devices connected into the application.
 The VInput devices will be auto conntected, and can be tested at the below window <code>Selected Device Input Test</code>.</p>
+<p>The <code>Virtual Tracker</code> is the system to map the device input into the virtual tracker.
+By default, the virtual tracker 0 to 2 is mapped with mouse axes of hold nothing or holding left click, holding right click and holding middle scrolls respectively.</p>
 <p>The properties are similar, they are <code>Holding Duration</code>, <code>Axes Dead Zone</code> and <code>Axes Press Detect Value</code>.</p>
 <p><img src="../images/13.3.3.5.png" alt=""></p>
 <h5 id="openvr-device">OpenVR Device</h5>
