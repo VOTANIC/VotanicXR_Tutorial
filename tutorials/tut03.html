@@ -18,7 +18,7 @@
     <meta property="docfx:tocrel" content="toc.html">
     
     
-    
+    <meta property="docfx:newtab" content="true">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -69,53 +69,55 @@
             <article class="content wrap" id="_content" data-uid="tut03-locomotion">
 <h1 id="locomotion">Locomotion</h1>
 
-<p>VotanicXR provides a set of built-in locomotion tools to help the user navigate in the virtual world. These tried-and-tested Locomotion tools offer options for the user to safely move around in the virtual world and avoid motion sickness, as the human body doesn’t like it when there’s a mismatch between what it sees and what it feels.</p>
+<p>VotanicXR provides a set of built-in locomotion tools to help the user navigate in the virtual world. These tried-and-tested Locomotion tools offer options for the user to safely move around in the virtual world and avoid motion sickness, as the human body does not like it when there’s a mismatch between what it sees and what it feels.</p>
 <p>This chapter introduces two locomotion tools in VotanicXR to move the user, one is teleportation, the other one is movement.</p>
 <p><code>Movement</code> is the locomotion that the user moves gradually by initiating artificial acceleration using key input. It is similar to how a player move in a typical first-person view video game. We suggest using these methods with caution as it is easy to trigger motion sickness when used inappropriately.</p>
-<p><code>Teleportation</code> is the locomotion that the user will be instantly teleported to the target destination. This is the most common way to move the user in VR.</p>
+<p><code>Teleportation</code> is the locomotion that the user is transitioned to a target location via a rapid animation tuned to maintain player comfort. This is the most common way to move the user in VR with minimal discomfort.</p>
 <p>For the detailed techniques of VR locomotion, you can learn the best practices and suggestions from this <a href="https://developer.oculus.com/design/latest/concepts/bp-locomotion">link</a>.</p>
+<h2 id="interaction-tutorial-scene">Interaction Tutorial Scene</h2>
+<p>The related materials and example scene are in <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial03_Locomotion</code>.</p>
 <h2 id="movement">Movement</h2>
 <h3 id="movement-basic">Movement Basic</h3>
-<p>VotanicXR SDK Manager provides six built-in commands for movement, namely Move, Rotate, Shift, Float, Turn and JumpSink. The effect of each command is listed in the below table.</p>
+<p>VotanicXR SDK Manager provides six built-in commands for movement, namely <code>Move</code>, <code>Rotate</code>, <code>Shift</code>, <code>Float</code>, <code>Turn</code> and <code>JumpSink</code>. The effect of each command is listed in the below table.</p>
 <p><em>Effect of each command</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"><strong>Command</strong></th>
-<th style="text-align: center;"><strong>Description</strong></th>
-<th style="text-align: center;"><strong>Effect</strong></th>
+<th style="text-align: left;"><strong>Command</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Move</td>
-<td style="text-align: center;">Move the user forward and backward at a constant velocity along a straight line</td>
-<td style="text-align: center;"><img src="../images/3.1.1.gif" alt="Move command demonstration"></td>
+<td style="text-align: left;">Move</td>
+<td style="text-align: left;">Move the user forward and backward at a constant velocity along a straight line</td>
+<td style="text-align: left;"><img src="../images/3.1.1.gif" alt="Move command demonstration"></td>
 </tr>
 <tr>
-<td style="text-align: center;">Rotate</td>
-<td style="text-align: center;">Rotate the user left or right at a constant angular velocity</td>
-<td style="text-align: center;"><img src="../images/3.1.2.gif" alt="Rotate command demonstration"></td>
+<td style="text-align: left;">Rotate</td>
+<td style="text-align: left;">Rotate the user left or right at a constant angular velocity</td>
+<td style="text-align: left;"><img src="../images/3.1.2.gif" alt="Rotate command demonstration"></td>
 </tr>
 <tr>
-<td style="text-align: center;">Shift</td>
-<td style="text-align: center;">Move the user left or right at a constant velocity along a straight line</td>
-<td style="text-align: center;"><img src="../images/3.1.3.gif" alt="Shift command demonstration"></td>
+<td style="text-align: left;">Shift</td>
+<td style="text-align: left;">Move the user left or right at a constant velocity along a straight line</td>
+<td style="text-align: left;"><img src="../images/3.1.3.gif" alt="Shift command demonstration"></td>
 </tr>
 <tr>
-<td style="text-align: center;">Float</td>
-<td style="text-align: center;">Change the elevation of the user at a constant velocity along a straight line</td>
-<td style="text-align: center;"><img src="../images/3.1.4.gif" alt="Float command demonstration"></td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Change the elevation of the user at a constant velocity along a straight line</td>
+<td style="text-align: left;"><img src="../images/3.1.4.gif" alt="Float command demonstration"></td>
 </tr>
 <tr>
-<td style="text-align: center;">Turn</td>
-<td style="text-align: center;">Snap turn the user’s front direction by 90 degrees left or right</td>
-<td style="text-align: center;"><img src="../images/3.1.5.gif" alt="Turn command demonstration"></td>
+<td style="text-align: left;">Turn</td>
+<td style="text-align: left;">Snap turn the user’s front direction by 90 degrees left or right</td>
+<td style="text-align: left;"><img src="../images/3.1.5.gif" alt="Turn command demonstration"></td>
 </tr>
 <tr>
-<td style="text-align: center;">JumpSink</td>
-<td style="text-align: center;">Make the user jump for a fixed height or sink the user to the ground layer below the user’s current position.</td>
-<td style="text-align: center;"><img src="../images/3.1.6.gif" alt="JumpSink command demonstration"></td>
+<td style="text-align: left;">JumpSink</td>
+<td style="text-align: left;">Make the user jump for a fixed height or sink the user to the ground layer below the user’s current position.</td>
+<td style="text-align: left;"><img src="../images/3.1.6.gif" alt="JumpSink command demonstration"></td>
 </tr>
 </tbody>
 </table>
@@ -127,48 +129,48 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Command</th>
-<th style="text-align: center;">Keyboard / Mouse in PC Mode</th>
-<th style="text-align: center;">Vive Controller</th>
-<th style="text-align: center;">Other Supported Input Devices</th>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Keyboard / Mouse in PC Mode</th>
+<th style="text-align: left;">Vive Controller</th>
+<th style="text-align: right;">Other Supported Input Devices</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Move</td>
-<td style="text-align: center;">W / S</td>
-<td style="text-align: center;">Touchpad Vertical Axis</td>
-<td style="text-align: center;">Axis[1] of the 1st and 2nd controller recognized by VotanicXR</td>
+<td style="text-align: left;">Move</td>
+<td style="text-align: left;">W / S</td>
+<td style="text-align: left;">Touchpad Vertical Axis</td>
+<td style="text-align: right;">Axis[1] of the 1st and 2nd controller recognized by VotanicXR</td>
 </tr>
 <tr>
-<td style="text-align: center;">Rotate</td>
-<td style="text-align: center;">Mouse move left / right</td>
-<td style="text-align: center;">Touchpad Horizontal Axis</td>
-<td style="text-align: center;">Axis[0] of the 1st and 2nd controller recognized by VotanicXR</td>
+<td style="text-align: left;">Rotate</td>
+<td style="text-align: left;">Mouse move left / right</td>
+<td style="text-align: left;">Touchpad Horizontal Axis</td>
+<td style="text-align: right;">Axis[0] of the 1st and 2nd controller recognized by VotanicXR</td>
 </tr>
 <tr>
-<td style="text-align: center;">Shift</td>
-<td style="text-align: center;">A / D</td>
-<td style="text-align: center;">No mapping by default</td>
-<td style="text-align: center;">Axis[3] of the 1st and 2nd controller recognized by VotanicXR</td>
+<td style="text-align: left;">Shift</td>
+<td style="text-align: left;">A / D</td>
+<td style="text-align: left;"><p style="color:LightGray;">No mapping by default</p></td>
+<td style="text-align: right;">Axis[3] of the 1st and 2nd controller recognized by VotanicXR</td>
 </tr>
 <tr>
-<td style="text-align: center;">Float</td>
-<td style="text-align: center;">Mouse wheel scroll up / down</td>
-<td style="text-align: center;">No mapping by default</td>
-<td style="text-align: center;">Axis[4] of the 1st and 2nd controller recognized by VotanicXR</td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">Mouse wheel scroll up / down</td>
+<td style="text-align: left;"><p style="color:LightGray;">No mapping by default</p></td>
+<td style="text-align: right;">Axis[4] of the 1st and 2nd controller recognized by VotanicXR</td>
 </tr>
 <tr>
-<td style="text-align: center;">Turn</td>
-<td style="text-align: center;">Holding alpha3 + Keypad4 / Keypad6</td>
-<td style="text-align: center;">No mapping by default</td>
-<td style="text-align: center;">Button[10] / [11] of a connected controller recognized by VotanicXR</td>
+<td style="text-align: left;">Turn</td>
+<td style="text-align: left;">Holding alpha3 + Keypad4 / Keypad6</td>
+<td style="text-align: left;"><p style="color:LightGray;">No mapping by default</p></td>
+<td style="text-align: right;">Button[10] / [11] of a connected controller recognized by VotanicXR</td>
 </tr>
 <tr>
-<td style="text-align: center;">JumpSink</td>
-<td style="text-align: center;">Holding alpha3 + Keypad2 / Keypad8</td>
-<td style="text-align: center;">No mapping by default</td>
-<td style="text-align: center;">Button[13] / [12] of a connected controller recognized by VotanicXR</td>
+<td style="text-align: left;">JumpSink</td>
+<td style="text-align: left;">Holding alpha3 + Keypad2 / Keypad8</td>
+<td style="text-align: left;"><p style="color:LightGray;">No mapping by default</p></td>
+<td style="text-align: right;">Button[13] / [12] of a connected controller recognized by VotanicXR</td>
 </tr>
 </tbody>
 </table>
@@ -183,53 +185,53 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Command</th>
-<th style="text-align: center;">Value</th>
-<th style="text-align: center;">Remark</th>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Remark</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Move</td>
-<td style="text-align: center;">-1 to +1</td>
-<td style="text-align: center;">positive = forward<br>negative = backward</td>
+<td style="text-align: left;">Move</td>
+<td style="text-align: left;">-1 to +1</td>
+<td style="text-align: left;">positive = forward<br>negative = backward</td>
 </tr>
 <tr>
-<td style="text-align: center;">Rotate</td>
-<td style="text-align: center;">-1 to +1</td>
-<td style="text-align: center;">positive =  turn right<br>negative = turn left</td>
+<td style="text-align: left;">Rotate</td>
+<td style="text-align: left;">-1 to +1</td>
+<td style="text-align: left;">positive =  turn right<br>negative = turn left</td>
 </tr>
 <tr>
-<td style="text-align: center;">Shift</td>
-<td style="text-align: center;">-1 to +1</td>
-<td style="text-align: center;">positive = shift right <br>negative = shift left</td>
+<td style="text-align: left;">Shift</td>
+<td style="text-align: left;">-1 to +1</td>
+<td style="text-align: left;">positive = shift right <br>negative = shift left</td>
 </tr>
 <tr>
-<td style="text-align: center;">Float</td>
-<td style="text-align: center;">-1 to +1</td>
-<td style="text-align: center;">positive = elevate user <br>negative = lower user</td>
+<td style="text-align: left;">Float</td>
+<td style="text-align: left;">-1 to +1</td>
+<td style="text-align: left;">positive = elevate user <br>negative = lower user</td>
 </tr>
 <tr>
-<td style="text-align: center;">Turn</td>
-<td style="text-align: center;">-1 or +1</td>
-<td style="text-align: center;">positive = turn right by 90 degrees <br>negative = turn left by 90 degrees</td>
+<td style="text-align: left;">Turn</td>
+<td style="text-align: left;">-1 or +1</td>
+<td style="text-align: left;">positive = turn right by 90 degrees <br>negative = turn left by 90 degrees</td>
 </tr>
 <tr>
-<td style="text-align: center;">JumpSink</td>
-<td style="text-align: center;">-1 or +1</td>
-<td style="text-align: center;">positive = jump up <br>negative = sink by to the ground below</td>
+<td style="text-align: left;">JumpSink</td>
+<td style="text-align: left;">-1 or +1</td>
+<td style="text-align: left;">positive = jump up <br>negative = sink to the ground below</td>
 </tr>
 </tbody>
 </table>
 <h3 id="configure-binding-of-movement-command-and-button">Configure Binding of Movement Command and Button</h3>
 <p>The mapping of locomotion command and button is stored in <code>setting.vxrs</code>, and can be configured by using the VotanicXR Configurator. Below we showcase an example on how the default movement command input binding can be customized.</p>
 <ol>
-<li><p>Open tutorial scene. In <code>Project</code> windows, go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial03</code>, open scene <code>Locomotion</code>.</p>
+<li><p>Open tutorial scene. In <code>Project</code> windows, go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial03_Locomotion &gt; Resources</code>, open scene <code>Locomotion</code>.</p>
 </li>
 <li><p>Select the vGear GameObject, the setting.vxrs file location is defined in <code>Setting Path</code> field.</p>
 <p><img src="../images/3.2.3.1.png" alt="vGear setting path"></p>
 </li>
-<li><p>In Unity’s Project window, follow the <code>setting.vxrs</code> path defined in vGear GameObject’s <code>Setting Path</code>, double click the <code>setting.vxrs</code> file to open and edit it with VotanicXR Configurator.</p>
+<li><p>In Unity’s Project window, follow the <code>setting.vxrs</code> path defined in vGear GameObject’s <code>Setting Path</code>, double click the <code>Setting_Locomotion.vxrs</code> file to open and edit it with VotanicXR Configurator.</p>
 <p><img src="../images/3.2.3.2.png" alt="setting.vxrs in project window"></p>
 </li>
 <li><p>Select the <code>Commands</code> tab, the built-in commands are listed in <code>Build-in Commands</code> window</p>
@@ -250,7 +252,7 @@
 </ol>
 <h3 id="movement-modes">Movement Modes</h3>
 <p><code>Traveler</code> and <code>Soul</code> are two modes to change the user transform and movement behaviour in the VR world. They are independent modes that can be mixed-and-matched to fit different design choices in the VotanicXR application.</p>
-<p><code>Traveler</code> Mode is a Boolean value that toggles the availability of the movement commands for using in navigation. When Traveler Mode is disabled, user cannot navigate in the VR world through the default movement commands, but user is still able to move around by using other methods such as teleportation. Apart from the default movement commands, any custom commands with <code>Traveler</code> set as `Pre Conditions``` in the command properties will also be restricted by the Traveler Mode value.</p>
+<p><code>Traveler</code> Mode is a Boolean value that toggles the availability of the movement commands for using in navigation. When Traveler Mode is disabled, user cannot navigate in the VR world through the default movement commands, but user is still able to move around by using other methods such as teleportation. Apart from the default movement commands, any custom commands with <code>Traveler</code> set as <code>Pre Conditions</code> in the command properties will also be restricted by the Traveler Mode value.</p>
 <p><code>Soul</code> Mode is a Boolean value to toggle the user transform behaviour regarding gravity and collision. When Soul Mode is enabled, the user transform will ignore gravity and collision with colliders. Similar to the Traveler Mode, any custom commands with <code>Soul</code> set as <code>Pre Conditions</code> in the command properties will also be restricted by the Soul Mode value.</p>
 <p>Movement modes can be changed in Unity Inspector or via API.</p>
 <p><strong>In <code>Inspector</code></strong></p>
@@ -283,21 +285,21 @@
 </tbody>
 </table>
 <h3 id="initiating-teleport">Initiating Teleport</h3>
-<p>In VotanicXR, the teleportation action can be initiated by either binding the <code>Teleport</code> command to an input device button or invoking teleportation programmatically.</p>
-<p><em>Invoke Teleport by Input Device</em>
-The <code>Teleport</code> command can be bind to an input device button from the <code>Commands</code> tab in VotanicXR Configurator.</p>
+<p>In VotanicXR, the teleportation action can be initiated by either pressing the input device button that is bind to the <code>Teleport</code> command, or invoking teleportation programmatically.</p>
+<p><em>Invoke Teleport by Input Device</em></p>
+<p>The <code>Teleport</code> command can be bind to an input device button from the <code>Commands</code> tab in VotanicXR Configurator.</p>
 <ol>
-<li><p>In <code>Project</code> window, go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial03_Locomotion &gt; Resources</code> and double click the setting.vxrs.</p>
+<li><p>In <code>Project</code> window, go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial03_Locomotion &gt; Resources</code> and double click the <code>Setting_Locomotion.vxrs</code>.</p>
 <p><img src="../images/3.2.3.2.png" alt="setting.vxrs in project window"></p>
 </li>
 <li><p>In Commands tab, select <code>Teleport</code> command in <code>Built-in Commands</code> list. Then, scroll down to the Triggers section to modify the existing key binding triggers or add a new Trigger for other devices.</p>
 <p><img src="../images/3.4.1.png" alt="Teleport command"></p>
 </li>
-<li><p>After making the changes, save the setting file by clicking File &gt; Save. Play the scene and you can use the new key binding you’ve just configured.</p>
+<li><p>After making the changes, save the setting file by clicking <code>File &gt; Save</code>. Play the scene and you can use the new key binding you have just configured.</p>
 </li>
 </ol>
 <p><em>Invoke Teleportation Programmatically</em></p>
-<p>Alternatively, we perform teleportation programmatically using the VotanicXR API. It is done by using either the Teleport API to perform simple teleportation or the Transform API to teleport to a pre-defined location in the scene.</p>
+<p>Alternatively, we perform teleportation programmatically using the VotanicXR API. It is done by using either the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Teleport.html">Teleport API</a> to perform simple teleportation or the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast_User.html#Votanic_vXR_vCast_vCast_User_Transform_UnityEngine_Transform_">Transform API</a> to teleport to a pre-defined location in the scene.</p>
 <p><em>Invoke Teleport API for Simple Teleportation</em></p>
 <ol>
 <li><p>Create a new C# script, and attach it to an empty GameObject.</p>
@@ -317,7 +319,7 @@ The <code>Teleport</code> command can be bind to an input device button from the
 </li>
 </ol>
 <p><em>Invoke Transform API to Teleport to a Given Position</em></p>
-<p>Develop can setup fixed locations in the unity scene and trigger the teleportation to a specific location using the Transform API.</p>
+<p>Developer can setup fixed locations in the unity scene and trigger the teleportation to a specific location using the Transform API.</p>
 <ol>
 <li><p>In the tutorial scene, create an empty GameObject and name it as <code>Location1</code>, and place the GameObject into the scene.</p>
 <p><img src="../images/3.4.2.1.png" alt="The position of Location1"></p>
@@ -328,14 +330,14 @@ The <code>Teleport</code> command can be bind to an input device button from the
 <li><p>Input the follow code in the <code>Teleportation</code> script.</p>
 <pre><code class="lang-csharp">void Update()
 {
-	if (vGear.Cmd.Received(&quot;Grab&quot;))
+	if (vGear.Cmd.Received(&quot;Trigger&quot;))
 	{
 		vGear.user.Transform(GameObject.Find(&quot;Location1&quot;).transfrom);
 	}
 }
 </code></pre>
 </li>
-<li><p>In the play mode, user transform will teleport to the designated location when triggering the controller <code>Grab</code> button.</p>
+<li><p>In the play mode, user transform will teleport to the designated location when triggering the controller <code>Trigger</code> button.</p>
 </li>
 </ol>
 <h3 id="using-teleport-area">Using Teleport Area</h3>
@@ -350,15 +352,15 @@ The <code>Teleport</code> command can be bind to an input device button from the
 </li>
 <li><p>Make sure the GameObject it has the Collider component enabled. Otherwise, add a collider component to the GameObject.</p>
 </li>
-<li><p>For the cube GameObject, set the Layer to <code>30:vLayerFloor</code>.</p>
+<li><p>For the GameObject <code>cube</code>, set the Layer to <code>30:vLayerFloor</code>.</p>
 <p><img src="../images/3.4.4.2.png" alt="layer of Cube "></p>
 </li>
-<li><p>Play the scene and point the user wand to the newly created GameObject <code>Cube</code>, the teleport tool circle is blue when it is on the cube GameObject, meaning the user can be teleported onto the surface of the cube.</p>
+<li><p>Play the scene and point the user wand to the newly created GameObject <code>Cube</code>, the teleport tool circle is blue when it is on the GameObject <code>cube</code>, meaning the user can be teleported onto the surface of the cube.</p>
 <p><img src="../images/3.4.4.3.png" alt="teleport on the Cube "></p>
 </li>
 </ol>
-<p><em>Adding Prohibit Teleport Area</em>
-A specific area can be set as prohibit area for teleport. The prohibit area can be placed on top of the teleport area to block out areas where the user cannot teleport onto.</p>
+<p><em>Adding Prohibit Teleport Area</em></p>
+<p>A specific area can be set as prohibit area for teleport. The prohibit area can be placed on top of the teleport area to block out areas where the user cannot teleport onto.</p>
 <ol>
 <li><p>Create an empty GameObject in <code>vGear &gt; Boundary &gt; Floors</code> and rename <code>Prohibit Teleport Area</code>.</p>
 <p><img src="../images/3.4.5.1.png" alt=""></p>
@@ -366,8 +368,10 @@ A specific area can be set as prohibit area for teleport. The prohibit area can 
 <li><p>Add a box collider component into GameObject <code>Prohibit Teleport Area</code>, and adjust it into the same height with the floor collider.</p>
 <p><img src="../images/3.4.5.2.png" alt=""></p>
 </li>
-<li><p>Create a new layer, for example <code>vLayerProhibitTeleport</code>. Mark down the index of the newly added layer. In this case, the layer’s index is 10.</p>
+<li><p>Create a new layer, for example <code>vLayerProhibitTeleport</code>.</p>
 <p><img src="../images/3.4.5.3.png" alt=""></p>
+</li>
+<li><p>Mark down the index of the newly added layer. In this case, the layer’s index is 10.</p>
 <p><img src="../images/3.4.5.4.png" alt=""></p>
 </li>
 <li><p>Apply the layer to the GameObject.</p>
@@ -376,16 +380,16 @@ A specific area can be set as prohibit area for teleport. The prohibit area can 
 <li><p>In the Hierarchy, select the <code>vGear &gt; Frame &gt; Controller</code> GameObject, and then go to the <code>[Setting] &gt; Tools &gt; Teleport</code> section in the Inspector windows.</p>
 <p><img src="../images/3.4.5.6.png" alt=""></p>
 </li>
-<li><p>Check the option <code>Priority Layer</code>,and add the new Layer index to the <code>Detect Layers</code> and <code>Ignore Layer</code> with priority.</p>
+<li><p>Check the option <code>Priority Layer</code>, and add the new Layer index to the <code>Detect Layers</code> and <code>Ignore Layers</code> with priority. When <code>Priority Layer</code> is checked, VotanicXR will scan the layers using the sequence as stated in the Detect Layers and Ignore Layers list. The higher up the layer index in the list, the higher the priority of the layer.</p>
 <p><img src="../images/3.4.5.7.png" alt=""></p>
 </li>
 <li><p>Save the setting and play the scene, the teleport tool circle will turn red when it is on the prohibit teleport area, meaning no teleportation can be performed in the area.</p>
 <p><img src="../images/3.4.5.8.png" alt=""></p>
 </li>
 </ol>
-<p><em>Adding Waypoints to Teleport</em>
-Configuration waypoint for teleport
-Waypoint can be used to restrict positions where the user can teleport to. By using waypoints, we can make sure the user will teleport to the desired position.</p>
+<p><em>Adding Waypoints to Teleport</em></p>
+<p><strong>Configuration waypoint for teleport</strong></p>
+<p>Waypoint can be used to restrict positions where the user can teleport to. By using waypoints, we can make sure the user will teleport to the desired position.</p>
 <ol>
 <li><p>Create a waypoint by right-click in the Hierarchy Window and select <code>vGear &gt; GameObjects &gt; Waypoint</code>.</p>
 <p><img src="../images/3.5.1.png" alt="add waypoint"></p>
@@ -393,7 +397,7 @@ Waypoint can be used to restrict positions where the user can teleport to. By us
 <li><p>Drag the Waypoint prefab to a desired position in the scene.</p>
 <p><img src="../images/3.5.2.png" alt="waypoint position"></p>
 </li>
-<li><p>In vGear_Teleport advanced settings, change the Teleport Waypoint mode in <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code> based on the teleportation needs in the scene.</p>
+<li><p>In <code>vGear_Teleport advanced</code> settings, change the Teleport Waypoint mode in <code>vGear &gt; Frame &gt; Controller &gt; Teleport</code> based on the teleportation needs in the scene.</p>
 <p><img src="../images/3.5.3.png" alt="Teleport Waypoint mode"></p>
 </li>
 </ol>
@@ -408,17 +412,17 @@ Waypoint can be used to restrict positions where the user can teleport to. By us
 </thead>
 <tbody>
 <tr>
-<td>Snap:</td>
+<td>Snap</td>
 <td>default mode, user can teleport to both waypoint and teleport area (GameObject with collider and layer is set to vLayerFloor). The teleport tool will snap to Waypoint GameObject if it close to the Waypoint.</td>
 <td><img src="../images/3.5.4.1.gif" alt="Snap"></td>
 </tr>
 <tr>
-<td>Waypoint:</td>
+<td>Waypoint Only</td>
 <td>User can teleport to waypoint only</td>
 <td><img src="../images/3.5.4.2.gif" alt="Waypoint"></td>
 </tr>
 <tr>
-<td>Ignore:</td>
+<td>Ignore</td>
 <td>User can teleport to everywhere, but Teleport tool will not snap to the Waypoint</td>
 <td><img src="../images/3.5.4.3.gif" alt="Ignore"></td>
 </tr>
@@ -435,9 +439,9 @@ Waypoint can be used to restrict positions where the user can teleport to. By us
 </li>
 </ol>
 <h3 id="advanced-teleport">Advanced Teleport</h3>
-<p><em>Collision Mode</em>
-By default, user can only teleport to the location with collider in the <code>vLayerFloor</code> layer, this is defined as the <code>Collision Mode</code> in Advanced Teleport Setting. However, in some use cases, such as point cloud visualization, 360 videos, there are no GameObject in the scene to add the collider, and therefore cannot use the default teleport mode to navigate in the VR world.</p>
-<p>In these situations, the <code>Collision</code> mode in teleport tool can be disabled to allow teleporting without needing the colliders. When the Collision mode is turned off, user can by default teleport to positions on the same level as the user. Optionally, the <code>vGear.Teleport.SetHeightOffset</code> API can be used for adjusting the height of teleportation in this mode.
+<p><em>Collision Mode</em></p>
+<p>By default, user can only teleport to the location with collider in the <code>vLayerFloor</code> layer, this is defined as the <code>Collision Mode</code> in Advanced Teleport Setting. However, in some use cases, such as point cloud visualization, 360 videos, there are no GameObject in the scene to add the collider, and therefore cannot use the default teleport mode to navigate in the VR world.</p>
+<p>In these situations, the <code>Collision mode</code> in teleport tool can be disabled to allow teleporting without needing the colliders. When the Collision mode is turned off, user can by default teleport to positions on the same level as the user. Optionally, the <code>vGear.controller.teleport.SetHeightOffset</code> <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Teleport.html#Votanic_vXR_vGear_vGear_Teleport_SetHeightOffset_System_Single_">API</a> can be used for adjusting the height of teleportation in this mode.
 For example, the below script will set the teleport height at 0.2m on script object is initialized.</p>
 <pre><code class="lang-csharp">void Start(){
 	vGear.controller.teleport.SetHeightOffset(0.2f);
@@ -463,7 +467,7 @@ For example, the below script will set the teleport height at 0.2m on script obj
 </tr>
 </tbody>
 </table>
-<p><em>Teleport’s Transition effect</em></p>
+<p><em>Teleport’s Transition Effect</em></p>
 <p>There are two transition effects available in VotanicXR for use in teleportation: Translation and Fade. The effects are shown in the below table.</p>
 <table>
 <thead>
@@ -483,9 +487,9 @@ For example, the below script will set the teleport height at 0.2m on script obj
 <ol>
 <li><p>In <code>Hierarchy</code> window, select GameObject <code>vGear &gt; Frame &gt; User</code> .</p>
 </li>
-<li><p>Change the <code>[Setting] &gt; Transition &gt; Method</code> in the <code>V Gear_User</code> script</p>
+<li><p>Change the <code>[Setting] &gt; Transition &gt; Method</code> in the <code>V Gear_User</code> script.</p>
 </li>
-<li><p>Optionally, details of the transition effects can also be fine-tuned to suit the needs of the application and to reduce motion-sickness</p>
+<li><p>Optionally, details of the transition effects can also be fine-tuned to suit the needs of the application and to reduce motion-sickness.</p>
 <p><img src="../images/3.8.png" alt=""></p>
 </li>
 </ol>
