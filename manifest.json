@@ -5,6 +5,17 @@
   "files": [
     {
       "type": "Resource",
+      "source_relative_path": "Resources/OpenSourceCredits.html",
+      "output": {
+        "resource": {
+          "relative_path": "Resources/OpenSourceCredits.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Resources/package.zip",
       "output": {
         "resource": {
@@ -87,7 +98,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/documentation01.html",
-          "hash": "RuIMEW4W9UMTw7O4/N/S5w=="
+          "hash": "f6TTZsMiU93ONVBTWnsI6A=="
         }
       },
       "is_incremental": true,
@@ -3295,10 +3306,43 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "6tYJh3SrEjNUTRknjdhkbQ=="
+          "hash": "aDP5/VKGLEPKRSxPxs2uhw=="
         }
       },
       "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/demo1.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/demo1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/demo2.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/demo2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/demo3.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/demo3.png"
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3369,6 +3413,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "install/manager0.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/manager0.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "install/manager1.png",
       "output": {
         "resource": {
@@ -3395,6 +3450,39 @@
       "output": {
         "resource": {
           "relative_path": "install/manager3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk1.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk3.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk3.png"
         }
       },
       "is_incremental": false,
@@ -3559,7 +3647,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/index.html",
-          "hash": "wbAjZVVWtwnb+FYd5XU0Ew=="
+          "hash": "O7ivx1wUCyox241T4pG56A=="
         }
       },
       "is_incremental": true,
@@ -3571,7 +3659,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview01.html",
-          "hash": "nwBIDg2nCnt4NeMzleL+KA=="
+          "hash": "wpFLIWI+Pd3tGW7zjgJ7yA=="
         }
       },
       "is_incremental": true,
@@ -3583,7 +3671,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview02.html",
-          "hash": "WO4LH7vUKIa3hMC0WjPOBQ=="
+          "hash": "8krfEuAN4FEQsB1olLmM9A=="
         }
       },
       "is_incremental": true,
@@ -3595,7 +3683,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview03.html",
-          "hash": "JthGoAiSVUozll59wPAoQQ=="
+          "hash": "Y+iX+/yFjoRBdIlETCHrWg=="
         }
       },
       "is_incremental": true,
@@ -3607,7 +3695,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview04.html",
-          "hash": "TvV5mqxGhR9mWCR4CkQX2w=="
+          "hash": "H4rsYMamivLkqGVGg/MJog=="
         }
       },
       "is_incremental": true,
@@ -3667,7 +3755,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "SxtbyHleBWMhL9DJX8BKow=="
+          "hash": "MQzPlm1c+cFvRD8ch2IJnw=="
         }
       },
       "is_incremental": false,
@@ -3706,7 +3794,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut03.html",
-          "hash": "+sI54yVgc82i9iMSESa2VA=="
+          "hash": "RJCUYOdLIW3Wu0FqexQcsg=="
         }
       },
       "is_incremental": true,

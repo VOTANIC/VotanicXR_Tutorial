@@ -121,10 +121,10 @@
 </tr>
 </tbody>
 </table>
-<p><em>Configure Movement Settings</em></p>
+<h4 id="configure-movement-settings">Configure Movement Settings</h4>
 <p>It is possible to customize parameters of the movement commands in the <code>vGear_User</code> component of the <code>vGear &gt; Frame &gt; User</code> GameObject. The figure below shows the <code>User</code> GameObject’s settings in Unity’s Inspector. Expand the <code>Navigator</code> attribute, there are several movement parameters related to movement speed, angular velocity, jumping height, etc. available for adjustment to suit the needs of your VotanicXR application.</p>
 <p><img src="../images/3.2.1.png" alt="Navigator attribute of the VGear User"></p>
-<p><em>Commands and Devices Mapping</em></p>
+<h4 id="commands-and-devices-mapping">Commands and Devices Mapping</h4>
 <p>The six movement commands are pre-configured to different key inputs on various input devices to accommodate cross-platform compatibility. The default command input mappings are shown in the table below for your reference. Optionally, you can always customise the mappings for each application using the VotanicXR Configurator.</p>
 <table>
 <thead>
@@ -174,8 +174,8 @@
 </tr>
 </tbody>
 </table>
-<p><em>Getting Movement Command Input Value</em></p>
-<p>Programmatically, we can always use VotanicXR’s cross-platform input system to initiate movement calls via the <code>vGear.Cmd</code> <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html">API</a>. By calling the movement commands in your script, you can flexibly adapt the movement commands to any interactions in your VotanicXR application, not just limited to key inputs from connected input devices.</p>
+<h4 id="getting-movement-command-input-value">Getting Movement Command Input Value</h4>
+<p>Programmatically, we can always use VotanicXR’s cross-platform input system to initiate movement calls via the <code>vGear.Cmd</code> <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd">API</a>. By calling the movement commands in your script, you can flexibly adapt the movement commands to any interactions in your VotanicXR application, not just limited to key inputs from connected input devices.</p>
 <p>It is also possible to retrieve the value of a command by using the <code>vGear.Cmd.Value(&quot;CommandName&quot;)</code> API call. The call will get the value of the command call and could be useful when you are debugging your VotanicXR application. Below shows an example to retrieve the value of the <code>Move</code> command in Unity Update.</p>
 <pre><code class="lang-csharp">void Update()
 {
@@ -255,10 +255,10 @@
 <p><code>Traveler</code> Mode is a Boolean value that toggles the availability of the movement commands for using in navigation. When Traveler Mode is disabled, user cannot navigate in the VR world through the default movement commands, but user is still able to move around by using other methods such as teleportation. Apart from the default movement commands, any custom commands with <code>Traveler</code> set as <code>Pre Conditions</code> in the command properties will also be restricted by the Traveler Mode value.</p>
 <p><code>Soul</code> Mode is a Boolean value to toggle the user transform behaviour regarding gravity and collision. When Soul Mode is enabled, the user transform will ignore gravity and collision with colliders. Similar to the Traveler Mode, any custom commands with <code>Soul</code> set as <code>Pre Conditions</code> in the command properties will also be restricted by the Soul Mode value.</p>
 <p>Movement modes can be changed in Unity Inspector or via API.</p>
-<p><strong>In <code>Inspector</code></strong></p>
+<h4 id="in-inspector">In <code>Inspector</code></h4>
 <p>Select vGear GameObject in <code>Hierarchy</code> window. Navigate to [Status] section, check or uncheck the <code>Traveler</code> and <code>Soul</code> attribute to enable/disable the movement modes.</p>
 <p><img src="../images/3.2.4.1.png" alt="Attribute of vGear"></p>
-<p><strong>In <code>API</code></strong></p>
+<h4 id="in-api">In <code>API</code></h4>
 <p>Use the <code>vGear.SetTraveler(bool)</code> and <code>vGear.SetSoul(bool)</code> function to enable/disable the movement modes.</p>
 <pre><code class="lang-csharp">void Start()
 {
@@ -286,7 +286,7 @@
 </table>
 <h3 id="initiating-teleport">Initiating Teleport</h3>
 <p>In VotanicXR, the teleportation action can be initiated by either pressing the input device button that is bind to the <code>Teleport</code> command, or invoking teleportation programmatically.</p>
-<p><em>Invoke Teleport by Input Device</em></p>
+<h4 id="invoke-teleport-by-input-device">Invoke Teleport by Input Device</h4>
 <p>The <code>Teleport</code> command can be bind to an input device button from the <code>Commands</code> tab in VotanicXR Configurator.</p>
 <ol>
 <li><p>In <code>Project</code> window, go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial03_Locomotion &gt; Resources</code> and double click the <code>Setting_Locomotion.vxrs</code>.</p>
@@ -298,9 +298,9 @@
 <li><p>After making the changes, save the setting file by clicking <code>File &gt; Save</code>. Play the scene and you can use the new key binding you have just configured.</p>
 </li>
 </ol>
-<p><em>Invoke Teleportation Programmatically</em></p>
-<p>Alternatively, we perform teleportation programmatically using the VotanicXR API. It is done by using either the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Teleport.html">Teleport API</a> to perform simple teleportation or the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast_User.html#Votanic_vXR_vCast_vCast_User_Transform_UnityEngine_Transform_">Transform API</a> to teleport to a pre-defined location in the scene.</p>
-<p><em>Invoke Teleport API for Simple Teleportation</em></p>
+<h4 id="invoke-teleportation-programmatically">Invoke Teleportation Programmatically</h4>
+<p>Alternatively, we perform teleportation programmatically using the VotanicXR API. It is done by using either the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Teleport">Teleport API</a> to perform simple teleportation or the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast_User#Votanic_vXR_vCast_vCast_User_Transform_UnityEngine_Transform_">Transform API</a> to teleport to a pre-defined location in the scene.</p>
+<h5 id="invoke-teleport-api-for-simple-teleportation">Invoke Teleport API for Simple Teleportation</h5>
 <ol>
 <li><p>Create a new C# script, and attach it to an empty GameObject.</p>
 </li>
@@ -318,7 +318,7 @@
 <p><img src="../images/3.4.2.gif" alt="Invoke Teleport via receiving the grab command"></p>
 </li>
 </ol>
-<p><em>Invoke Transform API to Teleport to a Given Position</em></p>
+<h5 id="invoke-transform-api-to-teleport-to-a-given-position">Invoke Transform API to Teleport to a Given Position</h5>
 <p>Developer can setup fixed locations in the unity scene and trigger the teleportation to a specific location using the Transform API.</p>
 <ol>
 <li><p>In the tutorial scene, create an empty GameObject and name it as <code>Location1</code>, and place the GameObject into the scene.</p>
@@ -341,10 +341,10 @@
 </li>
 </ol>
 <h3 id="using-teleport-area">Using Teleport Area</h3>
-<p><em>Default Teleport Area</em></p>
+<h4 id="default-teleport-area">Default Teleport Area</h4>
 <p>By default, VotanicXR’s Teleport tool performs teleportation only to pre-defined <code>Teleport Area</code>. The teleport area is defined by the <code>Floor</code> GameObject, which can be located at <code>vGear &gt; Boundary &gt; Floors &gt; Floor</code>. The size and position of the GameObject <code>Floor</code> can be adjusted according to the teleportation needs in the scene.</p>
 <p><img src="../images/3.4.3.png" alt="The GameObject Floor "></p>
-<p><em>Adding Addition Teleport Area</em></p>
+<h4 id="adding-addition-teleport-area">Adding Addition Teleport Area</h4>
 <p>Apart from the default teleport area, you can create and define additional teleport areas by following the steps below:</p>
 <ol>
 <li><p>Create a cube by <code>GameObject &gt; 3D Object &gt; Cube</code>, and place it in the scene.</p>
@@ -359,7 +359,7 @@
 <p><img src="../images/3.4.4.3.png" alt="teleport on the Cube "></p>
 </li>
 </ol>
-<p><em>Adding Prohibit Teleport Area</em></p>
+<h4 id="adding-prohibit-teleport-area">Adding Prohibit Teleport Area</h4>
 <p>A specific area can be set as prohibit area for teleport. The prohibit area can be placed on top of the teleport area to block out areas where the user cannot teleport onto.</p>
 <ol>
 <li><p>Create an empty GameObject in <code>vGear &gt; Boundary &gt; Floors</code> and rename <code>Prohibit Teleport Area</code>.</p>
@@ -387,7 +387,7 @@
 <p><img src="../images/3.4.5.8.png" alt=""></p>
 </li>
 </ol>
-<p><em>Adding Waypoints to Teleport</em></p>
+<h3 id="adding-waypoints-to-teleport">Adding Waypoints to Teleport</h3>
 <p><strong>Configuration waypoint for teleport</strong></p>
 <p>Waypoint can be used to restrict positions where the user can teleport to. By using waypoints, we can make sure the user will teleport to the desired position.</p>
 <ol>
@@ -413,7 +413,7 @@
 <tbody>
 <tr>
 <td>Snap</td>
-<td>default mode, user can teleport to both waypoint and teleport area (GameObject with collider and layer is set to vLayerFloor). The teleport tool will snap to Waypoint GameObject if it close to the Waypoint.</td>
+<td>default mode, user can teleport to both waypoint and teleport area (GameObject with collider and layer is set to vLayerFloor). The teleport tool will snap to Waypoint GameObject if it is close to the Waypoint.</td>
 <td><img src="../images/3.5.4.1.gif" alt="Snap"></td>
 </tr>
 <tr>
@@ -439,9 +439,9 @@
 </li>
 </ol>
 <h3 id="advanced-teleport">Advanced Teleport</h3>
-<p><em>Collision Mode</em></p>
+<h4 id="collision-mode">Collision Mode</h4>
 <p>By default, user can only teleport to the location with collider in the <code>vLayerFloor</code> layer, this is defined as the <code>Collision Mode</code> in Advanced Teleport Setting. However, in some use cases, such as point cloud visualization, 360 videos, there are no GameObject in the scene to add the collider, and therefore cannot use the default teleport mode to navigate in the VR world.</p>
-<p>In these situations, the <code>Collision mode</code> in teleport tool can be disabled to allow teleporting without needing the colliders. When the Collision mode is turned off, user can by default teleport to positions on the same level as the user. Optionally, the <code>vGear.controller.teleport.SetHeightOffset</code> <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Teleport.html#Votanic_vXR_vGear_vGear_Teleport_SetHeightOffset_System_Single_">API</a> can be used for adjusting the height of teleportation in this mode.
+<p>In these situations, the <code>Collision mode</code> in teleport tool can be disabled to allow teleporting without needing the colliders. When the Collision mode is turned off, user can by default teleport to positions on the same level as the user. Optionally, the <code>vGear.controller.teleport.SetHeightOffset</code> <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Teleport#Votanic_vXR_vGear_vGear_Teleport_SetHeightOffset_System_Single_">API</a> can be used for adjusting the height of teleportation in this mode.
 For example, the below script will set the teleport height at 0.2m on script object is initialized.</p>
 <pre><code class="lang-csharp">void Start(){
 	vGear.controller.teleport.SetHeightOffset(0.2f);
@@ -467,7 +467,7 @@ For example, the below script will set the teleport height at 0.2m on script obj
 </tr>
 </tbody>
 </table>
-<p><em>Teleport’s Transition Effect</em></p>
+<h4 id="teleports-transition-effect">Teleport’s Transition Effect</h4>
 <p>There are two transition effects available in VotanicXR for use in teleportation: Translation and Fade. The effects are shown in the below table.</p>
 <table>
 <thead>

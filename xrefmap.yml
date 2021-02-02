@@ -31,6 +31,21 @@ references:
 - uid: doc05
   name: doc05
   href: documentation/documentation05.html
+- uid: overview00-index
+  name: Information Provided in this Guide
+  href: overview/index.html
+- uid: overview01-about
+  name: Overview
+  href: overview/overview01.html
+- uid: overview02-system
+  name: Software Requirement
+  href: overview/overview02.html
+- uid: overview03-installation
+  name: Installation Guide
+  href: overview/overview03.html
+- uid: overview04-updates
+  name: '[Updates]'
+  href: overview/overview04.html
 - uid: theory01
   name: Theory - XR Structure
   href: knowledgeBase/TheoryXRStructure.html
