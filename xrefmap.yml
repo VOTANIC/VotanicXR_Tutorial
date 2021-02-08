@@ -62,7 +62,7 @@ references:
   name: Interaction System
   href: knowledgeBase/TheoryInteractionSystem.html
 - uid: tut01-quickstart
-  name: Quick Start
+  name: Set Up Tutorial Project
   href: tutorials/tut01.html
 - uid: tut02-inputsystem
   name: Getting Cross-platform Input

@@ -139,6 +139,37 @@
 </tr>
 </tbody>
 </table>
+<p>The interaction actions are pre-configurured to different key on various input devices to accommodate cross-platform compatibility. The default command input mappings are shown in the table below for your reference. Optionally, you can always customise the mappings for each application using the VotanicXR Configurator.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Keyboard / Mouse in PC Mode</th>
+<th style="text-align: left;">Vive Controller</th>
+<th style="text-align: right;">Other Supported Input Devices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Grab</td>
+<td style="text-align: left;">Left Shift</td>
+<td style="text-align: left;">Grab Button</td>
+<td style="text-align: right;">Button[1] of the 1st and 2nd controller recognized by VotanicXR</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pick</td>
+<td style="text-align: left;"><p style="color:LightGray;">No mapping by default</p></td>
+<td style="text-align: left;"><p style="color:LightGray;">No mapping by default</p></td>
+<td style="text-align: right;"><p style="color:LightGray;">No mapping by default</p></td>
+</tr>
+<tr>
+<td style="text-align: left;">Climb</td>
+<td style="text-align: left;">Left Shift</td>
+<td style="text-align: left;">Grab Button</td>
+<td style="text-align: right;">Button[1] of the 1st and 2nd controller recognized by VotanicXR</td>
+</tr>
+</tbody>
+</table>
 <p>These pre-defined interaction actions, as well as detailed behaviour, can be set by toggling the <code>Climb Setting</code> and <code>Grab Setting</code> parameters in the <code>V Gear_Interactable (Script)</code> component.</p>
 <p><img src="../images/4.3.4.png" alt=""></p>
 <p><strong>Note</strong>: due to the nature of the actions, <code>climb</code> and <code>pick</code> are mutually exclusive actions. When both the <code>climb</code> and the <code>pick</code> options are selected in the interactables settings, the <code>pickable</code> option will be automatically disabled in runtime.</p>
@@ -151,7 +182,7 @@
 <li><p>In <code>V Gear_Interactables</code> component, enable <code>[Setting] &gt; Grab Setting &gt; Grabbable</code> property</p>
 <p><img src="../images/4.4.1.png" alt=""></p>
 </li>
-<li><p>In play mode, the GameObject <code>Chair</code> can be grabbed when user holds the <code>Grab</code> button, by default it is bound with the button index 1 of controller.</p>
+<li><p>In play mode, the GameObject <code>Chair</code> can be grabbed when user holds the <code>Grab</code> button.</p>
 </li>
 <li><p>Optional. User would be able to throw the object if the <code>Grab</code> button is released while the wand object is in motion.</p>
 </li>
@@ -187,7 +218,7 @@
 <li><p>Right click the GameObject <code>Interactable gameObjects &gt; Flying Shield</code>. Then select <code>vGear &gt; Component &gt; Interactables+</code>. A component <code>V Gear_Interactables</code> will be added to the GameObject.</p>
 <p><img src="../images/4.4.7.png" alt=""></p>
 </li>
-<li><p>In <code>V Gear_Interactables</code> component, enable <code>[Setting] &gt; Climb Setting &gt; Climb Object</code> property. Optionally, check the <code>X</code>, <code>Y</code>, <code>Z</code> property in <code>[Setting] &gt; Climb Setting</code> to disable the relative movement of the user transform in the corresponding direction when grabbing the object.</p>
+<li><p>In <code>V Gear_Interactables</code> component, enable <code>[Setting] &gt; Climb Setting &gt; Climb Object</code> property. Optionally, check the <code>X</code>, <code>Y</code>, <code>Z</code> property in <code>[Setting] &gt; Climb Setting</code> to enable the relative movement of the user transform in the corresponding direction when grabbing the object.</p>
 <p><img src="../images/4.4.8.png" alt=""></p>
 </li>
 <li><p>In play mode, when user hold the <code>Grab</code> button on the <code>Flying Shield</code> GameObject, the user will follow the movement of the <code>Flying Shield</code>.</p>
@@ -198,11 +229,11 @@
 <p>In addition to the basic interactions, VotanicXR has altogether 17 Interactive event triggers for developers to extend the usage of their application. Besides, developers can register their own function to each event.</p>
 <table width="100%">
    <tr>
-      <td>Event Trigger</td>
-      <td>Interactor</td>
-      <td>Triggered by</td>
-      <td>Corresponding Command</td>
-      <td>Triggering Condition</td>
+      <td><b>Event Trigger</b></td>
+      <td><b>Interactor</b></td>
+      <td><b>Triggered by</b></td>
+      <td><b>Corresponding Command</b></td>
+      <td><b>Triggering Condition</b></td>
    </tr>
    <tr>
       <td>Grab</td>
@@ -304,17 +335,17 @@
 
 public void OnWandDeselectOnRock()
 {
-    GetComponent&lt;Renderer&gt;().material.color = new Color(Random.value, Random.value, Random.value);
+    GetComponent&lt;Renderer&gt;().material.color = Color.white;
 }
 </code></pre>
 </li>
 <li><p>Add interactable+ on the <code>Rock</code> GameObject.</p>
 <p><img src="../images/4.5.3.png" alt=""></p>
 </li>
-<li><p>In the <code>V Gear_Interactables</code> component, configure the <code>Interaction Type</code> to <code>Select</code> and add a Unity Event. In the event item, drag the <code>Rock</code> GameObject to the event and select <code>OnWandSelect</code></p>
+<li><p>In the <code>V Gear_Interactables</code> component, configure the <code>Interaction Type</code> to <code>Select</code> and add a Unity Event. In the event item, drag the <code>Rock</code> GameObject to the event and select <code>OnWandSelectOnRock</code></p>
 <p><img src="../images/4.5.4.png" alt=""></p>
 </li>
-<li><p>Multiple interactions can be defined in the <code>V Gear_Interactables</code>. We add the <code>Deselect</code> event in the <code>[Additional Setting] &gt; Interactions</code> and bind the event to the <code>OnWandExit</code> function.</p>
+<li><p>Multiple interactions can be defined in the <code>V Gear_Interactables</code>. We add the <code>Deselect</code> event in the <code>[Additional Setting] &gt; Interactions</code> and bind the event to the <code>OnWandDeselectOnRock</code> function.</p>
 <p><img src="../images/4.5.5.png" alt=""></p>
 </li>
 <li><p>Finally, check the result in the play mode.</p>
@@ -334,13 +365,17 @@ public void OnWandDeselectOnRock()
 <li><p>Create an empty GameObject <code>SceneController</code> and a new script <code>CommandController</code>, then attach the script to the <code>SceneController</code>.</p>
 <p><img src="../images/4.6.3.png" alt=""></p>
 </li>
-<li><p>Use API <code>vGear.Cmd.Received(&quot;OnBarrelPress&quot;)</code> to receive the command.</p>
+<li><p>Use API <code>vGear.Cmd.Received(&quot;OnWandSelectOnBarrel&quot;)</code> and <code>vGear.Cmd.Received(&quot;OnWandDeselectOnBarrel&quot;)</code> to receive the command.</p>
 <pre><code class="lang-csharp">void Update()
 {        
-    if (vGear.Cmd.Received(&quot;OnBarrelPress&quot;))
+    if (vGear.Cmd.Received(&quot;OnWandSelectOnBarrel&quot;))
     {
         GameObject.Find(&quot;Barrel&quot;).GetComponent&lt;Renderer&gt;().material.color 
             = new Color(Random.value, Random.value, Random.value);
+    }    
+    if (vGear.Cmd.Received(&quot;OnWandDeselectOnBarrel&quot;))
+    {
+        GameObject.Find(&quot;Barrel&quot;).GetComponent&lt;Renderer&gt;().material.color = Color.white;
     }
 }
 
@@ -352,7 +387,7 @@ public void OnWandDeselectOnRock()
 </ol>
 <h3 id="other-interaction-examples">Other Interaction Examples</h3>
 <h4 id="interaction-with-vision">Interaction with vision</h4>
-<p>The vision Interactor can be triggered interactions between user line-of-sight and interactable game objects. The relevant interaction types are <code>Look</code>, <code>Look Repeat</code>, <code>Look Stay</code> and <code>Look Exit</code>.</p>
+<p>The Vision Interaction can be used to trigger interactions between user's line-of-sight and interactable gameObjects. The relevant interaction types are <code>Look</code>, <code>Look Repeat</code>, <code>Look Stay</code> and <code>Look Exit</code>.</p>
 <ol>
 <li><p>Right Click the <code>Interaction Object &gt; Bird House</code> GameObject and click <code>Interactable+</code> component.</p>
 <p><img src="../images/4.7.1.png" alt=""></p>
@@ -377,7 +412,7 @@ public void OnWandDeselectOnRock()
 </li>
 </ol>
 <h4 id="interaction-with-collider">Interaction with collider</h4>
-<p>The Collider Interactor can be triggered interactions between interactor collider and interactable game objects. The relevant interaction types are <code>Collider Enter</code>, <code>Collider Stay</code> and <code>Collider Exit</code>.</p>
+<p>The Collider Interactor can be used to trigger interactions between a game object with collider and other interactable gameObjects. The relevant interaction types are <code>Collider Enter</code>, <code>Collider Stay</code> and <code>Collider Exit</code>.</p>
 <ol>
 <li><p>Right Click the <code>Interaction Object &gt; Area</code> GameObject and click <code>Interactable+</code> component.</p>
 <p><img src="../images/4.7.5.png" alt=""></p>
@@ -390,15 +425,22 @@ public void OnWandDeselectOnRock()
 {
     GetComponent&lt;Renderer&gt;().material.color = new Color(Random.value, Random.value, Random.value, .5f);
 }
+public void AreaRestoreColor()
+{
+    GetComponent&lt;Renderer&gt;().material.color = Color.white;
+}
 </code></pre>
 </li>
 <li><p>In <code>Area</code> GameObject, set the interaction in the <code>V Gear_Interactables(Script)</code> as below.</p>
-<p>Interaction Type: Collider Stay</p>
+<p>Interaction Type: Collider</p>
 <p>Unity event: add an event and select the last created function</p>
 <p><img src="../images/4.7.7.png" alt=""></p>
 </li>
 <li><p>Play the scene and see the effect.</p>
 <p><img src="../images/4.7.8.gif" alt=""></p>
+</li>
+<li><p>Optional. The <code>Collider Detection</code> property can be used to limit the interactor object that is able to interact with the interactable object. Below is an example collider detection option added to the Area interactable. We give 2 conditions on the interactor object: 1. the name of the GameObject equals <code>Chair</code> and in layer 30; OR 2. the GameObject is in layer 28. The interactor must fulfil either one of these conditions to interact with the Area interactable.</p>
+<p><img src="../images/4.7.9.png" alt=""></p>
 </li>
 </ol>
 </article>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Quick Start </title>
+    <title>Set Up Tutorial Project </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Quick Start ">
+    <meta name="title" content="Set Up Tutorial Project ">
     <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,119 +67,163 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="tut01-quickstart">
-<h1 id="quick-start">Quick Start</h1>
 
-<p>In this article</p>
-<ul>
-<li><a class="xref" href="tut01.html#set-up-tutorial-project">Set Up Tutorial Project</a></li>
-<li><a class="xref" href="tut01.html#import-votanicxr">Import VotanicXR</a></li>
-<li><a class="xref" href="tut01.html#add-votanicxr-manager-to-scene">Add VotanicXR Manager to Scene</a></li>
-<li><a class="xref" href="tut01.html#build-the-scene">Build the Scene</a></li>
-<li><a class="xref" href="tut01.html#running-the-build">Running the Build</a></li>
-</ul>
-<h3 id="objective">Objective</h3>
-<p>VotanicXR is a Software Development Toolkit of Extended Reality as a plug-in of Unity Engine. This chapter will cover the quick start guide to build and run a basic scene using VotanicXR SDK with different platform.</p>
-<h3 id="conventions-in-this-tutorial">Conventions in this Tutorial</h3>
-<p>In this series of tutorial, we will use the following conventions.</p>
-<h4 id="tutorial">Tutorial</h4>
-<p>Each part of the tutorial consists an objective, a folder with sample scene and resources, and detail step of using corresponding component.</p>
-<h4 id="component">Component</h4>
-<p>The components provided by VotanicXR SDK will using the following naming convention:</p>
-<p>Using <code>vGear_Interactable</code> class as example, the component using <code>vGear</code> as prefix, and connect the component with underscore <code>_</code>.
-The class will be shown in Unity Inspector with its convention as script component, i.e. <code>V Gear_Interactable (Script)</code>.</p>
-<h4 id="code-style">Code style</h4>
-<p>The code provided in the tutorial will follow the <a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules">Code style naming rules of .Net</a>.</p>
-<h4 id="definition">Definition</h4>
-<p>Some useful definition will be introduced here:</p>
-<ul>
-<li>VotanicXR application - The Unity Application using VotanicXR SDK.</li>
-<li>Developer - The developer using VotanicXR SDK to develop application.</li>
-<li>User - The user of the VotanicXR application</li>
-<li>vGear - The prefab of VotanicXR SDK Manager.</li>
-<li>User Transform - The transform of User gameObject in the vGear Prefab.</li>
-</ul>
-<h2 id="set-up-tutorial-project">Set Up Tutorial Project</h2>
-<h3 id="download-tutorial-package">Download Tutorial Package</h3>
-<p>Click <a href="../Resources/VotanicXR_Tutorial.unitypackage">here</a> to download the Tutorial Package, the package includes the material of the tutorial and the sample scene.</p>
-<p>For each chapter of the tutorial, there are a folder of the corresponding materials.
-The material includes a scene named the same as the tutorial, for the practice of tutorial reader, a <code>Sample</code> folder for the sample scene, and some of them have resources.</p>
-<p>Setting and configuration files are provided for the tutorial package in <code>Common Resources</code> folder.</p>
-<h3 id="configure-unity">Configure Unity</h3>
+
+<p>VotanicXR is a Software Development Toolkit of Extended Reality as a plug-in of Unity Engine. This chapter is a quick start guide to build a XR application from a new empty project, and run the build in PC and HMD platform.</p>
+<p>In this section, <code>Unity 2018.4</code> is used for the demonstration.</p>
+<h1 id="set-up-tutorial-project">Set Up Tutorial Project</h1>
+<h2 id="configure-unity-project-settings">Configure Unity Project Settings</h2>
 <p>Configure the following settings before import the VotanicXR SDK:</p>
 <ol>
-<li><p>In <code>Edit &gt; Project Settings &gt; Player</code>, set the <code>Scripting Runtime Version</code> to <strong>.Net 4.x Equivalent</strong> if you are using Unity 2018.2.</p>
+<li><p><strong>Configure API Compatibility Level</strong>. In <code>Edit &gt; Project Settings &gt; Player</code>, set the <strong>Api Compatibility Level to .Net 4.x Equivalent</strong> in <strong>Configuration</strong> section.</p>
 </li>
-<li><p>In <code>Edit &gt; Project Settings &gt; Editor</code>, set the <code>Version Control</code> is <strong>Visible Meta Files</strong> and <code>Asset Serialization</code> is <strong>Mixed</strong>.</p>
+<li><p><strong>Configure Editor Setting</strong>. In <code>Edit &gt; Project Settings &gt; Editor</code>, set the <strong>Version Control</strong> to <strong>Visible Meta Files and Asset Serialization</strong> to <strong>Mixed</strong>.</p>
 </li>
-<li><p>In <code>File &gt; Build Settings</code>, set the <code>Architecture</code> into <strong>x86_64</strong>.</p>
-</li>
-<li><p>If you are using Unity Editor with version 2019 or above, please go to Package Manager and install <code>Multiplayer HLAPI</code> for this series of tutorial, detail mentioned <a class="xref" href="tut07.html#set-up-multi-user-networking-sample-scene">here</a>.</p>
+<li><p><strong>Configure Build Architecture</strong>. In <code>File &gt; Build Settings</code>, set the <strong>Architecture</strong> to <strong>x86_64</strong>.</p>
 </li>
 </ol>
-<h2 id="import-votanicxr">Import VotanicXR</h2>
-<h3 id="import-votanicxr-package">Import VotanicXR Package</h3>
-<p>Import the VotanicXR SDK for Unity:</p>
+<h1 id="import-votanicxr-and-tutorial-content">Import VotanicXR and tutorial content</h1>
+<h2 id="import-votanicxr-package">Import VotanicXR Package</h2>
+<p>The VotanicXR for Unity SDK Package can be accessed from the VotanicXR Suite.</p>
+<p><img src="../install/sdk1.png" alt=""></p>
+<p>Select <code>Unity SDK</code> will open the VotanicXR Unity SDK folder shown below:</p>
+<p><img src="../install/sdk2.png" alt=""></p>
+<p>The VotanicXR 2020 for Unity SDK is available in two variations: <strong>VotanicXR 2020 for 2018.4</strong> - targeted for Unity 2018.4 version and <strong>VotanicXR 2020 for 2019.2+</strong> - targeted for Unity 2019.2 or above. The below table highlight the corresponding unity version and VotanicXR SDK version. VotanicXR 2020 may work with newer Unity releases than these listed in the table, but full compatibility is not guaranteed. Due to limitation of the Unity engine, it is highly recommended that you do not switch major release version of the Unity engine for your project once it is set up with the corresponding VotanicXR Unity SDK.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Unity Version</th>
+<th style="text-align: left;">VotanicXR SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&lt; 2018.4</td>
+<td style="text-align: left;">-not supported-</td>
+</tr>
+<tr>
+<td style="text-align: left;">2018.4</td>
+<td style="text-align: left;">VotanicXR_2020.x for 2018.4.unitypackage</td>
+</tr>
+<tr>
+<td style="text-align: left;">2019.1</td>
+<td style="text-align: left;">-not supported-</td>
+</tr>
+<tr>
+<td style="text-align: left;">2019.2 – 2019.4</td>
+<td style="text-align: left;">VotanicXR_2020.x for 2019.2+ [NET].unitypackage</td>
+</tr>
+</tbody>
+</table>
+<p>The VotanicXR 2020 for Unity SDK importing process is a bit different for Unity 2018 and Unity 2019 due to Unity changing the networking system in recent versions. Please follow the importing procedure for the corresponding version below:</p>
+<p><ins>For Unity 2018</ins></p>
 <ol>
-<li><p>Right-click in Project <code>Assets &gt; Import Package &gt; Custom Package</code>, and select the SDK package download.</p>
-<p>If you are using Unity Editor with version 2018.2, please import <code>VotanicXR_2020.6.0f6 for 2018.2.unitypackage</code>.</p>
-<p>If you are using Unity Editor with version 2018.4, please import <code>VotanicXR_2020.6.0f6 for 2018.4.unitypackage</code>.</p>
-<p>If you are using Unity Editor with version 2019.2 or above, please import <code>VotanicXR_2020.6.0f6 for 2019.2+ [Net].unitypackage</code>.</p>
+<li><p>Right-click in Project windows. Click <code>Import Package &gt; Custom Package</code>, and select the VotanicXR SDK package.</p>
 </li>
-<li><p>In the Importing Package dialog, make sure that all package options are selected and click Import.</p>
+<li><p>Select all files in the <code>Importing Package</code> dialog, and click <code>Import</code> button.</p>
 </li>
 </ol>
-<h3 id="import-tutorial-package">Import Tutorial Package</h3>
+<p><ins>For Unity 2019</ins></p>
+<ol>
+<li><p>Go to Unity Package Manager and install Multiplayer HLAPI for this series of tutorial, detail mentioned here.</p>
+<p><img src="../install/sdk3.png" alt=""></p>
+</li>
+<li><p>Right-click in Project windows. Click <code>Import Package &gt; Custom Package</code>, and select the VotanicXR SDK package.</p>
+</li>
+<li><p>Select all files in the <code>Importing Package</code> dialog, and click <code>Import</code> button.</p>
+</li>
+</ol>
+<h2 id="import-tutorial-package">Import Tutorial Package</h2>
+<p>Download Tutorial Package</p>
+<ul>
+<li>Click <a href="https://votanic-my.sharepoint.com/:f:/p/tobey/Ejl-1366wtxLq9wS29q9U6ABH-t1UnABIYtJSJJww1cRvg">here</a> to download the tutorial package.</li>
+</ul>
 <p>Import the Tutorial Package of VotanicXR:</p>
 <ol>
-<li>Right-click in Project <code>Assets &gt; Import Package &gt; Custom Package</code>, and select the tutorial package download.</li>
-<li>In the Importing Package dialog, make sure that all package options are selected and click Import.</li>
+<li>Right-click in Project windows. <code>Click Import Package &gt; Custom Package</code>, and select the tutorial package download.</li>
+<li>Select all files in the <code>Importing Package</code> dialog, and click <code>Import</code> button.</li>
 </ol>
-<p>Please import the package after import the VotanicXR Package, for the requirement of the package contents.</p>
-<h2 id="add-votanicxr-manager-to-scene">Add VotanicXR Manager to Scene</h2>
-<h3 id="open-sample-scene">Open Sample Scene</h3>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial01_Demo </code> and open the scene <code>Demo</code> provided.</p>
+<p>Note: Tutorial package <strong>must be</strong> imported after the VotanicXR package, as some tutorial prefabs and scripts require VotanicXR base classes and materials.</p>
+<h1 id="add-votanicxr-manager-to-scene">Add VotanicXR Manager to Scene</h1>
+<h2 id="open-sample-scene">Open Sample Scene</h2>
+<p>In <code>Project</code> windows, select Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial01_GettingStated, open the <code>Demo</code> scene.</p>
 <p><img src="../images/1.3.0.png" alt="Demo Scene"></p>
-<h3 id="add-vgear">Add vGear</h3>
-<p>Add the SDK Manager of VotanicXR <code>vGear</code> to the scene:</p>
+<h2 id="add-vgear-sdk-manager">Add vGear SDK Manager</h2>
 <ol>
-<li><p>Right-click in the Hierarchy window.</p>
+<li><p>Right-click in the <code>Hierarchy</code> window.</p>
 <p><img src="../images/1.3.1.png" alt="Adding SDK Manager"></p>
 </li>
-<li><p>Select <code>VGear &gt; SDK Manager</code></p>
-<p>Two gameobjects will be shown in the Hierarchy window, <code>vGear</code> and <code>StartPoint</code>.</p>
-<p><img src="../images/1.3.2.png" alt="vGear and StartPoint gameobjects"></p>
-<p><code>vGear</code> is the SDK Manager of the VotanicXR system, and the child gameobjects are the features of the the system.</p>
-<p><code>StartPoint</code> is a gameobject to coordinate the start point of the user.</p>
+<li><p>Click <code>VGear &gt; SDK Manager</code> . This will add the <code>vGear</code> and the GameObject <code>StartPoint</code> to the scene’s hierarchy.</p>
 </li>
-<li><p>If you are using controllers with <code>Role System</code>, please select <code>Role System</code> at the <code>[Settings] &gt; XR Support</code> in component <code>V Gear (Script)</code> of vGear prefab.
-We will use the Vive controller and HMD with <code>Role System</code> as VR controller in this series of tutorial, the default value of <code>XR Support</code> option will be <code>Role System</code> for the template scenes.</p>
-<p><img src="../images/1.3.3.png" alt="Role System"></p>
+<li><p>Agree to VotanicXR Licensing Agreement (first-run only)</p>
+<p>If it is the first time you are adding vGear SDK Manager to your scene, you must read and agree to the VotanicXR Licensing Agreement first. The vGear GameObject will be disabled until this step is completed.</p>
+<p><img src="../images/1.3.2.png" alt=""></p>
+</li>
+<li><p>Configure XR Support</p>
+<p>Every time when vGear SDK Manager is added to the scene, you will be prompted about configuring XR Support for your scene.</p>
+<p><img src="../images/1.3.3.png" alt=""></p>
+<p>For best cross-platform compatibility, we recommend that you enable XR Support by selecting the <code>Confirm</code> button. This will add Unity XR libraries to your scene. Please wait awhile for Unity to finish importing these libraries. If you prefer to add the XR Support later, you can select <code>Cancel</code> here.</p>
+<p><img src="../images/1.3.4.png" alt=""></p>
+<p><em>Note that you must set XR Support to <code>Role System</code> before building the scene if you would like your application to be cross-platform and playable in HMD systems.</em></p>
+</li>
+<li><p>VotanicXR is ready to use!</p>
+<p><code>vGear SDK Manager</code> is a group of components for creating VR environment. It includes <code>VotanicXR core classes</code>, <code>cameras</code>, and <code>Input system</code>. This GameObject must be present for other VotanicXR components to function, such as Media, and Behaviour system.</p>
+<p><code>StartPoint</code> represents where the player will be standing when the application starts. You can change the transform of the StartPoint to adjust the starting position of the player. In <code>Game</code> and <code>Scene</code> windows, it is indicated by a giant red cross symbol whereas the robot is a virtual representation of the user in the game for size reference, both of which will be hidden in <code>Play</code> mode automatically.</p>
+<p><img src="../images/1.3.5.png" alt=""></p>
 </li>
 </ol>
-<p>Detail of the components is described in <a href="../documentation/vGearDetail.html">Detail of vGear Components</a>.</p>
-<h2 id="build-the-scene">Build the Scene</h2>
+<h1 id="test-run-in-unity-editor">Test Run in Unity Editor</h1>
+<p>You can test run the VotanicXR application in Unity Editor. When the application is loaded,  the vGear GameObject will be populated with objects according to the Config and Setting files defined in vGear. By default, the PC config is loaded for in-editor testing. If you would like to use the HMD to test in Unity Editor, change the Config Path from “xxxxxx/ConfigPC.vxrc” to “xxxxxx/ConfigHMD.vxrc”, and make sure XR Support is set to “Role System” before hitting the play button.</p>
+<p><img src="../images/1.3.6.png" alt=""></p>
+<h1 id="build-the-scene">Build the Scene</h1>
+<p>When building the VotanicXR application, VotanicXR creates a series of batch files that can launch the application for different hardware / software systems. By default, batch files are created for PC, HMD, and CAVE system. User can customise the batch file settings in the “Batches” setting in vGear SDK Manager.</p>
+<p><img src="../images/1.3.7.png" alt=""></p>
+<p>VotaincXR builds 1 standalone PC application that can adapt to settings different PC-based VR systems. Make sure you have correctly configured the Unity project setting as introduced at the beginning of this section, then perform the following steps to build the VotanicXR application:</p>
 <ol>
 <li><p>Go to <code>File &gt; Build Setting</code>.</p>
 </li>
-<li><p>Click <code>Add Open Scenes</code>	.</p>
+<li><p>Click <code>Add Open Scenes</code> .</p>
 </li>
-<li><p>Click <code>Build</code>, (Note: Recommended to create a new folder to save your build folders).</p>
+<li><p>Click <code>Build</code>, (Note: It is recommended to create a new folder to save your published build files).</p>
 </li>
-<li><p>When the build completed, the build folder will be popped out at the new window.</p>
+<li><p>When the build process is completed, the build folder will be opened in the file explorer.</p>
 </li>
 </ol>
-<h2 id="running-the-build">Running the Build</h2>
-<p>The built folder will contains some <code>batch</code> (.bat) files with the format <code>{Project Name}_[{Environment}].bat</code>.</p>
-<p><img src="../images/1.4.png" alt="The build folder"></p>
-<p>Double click the batch file with the environment you are using.</p>
-<p>The table below shows the corresponding name for the environment.</p>
-<table width="100%">
-<tr> <td>Environment				<td>Name	<td>Explanation
-<tr> <td>Multi Display System		<td>the batch file with CAVE	<td>The config will be loaded with the <b>config.vxrc</b> at global floder, will be further introduced in [Configurator](xref:tut11-configurator)
-<tr> <td>HMD System					<td>the batch file with HMD		<td>
-<tr> <td>PC							<td>the batch file with PC		<td>
-<tr> <td>Local Test Configuration	<td>the batch file with TEST	<td>The config will be loaded with the <b>config.vxrc</b> at the local folder.
-</td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></table>
+<h1 id="running-the-application">Running the Application</h1>
+<p>The output folder will contain some batch (.bat) files with the format {Project Name}_[{Environment}].bat.</p>
+<p>Double click the batch file to start the application with different pre-defined environment configuration. The differences between various environment are shown in below table.</p>
+<p><img src="../images/1.4.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Environment</th>
+<th style="text-align: left;">Config Location</th>
+<th style="text-align: left;">Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CAVE</td>
+<td style="text-align: left;">Loading the configCAVE.vxrc file in %VOTANIC_PATH%/Configs/.</td>
+<td style="text-align: left;">The CAVE system’s global configuration in production environment</td>
+</tr>
+<tr>
+<td style="text-align: left;">HMD</td>
+<td style="text-align: left;">[output folder]\VotanicXR\Configs\ConfigHMD.vxrc</td>
+<td style="text-align: left;">The configuration enabled HMD and controllers</td>
+</tr>
+<tr>
+<td style="text-align: left;">PC</td>
+<td style="text-align: left;">[output folder]\VotanicXR\Configs\ConfigPC.vxrc</td>
+<td style="text-align: left;">The configuration use keyboard and mouse as output</td>
+</tr>
+<tr>
+<td style="text-align: left;">TEST</td>
+<td style="text-align: left;">[output folder]\VotanicXR\Configs\ConfigCAVE.vxrc</td>
+<td style="text-align: left;">The CAVE system’s local testing configuration. Used to test different environment configuration settings</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
