@@ -86,7 +86,7 @@
 <p><img src="../images/faq001.2.png" alt=""></p>
 <p><img src="../images/faq001.3.png" alt=""></p>
 <p><code>Name</code> will be concatenated to the application name into the batch file generated. The default value will be the chosen environment type warpped by bracket.</p>
-<p><code>Config Name</code> stores the path of the configuration file of the application. The default value will be the corresponding config of the chosen environment type.</p>
+<p><code>Config Name</code> stores the path of the configuration file of the application. The default value will be the corresponding config of the chosen environment type. For <code>CAVE</code> and <code>DOME</code>, two batch files will be generated. Take <code>CAVE</code> as example, <code>applicationName_[CAVE].bat</code> and <code>applicationName_[TEST][CAVE].bat</code> will be generated, the former loading the <code>configCAVE.vxrc</code> file in <code>%VOTANIC_PATH%/Configs/</code>, the latter loading the <code>[output folder]\VotanicXR\Configs\ConfigCAVE.vxrc</code>. For other environment types, only one batch file will be generated with loading <code>[output folder]\VotanicXR\Configs\{Config Name}</code>.</p>
 </li>
 <li><p>Modify the <code>Reference Config</code> and <code>Setting Name</code> if needed.</p>
 <p><code>Reference Config</code> will create transparent screens for the reference in the application, the result will be similar to the transparent screen created by the reference config in the editor. The default value of the <code>Reference Config</code> will be null.</p>
