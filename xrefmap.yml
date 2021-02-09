@@ -17,20 +17,8 @@ references:
   name: Detail of VGear Components
   href: documentation/vGearDetail.html
 - uid: doc01
-  name: Device Inputs
-  href: documentation/documentation01.html
-- uid: doc02
-  name: doc02
-  href: documentation/documentation02.html
-- uid: doc03
-  name: doc03
-  href: documentation/documentation03.html
-- uid: doc04
-  name: doc04
-  href: documentation/documentation04.html
-- uid: doc05
-  name: doc05
-  href: documentation/documentation05.html
+  name: Default Input Device Mapping for Virtual Controller
+  href: documentation/defaultMapping.html
 - uid: faq001
   name: How to cutomise the batch file settings?
   href: knowledgeBase/FAQ001.html
