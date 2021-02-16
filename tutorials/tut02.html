@@ -69,119 +69,471 @@
             <article class="content wrap" id="_content" data-uid="tut02-inputsystem">
 <h1 id="getting-cross-platform-input">Getting Cross-platform Input</h1>
 
-<p>In this article</p>
+<p>The Input System of VotanicXR is designed with cross-platform in mind, it is intended to be a flexible and reconfigurable system that can be configured to work with different input devices without needing to re-work the application logic.</p>
+<h2 id="input-system-terminology">Input System Terminology</h2>
+<p>VotanicXR’s input system is designed to revolve around the VotanicXR application user’s intention or action, which we abstract as <strong><code>Command</code></strong> in the application and uses it in various contexts in VotanicXR. The use of <strong><code>Command</code></strong> effectively decouples the application logic in the VotanicXR application and the events happening on a physical input device. With this decoupling of application and physical device logic, not only can the application developer focus more on creating the actual VR experience, the application itself is also more flexible which allows users with different kinds of physical input devices to customize the input bindings at any time, without needing to re-work the application logic.</p>
+<p>While the <strong><code>Command</code></strong> is VotanicXR’s logical input abstraction layer which maps the user intention to application logic, the <code>Virtual Controller</code> is VotanicXR’s physical input abstraction layer that unifies input events from various physical devices. The <strong><code>Virtual Controller</code></strong> is designed to be user-friendly yet also reconfigurable to adapt to different application needs. For typical usage, VotanicXR scans for available input devices in the system and automatically maps them to the virtual controllers, enabling these devices for use by the input system. Optionally, the virtual controllers can be customized to map different special input devices, such as custom-made IoT devices and motion platform, to virtual controller’s input events.</p>
+<p>To accommodate device-independent cross-platform input, a mapping is created to bind various <strong><code>Virtual Controller</code></strong> events to different <strong><code>Command</code></strong>. The illustration below depicts the structure of the VotanicXR Input System and how it works with different physical input devices and application logics.</p>
+<p><img src="../images/2.1.png" alt=""></p>
+<p>The input system is organically integrated into features of VotanicXR. This chapter would provide a generic overview and common usage of the input system, whereas the feature-specific implementation will be introduced in the subsequent chapters of this tutorial series in the respective tutorial chapters.</p>
+<h2 id="input-system-tutorial-scene">Input System Tutorial Scene</h2>
+<p>The related materials and example scene are in <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial02_InputSystem</code>.</p>
+<h2 id="commands">Commands</h2>
+<p>The commands abstract user’s intention or action in the application. To use a command in VotanicXR’s application logic, the relevant command would need to be first declared in the application’s commands list, then invoked in the application logic using VotanicXR’s command handling methods.</p>
+<p>Commands, once created, are stored in the VotanicXR application’s <code>setting.vxrs</code> file and can be customized using the VotanicXR Configurator. By default, there are a set of built-in commands that can be used to invoke various built-in features of VotanicXR. In addition, custom commands can be created to invoke self-defined application logics.</p>
+<p>The Command system is a flexible yet powerful system that can be configured to use in simple and complex scenarios. A command consists of a list of triggers each configured to map to a virtual controller event. Optionally, a list of pre-conditions can be defined which limits the contexts for which the command can be triggered. A list of optional trigger conditions can also be added to each individual trigger to restrict how the particular trigger can be used. An illustrative example will be provided in this tutorial to demonstrate how the command system is used in practice.</p>
+<p><img src="../images/2.2.png" alt=""></p>
+<h3 id="built-in-commands">Built-in commands</h3>
+<p>Below is a list of VotanicXR’s built-in commands and the corresponding actions they invoke.  The usage and default binding of these commands are introduced in the respective tutorial chapters that uses these commands.</p>
+<table>
+   <tr>
+      <td>Built-in Command</td>
+      <td>Category</td>
+      <td>Description</td>
+      <td>Remark </td>
+   </tr>
+   <tr>
+      <td>Quit</td>
+      <td rowspan="11">System</td>
+      <td>Quit the application</td>
+      <td rowspan="11"></td>
+   </tr>
+   <tr>
+      <td>Reset</td>
+      <td>Reset the scene</td>
+   </tr>
+   <tr>
+      <td>Test3D</td>
+      <td>Show test 3D tool</td>
+   </tr>
+   <tr>
+      <td>Stereo</td>
+      <td>Toggle 2D and 3D mode </td>
+   </tr>
+   <tr>
+      <td>Tracking</td>
+      <td>Toggle VR positional tracking on/off</td>
+   </tr>
+   <tr>
+      <td>Photography</td>
+      <td>Shortcut for enable 2D mode and disable tracking</td>
+   </tr>
+   <tr>
+      <td>Scan</td>
+      <td>Rescan input devices and map to unassigned virtual controller</td>
+   </tr>
+   <tr>
+      <td>UserLevel</td>
+      <td>Change user level</td>
+   </tr>
+   <tr>
+      <td>UserLevelLock</td>
+      <td>Lock user level</td>
+   </tr>
+   <tr>
+      <td>Shadows</td>
+      <td>Toggle shadow setting on/off</td>
+   </tr>
+   <tr>
+      <td>Stabilize</td>
+      <td>Toggle stabilize camera function on/off</td>
+   </tr>
+   <tr>
+      <td>Info</td>
+      <td rowspan="3">InfoWall</td>
+      <td>Toggle InfoWall on/off</td>
+      <td rowspan="3"></td>
+   </tr>
+   <tr>
+      <td>Debug</td>
+      <td>Toggle debug message on/off on InfoWall</td>
+   </tr>
+   <tr>
+      <td>FPS</td>
+      <td>Toggle FPS display on/off on InfoWall</td>
+   </tr>
+   <tr>
+      <td>Menu</td>
+      <td rowspan="6">In-game Tool</td>
+      <td>Open in-game menu</td>
+      <td rowspan="6">See <b><a href="https://votanic.github.io/VotanicXR_Tutorial/tutorials/tut10.html">Using In-Game tools</a></b> section for details</td>
+   </tr>
+   <tr>
+      <td>SetTool</td>
+      <td>Toggle in-game tool</td>
+   </tr>
+   <tr>
+      <td>Zoom</td>
+      <td>Trigger zoom function</td>
+   </tr>
+   <tr>
+      <td>Reporter</td>
+      <td>Trigger reporter function</td>
+   </tr>
+   <tr>
+      <td>Brush</td>
+      <td>Trigger brush function</td>
+   </tr>
+   <tr>
+      <td>Measurer</td>
+      <td>Trigger measurer function</td>
+   </tr>
+   <tr>
+      <td>Soul</td>
+      <td rowspan="9">Locomotion</td>
+      <td>Toggle soul mode on/off</td>
+      <td rowspan="9">See <b><a href="https://votanic.github.io/VotanicXR_Tutorial/tutorials/tut03.html">Locomotion</a></b> section for details</td>
+   </tr>
+   <tr>
+      <td>Traveler</td>
+      <td>Toggle traveler mode on/off</td>
+   </tr>
+   <tr>
+      <td>Move</td>
+      <td>Trigger the user transform move forward or backward</td>
+   </tr>
+   <tr>
+      <td>Rotate</td>
+      <td>Trigger the user transform rotate left or right</td>
+   </tr>
+   <tr>
+      <td>Shift</td>
+      <td>Trigger the user transform move left or right horizontally </td>
+   </tr>
+   <tr>
+      <td>Float</td>
+      <td>Trigger the user transform elevate upward and downward</td>
+   </tr>
+   <tr>
+      <td>Turn</td>
+      <td>Trigger the user transform turn left or right by 90 degrees</td>
+   </tr>
+   <tr>
+      <td>JumpSink</td>
+      <td>Trigger user transform jump or sink to the ground</td>
+   </tr>
+   <tr>
+      <td>Teleport</td>
+      <td>Trigger teleport action</td>
+   </tr>
+   <tr>
+      <td>Grab</td>
+      <td rowspan="5">Interaction</td>
+      <td>Trigger grab function</td>
+      <td rowspan="5">See <b><a href="https://votanic.github.io/VotanicXR_Tutorial/tutorials/tut04.html">Interaction with Virtual World</a></b> section for details</td>
+   </tr>
+   <tr>
+      <td>Ungrab</td>
+      <td>Trigger ungrab function</td>
+   </tr>
+   <tr>
+      <td>Pick</td>
+      <td>Trigger pick function</td>
+   </tr>
+   <tr>
+      <td>Drop</td>
+      <td>Trigger drop function</td>
+   </tr>
+   <tr>
+      <td>Trigger</td>
+      <td>Trigger confirm function</td>
+   </tr>
+</table>
+<h3 id="create-custom-command">Create Custom command</h3>
+<p>Apart from the built-in commands, custom commands can be created and used in the VotanicXR applications. Below, we provide an example to create a custom command using the VotanicXR Configurator. Before you proceed, open the tutorial example scene in <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial02_InputSystem</code>.</p>
+<ol>
+<li><p>Select the GameObject <code>vGear</code> and identify the Setting Path for the application’s <code>setting.vxrs</code> file, then navigate to the path and open it with the VotanicXR Configurator.</p>
+<p><img src="../images/2.3.1.png" alt=""></p>
+</li>
+<li><p>Select <code>Commands</code> tab, click <code>+</code> button in the <code>Custom Commands</code> list.</p>
+<p><img src="../images/2.3.2.png" alt=""></p>
+</li>
+<li><p>Then, put down <code>Shoot’ as Command Name and click </code>Create` button.</p>
+<p><img src="../images/2.3.3.png" alt=""></p>
+</li>
+<li><p>The custom command <code>Shoot</code> is created in the <code>Custom Command</code> list and ready for the further action to bind the trigger event to virtual controller. This will be future discussed in the below section.</p>
+</li>
+</ol>
+<h2 id="virtual-controller">Virtual Controller</h2>
+<p>The <code>Virtual Controller</code> is VotanicXR’s physical input abstraction layer that unifies input events from various physical devices. It provides interfaces for developers or other VotanicXR modules to access the events of the physical input devices through the virtual controller.</p>
+<p>VotanicXR has native support to a list of physical input devices, whose buttons and axes are mapped to the virtual controller button and axis automatically once the physical input devices are identified. The default mappings of the virtual controller and various input devices are provided <a class="xref" href="../documentation/defaultMapping.html">here</a>.</p>
+<p>For typical usage, VotanicXR scans for available input devices in the system and automatically maps them to the virtual controllers, enabling these devices for use by the input system. For example, when a pair of HTC Vive controllers are connected to the system, the 2 vive controllers are automatically mapped to controller[0] and controller[1], with controller[0] as the right hand controller and controller[1] as the left hand controller of the user.</p>
+<h3 id="virtual-controller-configuration">Virtual Controller Configuration</h3>
+<p>For advanced usage, the virtual controller can be customized in several ways:</p>
+<ol>
+<li><p>Change the tools available on each controller</p>
+</li>
+<li><p>Change the input device mapping on the controller</p>
+</li>
+</ol>
+<p>The Virtual Controller configuration is stored in the <code>setting.vxrs</code> and can be configurated using the VotanicXR Configurator. Open the same <code>setting.vxrs</code> file that you used to create the custom command in the last section, then select the <code>Controllers</code> tab in the VotanicXR Configurator.</p>
+<p><img src="../images/2.4.1.png" alt=""></p>
+<p>Virtual Controller are listed in the <code>Controllers</code> list. By default, there are two virtual controllers, <code>Controller</code> and <code>Controller2</code>, available for use by the VotanicXR application. For typical use, when there are two controllers connected to the system, the first identified controller will be mapped to <code>Controller</code> (controller[0]), and the second identified controller will be mapped to <code>Controller2</code> (controller[1]). For advanced usage, you can configure the specifics of each controller by selecting the particular controller in the list and configure different properties of the controller.</p>
+<h4 id="configure-controller-tools">Configure Controller Tools</h4>
+<p>There are several built-in tools that can be attached to each virtual controller. Depending on the needs of your application, you can customize the available tools on each controller and set the corresponding default tools. Details of the VotanicXR tools are introduced in the In-Game Tools chapter, below we introduce how to customize tools on each controller.</p>
+<ol>
+<li><p>Select the controller which you wish to customize the controller tools.</p>
+<p><img src="../images/2.4.2.1.png" alt=""></p>
+</li>
+<li><p>The tools available on the controller are shown in the <code>Tools of controller</code> list. Add or subtract tools from the list.</p>
+<p><img src="../images/2.4.2.2.png" alt=""></p>
+</li>
+<li><p>In the <code>Selected Controller Properties</code>, select the default controller tool from the <code>Default Tool</code> property.</p>
+<p><img src="../images/2.4.2.3.png" alt=""></p>
+</li>
+</ol>
+<h4 id="configure-controller-input-device-mapping">Configure Controller Input Device Mapping</h4>
+<p>In most cases, VotanicXR automatically identifies and maps available input devices to the virtual controllers for use by the applications. However, in some advanced uses, such as using custom-made IoT devices, VRPN devices, or when the system has multiple devices connected to it, it is necessary to define custom device mapping so that the correct input device would be mapped to the controller.</p>
+<ol>
+<li><p>Select the controller which you wish to customize input device mapping</p>
+<p><img src="../images/2.4.3.1.png" alt=""></p>
+</li>
+<li><p>In the <code>Selected Controller Properties</code>, if enable the <code>Auto Find Buttons (if no buttons bound)</code> and <code>Auto Find Axes (if no axes bound)</code>, the selected virtual controller will be automatically bound the physical input device.</p>
+<p><img src="../images/2.4.3.2.png" alt=""></p>
+</li>
+</ol>
+<h4 id="optional-manually-bind-the-device-to-virtual-controller">(Optional) Manually Bind the Device to Virtual Controller</h4>
+<ol>
+<li><p>User can bind a specific device to the virtual controller. Input the device button and axis name to <code>Bind Buttons</code> and <code>Bind Axes</code> field correspondingly.</p>
+<p><img src="../images/2.4.4.1.png" alt=""></p>
+</li>
+<li><p>The device button and axis name can be retrieved by an embedded tool. Click <code>Test and Bind</code> button to open a <code>Virtual Controller Binding Test</code> panel.</p>
+<p><img src="../images/2.4.4.2.png" alt="">
+<img src="../images/2.4.4.3.png" alt=""></p>
+</li>
+<li><p>Click the <code>Select</code> button to select the configure file (config.vxrc). This configuration file can be checked in <code>vGear</code> GameObject, <code>Config Path</code> property.</p>
+<p><img src="../images/2.4.4.4.png" alt=""></p>
+</li>
+<li><p>After the config file is selected, the available devices are listed in the <code>Buttons</code> and <code>Axes</code> dropdown list. Developer can change other device to test, and the result will be displayed in the <code>Virtual Controller Status</code> section.</p>
+<p><img src="../images/2.4.4.5.PNG" alt=""></p>
+</li>
+<li><p>After the device is confirmed, click <code>Bind</code> button to close the panel, and the device’s button and axes will fill to <code>Bind Buttons</code> and <code>Bind Axes</code> fields.</p>
+<p><img src="../images/2.4.4.6.PNG" alt="">
+<img src="../images/2.4.4.7.PNG" alt=""></p>
+</li>
+<li><p>Finally, click <code>File &gt; Save</code> to save the configuration.</p>
+</li>
+</ol>
+<h3 id="binding-command-to-virtual-controller-event">Binding Command to Virtual Controller Event</h3>
+<p>After the command and virtual controller ready, we can bind the command to the virtual controller event. As mentioned previously, the command system included pre-condition and trigger condition to set up the dependency of the command or limit the command usage.</p>
+<p>This section introduces 1) how to <strong>bind the command to virtual controller event</strong>, 2) how to <strong>setup command pre-condition and trigger condition</strong>, the conditions are listed as below.</p>
 <ul>
-<li><a class="xref" href="tut02.html#command-input-system">Command Input System</a></li>
-<li><a class="xref" href="tut02.html#virtual-controller-input-system">Virtual Controller Input System</a></li>
+<li>Command: bind <code>Shoot</code> command to Vive controller and keyboard</li>
+<li>Pre-condition: allow the command to be used in Traveler mode.</li>
+<li>Tigger condition: two triggers will be created
+<ul>
+<li>1 trigger to bind the Vive controller <code>TouchPad</code> button for all environments</li>
+<li>1 trigger to bind the keyboard spacebar in PC environment only for testing</li>
 </ul>
-<h2 id="objective">Objective</h2>
-<p>VotanicXR has built up interfaces for the input system, and divided the input into several levels.
-This chapter introduces the first two levels, <strong>Command level</strong> and <strong>Virtual Controller level</strong>. <strong>Command level</strong></p>
-<h3 id="cross-platform-input-system">Cross-platform Input System</h3>
-<p>The <strong>Command Input System</strong> using <code>vGear.Cmd</code> class in <code>vGear</code> as command manager, to handle the <code>Send</code> and <code>Receive</code> of commands. The command can be sent by using api and inputting the button bound in the setting file.</p>
-<p>The <strong>Virtual Controller level</strong> using <code>vGear.Ctrl</code> class in <code>vGear</code>, to receive the button input with respect to the index saved in setting file.</p>
-<p>The setting file can be modified in <a class="xref" href="tut11.html">Configurator</a>.</p>
-<h3 id="set-up-tutorial-profile">Set up Tutorial Profile</h3>
-<h4 id="using-configurator">Using Configurator</h4>
-<p>To modify the setting file, please go to <a class="xref" href="tut11.html">Configurator</a>.</p>
-<h4 id="open-sample-scene">Open Sample Scene</h4>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial02_InputSystem </code> and open the scene <code>Input System</code> provided.</p>
-<p>Add a gameObject named <code>TutorialController</code> and create a component named <code>Tutorial02Controller</code> for the code sample below.</p>
-<h2 id="command-input-system">Command Input System</h2>
-<h3 id="command-input-system-overview">Command Input System Overview</h3>
-<p><strong>Command Input System</strong> is a simple communication system to handle the <code>Send</code> and <code>Receive</code> of <code>Command</code>. The reference class is <code>vGear.Cmd</code>.</p>
-<p>Once a command is sent, the command handler will receive the command and can be checked by the API functions. When the command is checked, it will returns true and triggers the custom methods.</p>
-<p><img src="../images/tut02.flow.png" alt="Flow of the command system"></p>
-<h3 id="define-new-command">Define New Command</h3>
-<p>There are several ways to define a new command.</p>
-<h4 id="create-command-in-configurator">Create Command in Configurator</h4>
-<p>To create command in configurator, please go to <a class="xref" href="tut11.html#commands-setting">Command Setting of Configurator</a>.</p>
-<h4 id="map-device-button-to-command">Map Device Button to Command</h4>
-<p>To map device button to command, please go to <a class="xref" href="tut11.html#commands-setting">Command Setting of Configurator</a>.</p>
-<h4 id="send-command-from-interactable">Send Command from Interactable</h4>
-<p><code>vGear Interactable</code> is a component provided by VotanicXR SDK to handle the gameObject Interaction.</p>
-<p>When the component is interacted by user, the command saved in the component will be sent to the Command System.</p>
-<p>Detail will be introduced at <a class="xref" href="tut04.html">Interact with Virtual World</a> and <a class="xref" href="../documentation/vGearInterctableDetail.html">Detail of vGear Interactable</a>.</p>
-<h3 id="send-and-receive-command">Send and Receive Command</h3>
-<p>The basic functions of <code>vGear.Cmd</code> class are <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Send_System_String_System_Single_System_Int32_System_Int32_Votanic_vXR_InteractorType_">Send</a></strong>, <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Received_System_String_">Received</a></strong> and <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_AllReceived">AllReceived</a></strong>.</p>
-<p><strong>Send</strong> sends a custom command to the command handler, the command sent can be received by <strong>Receive</strong> and <strong>AllReceived</strong>.</p>
-<p>To check the parameter sent with the commands, you may use <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Value_System_String_">Value</a></strong> and <strong><a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html#Votanic_vXR_vCast_vCast_Cmd_Target_System_String_">Target</a></strong>.</p>
-<h3 id="command-input-demo">Command Input Demo</h3>
-<p>The sample below shows the usage of <strong>Send</strong> and <strong>Receive</strong>. When the component is enabled, the command handler send a <code>&quot;Custom&quot;</code> command. The update function will check the command received by the command handler, once <code>&quot;Custom&quot;</code> command is received, will print the debug log.</p>
-<pre><code class="lang-cs">void Start()
+</li>
+</ul>
+<ol>
+<li><p>In <code>Project</code> windows, double click and open the <code>setting.vxrs</code> with VotanicXR Configurator.</p>
+<p><img src="../images/2.5.1.png" alt=""></p>
+</li>
+<li><p>Go to <code>Commands</code> tab, select <code>Shoot</code> command in <code>Custom Commands</code></p>
+<p><img src="../images/2.5.2.png" alt=""></p>
+</li>
+<li><p>Setup the command pre-condition. In the right-hand side windows. Click the <code>+</code> Button in <code>Pre Conditions (For all triggers)</code> property. Then, select the new created item <code>None</code>. In the <code>Type</code> select the <code>Traveler</code> in the drop-down list.</p>
+<p><img src="../images/2.5.3.png" alt=""></p>
+</li>
+<li><p>Setup the trigger condition to Vive controller in all environment. Scroll down a little bit to <code>Triggers (Command will be sent if ONE is triggered)</code> section. Select the <code>Trigger 1</code>, then, input <code>0</code> in <code>Input Controller</code> property. This is the virtual controller index, index 0 means the first virtual controller will be bound to this <code>Shoot</code> command.</p>
+<p>Then, in the <code>Selected Input Properties</code> section, select <code>ButtonDown</code> in the <code>Type</code> property and input <code>3</code> in the <code>Key</code> property. Key is the virtual controller button index, please check <a class="xref" href="../documentation/defaultMapping.html">This Link</a> for details.</p>
+<p><img src="../images/2.5.4.png" alt="">
+<img src="../images/2.5.5.png" alt=""></p>
+</li>
+<li><p>(Optional) Jump to step 7 if you want to skip this step. This step is to setup another trigger condition to keyboard in PC environment for testing or debug purpose.</p>
+<p>Click <code>+</code> button in <code>Triggers (Command will be sent if ONE is triggered)</code> section. Then, select the new created <code>Trigger 2</code>. Click <code>+</code> button in <code>Conditions</code> to add a trigger condition. In the <code>Type</code> property, select <code>Environment</code> in the drop-down list. Finally, input <code>PC</code> in the <code>Environment Type</code></p>
+<p><img src="../images/2.5.6.png" alt="">
+<img src="../images/2.5.7.png" alt=""></p>
+</li>
+<li><p>Input <code>-1</code> in <code>Input Controller</code> property. The <code>-1</code> value is to disable the use of virtual controller, and therefore, it will detect the keyboard device. Then, select <code>KeyboardDown</code> in the <code>Type</code> property and input <code>Space</code> in <code>Key</code> property.</p>
+<p><img src="../images/2.5.8.png" alt=""></p>
+</li>
+<li><p>Finally, click <code>File &gt; Save</code> to save the configuration, and the binding process is completed. The next section will discuss how the command be used in the application.</p>
+<p><img src="../images/2.5.9.png" alt=""></p>
+</li>
+</ol>
+<h2 id="command-handling">Command Handling</h2>
+<p>VotanicXR provides a set of command handling methods from the <code>vGear.Cmd</code> class. The most typical use of the commands is through the <code>Cmd.Receive</code> and <code>Cmd.Send</code> methods, which will be introduced below. You can refer to the API documentation <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Cmd.html">here</a> for a complete list of the command handling methods.</p>
+<h3 id="receiving-command">Receiving Command</h3>
+<p>When an input event is invoked on the physical input device, the command that is mapped to the input event of the corresponding virtual controller is triggered, this results in the VotanicXR application receiving the command from the input system. In VotanicXR command handling, the <code>Receive</code> and <code>AllReceived</code> methods can be used for receiving commands. Besides, the <code>Value</code> method can be used for retrieving the value of the command’s parameter. The below section will illustrate command handling steps to receive the <code>Shoot</code> custom command.</p>
+<ol>
+<li><p>Create a <code>CommandController</code> GameObject in the scene. Create a <code>CommandHandler</code> script and attach to the <code>CommandController</code>.</p>
+<p><img src="../images/2.6.1.1.png" alt=""></p>
+</li>
+<li><p>In the <code>CommandHandler</code> script, input the code below. The first <code>if statement</code> is to print out a message when the <code>Shoot</code> command is received. The second <code>if statement</code> is to print out the input controller axis value when the <code>Move</code> button is pressed.</p>
+<pre><code class="lang-csharp">void Update()
 {
-    vGear.Cmd.Send(&quot;Custom&quot;);
-}
-
-private void CheckCustomCommand()
-{
-    //  CheckCustomCommand function in Update
-    if (vGear.Cmd.Received(&quot;Custom&quot;))
+    if (vGear.Cmd.Received(&quot;Shoot&quot;))
     {
-        Debug.Log(&quot;Custom command received!&quot;);
+        GameObject bullet = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+        bullet.transform.localScale = new Vector3(.05f, .05f, .05f);
+        bullet.transform.LookAt(vGear.controller.transform);
+        bullet.AddComponent&lt;Rigidbody&gt;().AddForce(vGear.head.transform.forward * 1000f);
+        Destroy(bullet, 5f);
     }
+
+    if (vGear.Cmd.Received(&quot;Move&quot;))
+    {
+        Debug.Log(&quot;Move value: &quot; + vGear.Cmd.Value(&quot;Move&quot;));
+    }
+
 }
 </code></pre>
-<p><img src="../images/4.2.2.png" alt="Console Result Send and Received"></p>
-<br>
-<p>The sample below shows the usage of <strong>AllReceived</strong> and <strong>Value</strong>. The update function contains a foreach loop to get the command through <strong>AllReceived</strong>. For each command got from the handler, print out the float value of the command. If the command match <code>&quot;FunctionA&quot;</code>, call the Function <code>&quot;FunctionA&quot;</code>.</p>
-<pre><code class="lang-cs">private void CheckAllCommand()
+</li>
+<li><p>Play the scene and check the message in the debug windows.</p>
+<p><img src="../images/2.6.1.2.gif" alt=""></p>
+</li>
+</ol>
+<h3 id="sending-command">Sending Command</h3>
+<p>Apart from binding commands to virtual controller buttons and axes, commands can be sent out programmatically. Commands send out from API do not need to define in the configurator first.</p>
+<ol>
+<li><p>Modify the first <code>if statement</code> in <code>CommandHandler</code> script. If the <code>Shoot</code> command is invoked few times, a <code>ShootOverloaded</code> command will be sent out.</p>
+<pre><code class="lang-csharp">void Update()
 {
-    //  CheckAllCommand function in Update
-    foreach (string command in vGear.Cmd.AllReceived())
+    if (vGear.Cmd.Received(&quot;Shoot&quot;) || vGear.Input.KeyboardDown(KeyCode.H))
     {
-        Debug.Log(&quot;The value of &quot; + command + &quot; command is &quot; + vGear.Cmd.Value(command));
-        switch (command)
+        GameObject bullet = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+        bullet.transform.localScale = new Vector3(.05f, .05f, .05f);
+        bullet.transform.LookAt(vGear.controller.transform);
+        bullet.AddComponent&lt;Rigidbody&gt;().AddForce(vGear.head.transform.forward * 1000f);
+        Destroy(bullet, 5f);
+
+        if (++shootCount &gt; 5)
         {
-            case &quot;FunctionA&quot;:
-                FunctionA();
-                break;
+            vGear.Cmd.Send(&quot;ShootOverloaded&quot;);
         }
     }
-}
-</code></pre>
-<p><img src="../images/4.2.4.png" alt="Console Result of AllReceived and Value"></p>
-<h2 id="virtual-controller-input-system">Virtual Controller Input System</h2>
-<h3 id="virtual-controller-input-system-overview">Virtual Controller Input System Overview</h3>
-<p><strong>Virtual Controller Input System</strong> is an input system to handle vCast controller.
-The reference class is <code>vGear.Ctrl</code>.</p>
-<p>By default, this component will bind with Buttons and Axes of the connected devices automatically.
-The bound mapping can be configurated in the <a class="xref" href="tut11.html#controllers-setting">Controller Setting in Configurator</a>, and the mapping can be customized for developer needs.</p>
-<h3 id="configure-virtual-controller">Configure Virtual Controller</h3>
-<h3 id="virtual-controller-input-demo">Virtual Controller Input Demo</h3>
-<p>The sample below shows the input of button index 0 and axis index 0.</p>
-<pre><code class="lang-cs">private void CheckVirtualControllerInput()
-{
-    //  CheckVirtualControllerInput function in Update
-    if (vGear.Ctrl.ButtonDown(0))
+
+    if (vGear.Cmd.Received(&quot;Move&quot;))
     {
-        Debug.Log(&quot;Button 0 is down.&quot;);
-    }
-    if (vGear.Ctrl.ButtonHold(0))
-    {
-        Debug.Log(&quot;Button 0 is held for some time.&quot;);
-    }
-    if (vGear.Ctrl.ButtonPress(0))
-    {
-        Debug.Log(&quot;Button 0 is pressing.&quot;);
+        Debug.Log(&quot;Move value: &quot; + vGear.Cmd.Value(&quot;Move&quot;));
     }
 
-    if (vGear.Ctrl.AxisDown(0))
+}
+</code></pre>
+</li>
+<li><p>Create a <code>GameController</code> GameObject and attach a <code>GameHandler</code> script on it.</p>
+<p><img src="../images/2.6.2.1.png" alt=""></p>
+</li>
+<li><p>In the <code>GameHandler</code> script, input the code below to display a message when command <code>ShootOverloaded</code> is received.</p>
+<pre><code class="lang-csharp">void Update()
+{
+    if (vGear.Cmd.Received(&quot;ShootOverloaded&quot;))
     {
-        Debug.Log(&quot;Axis 0 is down.&quot;);
+        Debug.Log(&quot;You press shoot button too much!&quot;));
     }
-    if (vGear.Ctrl.AxisHold(0))
+
+}
+</code></pre>
+</li>
+<li><p>Finally, check the result in the play mode.</p>
+<p><img src="../images/2.6.2.2.png" alt=""></p>
+</li>
+</ol>
+<h2 id="getting-virtual-controller-value">Getting Virtual Controller Value</h2>
+<p>Virtual Controller buttons and axes can be access via Class <code>vGear.Ctrl</code>. The related methods are listed in below table. The detail API document can be checked <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Ctrl.html">here</a>.</p>
+<p>However, <em>direct access the virtual controller buttons and axes is not recommended</em> in the application. The <code>Command</code> system is the better way to use the input system.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><code>Ctrl</code> Class Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AxisDown(Int32, AxisDirection, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">AxisHold(Int32, AxisDirection, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">AxisPress(Int32, AxisDirection, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">AxisUp(Int32, AxisDirection, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">AxisValue(Int32, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ButtonDown(Int32, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ButtonHold(Int32, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ButtonPress(Int32, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ButtonTouch(Int32, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ButtonUp(Int32, Int32, Boolean)</td>
+</tr>
+<tr>
+<td style="text-align: left;">GetAxes(Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">GetButtons(Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetAxes(Int32, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetAxes(String, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetButtons(Int32, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">SetButtons(String, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vibrate(Single, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Vibrate(Single, Single, Single, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">VibrateAxes(Single, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">VibrateAxes(Single, Single, Single, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">VibrateButtons(Single, Int32)</td>
+</tr>
+<tr>
+<td style="text-align: left;">VibrateButtons(Single, Single, Single, Int32)</td>
+</tr>
+</tbody>
+</table>
+<p>The following step is an example to use the <code>Virbtate</code> API</p>
+<ol>
+<li><p>Open a tutorial scene. In <code>Project</code> window, open <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial02_InputSystem</code></p>
+<p><img src="../images/2.7.1.png" alt=""></p>
+</li>
+<li><p>Create GameObject <code>VirtualController</code> . Then create a <code>VirtualControllerScript</code> C# script and attached the script to <code>VirtualController</code></p>
+<p><img src="../images/2.7.2.png" alt=""></p>
+</li>
+<li><p>Add the below code in the <code>VirtualControllerScript</code>. In the <code>Vibrate</code> method, the argument <code>duration</code> is the duration of vibration. For further details please refer <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Ctrl.html#Votanic_vXR_vCast_vCast_Ctrl_Vibrate_System_Single_System_Int32_">API</a>.</p>
+<pre><code class="lang-csharp">float time = 0f;
+void Update()
+{
+    time += Time.deltaTime;
+    if (time &gt;= 5f)
     {
-        Debug.Log(&quot;Axis 0 is held for some time.&quot;);
-    }
-    if (vGear.Ctrl.AxisPress(0))
-    {
-        Debug.Log(&quot;Axis 0 is pressing with value &quot; +
-            vGear.Ctrl.AxisValue(0).ToString(&quot;F2&quot;) + &quot;.&quot;);
+        vGear.Ctrl.Vibrate(1f);
+        time = 0f;
     }
 }
 </code></pre>
-<p><img src="../images/4.3.3.png" alt="Console Result of AllReceived and Value"></p>
+</li>
+<li><p>In the play mode, the controller will be vibrated one second for every five seconds.</p>
+</li>
+</ol>
 </article>
           </div>
           

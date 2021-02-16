@@ -69,132 +69,220 @@
             <article class="content wrap" id="_content" data-uid="tut05-3dui">
 <h1 id="interact-with-3d-ui">Interact with 3D UI</h1>
 
-<p>In this article</p>
+<p>This chapter introduces the built-in 3D User Interface components in VotanicXR and demonstrate how to quickly create 3D user interface which the user can interact with. VotanicXR provides a flexible 3D UI Toolkit for creating interactive 3D UIs in VotanicXR applications. It is extends the VotanicXR Interactable components so that user can interact with the 3D user interface in VR world using Wand or Glove. Specifically, we introduce the vGear panel and vGear button basic 3D UI components, and demonstrate in the tutorial how to create a simple message dialog panel using the UIPanel prefab.</p>
+<h2 id="tutorial-scene-and-related-materials">Tutorial Scene and Related Materials</h2>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial05_3DUI &gt; Resources</code> and open the scene <code>3D UI</code> provided.</p>
+<h2 id="votanicxr-ui-basic">VotanicXR UI Basic</h2>
+<p>VotanicXR provides two commonly used UI components, <code>vGear Panel</code> and <code>vGear Button</code>. They are very easy to customize and quick to configure to fit any art style of the application. Moreover, since the UI components extend the VotanicXR Interactable module, users will be able to interact with the UI components with the Wand Interactor.</p>
 <ul>
-<li><a class="xref" href="tut05.html#create-3d-ui">Create 3D UI</a></li>
-<li><a class="xref" href="tut05.html#interact-with-vgear-button">Interact with vGear Button</a></li>
-<li><a class="xref" href="tut05.html#using-vgear-panel">Using vGear Panel</a></li>
-<li><a class="xref" href="tut05.html#using-vgear-slider">Using vGear Slider</a></li>
+<li><p><code>vGear_Panel</code> is a container to manage the display of the UI element itself as well as its child objects. This component is inherited from the <code>vGear_Interactables</code> class. It can be added to GameObjects or Canvas.</p>
+</li>
+<li><p><code>vGear Button</code> adds interactivity to the original Unity UI button to allow it to interact with the Wand Interactor. <code>vGear Button</code> comes with built-in transition effects to the <code>on select</code>, <code>on click</code> and on <code>disable</code> event. Developers can easily customize the button properties without any scripting. This component is inherited from the <code>vGear_Interactables</code> class. It can be added to GameObjects or Canvas.</p>
+</li>
 </ul>
-<h2 id="objective">Objective</h2>
-<p>This chapter introduces the <code>3D User Interface</code> features provided by VotanicXR.
-3D User Interface is specialized the user interface for the virtual reality development.</p>
-<p>The design concern is different between tranditional PC Game and VR Game developed with VotanicXR, to use the advantage and avoid the disadvantage of virtual space.
-The design concept of User Interface in virtual world is easy to read and leading less discomfort, suitable distance and flow is good for user.</p>
-<p>This chapter introduces how to use and modify the built-in 3D UI components and prefabs.</p>
-<h3 id="built-in-3d-ui-components-in-votanicxr">Built-in 3D UI Components in VotanicXR</h3>
-<p>The built-in 3D UI components are <code>Button</code>, <code>Panel</code> and <code>Slider</code>.</p>
-<h3 id="set-up-ui-interaction-sample-scene">Set up UI Interaction Sample Scene</h3>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial05_3DUI </code> and open the scene <code>3D UI</code> provided.</p>
-<p>GameObject <code>TutorialController</code> with script component <code>Tutorial05Controller</code> is provided for the tutorial usage.</p>
-<h2 id="create-3d-ui">Create 3D UI</h2>
-<p>To create a frame for the 3D UI canvas, please use the following setting.</p>
-<ol>
-<li><p>Create an canvas gameobject of Unity, we use Image for the demonstration.</p>
+<h3 id="recommended-canvas-configuration">Recommended Canvas Configuration</h3>
+<p>Unlike the typical screen space UI which point and click with a mouse pointer, the UI in VR world should be rendered in world space to allow the user to interact with it using the Wand or VR controllers. The following canvas setting is recommended for creating UI in VR environment.</p>
+<ul>
+<li><p>Canvas Render Mode should be set to <code>World Space</code>.</p>
 </li>
-<li><p>Set the corresponding canvas <code>Render Mode</code> into <code>World Space</code>, and tune the rect transform in suitable parameter that easy be reached for user.</p>
-<p>We suggest the scle of the Rect Transform is (0.001, 0.001, 0.001), for the pixel correspondence amd precision.
-Note that 1 unit in Unty Editor is corresponding to 1 meter in virtual world and real world.
-In this sample, 0.001 scale with 1000 width corresponds to 1mm per pixel.</p>
-<p><img src="../images/7.1.1.png" alt="Set the rect transform of canvas into suitable size."></p>
-<p>Also tune the Image into the suitable size.</p>
-<p><img src="../images/7.1.2.png" alt="Set the rect transform of image into suitable size."></p>
-<p>Robot dummy provided by StartPOint prefab can be a reference of size.</p>
-<p><img src="../images/7.1.3.png" alt="Reference with the robot dummy"></p>
+<li><p>Using scale (0.001, 0.001, 0.001) in <code>Rect Transform</code> so that pixels are rendered in 1-to-1 correspondence with millimetre. <strong>In the below figure, the Width and Height of <code>Rect Transform</code> is equivalent to (1000 x 1000) mm. You may adjust the scale for the precision.</strong></p>
+<p><img src="../images/5.1.png" alt="">
+ </p>
+</li>
+</ul>
+<h4 id="vgear-panel">vGear Panel</h4>
+<p><code>vGear_Panel</code> is use for managing the display of the UI panel itself and its child GameObjects. it can be added to both 3D GameObjects and UI Element of Canvas.</p>
+<h5 id="adding-vgear-panel-component">Adding vGear Panel Component</h5>
+<ol>
+<li><p>Create a 2D UI using Unity canvas and named it <code>DemoPanel</code>.</p>
+<p><img src="../images/5.2.1.png" alt=""></p>
+</li>
+<li><p>Right click on the GameObject <code>Panel</code> and select <code>vGear &gt; Component &gt; Panel</code> to add a <code>V Gear_Panel(script)</code> to the canvas.</p>
+<p><img src="../images/5.2.2.png" alt=""></p>
+<p><strong>Note</strong>: a {gameobject.name}.Grabbables (Panel.Grabbables in this example) will be created and the selected GameObject will be parented to the Grabbables GameObject as illustrated below. The <code>V Gear_Panel (Script)</code> is added to the selected GameObject (<code>Panel</code> GameObject in this example).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Before adding the component</th>
+<th style="text-align: center;">After adding the component</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../images/5.2.3.png" alt=""></td>
+<td style="text-align: center;"><img src="../images/5.2.4.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>In the <code>V Gear_Panel (Script)</code>, scroll down to the <code>[Transition]</code> setting and update <code>[Transition] &gt; Close &gt; Alpha</code> value to 0. When the panel is closed, it will disappear.</p>
+<p><img src="../images/5.2.5.png" alt=""></p>
+</li>
+<li><p>In the [Panel Settings], select <code>Default Open</code>, then the panel will be opened by default when the application starts.</p>
+<p><img src="../images/5.2.6.png" alt=""></p>
 </li>
 </ol>
-<h2 id="interact-with-vgear-button">Interact with vGear Button</h2>
-<p><code>V Gear_Button (Script)</code>, inherited from <code>vGear_Interactable</code> class and <code>vGear_UI</code> class, can be added into both 3D gameobjects or UI Element of Canvas.
-It may set the transition effect into this interactable, the transition happened when transitioning, on click, on disable or on select.</p>
-<h3 id="add-vgear-button-component">Add vGear Button Component</h3>
-<p>The sample of add vGear Button is shown below.</p>
+<h5 id="controlling-the-vgear_panel-programmatically">Controlling the vGear_Panel Programmatically</h5>
+<p>The vGear_Panel can also be configured to open and close using the <code>vGear_Panel.Open()</code> and <code>vGearPanel.Close()</code> API</p>
 <ol>
-<li><p>Add the vGear Button component by <code>vGear &gt; Component &gt; Button</code> to the image gameObject in previous section, the gameobject is wrapped and parented to <code>{gameobject.name}.Grabbables</code>.</p>
-<p>The parent is a gameobject with Transform <strong><code>for</code></strong> the <code>V Gear_Button (Script)</code> component, and the gameobject <strong><code>with</code></strong> the <code>Canvas</code> and <code>V Gear_Button (Script)</code> component will be the child.
-The structure is to separate the management of the transform function and rect transform function .</p>
-<table width="100%">
-<tr><td>Before add the component <td> After add the component
-<tr><td><img src="../images/7.2.1.1.png" alt="Collision Mode enable"><td><img src="../images/7.2.1.2.png" alt="Collision Mode disable">
-</td></td></tr></td></td></tr></table>
+<li><p>Create an empty GameObject and name it as <code>SceneController</code>. Then create a C# script and named it as <code>PanelControllerScript</code> and attach the script to the <code>SceneController</code> GameObject.</p>
+<p><img src="../images/5.3.1.png" alt=""></p>
+</li>
+<li><p>Add the below code to the <code>PanelControllerScript</code>.</p>
+<pre><code class="lang-csharp">vGear_Panel panel;
+void Start()
+{
+    panel = GameObject.Find(&quot;DemoPanel/Panel.Grabbables/Panel&quot;).GetComponent&lt;vGear_Panel&gt;();
+}
+
+void Update()
+{
+    if ((panel != null) &amp;&amp; (!panel.isTransiting) &amp;&amp; (vGear.Cmd.Received(&quot;Grab&quot;)))
+    {
+        if (panel.isOpened)
+        {
+            panel.Close();
+        }
+        else
+        {
+            panel.Open();
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>In the play mode, the Panel will toggle open and close when user presses the Grab button.</p>
+<p><img src="../images/5.3.3.gif" alt=""></p>
 </li>
 </ol>
-<h3 id="configure-vgear-button-with-adding-vgear-transition-effect">Configure vGear Button with adding vGear Transition Effect</h3>
-<p>The <code>V Gear_Button (Script)</code> is similar to the <code>V Gear_Interactable (Script)</code>, the additional settings are series of transition setting after <strong>[Additional Setting]</strong>.</p>
-<p>The <strong>Transition Settings</strong> can only be set in editor mode.</p>
-<p>And do not forget to set the Box Collider into suitable size.</p>
-<p><img src="../images/7.3.1.png" alt="The V Gear_Button (Script)"></p>
-<p>Note that the value of Transform in <code>UIState</code> is <strong>applying</strong> into the Transform of the object, in detail, the value is applied with respect to the original rect transform, and the <code>Scaling</code> is added to the original value.</p>
-<p>The below will shown a sample of the Transition effect.</p>
+<h4 id="vgear-button">vGear Button</h4>
+<p>V Gear_Button (Script), is inherited from the vGear_Interactable class and the vGear_UI class. It can be added to both the 3D gameobjects or UI Element of Canvas. Apart from the default interactions and UI behaviours inherited from the 2 classes, transition effects may also be added to the vGear Button on different button events. The transition effects are available when transitioning, on click, on disable or on select.</p>
+<h5 id="adding-vgear-button-component">Adding vGear Button Component</h5>
 <ol>
-<li><p>Go to <code>V Gear_Button (Script) [Transition] &gt; Transition</code>, the common setting is stored here.
-We take the default value, that is using time and 0.25 seconds as Transition Factor.</p>
+<li><p>We will reuse the panel created in the previous section. In the Panel, create a <code>UI &gt; Text</code> and named it as <code>DemoButton</code>.</p>
+<p><img src="../images/5.4.1.png" alt=""></p>
 </li>
-<li><p>Go to <code>V Gear_Button (Script) [Transition] &gt; Select</code>, change the the <code>Scaling</code> into (0.2, 0.2, 0.2), <code>Rotation</code> to (0, 0, 180) and <code>Color</code> to purple.</p>
+<li><p>Select the <code>Button</code> GameObject. Then, right click on the <code>Button</code> GameObject and select <code>vGear &gt; Component &gt; Button</code> to add the vGear_Button script to the selected GameObject.</p>
+<p><img src="../images/5.4.2.png" alt=""></p>
+<p><strong>Note</strong>: Same as the vGear Panel, a {gameobject.name}.Grabbables will be created and the selected GameObject will be parented to it. The <code>V Gear_Button (Script)</code> is added to the selected GameObject.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Before adding the component</th>
+<th style="text-align: center;">After adding the component</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../images/5.4.3.png" alt=""></td>
+<td style="text-align: center;"><img src="../images/5.4.4.png" alt=""></td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><p>Go to <code>V Gear_Button (Script) [Transition] &gt; Click</code>, change the the <code>Scaling</code> into (-0.2, -0.2, -0.2), <code>Rotation</code> to (0, 0, 360) and <code>Color</code> to purple.</p>
-<p><img src="../images/7.3.2.2.png" alt="The V Gear_Button (Script)"></p>
+<li><p>Create a <code>UI &gt; Panel</code> before the GameObject <code>DemoButton.Grabbables</code> as the background of the button.</p>
+<p><img src="../images/5.4.1b.png" alt=""></p>
+</li>
+<li><p>In the <code>V Gear_Button (Script)</code>, customized button actions can be added under <code>[Settings] &gt; Interaction</code>, in the same way as you configure the interaction for an Interactable GameObject using Unity Event. In the below example, the button is set to close the panel on click.</p>
+<p>Interaction Type: Up</p>
+<p>Unity Event:	Object: <code>Panel (vGear_Panel)</code> Function: <code>vGear_Panel.Close</code></p>
+<p><img src="../images/5.4.5.png" alt=""></p>
+</li>
+<li><p>The <code>Box Collider</code> attached to the vGear Button is the interaction area for the Wand Interactor. Adjust the size of the box collider so that it fits the size of the background of the button.</p>
+<p><img src="../images/5.4.6.png" alt=""></p>
+</li>
+<li><p>Play the scene and check out the effect. When user clicks the button using the Wand, the panel will be closed.</p>
+<p><img src="../images/5.4.7.gif" alt=""></p>
 </li>
 </ol>
-<p>The result of selecting button and the value change is shown below.</p>
-<p><img src="../images/7.3.2.gif" alt="The result of selecting button"></p>
-<table width="100%">
-<tr><td>Editor Mode<td>Play Mode
-<tr><td> <img src="../images/7.3.3.1.png"><td> <img src="../images/7.3.3.2.png">
-</td></td></tr></td></td></tr></table>
-<p>Detail of the <code>Transition Effects</code> will be described in <a href="../documentation/vGearDetail.html">Detail of UI Element</a>.</p>
-<h2 id="using-vgear-panel">Using vGear Panel</h2>
-<p><code>vGear_Panel</code>, inherited from <code>vGear_Button</code> class, manages the display of itself and its child gameobjects.
-it can be added into both 3D gameobjects or UI Element of Canvas.</p>
-<p>The additional features of <code>V Gear_Panel (Script)</code> component is the functions to react with the childs.</p>
-<h3 id="add-vgear-panel-prefab">Add vGear Panel Prefab</h3>
-<p>Instead of adding the component manually, VotanicXR provides prefabs with the <code>V Gear_Panel (Script)</code> component, and they contain similar structure as mention above.</p>
-<p>The prefabs using <code>V Gear_Panel (Script)</code> component are <code>UIPanel</code> and <code>InputPanel</code>, and we take <code>UIPanel</code> as the sample below.</p>
-<p>Right-click <code>vGear &gt; GameObject &gt; UIPanel</code>, the prefab named <code>Panel</code> is added to the scene.</p>
-<p><img src="../images/7.4.1.1.png" alt="The Panel Prefab"></p>
-<p>The structure of the prefab Panel.</p>
-<table width="100%">
-<tr><td>Hierarch<td>Flow of structure
-<tr><td> <img src="../images/7.4.1.2.png"><td> <img src="../images/7.4.1.3.png">
-</td></td></tr></td></td></tr></table>
-<p>The prefab is provided with some presets that convenient for development, that is the color of button and the panel will be closed on click.
-The setting below is the preset Unity Event of the button in the prefab.</p>
-<p><img src="../images/7.4.1.4.png" alt="The button preset"></p>
-<p>The demonstration usage is shown as below.</p>
-<p><img src="../images/7.4.1.5.gif" alt="The demonstration usage"></p>
-<h3 id="configure-vgear-panel">Configure vGear Panel</h3>
-<p>In addition to the transition effects, <code>vGear Panel</code> class provides features to manage the child gameObject as the setting <code>Panel Settings</code> below.</p>
-<p><img src="../images/7.4.2.1.png" alt="The Panel Settings"></p>
-<p>The field <code>Grab With Buttons</code> will overrides child buttons grab setting if true.
-Besides, the provided functions of <code>vGear Panel</code> class will affects the child gameObjects.</p>
-<p>For example in previous section, the function <code>vGear_Panel.Close</code> in the preset Unity Event, it closes the panel and the child gameObjects, instead of only close the panel only.</p>
-<p>The relevant functions are <code>Open</code>, <code>Enable</code>, <code>Disable</code>.etc , detail will be introduced in the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Panel.html">API</a>.</p>
-<h2 id="using-vgear-slider">Using vGear Slider</h2>
-<p><code>V Gear_Panel (Script)</code>, inherited from <code>vGear_Button</code> class, manages the child canvas gameobjects by the slider using <strong>triggering</strong>.
-It can be added into both 3D gameobjects or UI Element of Canvas to implement slidable features.</p>
-<h3 id="add-vgear-slider-prefab">Add vGear Slider Prefab</h3>
-<p>VotanicXR also provides prefab with the <code>V Gear_Slider (Script)</code> component, and it contains similar structure as mention above.</p>
-<p>The prefab using <code>V Gear_Slider (Script)</code> component is <code>ScrollPanel</code>, will be introduced below.</p>
-<p>Right-click <code>vGear &gt; GameObject &gt; ScrollPanel</code>, the prefab named <code>ScrollPanel</code> is added to the scene.</p>
-<p><img src="../images/7.5.1.png" alt="The Panel Prefab"></p>
-<h3 id="configure-vgear-slider">Configure vGear Slider</h3>
-<p>In addition to the transition effects, <code>vGear Slider</code> class controls the slider as the setting <code>Slider Settings</code> below.</p>
-<p><img src="../images/7.5.2.png" alt="The Slider Settings"></p>
-<p>The <code>Controller Transform</code>, <code>Max Slided Transform</code> and <code>Max Scroll Transform</code> are the parameters should be set for each slider.</p>
-<p><code>Max Slided Transform</code> is the maximum slider transformation for the slider movement with respect to the rect transform, .</p>
-<p><code>Max Scroll Transform</code> is the maximum scroll content transformation value from the original.</p>
-<p><code>Controller Transform</code> is the structure to calculate controller transformation, as a factor to map from controller input to the slider, the value of this should be the same ratio to the parent transform scale with the <code>Max Slided Transform</code> to synchorinize controller input.</p>
-<p>The <code>Value Range</code> is the interaction return value range of slider, can be called by using <code>GetValue()</code> for instant responce, such as volume of a sound emitter.</p>
-<p>The useful setting to be adjusted is <code>Inertia</code>, the movement rate after controller release.
-The preset of <code>Inertia</code> in the child <code>ScrollButton [ContentSlider]</code> is set as 0.75 as shown below.</p>
-<p><img src="../images/7.5.3.gif" alt="The Slider Settings"></p>
-<p>In Contrast, the child <code>Slider</code> without setting <code>Inertia</code> is shown below.</p>
-<p><img src="../images/7.5.3.2.gif" alt="The Slider Settings"></p>
-<p>The below is the preset settings of the child <code>ScrollButton [ContentSlider]</code> and child <code>Slider</code>, they are synchronized sliders with each other.</p>
-<table width="100%">
-<tr><td>ScrollButton [ContentSlider]<td><img src="../images/7.5.2.2.png">
-<tr><td>Slider <td> <img src="../images/7.5.2.1.png">
-</td></td></tr></td></td></tr></table>
-<p>The detail of the UI elements will be introduced in <a class="xref" href="../documentation/vGearUIDetail.html">Detail of UI Element</a>.</p>
+<h5 id="vgear-button-transition-effects">vGear Button Transition Effects</h5>
+<p>Optionally, developer can change the button <code>click</code>, <code>select</code> and <code>disable</code> transition effects in the <code>V Gear_Button (Script) &gt; [Transition]</code> section.</p>
+<p><img src="../images/5.5.1.png" alt=""></p>
+<p>The <code>Transition</code> field includes some parameters to store the transition setting.
+<img src="../images/5.5.2.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Transition Parameter</strong></th>
+<th style="text-align: left;"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Parameter</td>
+<td style="text-align: left;">The transition method used for the transition, the methods are <code>Time Base</code> and <code>Velocity Base</code>.<br><br>For time base, the total motion duration equals to acceleration factor plus motion factor plus deceleration factor.<br>For velocity base. The motion factor equals to Maximum speed, acceleration factor and deceleration factor equal to acceleration and deceleration respectively.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transition Factor</td>
+<td style="text-align: left;">The motion factor for the corresponding transition method used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acceleration Factor</td>
+<td style="text-align: left;">Transition accelerating value for corresponding transition method used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Deceleration Factor</td>
+<td style="text-align: left;">Transition decelerating value for corresponding transition method used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unscaled Delta Time</td>
+<td style="text-align: left;">Using unscaled delta time if true.</td>
+</tr>
+</tbody>
+</table>
+<p>The transition effects for the button include <code>Movement</code>, <code>Rotation</code>, <code>Scaling</code>, <code>Color</code> and <code>Alpha</code>. In each transition, these five properties can be configurated. The below table lists the effects of these properties with examples demonstrating the effects.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Transition Property</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Movement</td>
+<td style="text-align: left;">Offset the position of the GameObject according to (X, Y, Z) value</td>
+<td style="text-align: left;"><img src="../images/5.5.3.1.gif" alt=""></td>
+</tr>
+<tr>
+<td style="text-align: left;">Rotation</td>
+<td style="text-align: left;">Offset the rotation of the GameObject according to (X, Y, Z) value</td>
+<td style="text-align: left;"><img src="../images/5.5.3.2.gif" alt=""></td>
+</tr>
+<tr>
+<td style="text-align: left;">Scaling</td>
+<td style="text-align: left;">Enlarge or contract the GameObject according to (X, Y, Z) value. <br>Example: (0,0,0) is the original size. (1,1,1) is double the size.</td>
+<td style="text-align: left;"><img src="../images/5.5.3.3.gif" alt=""></td>
+</tr>
+<tr>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">Change the color of the button</td>
+<td style="text-align: left;"><img src="../images/5.5.3.4.gif" alt=""></td>
+</tr>
+<tr>
+<td style="text-align: left;">Alpha</td>
+<td style="text-align: left;">Change the opacity of the button</td>
+<td style="text-align: left;"><img src="../images/5.5.3.5.gif" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="votanicxr-ui-panel-prefab">VotanicXR UI Panel Prefab</h3>
+<p>VotanicXR has a panel prefeb to create a simple panel quickly.</p>
+<ol>
+<li><p>In the tutorial scene, right click in the <code>Hierarchy</code> window. Then select <code>vGear &gt; GameObject &gt; UIPanel</code>. This will create a <code>Panel</code> GameObject in the scene.</p>
+<p><img src="../images/5.6.1.png" alt=""></p>
+</li>
+<li><p>The newly created <code>Panel</code> prefab has <code>Panel</code> and <code>Button</code> GameObjects. The text message can be changed in the <code>Panel &gt; Text</code>, and the button text can be changed in the <code>Panel &gt; Button &gt; Button </code>.</p>
+<p><img src="../images/5.6.2.png" alt=""></p>
+</li>
+<li><p>The <code>vGear_Panel</code> class has four public functions, which are <code>Open()</code>, <code>Close()</code>, <code>Enable()</code> and <code>Disable()</code>,  to control the behaviour of the panel. The <code>OK</code> button is pre-configured to invoke the <code>Close()</code> function of interaction type <code>Up</code>. Developer can register other events to the <code>Unity Event (Parameter)</code> if required.</p>
+<p><img src="../images/5.6.3.png" alt=""></p>
+</li>
+<li><p>In the play mode, the panel will be closed when the Wand click the <code>OK</code> button.</p>
+<p><img src="../images/5.6.4.gif" alt=""></p>
+</li>
+</ol>
 </article>
           </div>
           
