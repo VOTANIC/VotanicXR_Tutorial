@@ -354,12 +354,12 @@ public void OnWandDeselectOnRock()
 </ol>
 <h3 id="set-up-interaction-using-custom-command">Set up Interaction using Custom Command</h3>
 <p>Instead of registering functions to the Interaction, the Interaction can send a custom command and receive that command via API <code>vGear.Cmd.Received(&quot;Command&quot;)</code>.</p>
-<p>The below example is to configure the GameObject <code>Barrel</code> to use the <code>Press</code> Interaction. A custom command <code>OnBarrelPress</code> will be sent out and received by a GameObject <code>SceneController</code>.</p>
+<p>The below example is to configure the GameObject <code>Barrel</code> to use the <code>Select</code> and <code>Deselct</code> Interactions. A custom command will be sent out and received by a GameObject <code>SceneController</code>.</p>
 <ol>
 <li><p>Right click the <code>Interactable Objects &gt; Barrel</code> GameObject and add a <code>Interactables+</code> script.</p>
 <p><img src="../images/4.6.1.png" alt=""></p>
 </li>
-<li><p>In <code>V Gear_Interactables</code> component, select <code>Press</code> in <code>Interaction Type</code>, and input <code>OnBarrelPress</code> in the <code>Command</code> property.</p>
+<li><p>In <code>V Gear_Interactables</code> component, select <code>Interaction Type</code>, and input the commands in the <code>Command</code> property as follow.</p>
 <p><img src="../images/4.6.2.png" alt=""></p>
 </li>
 <li><p>Create an empty GameObject <code>SceneController</code> and a new script <code>CommandController</code>, then attach the script to the <code>SceneController</code>.</p>
