@@ -161,7 +161,7 @@
           "hash": "y4bUrMHrkfJ9+2YqTWA6Aw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -182,7 +182,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearMediaplayerDetail.html",
-          "hash": "h9Nom69OthovkKN67j7yGw=="
+          "hash": "7dftgvtSf7kDULfzw/SwrQ=="
         }
       },
       "is_incremental": true,
@@ -1670,6 +1670,17 @@
       "output": {
         "resource": {
           "relative_path": "images/2.4.4.4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/2.4.4.4b.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/2.4.4.4b.png"
         }
       },
       "is_incremental": false,
@@ -3261,6 +3272,105 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/6.1.1.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.1.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.1.1.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.1.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.1.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.1.3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.3.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.1.3.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.3.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.1.3.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.3.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.1.3.4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.3.4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.1.3.5.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.1.3.5.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/6.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/6.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/6.2.2.png",
       "output": {
         "resource": {
@@ -3283,142 +3393,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/6.3.1.gif",
+      "source_relative_path": "images/6.2.4.png",
       "output": {
         "resource": {
-          "relative_path": "images/6.3.1.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.3.2.gif",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.3.2.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.3.3.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.3.3.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.3.3.2.gif",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.3.3.2.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.3.4.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.3.4.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.3.5.2.gif",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.3.5.2.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.3.6.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.3.6.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.3.6.2.gif",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.3.6.2.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.4.1.0.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.4.1.0.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.4.1.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.4.1.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.4.1.2.gif",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.4.1.2.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.4.2.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.4.2.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/6.4.2.2.gif",
-      "output": {
-        "resource": {
-          "relative_path": "images/6.4.2.2.gif"
+          "relative_path": "images/6.2.4.png"
         }
       },
       "is_incremental": false,
@@ -3701,138 +3679,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/8.1.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.1.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.1.2.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.1.2.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.1.3.1.2.gif",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.1.3.1.2.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.1.3.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.1.3.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.1.3.2.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.1.3.2.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.1.3.3.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.1.3.3.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.2.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.2.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.2.2.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.2.2.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.2.3.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.2.3.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.2.4.1.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.2.4.1.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.2.4.2.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.2.4.2.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/8.2.4.3.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/8.2.4.3.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "images/9.0.1.png",
       "output": {
         "resource": {
@@ -3943,10 +3789,318 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Temp/6.2.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.2.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.2.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.2.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.1.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.1.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.2.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.3.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.3.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.3.2.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.4.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.4.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.5.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.5.2.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.6.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.6.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.3.6.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.3.6.2.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.4.1.0.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.4.1.0.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.4.1.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.4.1.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.4.1.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.4.1.2.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.4.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.4.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/6.4.2.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/6.4.2.2.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.1.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.1.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.1.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.1.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.1.3.1.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.1.3.1.2.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.1.3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.1.3.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.1.3.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.1.3.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.1.3.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.1.3.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.2.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.2.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.2.4.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.2.4.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.2.4.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.2.4.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/8.2.4.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/8.2.4.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Temp/detail 3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Temp/detail 3.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/VXR_Logo.png",
       "output": {
         "resource": {
           "relative_path": "images/VXR_Logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/detail3.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/detail3.1.png"
         }
       },
       "is_incremental": false,
@@ -4613,7 +4767,7 @@
           "hash": "uxOnXX7MS3MrF+5tPRNDTw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4622,7 +4776,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "DGWzbeJ2FBxSlHrf37Zi0g=="
+          "hash": "FcgIeNaV2gS1SfcUkI5NXg=="
         }
       },
       "is_incremental": false,
@@ -4646,7 +4800,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut02.html",
-          "hash": "2GlrVBDIKyStYcNXXbCASA=="
+          "hash": "xKxtI66Ut9sL1cOBij4Mfw=="
         }
       },
       "is_incremental": true,
@@ -4673,7 +4827,7 @@
           "hash": "fgRZCc20ie36dYX3kPqyyA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4682,7 +4836,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut05.html",
-          "hash": "ymW6oHZaF2pd9qXkEVdSpw=="
+          "hash": "m5PFWKatwrWh4rbCnVFasw=="
         }
       },
       "is_incremental": true,
@@ -4694,7 +4848,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut06.html",
-          "hash": "toXgnKItYAwt1yGfd1YZ1g=="
+          "hash": "sx47Wow6QMKY968J2yuT2Q=="
         }
       },
       "is_incremental": true,
@@ -4760,7 +4914,7 @@
           "hash": "5E1Kll1yacN/3DxeEWqJoA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     }
   ],
@@ -4777,7 +4931,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 41,
-          "skipped_file_count": 40
+          "skipped_file_count": 41
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

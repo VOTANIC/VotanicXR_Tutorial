@@ -77,7 +77,7 @@
 <ul>
 <li><p><code>vGear_Panel</code> is a container to manage the display of the UI element itself as well as its child objects. This component is inherited from the <code>vGear_Interactables</code> class. It can be added to GameObjects or Canvas.</p>
 </li>
-<li><p><code>vGear Button</code> adds interactivity to the original Unity UI button to allow it to interact with the Wand Interactor. <code>vGear Button</code> comes with built-in transition effects to the <code>on select</code>, <code>on click</code> and on <code>disable</code> event. Developers can easily customize the button properties without any scripting. This component is inherited from the <code>vGear_Interactables</code> class. It can be added to GameObjects or Canvas.</p>
+<li><p><code>vGear Button</code> adds interactivity to the original Unity UI button to allow it to interact with the Wand Interactor. <code>vGear Button</code> comes with built-in transition effects to the <code>on select</code>, <code>on click</code> and <code>on disable</code> event. Developers can easily customize the button properties without any scripting. This component is inherited from the <code>vGear_Interactables</code> class. It can be added to GameObjects or Canvas.</p>
 </li>
 </ul>
 <h3 id="recommended-canvas-configuration">Recommended Canvas Configuration</h3>
@@ -92,7 +92,7 @@
 </ul>
 <h4 id="vgear-panel">vGear Panel</h4>
 <p><code>vGear_Panel</code> is use for managing the display of the UI panel itself and its child GameObjects. it can be added to both 3D GameObjects and UI Element of Canvas.</p>
-<h5 id="adding-vgear-panel-component">Adding vGear Panel Component</h5>
+<h4 id="adding-vgear-panel-component">Adding vGear Panel Component</h4>
 <ol>
 <li><p>Create a 2D UI using Unity canvas and named it <code>DemoPanel</code>.</p>
 <p><img src="../images/5.2.1.png" alt=""></p>
@@ -122,13 +122,13 @@
 <p><img src="../images/5.2.6.png" alt=""></p>
 </li>
 </ol>
-<h5 id="controlling-the-vgear_panel-programmatically">Controlling the vGear_Panel Programmatically</h5>
-<p>The vGear_Panel can also be configured to open and close using the <code>vGear_Panel.Open()</code> and <code>vGearPanel.Close()</code> API</p>
+<h4 id="controlling-the-vgear_panel-programmatically">Controlling the vGear_Panel Programmatically</h4>
+<p>The vGear_Panel can also be configured to open and close using the <code>vGear_Panel.Open()</code> and <code>vGearPanel.Close()</code> <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Panel.html#Votanic_vXR_vGear_vGear_Panel_Open">API</a></p>
 <ol>
-<li><p>Create an empty GameObject and name it as <code>SceneController</code>. Then create a C# script and named it as <code>PanelControllerScript</code> and attach the script to the <code>SceneController</code> GameObject.</p>
+<li><p>Create an empty GameObject and name it as <code>SceneController</code>. Then create a C# script and named it as <code>PanelController</code> and attach the script to the <code>SceneController</code> GameObject.</p>
 <p><img src="../images/5.3.1.png" alt=""></p>
 </li>
-<li><p>Add the below code to the <code>PanelControllerScript</code>.</p>
+<li><p>Add the below code to the <code>PanelController</code>.</p>
 <pre><code class="lang-csharp">vGear_Panel panel;
 void Start()
 {
@@ -157,12 +157,12 @@ void Update()
 </ol>
 <h4 id="vgear-button">vGear Button</h4>
 <p>V Gear_Button (Script), is inherited from the vGear_Interactable class and the vGear_UI class. It can be added to both the 3D gameobjects or UI Element of Canvas. Apart from the default interactions and UI behaviours inherited from the 2 classes, transition effects may also be added to the vGear Button on different button events. The transition effects are available when transitioning, on click, on disable or on select.</p>
-<h5 id="adding-vgear-button-component">Adding vGear Button Component</h5>
+<h4 id="adding-vgear-button-component">Adding vGear Button Component</h4>
 <ol>
 <li><p>We will reuse the panel created in the previous section. In the Panel, create a <code>UI &gt; Text</code> and named it as <code>DemoButton</code>.</p>
 <p><img src="../images/5.4.1.png" alt=""></p>
 </li>
-<li><p>Select the <code>Button</code> GameObject. Then, right click on the <code>Button</code> GameObject and select <code>vGear &gt; Component &gt; Button</code> to add the vGear_Button script to the selected GameObject.</p>
+<li><p>Select the GameObject <code>DemoButton</code>. Then, right click on the GameObject <code>DemoButton</code> and select <code>vGear &gt; Component &gt; Button</code> to add the vGear_Button script to the selected GameObject.</p>
 <p><img src="../images/5.4.2.png" alt=""></p>
 <p><strong>Note</strong>: Same as the vGear Panel, a {gameobject.name}.Grabbables will be created and the selected GameObject will be parented to it. The <code>V Gear_Button (Script)</code> is added to the selected GameObject.</p>
 <table>
@@ -184,18 +184,26 @@ void Update()
 <p><img src="../images/5.4.1b.png" alt=""></p>
 </li>
 <li><p>In the <code>V Gear_Button (Script)</code>, customized button actions can be added under <code>[Settings] &gt; Interaction</code>, in the same way as you configure the interaction for an Interactable GameObject using Unity Event. In the below example, the button is set to close the panel on click.</p>
-<p>Interaction Type: Up</p>
-<p>Unity Event:	Object: <code>Panel (vGear_Panel)</code> Function: <code>vGear_Panel.Close</code></p>
+<ul>
+<li><p>Interaction Type: Up</p>
+</li>
+<li><p>Unity Event:</p>
+<ul>
+<li>Object: <code>Panel (vGear_Panel)</code></li>
+<li>Function: <code>vGear_Panel.Close</code></li>
+</ul>
+</li>
+</ul>
 <p><img src="../images/5.4.5.png" alt=""></p>
 </li>
 <li><p>The <code>Box Collider</code> attached to the vGear Button is the interaction area for the Wand Interactor. Adjust the size of the box collider so that it fits the size of the background of the button.</p>
 <p><img src="../images/5.4.6.png" alt=""></p>
 </li>
-<li><p>Play the scene and check out the effect. When user clicks the button using the Wand, the panel will be closed.</p>
+<li><p>Play the scene and check out the effect. When user press the trigger button using the Wand, the panel will be closed.</p>
 <p><img src="../images/5.4.7.gif" alt=""></p>
 </li>
 </ol>
-<h5 id="vgear-button-transition-effects">vGear Button Transition Effects</h5>
+<h4 id="vgear-button-transition-effects">vGear Button Transition Effects</h4>
 <p>Optionally, developer can change the button <code>click</code>, <code>select</code> and <code>disable</code> transition effects in the <code>V Gear_Button (Script) &gt; [Transition]</code> section.</p>
 <p><img src="../images/5.5.1.png" alt=""></p>
 <p>The <code>Transition</code> field includes some parameters to store the transition setting.

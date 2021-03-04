@@ -248,7 +248,7 @@
 <li><p>Select <code>Commands</code> tab, click <code>+</code> button in the <code>Custom Commands</code> list.</p>
 <p><img src="../images/2.3.2.png" alt=""></p>
 </li>
-<li><p>Then, put down <code>Shoot’ as Command Name and click </code>Create` button.</p>
+<li><p>Then, put down <code>Shoot</code> as Command Name and click <code>Create</code> button.</p>
 <p><img src="../images/2.3.3.png" alt=""></p>
 </li>
 <li><p>The custom command <code>Shoot</code> is created in the <code>Custom Command</code> list and ready for the further action to bind the trigger event to virtual controller. This will be future discussed in the below section.</p>
@@ -257,7 +257,7 @@
 <h2 id="virtual-controller">Virtual Controller</h2>
 <p>The <code>Virtual Controller</code> is VotanicXR’s physical input abstraction layer that unifies input events from various physical devices. It provides interfaces for developers or other VotanicXR modules to access the events of the physical input devices through the virtual controller.</p>
 <p>VotanicXR has native support to a list of physical input devices, whose buttons and axes are mapped to the virtual controller button and axis automatically once the physical input devices are identified. The default mappings of the virtual controller and various input devices are provided <a class="xref" href="../documentation/defaultMapping.html">here</a>.</p>
-<p>For typical usage, VotanicXR scans for available input devices in the system and automatically maps them to the virtual controllers, enabling these devices for use by the input system. For example, when a pair of HTC Vive controllers are connected to the system, the 2 vive controllers are automatically mapped to controller[0] and controller[1], with controller[0] as the right hand controller and controller[1] as the left hand controller of the user.</p>
+<p>For typical usage, VotanicXR scans for available input devices in the system and automatically maps them to the virtual controllers, enabling these devices for use by the input system. For example, when a pair of HTC Vive controllers are connected to the system, the 2 vive controllers are automatically mapped to <strong>controller[0]</strong> and <strong>controller[1]</strong>, with controller[0] as the right hand controller and controller[1] as the left hand controller of the user.</p>
 <h3 id="virtual-controller-configuration">Virtual Controller Configuration</h3>
 <p>For advanced usage, the virtual controller can be customized in several ways:</p>
 <ol>
@@ -288,7 +288,7 @@
 <li><p>Select the controller which you wish to customize input device mapping</p>
 <p><img src="../images/2.4.3.1.png" alt=""></p>
 </li>
-<li><p>In the <code>Selected Controller Properties</code>, if enable the <code>Auto Find Buttons (if no buttons bound)</code> and <code>Auto Find Axes (if no axes bound)</code>, the selected virtual controller will be automatically bound the physical input device.</p>
+<li><p>In the <code>Selected Controller Properties</code>, the options <code>Auto Find Buttons</code> and <code>Auto Find Axes</code> are enabled by default. This enables VotanicXR to automatically scan for physical input devices and map them to the virtual controllers in the sequence in which the devices are identified. If the <code>Bind Buttons</code> and/or <code>Bind Axes</code> are defined for the application, VotanicXR will first search for the device matching the names of the Button and Axis defined, the auto bind mechanism will activate when the manually defined devices are not identified. If you do not want your application to use the automatically identified devices, you can turn off the <code>Auto Find Buttons</code> and <code>Auto Find Axes</code> options.</p>
 <p><img src="../images/2.4.3.2.png" alt=""></p>
 </li>
 </ol>
@@ -301,8 +301,10 @@
 <p><img src="../images/2.4.4.2.png" alt="">
 <img src="../images/2.4.4.3.png" alt=""></p>
 </li>
-<li><p>Click the <code>Select</code> button to select the configure file (config.vxrc). This configuration file can be checked in <code>vGear</code> GameObject, <code>Config Path</code> property.</p>
+<li><p>Click the <code>Select</code> button to choose a target VR system configuration file (config.vrxc) configured with the physical input device that you wish to use. For this tutorial, you can use the <code>ConfigPC.vrxc</code> file in vGear's Config folder <code>Assets &gt; Votanic &gt; VotanicXR &gt; vCast &gt; System &gt; Configs</code>.</p>
 <p><img src="../images/2.4.4.4.png" alt=""></p>
+<p><img src="../images/2.4.4.4b.png" alt=""></p>
+<p>Before loading the configuration file, turn on the device(s) that you wish to use, as the configurator will try to load the devices listed in the file as well as scanning all available devices currently connected to the system.</p>
 </li>
 <li><p>After the config file is selected, the available devices are listed in the <code>Buttons</code> and <code>Axes</code> dropdown list. Developer can change other device to test, and the result will be displayed in the <code>Virtual Controller Status</code> section.</p>
 <p><img src="../images/2.4.4.5.PNG" alt=""></p>
@@ -362,7 +364,7 @@
 <li><p>Create a <code>CommandController</code> GameObject in the scene. Create a <code>CommandHandler</code> script and attach to the <code>CommandController</code>.</p>
 <p><img src="../images/2.6.1.1.png" alt=""></p>
 </li>
-<li><p>In the <code>CommandHandler</code> script, input the code below. The first <code>if statement</code> is to print out a message when the <code>Shoot</code> command is received. The second <code>if statement</code> is to print out the input controller axis value when the <code>Move</code> button is pressed.</p>
+<li><p>In the <code>CommandHandler</code> script, input the code below. The first <code>if statement</code> is to send out a bullet to shoot the stuff in front of user when the <code>Shoot</code> command is received. The second <code>if statement</code> is to print out the input controller axis value when the <code>Move</code> button is pressed.</p>
 <pre><code class="lang-csharp">void Update()
 {
     if (vGear.Cmd.Received(&quot;Shoot&quot;))
@@ -434,7 +436,7 @@
 </ol>
 <h2 id="getting-virtual-controller-value">Getting Virtual Controller Value</h2>
 <p>Virtual Controller buttons and axes can be access via Class <code>vGear.Ctrl</code>. The related methods are listed in below table. The detail API document can be checked <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vCast.vCast.Ctrl.html">here</a>.</p>
-<p>However, <em>direct access the virtual controller buttons and axes is not recommended</em> in the application. The <code>Command</code> system is the better way to use the input system.</p>
+<p>However, <strong>direct access the virtual controller buttons and axes is not recommended</strong> in the application. The <code>Command</code> system is the better way to use the input system.</p>
 <table>
 <thead>
 <tr>
