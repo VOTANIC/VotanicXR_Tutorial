@@ -1,6 +1,9 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: detail-debugmode
+  name: detail-debugmode
+  href: documentation/vGearDebugMode.html
 - uid: detail-interactable
   name: Detail of VGear Interactable
   href: documentation/vGearInterctableDetail.html
@@ -10,6 +13,9 @@ references:
 - uid: detail-network
   name: Detail of Network Manager
   href: documentation/vGearNetworkManagerDetail.html
+- uid: detail-test3d
+  name: detail-test3d
+  href: documentation/vGearTest3D.html
 - uid: detail-ui
   name: Detail of UI Element
   href: documentation/vGearUIDetail.html
@@ -80,7 +86,7 @@ references:
   name: Using Behaviour System
   href: tutorials/tut08.html
 - uid: tut09-ingamemenu
-  name: Using In-Game Menu
+  name: Using In-Game and Landing Menu
   href: tutorials/tut09.html
 - uid: tut10-ingametool
   name: Using In-Game Tools

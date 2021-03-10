@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Using In-Game Menu </title>
+    <title>Using In-Game and Landing Menu </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Using In-Game Menu ">
+    <meta name="title" content="Using In-Game and Landing Menu ">
     <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,39 +67,296 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="tut09-ingamemenu">
-<h1 id="using-in-game-menu">Using In-Game Menu</h1>
+<h1 id="using-in-game-and-landing-menu">Using In-Game and Landing Menu</h1>
 
-<p>In this article</p>
+<p>Every VotanicXR application has an in-game and landing menu built-in. The in-game menus can be used for two purposes: 1. it provides quick access to different built-in features of VotanicXR; and 2. it is a convenient way for developers to add UI elements to invoke different commands during runtime without needing to create your own 3D UI. The in-game menu is fully customizable in terms of its menu-items and the visual effects.</p>
+<p>In addition, VotanicXR also provides a built-in landing menu for developer to quickly create a menu for the VotanicXR application. In runtime, the landing menu will show in front of the user when the application start. It can be used for displaying welcome message, or to faciliate scene or level selection on application start. The landing menu is also customizable in terms of background and button images.</p>
+<p>This chapter introduces the In-Game and Landing Menu features, the basic usages, and the configuration.</p>
+<h2 id="tutorial-scene-and-related-materials">Tutorial Scene and Related Materials</h2>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial09_InGameMenu</code> and open the scene <code>In Game Menu</code> provided.</p>
+<h2 id="in-game-menu">In-Game Menu</h2>
+<h3 id="basic-usage-of-in-game-menu">Basic usage of In-Game Menu</h3>
+<p>In the application, the in-game menu can be opened using both the keyboard or controller.</p>
+<p><strong>Keyboard</strong>:  holding key <code>3</code> and then press <code>M</code>
+<strong>Controller</strong>: press and hold menu button for 1 second (check <a href="https://votanic.github.io/VotanicXR_Tutorial/documentation/defaultMapping.html">this</a> for controller button mapping)</p>
+<p><img src="../images/9.2.1.1.gif" alt=""></p>
+<p>The in-game menu consists of two components, the <strong>menu panel</strong>, and the <strong>button of the menu panel</strong>. The menu panel is a container that holds a list of buttons in which each of the button invokes an action, for example, open another menu panel or other actions.</p>
+<p>In the below example, the figure at the top shows the Main (root) menu panel, and it contains 8 buttons. The <code>New Page</code> button in Main menu panel will open the <code>New Page</code> menu panel. The figure at the bottom shows the New Page menu panel, it has 3 buttons inside.</p>
+<p><img src="../images/9.2.1.2.png" alt=""></p>
+<p>The default in-game menu panel includes Info, Attribute, Tool, Reset, Quality and Apps.</p>
 <ul>
-<li><a class="xref" href="tut09.html#using-in-game-menu">Using In-Game Menu</a></li>
+<li><code>Info</code> manages the in-game information provided by VotanicXR, such as message, fps display and log displaying.</li>
+<li><code>Attribute</code> manages the vGear attributes, including the <a href="https://votanic.github.io/VotanicXR_Tutorial/tutorials/tut03.html#movement-modes">Traveler Mode</a>, <a href="https://votanic.github.io/VotanicXR_Tutorial/tutorials/tut03.html#movement-modes">Soul Mode</a>, <a class="xref" href="../documentation/vGearDebugMode.html">Debug Mode</a>, Tracking, Stereo and <a class="xref" href="../documentation/vGearTest3D.html">Test3D</a>.</li>
+<li><code>Tool</code> manages the in-game tools, details will be covered in <a class="xref" href="tut10.html">the In-Game Tools</a> chapter.</li>
+<li><code>Quality</code> manages the common quality settings of the application, such as anisotropic, anti-aliasing, shadows and shadow resolution.</li>
+<li><code>Apps</code> manages the current application, such as quit the current application.</li>
 </ul>
-<h2 id="objective">Objective</h2>
-<p>This chapter introduces the <code>In-Game Menu</code> feature provided by VotanicXR.
-The basic usage and configuration will be introduced.</p>
-<h3 id="in-game-menu-in-votanicxr">In-Game Menu in VotanicXR</h3>
-<p>The given <code>In-Game Menu</code> can be called by receiving <code>Menu</code> command, or hold the key with <code>index 2</code> of the controller.</p>
-<p><img src="../images/11.1.1.gif" alt="The Default In-Game Menu"></p>
-<p>Player can adjust the game setting such as game attribute and quality.</p>
-<p><img src="../images/11.1.2.png" alt="The quality setting in In-Game Menu"></p>
-<h3 id="set-up-in-game-menu-sample-scene">Set up In-Game Menu Sample Scene</h3>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial09_InGameMenu </code> and open the scene <code>In Game Menu</code> provided.</p>
-<p>This chapter focus on the <code>In-Game Menu</code> Editing, no sample scene but sample json <code>Option sample.vxrc</code> is provided for reference.</p>
-<h2 id="using-in-game-menu-1">Using In-Game Menu</h2>
-<p>The default pages on In-Game Menu are <code>Info</code>, <code>Attribute</code>, <code>Tool</code>, <code>Reset</code>, <code>Quality</code> and <code>Apps</code>.</p>
-<p><code>Info</code> manages the in-game informations provided by VotanicXR, such as message, fps display and log displaying.</p>
-<p><code>Attribute</code> manages the vGear attributes, including the <a class="xref" href="tut03.html#movement-modes"><code>Traveler Mode</code></a>, <a class="xref" href="tut03.html#movement-modes"><code>Soul Mode</code></a>, <code>Debug Mode</code>, <code>Tracking</code>, <code>Stereo</code> and <code>Test3D</code>.</p>
-<p><code>Tool</code> manages the in-game tools, detail will be introduced in <a class="xref" href="tut10.html">next chapter</a>.</p>
-<p><code>Quality</code> manages the quality settings, such as anisotropic, anti-aliasing, shadows and shadow resolution.</p>
-<p><code>Apps</code> manages the current application, such as quit the current application.</p>
-<h3 id="structure-of-option-config-legacy">Structure of Option config (Legacy)</h3>
-<p>The detail of the in-game menu is saved in the json file <code>Option.vxro</code>.
-Open the file <code>Option.vxro</code> in <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; System &gt; Options</code>, it stores the additional option data for <code>vGear</code>.</p>
-<p><code>Menu</code> in the data file stores the transition effects of the Menu and the structure of pages and items. <code>Main</code> is the first level of the Menu, and the remaining are the second level.</p>
-<p><img src="../images/11.3.1.png" alt="The structure of the Menu data"></p>
-<p>For each <code>Panel</code> item, it contains following data, including a set of buttons.</p>
-<p><img src="../images/11.3.2.png" alt="The structure of the Panel item"></p>
-<p>For the <code>Button</code> , it stores a set of button values as follow.</p>
-<p><img src="../images/11.3.3.png" alt="The structure of the Button and display"></p>
+<p>The below table summarized details of the menu panel, level, and its related buttons. The level is the menu hierarchy of the menu panel. <a style="color:red">The <code>Main</code> menu panel is the root of the menu, so the level is <code>0</code> and cannot be changed.</a> The level 1 menu panel is opened from the <code>Main</code> menu panel, etc.</p>
+<table width="100%">
+   <tr>
+      <td><b>Menu Panel</b></td>
+      <td><b>Level</b></td>
+      <td><b>Menu Button</b></td>
+      <td><b>Description</b></td>
+   </tr>
+   <tr>
+      <td rowspan="6">Main</td>
+      <td rowspan="6">0</td>
+      <td>Info</td>
+      <td>Open the Info menu panel</td>
+   </tr>
+   <tr>
+      <td>Attribute</td>
+      <td>Open the Attribute menu panel</td>
+   </tr>
+   <tr>
+      <td>Tool</td>
+      <td>Open the Tool menu panel</td>
+   </tr>
+   <tr>
+      <td>Reset</td>
+      <td>Open the Reset menu panel</td>
+   </tr>
+   <tr>
+      <td>Quality</td>
+      <td>Open the Quality menu panel</td>
+   </tr>
+   <tr>
+      <td>App</td>
+      <td>Open the App menu panel</td>
+   </tr>
+   <tr>
+      <td rowspan="4">Info</td>
+      <td rowspan="4">1</td>
+      <td>Message  </td>
+      <td>To show or hide all messages on the InfoWall, including log info, debug info, and fps info.</td>
+   </tr>
+   <tr>
+      <td>FPS</td>
+      <td>To show or hide FPS info on the InfoWall.</td>
+   </tr>
+   <tr>
+      <td>DebugLog</td>
+      <td>To show or hide VotanicXR system debug info and message logged by vGear.Info.DebugLog(message)</td>
+   </tr>
+   <tr>
+      <td>PrintLog </td>
+      <td>To show or hide log message by vGear.Info.Print(message)</td>
+   </tr>
+   <tr>
+      <td rowspan="6">Attribute</td>
+      <td rowspan="6">1</td>
+      <td>Traveler</td>
+      <td>To enable or disable the traveler mode</td>
+   </tr>
+   <tr>
+      <td>Soul</td>
+      <td>To enable or disable the soul mode</td>
+   </tr>
+   <tr>
+      <td>Debug</td>
+      <td>To enable or disable the debug mode</td>
+   </tr>
+   <tr>
+      <td>Tracking</td>
+      <td>To enable or disable tracking in the application</td>
+   </tr>
+   <tr>
+      <td>Stereo</td>
+      <td>To enable or disable the 2D or 3D mode</td>
+   </tr>
+   <tr>
+      <td>Test3D</td>
+      <td>To open the 3D stereoscopic effect diagnostic tool</td>
+   </tr>
+   <tr>
+      <td rowspan="7">Tool</td>
+      <td rowspan="7">1</td>
+      <td>Wand</td>
+      <td rowspan="7">To switch to using various built-in in-game tools. This will be discussed further in the <a href="https://votanic.github.io/VotanicXR_Tutorial/tutorials/tut10.html">In-game tools chapter.</a></td>
+   </tr>
+   <tr>
+      <td>Teleport</td>
+   </tr>
+   <tr>
+      <td>Glove</td>
+   </tr>
+   <tr>
+      <td>Magnifier</td>
+   </tr>
+   <tr>
+      <td>Report</td>
+   </tr>
+   <tr>
+      <td>Brush</td>
+   </tr>
+   <tr>
+      <td>Measurer</td>
+   </tr>
+   <tr>
+      <td rowspan="4">Reset</td>
+      <td rowspan="4">1</td>
+      <td>Scene</td>
+      <td>Restart the scene</td>
+   </tr>
+   <tr>
+      <td>Frame</td>
+      <td>Reset the vGear’s frame to the starting point</td>
+   </tr>
+   <tr>
+      <td>Users</td>
+      <td>Reset the user location to the starting point</td>
+   </tr>
+   <tr>
+      <td>DebugRotation</td>
+      <td>Depreciated</td>
+   </tr>
+   <tr>
+      <td rowspan="4">Quality</td>
+      <td rowspan="4">1</td>
+      <td>Anisotropic</td>
+      <td rowspan="4">To change the display quality setting of anisotropic, antialiasing, shadows type and shadow resolution.<br>For details, please check <a href="https://docs.unity3d.com/Manual/class-QualitySettings.html">this</a></td>
+   </tr>
+   <tr>
+      <td>Antialiasing</td>
+      
+   </tr>
+   <tr>
+      <td>Shadows</td>
+   </tr>
+   <tr>
+      <td>ShadowRes</td>
+   </tr>
+   <tr>
+      <td>App</td>
+      <td>1</td>
+      <td></td>
+      <td>App shortcut if available</td>
+   </tr>
+</table>
+<h3 id="configuring-in-game-menu">Configuring In-Game Menu</h3>
+<p>The setting of the in-game menu is stored in the <code>option.vxro</code> file. By default, the <code>Option.vxro</code> file is in the <code>Assets/Votanic/VotanicXR/vGear/System/Options</code> directory and configured in vGear in the <code>Option Path</code> property shown below. If you move the file to other file locations, make sure to update the <code>Option Path</code> in the vGear setting.</p>
+<p><img src="../images/9.2.2.1.png" alt=""></p>
+<p>The in-game menu can be modified using the VotanicXR Configurator.</p>
+<ol>
+<li><p>Navigate to the <code>option.vxro</code> location and double click to open the file with the VotanicXR Configurator.</p>
+</li>
+<li><p>Click the <code>In Game Menu</code> tab</p>
+<p><img src="../images/9.2.2.2.png" alt=""></p>
+</li>
+<li><p>In the <code>In Game Menu</code> tab, the <code>Menus</code> list is to configure the global setting and the menu panel. The <code>Buttons on Menu</code> list is to configure the menu buttons.</p>
+<p><img src="../images/9.2.2.3.png" alt=""></p>
+</li>
+<li><p>Click <code>Global Setting</code> item in <code>Menus</code>, menu properties can be changed in the right-side window.</p>
+<p><img src="../images/9.2.2.4.png" alt=""></p>
+</li>
+<li><p>Click <code>File &gt; Save</code> to save the setting.</p>
+</li>
+</ol>
+<h3 id="customizing-in-game-menu">Customizing In-Game Menu</h3>
+<p>The in-game menu can be customized, for example, changing menu item icon, or adding a new in-game menu item.</p>
+<h4 id="customizing-menu-item-icon">Customizing Menu Item Icon</h4>
+<ol>
+<li><p>Go to <code>Assets &gt; Votanic &gt; VotanicXR &gt; vGear &gt; Materials &gt; Prefabs &gt; Menu</code> Prefab, which is a prefab made with <a class="xref" href="tut05.html">UI Elements</a> and <a class="xref" href="tut02.html">Input System</a>. Double click the prefab to open and edit its contents.</p>
+<p>The menu prefab has the <code>V Gear_Menu (Script)</code> component, which is responsible for managing various properties of the In-Game Menu. To use your own custom icons in the in-game menu, expand the <code>Icons</code> list under <strong>[Built-in Menu]</strong> and drag your own icon sprites into the list.</p>
+<p><img src="../images/9.2.3.1.png" alt=""></p>
+</li>
+</ol>
+<h4 id="adding-in-game-menu-item">Adding In-Game Menu Item</h4>
+<p>In-Game Menu can be added using the VotanicXR Configurator. In general, there are three steps to add a new in-game menu.</p>
+<ol>
+<li><p>Creating a new menu panel <code>Item</code> in the menu list</p>
+</li>
+<li><p>Then, adding <code>SubItem1</code>, <code>SubItem2</code>, and <code>Back</code> buttons under the <code>Item</code> menu panel, and set the button command.</p>
+</li>
+<li><p>Finally, adding a <code>Item</code> button in the Main menu panel and set the button command to open <code>Item</code> menu panel.</p>
+</li>
+</ol>
+<p>The below tables summarized the Main and Item1 menu panel and buttons.</p>
+<table width="100%">
+<tr><td><b>Menu Panel Level=0<td><b>Menu Button<td><b>Action / Description
+<tr><td>Main	<td>Item	<td>Open Item1 menu panel
+</td></td></td></tr></b></td></b></td></b></td></tr></table>
+<table width="100%">
+<tr><td><b>Menu Panel Level=1<td><b>Menu Button<td><b>Action / Description
+<tr><td rowspan="3">Item	<td>SubItem1	<td>Send out the "SubItemCommand1" command
+<tr><td>SubItem2	<td>Send out the "SubItemCommand2" command
+<tr><td>Back	<td>Back to top menu
+</td></td></tr></td></td></tr></td></td></td></tr></b></td></b></td></b></td></tr></table>
+<p>The below steps are to demonstrate how to use the VotanicXR configurator to create the menu panel.</p>
+<ol>
+<li><p>Open the <code>option.vxro</code> file with the VotanicXR Configurator and go to the <code>In Game Menu</code> tab. Click <code>+</code> button in the <code>Menus</code> list.</p>
+<p><img src="../images/9.2.3.2.1.png" alt=""></p>
+</li>
+<li><p>A <code>Panel</code> item will be added to the <code>Menus</code> list. In the <code>Selected Menu Properties</code>, change the property as shown below.</p>
+<p><img src="../images/9.2.3.2.2.png" alt=""></p>
+<p><strong>Note</strong>: The <code>Level</code> of a menu panel item determines the position of the menu panel when it displays in the VR world. The menu items are displayed in different levels so that the pixels will not overlap with each other when transitioning from the menu to menu of its subitem, and vice versa. If you have a menu item with several layers of menu subitems, be sure to set the <code>Level</code> correctly to avoid the menu displaying with overlapping pixels.</p>
+</li>
+<li><p>Click <code>+</code> button next to the <code>Buttons on Menu</code> to create sub items. Input the property details as shown in the below figure:</p>
+<p><img src="../images/9.2.3.2.3.png" alt=""></p>
+<p><strong>Note</strong>: The <code>Icon Index</code> is the index of Icons element in the prefab of previous section. Icon index is -1 representing no icon, and index is -10i representing core icon with index ith stored in the prefab.</p>
+</li>
+<li><p>Repeat step 3 to create buttons for <code>SubItem2</code> and <code>Back</code>.</p>
+<p><img src="../images/9.2.3.2.4.png" alt=""></p>
+<p><img src="../images/9.2.3.2.5.png" alt=""></p>
+<p>For the <code>Back</code> button, input <code>Menu=0</code> in <code>Command to send</code> property, this command means open the menu panel index 0. <strong>The menu panel index is the menu panel order in the <code>Menus</code> list. The above figure illustrates how to count the menu panel index.</strong></p>
+</li>
+<li><p>Then, create a menu button <code>Item</code> in <code>Main</code> menu panel, and the button to open the <code>Item</code> menu panel. First, select the <code>Main</code> menu panel in <code>Menus</code>. Second, click the <code>+</code> button which near the <code>Buttons on Menu</code> list. Third, input <code>Item</code> and <code>Menu=6</code> in <code>Button Name</code> and <code>Command to send</code> property correspondingly.</p>
+<p><strong>Note</strong>: Command <code>Menu=6</code> means open the menu panel index 6. Please check the previous step to check the index number.</p>
+<p><img src="../images/9.2.3.2.6.png" alt=""></p>
+</li>
+<li><p>Finally, click <code>File &gt; Save</code> to save the setting.</p>
+</li>
+<li><p>Play the scene and check the result. The command can be received by using vGear.Cmd.Received(command) or vGear.Cmd.AllReceived(), which is described in <a class="xref" href="tut02.html">the Input System Section</a>.</p>
+<p><img src="../images/9.2.3.2.7.png" alt="">
+<img src="../images/9.2.3.2.8.png" alt=""></p>
+</li>
+</ol>
+<h4 id="removing-in-game-menu-item">Removing In-Game Menu Item</h4>
+<p>The menu panel can be deleted. However, the menu panel index will be changed if you delete a menu panel that is not the last item in the <code>Menus</code> list, as a result, the button command inside the <code>Main</code> menu panel are required to change as well.</p>
+<p><strong>Note</strong>: <a style="color:red">the &quot;Main&quot; menu panel cannot be deleted. </a></p>
+<p>The below steps are to remove the <code>Tool</code> menu panel.</p>
+<ol>
+<li><p>In the <code>Menus</code> list, select the <code>Tool</code> item and click the <code>-</code> button.</p>
+<p><img src="../images/9.2.3.3.1.png" alt=""></p>
+</li>
+<li><p>Then, select the <code>Main</code> item in the <code>Menus</code> list, and select <code>Tool</code> in the <code>Buttons on Menu</code> list, finally, click the <code>-</code> button to remove the button.</p>
+<p><img src="../images/9.2.3.3.2.png" alt=""></p>
+</li>
+<li><p>Then, update the <code>Command to send</code> property in <code>Reset</code> and <code>Quality</code> button. It is because the menu panel index has changed. The command should be changed from <code>Menu=4</code> and <code>Menu=5</code> to <code>Menu=3</code> and <code>Menu=4</code> accordingly.</p>
+<p><img src="../images/9.2.3.3.3.png" alt=""></p>
+</li>
+<li><p>Finally, click <code>File &gt; Save</code> to save the configuration.</p>
+</li>
+</ol>
+<h2 id="landing-menu">Landing Menu</h2>
+<p>The landing menu is a large menu panel that will show in front of the user when the application start. The below figure shows a default view of the landing menu.</p>
+<p><img src="../images/9.3.1.png" alt=""></p>
+<h3 id="basic-usage-of-landing-menu">Basic usage of Landing Menu</h3>
+<p>The configuration of the landing menu mainly relies on the VotanicXR Configurator. The landing menu settings are stored in the <code>option.vxro</code> file. You can open this file via the VotanicXR Configurator, and then select <code>Landing Menu</code> tab.</p>
+<p>To enable the landing menu, it is simple to enable the landing menu by turning on the <code>Apply Landing Menu</code> property in global setting, and then save the setting. A default landing menu will be shown when the application starts.</p>
+<p><img src="../images/9.3.2.png" alt=""></p>
+<h3 id="configuring-landing-menu">Configuring Landing Menu</h3>
+<p>The landing menu, just like the in-game menu, consists of the menu panel and the button of the menu panel. Those menu panel and button can be added and configured in the Configurator. The below figure shows the landing menu panel and the button list of the landing menu panel.</p>
+<p><img src="../images/9.3.3.1.png" alt=""></p>
+<h4 id="creating-landing-menu-panel">Creating Landing Menu Panel</h4>
+<p>The default <code>Main</code> menu, same as in-game menu, is the root of landing menu to open. If multiple landing menus are created. It is required to follow its hierarchy to setup the <code>Level</code> property. For example, if there is another landing menu, called <code>Page1</code> which is got into from the <code>Main</code> menu, the <code>Level</code> property of the <code>Page1</code> should be set to 1.</p>
+<p><img src="../images/9.3.3.2.1.png" alt=""></p>
+<p>The background of the Landing menu is configured in the <code>Global Setting &gt; Background Image Folder Path</code>. This property is to input the <strong>folder path</strong>. Images in the designated folder will be loaded and matched to the landing menu panel in alphabetical order according to the <strong>image list sequence and landing menu panel index</strong>. Otherwise, a default background image (the checkbox image) will be applied.
+For example, if the image folder contains two images, image1.jpg and image2.jpg. in the below figure, image1.jpg and image2.jpg will be used in <code>Main</code> and <code>Page1</code> landing menu panel correspondingly.</p>
+<p><img src="../images/9.3.3.2.2.png" alt=""></p>
+<h4 id="creating-landing-menu-button">Creating Landing Menu Button</h4>
+<p>It is possible to add buttons to the landing menus to perform different functions, for example, as a level selector. The configuration of the buttons is similar to that of the in-game menu, and you can define <code>Command</code> for the button action. The landing menu has built-in two command for closing the landing menu and switching the landing menu.</p>
+<table width="100%">
+<tr><td><b>Command<td><b>Description
+<tr><td>Landing=Close	<td>Close the landing menu
+<tr><td>Landing=[menuPanelIndex]	<td>Open menu panel by index<br>eg. Landing=0, open the `Main` landing menu panel
+</td></td></tr></td></td></tr></b></td></b></td></tr></table>
+<p><img src="../images/9.3.3.2.2.1.png" alt=""></p>
+<p>The button images and no. of buttons per line can be configured in <code>Global Setting</code>.</p>
+<p><code>Button Image Folder Path</code> defines the folder for the images shown on the list of buttons. Images in the designated folder will be loaded and matched to the button images in alphabetical order according to the image list sequence and button index sequence. Otherwise, a default button image will be applied.</p>
+<p><code>Maximum Button Count each line</code> defines the number of buttons per row, buttons will be displayed on the next row if it exceeded the limit.</p>
+<p><img src="../images/9.3.3.2.2.2.png" alt=""></p>
 </article>
           </div>
           

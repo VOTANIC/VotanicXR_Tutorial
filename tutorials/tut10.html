@@ -69,115 +69,185 @@
             <article class="content wrap" id="_content" data-uid="tut10-ingametool">
 <h1 id="using-in-game-tools">Using In-Game Tools</h1>
 
-<p>In this article</p>
-<ul>
-<li><a class="xref" href="tut10.html#using-in-game-tools">Using In-Game Tools</a></li>
-<li><a class="xref" href="tut10.html#configuring-in-game-tools">Configuring In-Game Tools</a></li>
-</ul>
-<h2 id="objective">Objective</h2>
-<p>This chapter introduces the <code>In-Game Tools</code> feature provided by VotanicXR.
-The basic introduction, loading and configuration setting will be introduced.</p>
-<h3 id="in-game-tool-in-votanicxr">In-Game Tool in VotanicXR</h3>
-<p>VotanicXR provides seven tools, they are <code>Wand</code>, <code>Teleport</code>, <code>Glove</code>, <code>Magnifier</code>, <code>Reporter</code>, <code>Brush</code> and <code>Measurer</code>.
-They are</p>
-<p>Detail usage will be described at <a class="xref" href="tut10.html#introduction-to-in-game-tools">below</a>.</p>
-<h3 id="set-up-in-game-tools-sample-scene">Set up In-Game Tools Sample Scene</h3>
-<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial10_InGameTools </code> and open the scene <code>In Game Tool</code> provided.</p>
-<h2 id="using-in-game-tools-1">Using In-Game Tools</h2>
-<h3 id="load-in-game-tool-using-in-game-menu">Load In-Game Tool using In-Game Menu</h3>
-<p>Player may choose different tools in the <a class="xref" href="tut09.html">In-Game Menu</a>.</p>
-<p><img src="../images/12.1.1.gif" alt="The tool menu of in-game menu"></p>
-<h3 id="load-in-game-tool-using-script">Load In-Game Tool using Script</h3>
-<p>Without using the <code>In-Game Menu</code>, the tool can be changed through API as below.</p>
+<p>VotanicXR provides several in-game tools with useful features which facilitate the user exploring the VR world. This chapter introduces the features, usage, and configuration of <code>In-Game Tools</code>.</p>
+<p>There are 7 in-game tools in VotanicXR, namely <code>Wand</code>, <code>Teleport</code>, <code>Glove</code>, <code>Magnifier</code>, <code>Reporter</code>, <code>Brush</code>, and <code>Measurer</code>.</p>
+<h2 id="tutorial-scene-and-related-materials">Tutorial Scene and Related Materials</h2>
+<p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial10_InGameTools</code> and open the scene <code>In Game Tool</code> provided.</p>
+<h2 id="in-game-tools-overview">In-Game Tools Overview</h2>
+<p>As introduced in the <a class="xref" href="tut02.html#configure-controller-tools">Cross-platform Input tutorial</a>, the in-game tools are attached to the controllers and can be configured according to the needs of the application. This section introduces briefly the seven in-game tools offered in VotanicXR.</p>
+<h3 id="wand">Wand</h3>
+<p>Wand is the primary tool the user uses to interact with the VR world, such as the interactable objects and 3D UIs. Due to the heavy use of the Wand tool, it is pre-set as the <code>Default Tool</code> on a controller. The settings such as response colour and length of the Wand can be changed in <code>V Gear_Wand (Script)</code> through Unity Inspector and API. More details on how the Wand tool is used to interact with the VR world is introduced in the <a class="xref" href="tut04.html#basic-interaction">Interact with Virtual World</a> tutorial.</p>
+<p><img src="../images/10.2.1.gif" alt=""></p>
+<h3 id="teleport">Teleport</h3>
+<p>The Teleport tool is the default tool for user to navigate in the VR world. Detailed usage of the teleport tool is introduced in the <a class="xref" href="tut03.html#teleport-basic">Locomotion section</a> for details.</p>
+<p><img src="../images/10.2.2.png" alt=""></p>
+<h3 id="glove">Glove</h3>
+<p><code>Glove</code> is similar to the <code>Wand</code> tool. It is used to interact with interactable objects at a shorter range, it works only with the game having <strong>[Role System]</strong> in XR Support enabled. The hand animation of the Glove can change in response to the changes in VR controllers' buttons &amp; axes states, the animation only works with supported OpenVR devices (such as Oculus controller, Vive controller, valve index controller, Windows Mixed Reality controller etc.) through SteamVR.</p>
+<p><img src="../images/10.2.3.1.gif" alt="">
+<img src="../images/10.2.3.2.gif" alt=""></p>
+<h3 id="magnifier">Magnifier</h3>
+<p><code>Magnifier</code> is a tool to zoom in/out a portion of the VR world for viewing. Details such as the camera angle and zoom level can be changed in <code>V Gear_Magnifier (Script)</code>.</p>
+<p><img src="../images/10.2.4.png" alt="">
+ </p>
+<h3 id="reporter">Reporter</h3>
+<p>Reporter is a tool to capture the VR world as a screenshot and add remarks about the screenshot. A <code>Camera View Finder Window</code> will show up when the <code>Reporter</code> tools is activated. Users can press the <code>Trigger</code> button to take a screenshot of the VR world.</p>
+<p><img src="../images/10.2.5.1.png" alt="">
+<img src="../images/10.2.5.2.png" alt=""></p>
+<p>Users can then add remark about the captured screenshot by clicking the photo using the <code>Wand</code></p>
+<p><img src="../images/10.2.5.3.gif" alt=""></p>
+<p>All screenshots and its related remarks can be exported to a HTML file. Users can hold the trigger button for one second to open the export dialog for saving the HTML file.</p>
+<!---![aaa](../images/10.2.5.4.gif) --->
+<h3 id="brush">Brush</h3>
+<p>Brush is a tool to paint in the VR world. When the Brush tool is activated, user can hold the Trigger button to draw. The Brush tool can be customised in several ways from the <code>V Gear_Magnifier (Script)</code> or from the brush tool's in-game tool UI.</p>
+<p><img src="../images/10.2.6.1.png" alt=""></p>
+<p>The drawing can be removed by selecting the drawing and pressing the <code>Trigger</code> button using the Wand.  Besides, all drawing can be cleared by selecting a drawing and holding the <code>Trigger</code> button for 1 second.</p>
+<!---![aaa](../images/10.2.6.2.gif)--->
+<p>The brush properties such as colour, tip size can be changed via the brush property panel.</p>
+<p><img src="../images/10.2.6.3.gif" alt="">
+<img src="../images/10.2.6.4.png" alt=""></p>
+<p>By default, the drawings are interactable objects in which user can grab it using the Wand and use it to perform other interactions. Optionally, user can open the Advanced Setting menu and configure physics setting for the brush ink.</p>
+<p><img src="../images/10.2.6.5.gif" alt=""></p>
+<h3 id="measurer">Measurer</h3>
+<p>Measurer is a tool to conduct in-game measurement in the VR world. To start measurement, user first mark a starting point in the VR world and press the <code>Trigger</code> button once. The measurement points can be grabbed and dragged around by selecting the point and holding the <code>Grab</code> button.</p>
+<p><img src="../images/10.2.7.1.png" alt="">
+<img src="../images/10.2.7.2.gif" alt=""></p>
+<p>The measurement can be removed by clicking <code>Trigger</code> button while having the Wand pointing to the line. User can hold the <code>Trigger</code> button for 1 second to clear all measurement.</p>
+<p><img src="../images/10.2.7.3.gif" alt=""></p>
+<p>The measurement has a <code>Continuity</code> property, which allows the measurement tool to take a series of measures when turned on. When using the measurement tool, press and hold the <code>Trigger</code> button when marking the measurement point to toggle the <code>Continuity</code> property.
+This Continuity can be changed via command, inspector, or API.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Continuity Off</strong></th>
+<th style="text-align: center;"><strong>Continuity On</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../images/10.2.7.4.gif" alt=""></td>
+<td style="text-align: center;"><img src="../images/10.2.7.5.gif" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic-usage-of-in-game-tools">Basic usage of In-Game Tools</h2>
+<p>VotanicXR in-game tools can be opened via two methods, one is opening from in-game menu, another one is invoking from API.</p>
+<h3 id="open-in-game-tool-using-in-game-menu">Open In-Game Tool using In-Game Menu</h3>
+<p>Open the in-game menu, then choose <code>Tool</code> to enter its sub menu, and you can select the in-game tool from the menu to use.</p>
+<p><img src="../images/10.3.1.gif" alt=""></p>
+<h3 id="open-in-game-tools-from-api">Open In-Game Tools From API</h3>
+<p>The in-game tools can be changed via <code>vGear.controller.SetTool(ToolName)</code> API. the name for each tool is shown in the below table.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tool Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Wand</td>
+</tr>
+<tr>
+<td style="text-align: left;">Teleport</td>
+</tr>
+<tr>
+<td style="text-align: left;">Glove</td>
+</tr>
+<tr>
+<td style="text-align: left;">Magnifier</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reporter</td>
+</tr>
+<tr>
+<td style="text-align: left;">Brush</td>
+</tr>
+<tr>
+<td style="text-align: left;">Measurer</td>
+</tr>
+</tbody>
+</table>
+<p>The below code shows an example to use the SetTool method</p>
 <pre><code class="lang-csharp">void Update(){
-//	Set the tool into Brush when PressY is received
-    if (vGear.Cmd.Received(&quot;PressY&quot;))
+//	Set the tool into Brush when Grab is received
+    if (vGear.Cmd.Received(&quot;Grab&quot;))
     {
         vGear.controller.SetTool(&quot;Brush&quot;);
     }
 }
 </code></pre>
 <h2 id="configuring-in-game-tools">Configuring In-Game Tools</h2>
-<p>This section introduces the basic configuration of tools for development, detail of the components please go to <a href="https://votanic.github.io/VotanicXR2020/api/index.html">API References</a>.</p>
-<p>To configure the tool setting related to the controller, including the <code>Auto Switch</code>, <code>Enable Scan</code>,<code>Detected Layer</code>.etc, go to the <code>V Gear_Controller (Script)</code> component of <code>vGear &gt; Frame &gt; Controller</code> prefab.</p>
-<p><img src="../images/12.2.1.png" alt="The V Gear_Controller (Script) component"></p>
-<p>The <code>Default Tool</code> is the tool be used when the game start.</p>
-<p>Besides, the tool will be changed by scanning based on the follow settings in inspector. Go to list <code>[Settings] &gt; Tools</code>, there are settings for each tool.</p>
-<p>The options <code>Auto Switch</code> and <code>Enable Scan</code>, and the layer List <code>Detect Layers</code> saved the scanning setting of current tool.</p>
-<p>When <code>Auto Switch</code> of a tool is enable, the tool will switch to first tool scanned with the gameObjects within <code>Scan Length</code> whose layer stored in <code>Detect Layers</code>. The tools will be scanned if the tool enable <code>Enable Scan</code>.</p>
-<p><img src="../images/12.2.2.2.gif" alt="The auto switch between Wand and Teleport"></p>
-<p><code>Detecy Layers</code> also controlls the object can be interacted or not, and its priority is lower than <code>Ignore Layers</code>.The meaning of <code>Ignore Layers</code> ignored are different for each tools, will be introduced in later sections.</p>
-<br>
-<p>The child gameObjects of the <code>Controller</code> prefab are managing the corresponding in-game tool, the below takes the default tool <code>Wand</code> as example.</p>
-<p><img src="../images/12.2.1.2.png" alt="The V Gear_Wand (Script) component"></p>
-<p>The <code>V Gear_Wand (Script)</code> component is stored at the second child of the <code>Controller</code> prefab, and it manages the setting of itself.</p>
-<p><code>Ray Beam</code> and <code>Ray Point</code> are the transform of its mesh childs.</p>
-<p><code>Ray</code> is the structure to manage the ray cast, such as the length of the wand, the display color and the position.</p>
-<p>The setting can be configured by script as sample below, other tools can also be configured by similar methods.</p>
-<pre><code class="lang-csharp">void Start()
-    {
-        vGear.controller.wand.ray.length = 30f;
-    }
-</code></pre>
-<p>Detail of the tool components please go to <a href="https://votanic.github.io/VotanicXR2020/api/index.html">API References</a>.</p>
-<p>The setting of tools can also be configurated in Controller Setting in Configurator.</p>
-<h3 id="introduction-to-in-game-tools">Introduction to In-Game Tools</h3>
-<p>This section will briefly introduce the seven tools.</p>
-<h4 id="wand">Wand</h4>
-<p><code>Wand</code> is the basic tool to interact with interactables, default value of the <code>Default Tool</code> is this tool. The settings such as response color and length of the <code>Wand</code> can be changed in <code>V Gear_Wand (Script)</code> through Unity Inspector and API.</p>
-<p><img src="../images/12.2.1.2.gif" alt="The Wand tool"></p>
-<h4 id="teleport">Teleport</h4>
-<p><code>Teleport</code> is a tool to teleport around, detail is decribed in <a class="xref" href="tut03.html">Locomotion</a>.</p>
-<p><img src="../images/12.2.2.png" alt="The Teleport tool"></p>
-<p>By default setting of the prefab, the tool will be switch between <code>Teleport</code> and <code>Wand</code> when user turn up or down the controller, this is because the <code>Auto Switch</code> and <code>Enable Scan</code> are enabled, the tool will scan the floor instantiated by <code>Start Point</code> to switch.</p>
-<p><img src="../images/12.2.2.2.gif" alt="The auto switch between Wand and Teleport"></p>
-<h4 id="glove">Glove</h4>
-<p><code>Glove</code> is a tool to interactact with interactables at a shorter range, it works with the game using [Role System] only. <code>Glove</code> provides the animation with the sensor such as Vive controller.</p>
-<p><img src="../images/12.2.3.gif" alt="The Glove tool with an interactable"></p>
-<p>The Glove animation is mapped with sense of the controller.</p>
-<p><img src="../images/12.2.3.2.gif" alt="The Glove animation "></p>
-<p>The <code>Ignore Layers</code> of this tool is to ignore the object to prevent interaction.</p>
-<p><code>Wand</code> and <code>Glove</code> can be displayed with other tools at the same time by enable the <code>Display</code> at the <code>Tool</code> list of <code>V Gear_Controller (Script)</code>.</p>
-<p><img src="../images/12.2.3.2.png" alt="The Magnifier tool with Glove"></p>
-<h4 id="magnifier">Magnifier</h4>
-<p><code>Magnifier</code> is a tool to magnify the objects for viewing. The detail such as camera angle and zoom size can be changed in <code>V Gear_Magnifier (Script)</code>.</p>
-<p><img src="../images/12.2.4.png" alt="The sample of using Magnifier"></p>
-<p>The <code>Ignore Layers</code> of this tool is to ignore the object display in the <code>Magnifier</code>.</p>
-<h4 id="reporter">Reporter</h4>
-<p><code>Reporter</code> is a tool include a camera and remark UI, to save the image captured with notes.</p>
-<p><img src="../images/12.2.5.1.png" alt="The image captured by Reporter"></p>
-<p>After <code>Trigger</code> is pressed, the <code>Reporter</code> will leaved a capture at the game.</p>
-<p><img src="../images/12.2.5.2.png" alt="The image captured by Reporter remains"></p>
-<p>The <code>Reporter</code> leaved can be interacted to remark or remove, and the images and remarks will be saved as <code>pdf</code> format.</p>
-<p><img src="../images/12.2.5.3.gif" alt="The reaction after clicked the reporter"></p>
-<p>The <code>Ignore Layers</code> of this tool is to ignore the object captured with this layer.</p>
-<h4 id="brush">Brush</h4>
-<p><code>Brush</code> is a tool to draw simple mesh on VR 3D space. When <code>Brush</code> tool is switched, user can hold the <code>Trigger</code> key to draw mesh. The detail below can be changed in <code>V Gear_Magnifier (Script)</code>.</p>
-<p><img src="../images/12.2.6.1.png" alt="The Brush panel"></p>
-<p>The mesh can be undo by receiving command <code>brush=remove</code> and be clear by receiving command <code>brush=clear</code>.
-By default, <code>brush=remove</code> is bound with button index 2.</p>
-<p><img src="../images/12.2.6.2.png" alt="The mesh drawn with Brush"></p>
-<p>Press the selected color at the panel, color can be edited based on RGBA.</p>
-<p><img src="../images/12.2.6.3.gif" alt="Color setting"></p>
-<p>Press the <code>Locus Setting</code> of the panel, locus setting such as interactable type and physic properties of mesh can be changed.</p>
-<p><img src="../images/12.2.6.4.gif" alt="Locus Setting"></p>
-<p>The <code>Ignore Layers</code> of this tool is to ignore the object to prevent interaction.</p>
-<h4 id="measurer">Measurer</h4>
-<p><code>Measurer</code> is a tool to create virtual measurement.</p>
-<p>The measurement can be undo by receiving command <code>measurer=remove</code> and be clear by receiving command <code>measurer=clear</code>.</p>
-<p>The <code>Continuity</code> can be toggled by receiving command <code>measurer=continuity</code> , this setting and others such as unit and decimals can be changed through Unity Inspecter and API.</p>
-<p><img src="../images/12.2.7.1.png" alt=""></p>
-<p>The point of the measurement can be grabbed.</p>
-<p><img src="../images/12.2.7.2.gif" alt=""></p>
-<p>The measurement will be removed if the wand trigger it.</p>
-<p><img src="../images/12.2.7.3.gif" alt=""></p>
-<p>When the <code>Continuity</code> is disabled, the measurement will be stoped after a <code>Trigger</code> received, else it will continue the measurement by connecting them.</p>
-<table width="100%">
+<p>This section introduces the configuration of in-game tools. The in-game tools setting can be configurated in the Unity inspector, VotanicXR Configurator, and API. Developer can refer to the <a href="https://votanic.github.io/VotanicXR2020/api/Votanic.vXR.vGear.vGear_Controller.html">API</a> for more details.</p>
+<h3 id="configuration-via-unity-inspector">Configuration via Unity Inspector</h3>
+<p>In VotanicXR, in-game tools are part of the virtual controller and <strong>all in-game tools settings are attached to the virtual controller</strong>. In the below figure, the highlighted <code>Controller</code> GameObject represent one virtual controller in VotanicXR. The details about virtual controllers are introduced in <a class="xref" href="tut02.html">Getting Cross-platform Input</a> section.</p>
+<p>The in-game tools settings can be changed in <code>V Gear_Controller(Script)</code> script which can be accessed via <code>vGear &gt; Frame &gt; Controller</code> GameObject. The Default Tool is the tool be used for the selected <code>Controller</code> when the game starts.</p>
+<p><img src="../images/10.4.1.1.png" alt=""></p>
+<p><strong>Notes</strong>: <a style="color:red">if there are multiple virtual controllers set up in the application. It is required to duplicate the <code>Controller</code> GameObject and named the same way as the virtual controller defined in the application setting (setting.vxrs) file.</a></p>
+<p>For example, the application has two virtual controllers (Controller and Controller2) defined for the left and the right hand. We need to duplicate the <code>Controller</code> GameObject and name it as <code>Controller2</code>. Then, in the setting.vxrs file (which can be opened via the VotanicXR Configurator), the virtual controller name should be also named as <code>Controller</code> and <code>Controller2</code>.</p>
+<p><img src="../images/10.4.1.2.png" alt="">
+<img src="../images/10.4.1.3.png" alt=""></p>
+<p>As shown in the below figure, for each tool there are 10 properties that can be configurated.</p>
+<p><img src="../images/10.4.1.4.png" alt=""></p>
+<p>The below table has a brief explanation about the setting.</p>
+<table>
+<thead>
 <tr>
-<td><img src="../images/12.2.7.3.1.gif">
-<td><img src="../images/12.2.7.3.2.gif">
-</td></td></tr></table>
-<p>The <code>Ignore Layers</code> of this tool is to ignore the object to prevent interaction.</p>
+<th style="text-align: left;">Property Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">Name of the tool</td>
+</tr>
+<tr>
+<td style="text-align: left;">Auto Switch</td>
+<td style="text-align: left;">If enable, the system is allowed to auto switch out of the current tool, if other tools fulfil the <code>Scan</code> conditions. <br><br>This property usually uses together with the <code>Enable Scan</code> property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Enable Scan</td>
+<td style="text-align: left;">If enabled, it allows auto scan and switch to this tool.<br><br>This property is required to use with the <code>Detect Layers</code> property for the detection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scan Length</td>
+<td style="text-align: left;">Raycast length of the tool</td>
+</tr>
+<tr>
+<td style="text-align: left;">Detect Layers</td>
+<td style="text-align: left;">This is an array list of layer index, which is used for whitelisting objects for detection. This property uses together with <code>enable scan</code> and <code>interaction</code> property.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ignore Layers</td>
+<td style="text-align: left;">A ignore layer list. The GameObject in the layer in this list will be ignored for auto switching tool and interaction.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">The position offset of the tool</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rotation</td>
+<td style="text-align: left;">The rotation offset of the tool</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wand Ray</td>
+<td style="text-align: left;">Enable to display a wand together with the tool. This section includes the basic setting of the Wand property, for example, interaction and wand length.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Glove</td>
+<td style="text-align: left;">Enable to display a glove together with the tool. . This section includes the basic setting of the Glove property, for example, interaction.</td>
+</tr>
+</tbody>
+</table>
+<p>In addition, there are some special tool-related properties in each tool's GameObject for fine tuning. However, <a style="color:red">if a setting appears in BOTH <code>Controller</code> and tool prefab, the <code>Controller</code> setting will overwrite the tool prefab setting.</a></p>
+<p><img src="../images/10.4.1.5.png" alt=""></p>
+<h3 id="configuration-via-votanicxr-configurator">Configuration via VotanicXR Configurator</h3>
+<p>By default, the in-game tools' setting in Unity Editor will be exported and saved to the application setting <code>setting.vxrs</code> file when building the application. The path is configured in <code>Setting Path</code> property. If you would like to stop the Unity Editor setting to be saved in the application setting file,  unchecked the <code>Auto Apply Setting</code> in <code>vGear</code> inspector window.</p>
+<p>Besides, by default, <strong>if the scene is played in the Unity Editor, settings defined in the inspector will be used rather than the setting.vxrs file</strong>. If you would like to test the configurations defined in the application setting file while running the scene in Unity Editor, it is required to uncheck the <code>Use Editor Setting</code> property.</p>
+<p><img src="../images/10.4.2.1.png" alt=""></p>
+<p>The setting.vxrs file can be configurated by using the VotanicXR Configurator. In the Configurator, select <code>Controllers</code> tab, then select the tool in <code>Tools of controller</code> list for configuration. The settings inside are the same as in Unity editor's inspector window. Please check the previous section for details of the properties to configure.</p>
+<p><strong>Notes</strong>: <a style="color:red">the virtual controller name in the application setting file's Controllers list should match ALL <code>vGear &gt; Frame &gt; Controller</code> GameObject names in the Hierarchy of the VotanicXR application. Besides, ALL virtual controller name should match the controller names defined in <code>XR Objects &gt; Hand &gt; Linked Virtual Device</code> in the XR system's config.vxrc file. Otherwise, the controller may not work correctly in the application.</a></p>
+<p><img src="../images/10.4.2.2.png" alt="">
+<img src="../images/10.4.2.3.png" alt=""></p>
 </article>
           </div>
           
