@@ -471,10 +471,32 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/10.2.5.4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/10.2.5.4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/10.2.6.1.png",
       "output": {
         "resource": {
           "relative_path": "images/10.2.6.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/10.2.6.2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/10.2.6.2.gif"
         }
       },
       "is_incremental": false,
@@ -4097,7 +4119,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut10.html",
-          "hash": "ekHWTiBh1MDuhiMG5jf5Gg=="
+          "hash": "qrs/8DWU8RYWPclLUB+FZA=="
         }
       },
       "is_incremental": false,
