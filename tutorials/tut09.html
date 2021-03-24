@@ -70,7 +70,7 @@
 <h1 id="using-in-game-and-landing-menu">Using In-Game and Landing Menu</h1>
 
 <p>Every VotanicXR application has an in-game and landing menu built-in. The in-game menus can be used for two purposes: 1. it provides quick access to different built-in features of VotanicXR; and 2. it is a convenient way for developers to add UI elements to invoke different commands during runtime without needing to create your own 3D UI. The in-game menu is fully customizable in terms of its menu-items and the visual effects.</p>
-<p>In addition, VotanicXR also provides a built-in landing menu for developer to quickly create a menu for the VotanicXR application. In runtime, the landing menu will show in front of the user when the application start. It can be used for displaying welcome message, or to faciliate scene or level selection on application start. The landing menu is also customizable in terms of background and button images.</p>
+<p>In addition, VotanicXR also provides a built-in landing menu for developer to quickly create a menu for the VotanicXR application. In runtime, the landing menu will show in front of the user when the application starts. It can be used for displaying welcome message, or to faciliate scene or level selection on application starts. The landing menu is also customizable in terms of background and button images.</p>
 <p>This chapter introduces the In-Game and Landing Menu features, the basic usages, and the configuration.</p>
 <h2 id="tutorial-scene-and-related-materials">Tutorial Scene and Related Materials</h2>
 <p>Go to <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial09_InGameMenu</code> and open the scene <code>In Game Menu</code> provided.</p>
@@ -215,7 +215,7 @@
       <td rowspan="4">Quality</td>
       <td rowspan="4">1</td>
       <td>Anisotropic</td>
-      <td rowspan="4">To change the display quality setting of anisotropic, antialiasing, shadows type and shadow resolution.<br>For details, please check <a href="https://docs.unity3d.com/Manual/class-QualitySettings.html">this</a></td>
+      <td rowspan="4">To change the display quality setting of anisotropic, antialiasing, shadows type and shadow resolution.<br>For details, please check <a href="https://docs.unity3d.com/Manual/class-QualitySettings.html">Unity's Quality setting manual</a></td>
    </tr>
    <tr>
       <td>Antialiasing</td>
@@ -247,7 +247,7 @@
 <li><p>In the <code>In Game Menu</code> tab, the <code>Menus</code> list is to configure the global setting and the menu panel. The <code>Buttons on Menu</code> list is to configure the menu buttons.</p>
 <p><img src="../images/9.2.2.3.png" alt=""></p>
 </li>
-<li><p>Click <code>Global Setting</code> item in <code>Menus</code>, menu properties can be changed in the right-side window.</p>
+<li><p>Click <code>Global Setting</code> item in <code>Menus</code>, menu properties can be changed in <code>Menu Properties</code> view on the right.</p>
 <p><img src="../images/9.2.2.4.png" alt=""></p>
 </li>
 <li><p>Click <code>File &gt; Save</code> to save the setting.</p>
@@ -302,8 +302,8 @@
 <p>For the <code>Back</code> button, input <code>Menu=0</code> in <code>Command to send</code> property, this command means open the menu panel index 0. <strong>The menu panel index is the menu panel order in the <code>Menus</code> list. The above figure illustrates how to count the menu panel index.</strong></p>
 </li>
 <li><p>Then, create a menu button <code>Item</code> in <code>Main</code> menu panel, and the button to open the <code>Item</code> menu panel. First, select the <code>Main</code> menu panel in <code>Menus</code>. Second, click the <code>+</code> button which near the <code>Buttons on Menu</code> list. Third, input <code>Item</code> and <code>Menu=6</code> in <code>Button Name</code> and <code>Command to send</code> property correspondingly.</p>
-<p><strong>Note</strong>: Command <code>Menu=6</code> means open the menu panel index 6. Please check the previous step to check the index number.</p>
 <p><img src="../images/9.2.3.2.6.png" alt=""></p>
+<p><strong>Note</strong>: Command <code>Menu=6</code> means open the menu panel index 6. Please check the previous step to check the index number.</p>
 </li>
 <li><p>Finally, click <code>File &gt; Save</code> to save the setting.</p>
 </li>
