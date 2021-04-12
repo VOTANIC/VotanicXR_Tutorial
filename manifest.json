@@ -5,6 +5,17 @@
   "files": [
     {
       "type": "Resource",
+      "source_relative_path": "Resources/03_Configurator_UserManual.pdf",
+      "output": {
+        "resource": {
+          "relative_path": "Resources/03_Configurator_UserManual.pdf"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Resources/OpenSourceCredits.html",
       "output": {
         "resource": {
@@ -684,6 +695,17 @@
       "output": {
         "resource": {
           "relative_path": "images/10.4.2.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/11.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/11.2.1.png"
         }
       },
       "is_incremental": false,
@@ -3551,7 +3573,7 @@
           "hash": "scWXsQbTMmjydy9aRL5NKw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4009,10 +4031,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/intro.html",
-          "hash": "DsecS+m+6WyT/hLkikQNzg=="
+          "hash": "eG2fHmgnWBUt0gciwYs0EQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4021,7 +4043,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "In4Efcr97vddxwtx2EOlhw=="
+          "hash": "QNrDxsKz9ahrslCLoyJ2Yw=="
         }
       },
       "is_incremental": false,
@@ -4146,6 +4168,18 @@
       },
       "is_incremental": true,
       "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tut11.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tut11.html",
+          "hash": "T70YamdCk4Iq/fP2J6oKkQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
     }
   ],
   "incremental_info": [
@@ -4160,8 +4194,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 41,
-          "skipped_file_count": 40
+          "total_file_count": 42,
+          "skipped_file_count": 42
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

@@ -91,6 +91,9 @@ references:
 - uid: tut10-ingametool
   name: Using In-Game Tools
   href: tutorials/tut10.html
+- uid: tut11-configurator
+  name: VotanicXR Configurator
+  href: tutorials/tut11.html
 - uid: underconstructed
   name: underconstructed
   href: tutorials/UnderContructed.html
