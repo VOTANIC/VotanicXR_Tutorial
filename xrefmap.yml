@@ -25,6 +25,9 @@ references:
 - uid: doc01
   name: Default Input Device Mapping for Virtual Controller
   href: documentation/defaultMapping.html
+- uid: doc02
+  name: Note on Binding Command to Virtual Controller Event
+  href: documentation/bindingCommand.html
 - uid: faq001
   name: How to cutomise the batch file settings?
   href: knowledgeBase/FAQ001.html

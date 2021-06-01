@@ -69,217 +69,192 @@
             <article class="content wrap" id="_content" data-uid="doc01">
 <h1 id="default-input-device-mapping-for-virtual-controller">Default Input Device Mapping for Virtual Controller</h1>
 
-<h2 id="default-mappings">Default Mappings</h2>
-<p>Here are the default mappings from common devices to vCast controller:</p>
+<h2 id="virtual-controller-button-and-axis-index-mapping-for-common-input-devices">Virtual Controller Button and Axis Index Mapping for Common Input Devices</h2>
+<p>In VotanicXR, input devices will automatically assign and bind to VotanicXR Virtual Controller by default. For a consistent user experience, VotanicXR has re-mapped the buttons / axes on common XR input device's buttons and axes will map to the Virtual Controller's buttons and axes. controllers to the virtual controller button / axis indexes so that the controllers can be used in the most natural way across all supported common devices. <strong>VotanicXR has pre-mapped 5 common devices</strong>, namely <code>Xbox controller</code>, <code>HTC VIVE (Pro)</code>, <code>Valve Index</code>, <code>Oculus Rift</code>, and <code>Samsung Odyssey+</code>, to Virtual Controller button and axis. The mapping of button and axis for those input devices are shown in the below table.</p>
+<p>Those Virtual Controller button and axis could be used to triggering VotanicXR Commands. For details, please check the <a class="xref" href="../tutorials/tut02.html">Getting Cross-platform Input</a> tutorial section.</p>
+<p>Table of Virtual Controller Button to Common Input Devices</p>
 <table width="100%">
-<tr><td>Button</td><td>Xbox</td><td>HTC VIVE</td><td>Valve Index</td><td>Oculus Rift</td><td>Samsung Odyssey+</td></tr>
-<tr><td>0</td><td>A</td><td>Trigger</td><td>Trigger</td><td>Trigger</td><td>Trigger</td></tr>
-<tr><td>1</td><td>B</td><td>Grip</td><td>Grip</td><td>Grip</td><td>Grip</td></tr>
-<tr><td>2</td><td>Y</td><td>Menu</td><td>Menu</td><td>Menu</td><td>Menu</td></tr>
-<tr><td>3</td><td>X</td><td>TouchPad</td><td>TouchPad</td><td>Back</td><td>TouchPad</td></tr>
-<tr><td>4</td><td>LB</td><td></td><td>Back</td><td>Joystick</td><td>Joystick</td></tr>
-<tr><td>5</td><td>RB</td><td></td><td>Joystick</td><td></td><td></td></tr>
-<tr><td>6</td><td>Select</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>7</td><td>Start</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>8</td><td>LS</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>9</td><td>RS</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>10</td><td>Left</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>11</td><td>Right</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>12</td><td>Up</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>13</td><td>Down</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>Button</b></td><td><b>Xbox</b></td><td><b>HTC VIVE</b></td><td><b>Valve Index</b></td><td><b>Oculus Rift</b></td><td><b>Samsung Odyssey+</b></td></tr>
+<tr><td><b>0</b></td><td>A</td><td>Trigger</td><td>Trigger</td><td>Trigger</td><td>Trigger</td></tr>
+<tr><td><b>1</b></td><td>B</td><td>Grip</td><td>Grip</td><td>Grip</td><td>Grip</td></tr>
+<tr><td><b>2</b></td><td>Y</td><td>Menu</td><td>A</td><td>A / X</td><td>Menu</td></tr>
+<tr><td><b>3</b></td><td>X</td><td>TouchPad (Trackpad)</td><td>TouchPad (Trackpad)</td><td>B / Y</td><td>TouchPad (Trackpad)</td></tr>
+<tr><td><b>4</b></td><td>LB (Left Bumper)</td><td></td><td>B</td><td>Joystick (Thumbstick)</td><td>Joystick (Thumbstick)</td></tr>
+<tr><td><b>5</b></td><td>RB (Right Bumper)</td><td></td><td>Joystick (Thumbstick)</td><td></td><td></td></tr>
+<tr><td><b>6</b></td><td>Back </td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>7</b></td><td>Start</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>8</b></td><td>LS (Left Stick)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>9</b></td><td>RS (Right Stick)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>10</b></td><td>Left (DPad Left)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>11</b></td><td>Right (DPad Right)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>12</b></td><td>Up (DPad Up)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><b>13</b></td><td>Down (DPad Down)</td><td></td><td></td><td></td><td></td></tr>
+</table>
+<p>Table of Virtual Controller Axis to Common Input Devices</p>
+<table>
+   <tr>
+      <td><b>Virtual Controller Axis Index</b></td>
+      <td><b>Xbox</b></td>
+      <td><b>HTC VIVE / VIVE Pro</b></td>
+      <td><b>Valve Index</b></td>
+      <td><b>Oculus Rift</b></td>
+      <td><b>Samsung Odyssey+</b></td>
+   </tr>
+   <tr>
+      <td><b>0</b></td>
+      <td>LX (Left Stick Horizontal)</td>
+      <td>TPX <br>(Trackpad Horizontal)</td>
+      <td>JX (Joystick Horizontal)</td>
+      <td>JX (Joystick Horizontal)</td>
+      <td>TPX <br>(TouchPad Horizontal)</td>
+   </tr>
+   <tr>
+      <td><b>1</b></td>
+      <td>LY (Left Stick Vertical)</td>
+      <td>TPY <br>(Trackpad Vertical)</td>
+      <td>JY (Joystick Vertical)</td>
+      <td>JY (Joystick Vertical)</td>
+      <td>TPY <br>(TouchPad Vertical)</td>
+   </tr>
+   <tr>
+      <td><b>2</b></td>
+      <td>RT (Right Trigger) / LT (Left Trigger)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><b>3</b></td>
+      <td>RX (Right Stick Horizontal)</td>
+      <td></td>
+      <td>TPX <br>(Trackpad Horizontal)</td>
+      <td></td>
+      <td>JX (Joystick Horizontal)</td>
+   </tr>
+   <tr>
+      <td><b>4</b></td>
+      <td>RY (Right Stick Vertical)</td>
+      <td></td>
+      <td>TPY <br>(Trackpad Vertical)</td>
+      <td></td>
+      <td>JY (Joystick Vertical)</td>
+   </tr>
+   <tr>
+      <td><b>5</b></td>
+      <td>LT (Left Trigger) / RT (Right Trigger)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><b>6</b></td>
+      <td>DX (DPad Horizontal)</td>
+      <td>Trigger</td>
+      <td>Trigger</td>
+      <td>Trigger</td>
+      <td>Trigger</td>
+   </tr>
+   <tr>
+      <td><b>7</b></td>
+      <td>DY (DPad Vertical)</td>
+      <td></td>
+      <td>Middle <br>(Finger Tracking)</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><b>8</b></td>
+      <td></td>
+      <td></td>
+      <td>Ring <br>(Finger Tracking)</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><b>9</b></td>
+      <td></td>
+      <td></td>
+      <td>Pinky <br>(Finger Tracking)</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><b>10</b></td>
+      <td></td>
+      <td></td>
+      <td>Track pad Force</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><b>11</b></td>
+      <td></td>
+      <td></td>
+      <td>Grip Force</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td></td>
+   </tr>
 </table>
 <table width="100%">
-<tr><td>Axis</td><td>Xbox</td><td>HTC VIVE</td><td>Valve Index</td><td>Oculus Rift</td><td>Samsung Odyssey+</td></tr>
-<tr><td>0</td><td>LX</td><td>TPX</td><td>JX</td><td>JX</td><td>TPX</td></tr>
-<tr><td>1</td><td>LY</td><td>TPY</td><td>JY</td><td>JY</td><td>TPY</td></tr>
-<tr><td>2</td><td>LT</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>3</td><td>RX</td><td></td><td>TPX</td><td></td><td>JX</td></tr>
-<tr><td>4</td><td>RY</td><td></td><td>TPY</td><td></td><td>JY</td></tr>
-<tr><td>5</td><td>RT</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>6</td><td>DX</td><td>Trigger</td><td>Trigger</td><td>Trigger</td><td>Trigger</td></tr>
-<tr><td>7</td><td>DY</td><td></td><td>Middle</td><td>Middle</td><td></td></tr>
-<tr><td>8</td><td></td><td></td><td>Ring</td><td></td><td></td></tr>
-<tr><td>9</td><td></td><td></td><td>Pinky</td><td></td><td></td></tr>
-<tr><td>10</td><td></td><td></td><td>PadForce</td><td></td><td></td></tr>
-<tr><td>11</td><td></td><td></td><td>GripForce</td><td></td><td></td></tr>
+    <tr>
+        <td width="50%" style="text-align:center;vertical-align: middle"><img src="../images/doc01.2.1.png">
+        <td width="50%" style="text-align:center;vertical-align: middle"><img src="../images/doc01.2.10.png">
+    </td></td></tr>  
+    <tr>
+        <td style="text-align:center;vertical-align: middle"><b><u>Xbox Controller
+        <td style="text-align:center;vertical-align: middle"><b><u>Samsung Odyssey+
+    </u></b></td></u></b></td></tr>
+    <tr>
+        <td style="text-align:center;vertical-align: middle"><img src="../images/doc01.2.7.png">
+        <td style="text-align:center;vertical-align: middle"><img src="../images/doc01.2.9.png">
+    </td></td></tr>
+    <tr>
+        <td style="text-align:center;vertical-align: middle"><b><u>HTC VIVE / VIVE Pro
+        <td style="text-align:center;vertical-align: middle"><b><u>Valve Index
+    </u></b></td></u></b></td></tr>
+    <tr>
+        <td colspan="2" style="text-align:center;vertical-align: middle"><img src="../images/doc01.2.8.png">  
+    </td></tr>
+    <tr>
+        <td colspan="2" style="text-align:center;vertical-align: middle"><b><u>Oculus Rift
+    </u></b></td></tr>
 </table>
-<h2 id="hardware-input-index">Hardware Input Index</h2>
-<h3 id="xbox-360--xbox-one--inno-gamepad--msi-gc30">Xbox 360 / Xbox One / Inno GamePad / MSI GC30</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>A</td><td>0</td><td>LX (Left Stick Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>B</td><td>1</td><td>LY (Left Stick Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>X</td><td>2</td><td>LT (Left Trigger)</td><td>2</td><td>0~1</td></tr>
-<tr><td>Y</td><td>3</td><td>RX (Right Stick Horizontal)</td><td>3</td><td>-1~1</td></tr>
-<tr><td>LB (Left Bumper)</td><td>4</td><td>RY (Right Stick Vertical)</td><td>4</td><td>-1~1</td></tr>
-<tr><td>RB (Right Bumper)</td><td>5</td><td>RT (Right Trigger)</td><td>5</td><td>0~1</td></tr>
-<tr><td>Back</td><td>6</td><td>DX (DPad Horizontal)</td><td>6</td><td>-1~1</td></tr>
-<tr><td>Start</td><td>7</td><td>DY (DPad Vertical)</td><td>7</td><td>-1~1</td></tr>
-<tr><td>LS (Left Stick)</td><td>8</td><td>LT (Left Trigger)</td><td>5</td><td>-1~0</td></tr>
-<tr><td>RS (Right Stick)</td><td>9</td><td>RT (Right Trigger)</td><td>2</td><td>-1~0</td></tr>
-<tr><td>Left (DPad Left)</td><td>10</td><td></td><td></td><td></td></tr>
-<tr><td>Right (DPad Right)</td><td>11</td><td></td><td></td><td></td></tr>
-<tr><td>Up (DPad Up)</td><td>12</td><td></td><td></td><td></td></tr>
-<tr><td>Down (DPad Down)</td><td>13</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><img src="../images/doc01.2.1.png"></table>
-<h3 id="ps-dualshock-4-wireless-controller">PS DualShock 4 Wireless Controller</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Cross </td><td>0</td><td>LX (Left Stick Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>Circle</td><td>1</td><td>LY (Left Stick Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>Square</td><td>2</td><td>L2 (Left Trigger)</td><td>2</td><td>-1~1</td></tr>
-<tr><td>Triangle</td><td>3</td><td>RX (Right Stick Horizontal)</td><td>3</td><td>-1~1</td></tr>
-<tr><td>L1</td><td>4</td><td>RY (Right Stick Vertical)</td><td>4</td><td>-1~1</td></tr>
-<tr><td>R1</td><td>5</td><td>R2 (Right Trigger)</td><td>5</td><td>-1~1</td></tr>
-<tr><td>Share</td><td>6</td><td>DX (DPad Horizontal)</td><td>6</td><td>-1~1</td></tr>
-<tr><td>Option</td><td>7</td><td>DY (DPad Vertical)</td><td>7</td><td>-1~1</td></tr>
-<tr><td>LS (Left Stick)</td><td>8</td><td></td><td></td><td></td></tr>
-<tr><td>RS (Right Stick)</td><td>9</td><td></td><td></td><td></td></tr>
-<tr><td>L2</td><td>10</td><td></td><td></td><td></td></tr>
-<tr><td>R2</td><td>11</td><td></td><td></td><td></td></tr>
-<tr><td>PS (Logo)</td><td>12</td><td></td><td></td><td></td></tr>
-<tr><td>Pad (Touch Pad)</td><td>13</td><td></td><td></td><td></td></tr>
-<tr><td>Left (DPad Left)</td><td>14</td><td></td><td></td><td></td></tr>
-<tr><td>Right (DPad Right)</td><td>15</td><td></td><td></td><td></td></tr>
-<tr><td>Up (DPad Up)</td><td>16</td><td></td><td></td><td></td></tr>
-<tr><td>Down (DPad Down)</td><td>17</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.2.png"></td></tr></table>
-<h3 id="thrustmaster-t300rs-racing-wheel">Thrustmaster T300RS Racing Wheel</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Cross</td><td>0</td><td>Wheel</td><td>0</td><td>-1~1</td></tr>
-<tr><td>Circle</td><td>1</td><td>Gas </td><td>1</td><td>1~-1</td></tr>
-<tr><td>Square</td><td>2</td><td>Brake</td><td>2</td><td>1~-1</td></tr>
-<tr><td>Triangle</td><td>3</td><td>Clutch</td><td>3</td><td>1~-1</td></tr>
-<tr><td>L1</td><td>4</td><td>DX (DPad Horizontal)</td><td>4</td><td>-1~1</td></tr>
-<tr><td>R1</td><td>5</td><td>DY (DPad Vertical)</td><td>5</td><td>-1~1</td></tr>
-<tr><td>Select</td><td>6</td><td></td><td></td><td></td></tr>
-<tr><td>Start</td><td>7</td><td></td><td></td><td></td></tr>
-<tr><td>L2</td><td>8</td><td></td><td></td><td></td></tr>
-<tr><td>R2</td><td>9</td><td></td><td></td><td></td></tr>
-<tr><td>L3</td><td>10</td><td></td><td></td><td></td></tr>
-<tr><td>R3</td><td>11</td><td></td><td></td><td></td></tr>
-<tr><td>PS (Logo)</td><td>12</td><td></td><td></td><td></td></tr>
-<tr><td>Left (DPad Left)</td><td>13</td><td></td><td></td><td></td></tr>
-<tr><td>Right (DPad Right)</td><td>14</td><td></td><td></td><td></td></tr>
-<tr><td>Up (DPad Up)</td><td>15</td><td></td><td></td><td></td></tr>
-<tr><td>Down (DPad Down)</td><td>16</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.3.1.png"><td><img src="../images/doc01.2.3.2.png"></td></td></tr></table>
-<h3 id="logitech-g-hub-g29-driving-force-racing-wheel-usb">Logitech G Hub G29 Driving Force Racing Wheel USB</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Cross </td><td>0</td><td>Wheel</td><td>0</td><td>-1~1</td></tr>
-<tr><td>Circle</td><td>1</td><td>Gas </td><td>1</td><td>1~-1</td></tr>
-<tr><td>Square</td><td>2</td><td>Brake</td><td>2</td><td>1~-1</td></tr>
-<tr><td>Triangle</td><td>3</td><td>Clutch</td><td>3</td><td>1~-1</td></tr>
-<tr><td>L1</td><td>4</td><td>DX (DPad Horizontal)</td><td>4</td><td>-1~1</td></tr>
-<tr><td>R1</td><td>5</td><td>DY (DPad Vertical)</td><td>5</td><td>-1~1</td></tr>
-<tr><td>Share</td><td>6</td><td></td><td></td><td></td></tr>
-<tr><td>Option</td><td>7</td><td></td><td></td><td></td></tr>
-<tr><td>L2</td><td>8</td><td></td><td></td><td></td></tr>
-<tr><td>R2</td><td>9</td><td></td><td></td><td></td></tr>
-<tr><td>L3</td><td>10</td><td></td><td></td><td></td></tr>
-<tr><td>R3</td><td>11</td><td></td><td></td><td></td></tr>
-<tr><td>G1 (Gear 1)</td><td>12</td><td></td><td></td><td></td></tr>
-<tr><td>G2 (Gear 2)</td><td>13</td><td></td><td></td><td></td></tr>
-<tr><td>G3 (Gear 3)</td><td>14</td><td></td><td></td><td></td></tr>
-<tr><td>G4 (Gear 4)</td><td>15</td><td></td><td></td><td></td></tr>
-<tr><td>G5 (Gear 5)</td><td>16</td><td></td><td></td><td></td></tr>
-<tr><td>G6 (Gear 6)</td><td>17</td><td></td><td></td><td></td></tr>
-<tr><td>GR (Gear R)</td><td>18</td><td></td><td></td><td></td></tr>
-<tr><td>+</td><td>19</td><td></td><td></td><td></td></tr>
-<tr><td>-</td><td>20</td><td></td><td></td><td></td></tr>
-<tr><td>TL</td><td>21</td><td></td><td></td><td></td></tr>
-<tr><td>TR</td><td>22</td><td></td><td></td><td></td></tr>
-<tr><td>Back</td><td>23</td><td></td><td></td><td></td></tr>
-<tr><td>PS (Logo)</td><td>24</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.4.png"></td></tr></table>
-<h3 id="cyborg-x">Cyborg X</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Trigger</td><td>0</td><td>JX (Joystick Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>1</td><td>1</td><td>JY (Joystick Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>2</td><td>2</td><td>JZ (Joystick Rotation)</td><td>2</td><td>-1~1</td></tr>
-<tr><td>3</td><td>3</td><td>L1 (Left Axis 1)</td><td>3</td><td>-1~1</td></tr>
-<tr><td>4</td><td>4</td><td>L2 (Left Axis 2)</td><td>4</td><td>-1~1</td></tr>
-<tr><td>5</td><td>5</td><td></td><td></td><td></td></tr>
-<tr><td>6</td><td>6</td><td></td><td></td><td></td></tr>
-<tr><td>7</td><td>7</td><td></td><td></td><td></td></tr>
-<tr><td>8</td><td>8</td><td></td><td></td><td></td></tr>
-<tr><td>9</td><td>9</td><td></td><td></td><td></td></tr>
-<tr><td>10</td><td>10</td><td></td><td></td><td></td></tr>
-<tr><td>11</td><td>11</td><td></td><td></td><td></td></tr>
-<tr><td>12</td><td>12</td><td></td><td></td><td></td></tr>
-<tr><td>13</td><td>13</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.5.png"></td></tr></table>
-<h3 id="x-rover-jaguar-d6-plus-gun-controller">X-ROVER Jaguar D6 Plus Gun Controller</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>A</td><td>0</td><td>JX (Joystick Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>B</td><td>1</td><td>JY (Joystick Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>X</td><td>2</td><td>LT (Rotation Axis 1)</td><td>2</td><td>-1~1</td></tr>
-<tr><td>Y</td><td>3</td><td>RT (Rotation Axis 2)</td><td>3</td><td>-1~1</td></tr>
-<tr><td>LB (Left Bumper)</td><td>4</td><td>DX (DPad Horizontal)</td><td>4</td><td>-1~1</td></tr>
-<tr><td>RB (Right Bumper)</td><td>5</td><td>DY (DPad Vertical)</td><td>5</td><td>-1~1</td></tr>
-<tr><td>Back</td><td>6</td><td></td><td></td><td></td></tr>
-<tr><td>Start</td><td>7</td><td></td><td></td><td></td></tr>
-<tr><td>RT</td><td>8</td><td></td><td></td><td></td></tr>
-<tr><td>JS (Joystick Button)</td><td>10</td><td></td><td></td><td></td></tr>
-<tr><td>Left (DPad Left)</td><td>11</td><td></td><td></td><td></td></tr>
-<tr><td>Right (DPad Right)</td><td>12</td><td></td><td></td><td></td></tr>
-<tr><td>Up (DPad Up)</td><td>13</td><td></td><td></td><td></td></tr>
-<tr><td>Down (DPad Down)</td><td>14</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.6.png"></td></tr></table>
-<h3 id="htc-vive">HTC VIVE</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Trigger</td><td>0</td><td>TPX (Trackpad Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>TouchPad (Trackpad)</td><td>1</td><td>TPY (Trackpad Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>Grip</td><td>2</td><td>Trigger</td><td>2</td><td>0~1</td></tr>
-<tr><td>Menu</td><td>3</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.7.png"></td></tr></table>
-<h3 id="oculus-rift">Oculus Rift</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Trigger</td><td>0</td><td>JX (Joystick Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>Joystick</td><td>1</td><td>JY (Joystick Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>Grip</td><td>2</td><td>Trigger</td><td>2</td><td>0~1</td></tr>
-<tr><td>Menu (A/X)</td><td>3</td><td>Middle</td><td>3</td><td>0~1</td></tr>
-<tr><td>Back (B/Y)</td><td>4</td><td></td><td></td><td></td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.8.png"></td></tr></table>
-<h3 id="valve-index-knuckles"> Valve Index (Knuckles)</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Trigger</td><td>0</td><td>JX (Joystick Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>TouchPad (Trackpad)</td><td>1</td><td>JY (Joystick Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>Grip</td><td>2</td><td>Trigger</td><td>2</td><td>0~1</td></tr>
-<tr><td>Menu (A)</td><td>3</td><td>TPX (Trackpad Horizontal)</td><td>3</td><td>-1~1</td></tr>
-<tr><td>Back (B)</td><td>4</td><td>TPY (Trackpad Vertical)</td><td>4</td><td>-1~1</td></tr>
-<tr><td>Joystick (Thumbstick)</td><td>5</td><td>Middle (Finger Tracking)</td><td>5</td><td>0~1</td></tr>
-<tr><td></td><td></td><td>Ring (Finger Tracking)</td><td>6</td><td>0~1</td></tr>
-<tr><td></td><td></td><td>Pinky (Finger Tracking)</td><td>7</td><td>0~1</td></tr>
-<tr><td></td><td></td><td>PadForce (Trackpad Force)</td><td>8</td><td>0~1</td></tr>
-<tr><td></td><td></td><td>GripForce (Grip Force)</td><td>9</td><td>0~1</td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.9.png"></td></tr></table>
-<h3 id="samsung-odyssey">Samsung Odyssey+</h3>
-<table width="100%">
-<tr><td>Button</td><td>Index</td><td>Axis</td><td>Index</td><td>Value</td></tr>
-<tr><td>Trigger</td><td>0</td><td>TPX (Trackpad Horizontal)</td><td>0</td><td>-1~1</td></tr>
-<tr><td>TouchPad</td><td>1</td><td>TPY (Trackpad Vertical)</td><td>1</td><td>-1~1</td></tr>
-<tr><td>Grip</td><td>2</td><td>Trigger</td><td>2</td><td>0~1</td></tr>
-<tr><td>Menu</td><td>3</td><td>JX (Joystick Horizontal)</td><td>3</td><td>-1~1</td></tr>
-<tr><td>Joystick (Thumbstick)</td><td>4</td><td>JY (Joystick Vertical)</td><td>4</td><td>-1~1</td></tr>
-</table>
-<table width="100%"><tr><td><img src="../images/doc01.2.10.png"></td></tr></table>
+<h2 id="creating-a-virtual-controller-for-other-input-devices">Creating a Virtual Controller for Other Input Devices</h2>
+<p>Aside from the 5 pre-mapped input devices, there is not a re-mapping between the physical device's raw input index and the virtual controller indexes. Therefore, it is necessary to test those devices' button and axis indexes first, and then assign them to the appropriate VotanicXR Command trigger. For a device that's not in our natively supported controller list introduced above, we recommend that you create a new Virtual Controller and manually bind the input device to this new Virtual Controller, then obtain the button and axis index for creating triggers in the VotanicXR Command system. This section introduces the steps in this process. An PS4 controller is used for demonstration.</p>
+<ol>
+<li><p><strong>Ensure the input device is connected to the PC</strong> and <strong>open the application setting file</strong> which can be obtained from <code>Setting Path</code> property in <code>vGear</code> SDK manager. You can navigate to the folder path and double click to open the file with VotanicXR Configurator.</p>
+<p><img src="../images/doc01.3.1.png" alt=""></p>
+</li>
+<li><p>Click the <code>Controllers</code> tab. Virtual controllers are listed on the <code>Controllers</code> list. Then click <code>+</code> button on the <code>Controllers</code> list to create a new virtual controller for the new input device.
+<strong>Note:</strong> <em><strong>it is recommended not to delete the default virtual controllers (controller[0] and controller[1]) as a lot of built-in commands are bound to these virtual controllers.</strong></em></p>
+<p><b><i style="color:Red">You should start by creating a new controller with index 2.</i></b></p>
+<p><img src="../images/doc01.3.2.png" alt=""></p>
+</li>
+<li><p>In the new controller item, disable <code>Auto Find Buttons (If no buttons bound)</code> and <code>Auto Find Axes (If no axes bound)</code> property. Then click <code>Test and Bind</code> button.</p>
+<p><img src="../images/doc01.3.3.png" alt=""></p>
+</li>
+<li><p>In the <code>Virtual Controller Binding Test</code> dialog, click <code>Select</code> button to open the system config file to continue. The system config file can be obtained from <code>Config Path</code> property in <code>vGear</code> SDK manager. Then, select the corresponding input device Buttons and Axes in the <code>Available Device</code> section. In this demonstration, the PS4 controller is showed as <code>Wireless Controller Buttons</code> and <code>Wireless Controller Axes</code>.</p>
+<p>After selecting the input device, you can test the virtual controller and get the button and axis index in the <code>Virtual Controller Status</code> section. <strong>It is required to use the button and axis index for setting the commands.</strong></p>
+<p>If the testing is completed, click the <code>Blind</code> button, and close the dialog.</p>
+<p><img src="../images/doc01.3.4.png" alt=""></p>
+</li>
+<li><p>If you click the <code>Bind</code> button in the previous step, the device name will be automatically filled into the <code>Bind Buttons</code> and <code>Bind Axes</code> property. In this setting, the PS4 controller will be bound to <code>Controller2</code> if available, otherwise, this controller will remain unassigned.
+Finally, remember to click <code>File -&gt; Save</code> to save the configuration.</p>
+<p><img src="../images/doc01.3.5.png" alt=""></p>
+</li>
+<li><p>(Optional) this step is to demonstrate assign the new virtual controller to <code>Trigger</code> command.</p>
+<p>First, in the <code>Commands</code> tab, select the <code>Trigger</code> command in the <code>Built-in Commands</code> list.</p>
+<p>Second, click <code>+</code> button to create a new Trigger.</p>
+<p><img src="../images/doc01.3.6.png" alt=""></p>
+<p>Third, input the new created virtual controller index in the <code>Input Controller</code> property. Then select a proper input type in <code>Type</code> property and input related virtual controller button or axis index, which is obtained in the step 4, in the <code>Index</code> property. <strong>Repeat this step for <code>Menu</code> and <code>Grab</code> commands, which are the three basic commands for VotanicXR, and other commands used in the application</strong> and remember to save the configuration.</p>
+<p><img src="../images/doc01.3.7.png" alt=""></p>
+</li>
+</ol>
 </article>
           </div>
           

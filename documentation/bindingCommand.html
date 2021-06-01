@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Note on Binding Command to Virtual Controller Event </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Note on Binding Command to Virtual Controller Event ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="doc02">
+<h1 id="note-on-binding-command-to-virtual-controller-event">Note on Binding Command to Virtual Controller Event</h1>
+
+<p>The VotanicXR command system provide a decoupled and extensible mechanism for developer to separate the application logic to physical input device system.</p>
+<p>VotanicXR has several core commands, they are <code>Trigger</code>, <code>TriggerUp</code>, <code>TriggerHold</code>, <code>Grab</code>, and <code>Menu</code>. These commands are used in several of VotanicXR’s core features, and are also used by other commands when different in-game tools are enabled. It is required to assign virtual controller button to these commands so that VotanicXR work properly. In the VotanicXR, <strong>the first two virtual controllers</strong> (Controller[0] and Controller[1]) in the VotanicXR Configurator are reserved for the 5 pre-mapped common devices introduced <a class="xref" href="defaultMapping.html">here</a>. For these 5 common devices, the command to virtual controller event binding is pre-defined as follows:</p>
+<p>a)	The common device that’s connected to the system are automatically assigned to the Controller[0] and Controller[1] with the button &amp; axis index re-mapped.</p>
+<p>b)	The virtual controller button[0], button[1] and button[2] to are pre-assigned to commands <code>Trigger</code>, <code>Grab</code>, and <code>Menu</code> correspondingly.</p>
+<p>The detailed mapping of core commands, virtual controller index and button index are summarized in the below table.</p>
+<table>
+   <tr>
+      <td><b>Command</b></td>
+      <td><b>Input Type</b></td>
+      <td><b>Virtual <br>Controller <br>Index</b></td>
+      <td><b>Virtual <br>Controller <br>Button Index</b></td>
+      <td><b>Remark</b></td>
+   </tr>
+   <tr>
+      <td><b>Trigger</b></td>
+      <td>Button Press</td>
+      <td>0</td>
+      <td>0</td>
+      <td rowspan="5" style="text-align:center;vertical-align: middle">For first virtual controller</td>
+   </tr>
+   <tr>
+      <td><b>TriggerUp</b></td>
+      <td>Button Up</td>
+      <td>0</td>
+      <td>0</td>
+   </tr>
+   <tr>
+      <td><b>TriggerHold</b></td>
+      <td>Button Hold</td>
+      <td>0</td>
+      <td>0</td>
+   </tr>
+   <tr>
+      <td><b>Grab</b></td>
+      <td>Button Press</td>
+      <td>0</td>
+      <td>1</td>
+   </tr>
+   <tr>
+      <td><b>Menu</b></td>
+      <td>Button Hold</td>
+      <td>0</td>
+      <td>2</td>
+   </tr>
+   <tr>
+      <td><b>Trigger=1</b></td>
+      <td>Button Press</td>
+      <td>1</td>
+      <td>0</td>
+      <td rowspan="2" style="text-align:center;vertical-align: middle">For second virtual controller</td>
+   </tr>
+   <tr>
+      <td><b>Grab=1</b></td>
+      <td>Button Press</td>
+      <td>1</td>
+      <td>1</td>
+   </tr>
+</table>
+<p><strong>Here are few remarks about the setting the command and virtual controller event.</strong></p>
+<h2 id="htc-vive--vive-pro-controller">HTC VIVE / VIVE Pro Controller</h2>
+<p>HTC VIVE and VIVE Pro controller physical has four buttons, but the <strong><code>steam menu</code> button is reserved by SteamVR</strong> for calling its steam setting overlay. It has only <strong>three buttons can be used in the application</strong>. However, VotanicXR has reserved the <code>Trigger</code>, <code>Grab</code> and <code>Menu</code> buttons for the core commands which is showed in the previous table.</p>
+<p>Therefore, for HTC VIVE / VIVE Pro controllers, if the application is required to assign commands to the controller button, there are only <strong>two buttons can be used in the application.</strong></p>
+<ul>
+<li>Button Up / Down / Press / Hold for <code>Trackpad</code> button</li>
+<li>Button Up / Down for <code>Menu</code> button.</li>
+</ul>
+<h2 id="assigning-input-device-to-default-virtual-controller">Assigning Input Device to Default Virtual Controller</h2>
+<p>The article <a class="xref" href="defaultMapping.html">Input Device Mapping for Virtual Controller</a> highlighted that <strong>VotanicXR has native support for 5 common devices</strong>, namely Xbox controller, HTC VIVE (Pro), Valve Index, Oculus Rift, and Samsung Odyssey+, in which we have pre-mapped the button and axis of these devices to the default Virtual Controller. If you use one of these devices in your VotanicXR application, you can all features of VotanicXR right away, there is no more action required on the input button mapping.</p>
+<p>However, if you use an input device that’s not yet supported in the common device list, and would like to use the default virtual controller (controller[0]), you must reassign the controller button index in the <code>Trigger</code>, <code>TriggerUp</code>, <code>TriggerHold</code>, <code>Grab</code>, and <code>Menu</code> commands to desired button in the input device.</p>
+<p>This situation also applies to the second virtual controller (controller[1]). The command <code>Trigger=1</code> and <code>Grab=1</code> are used for the second input device, and required to change the button index.</p>
+<h2 id="assigning-input-device-to-custom-virtual-controller">Assigning Input Device to Custom Virtual Controller</h2>
+<p>Another approach is to create a new virtual controller and custom the command triggering for the non-listed input device. In this case, please ensure the index of the new virtual controller is 2 or above (controller[2] or above), otherwise, the default button and axis mapping and binding will be used in the built-in commands.
+For details, you can check this <a class="xref" href="defaultMapping.html">article</a> to create a virtual controller for other input devices.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
