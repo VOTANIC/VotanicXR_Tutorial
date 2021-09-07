@@ -72,27 +72,18 @@
 <p><img src="../images/faq001.0.png" alt=""></p>
 <p>To cutomise the batch file settings, please follow the step below:</p>
 <ol>
-<li><p>Go to the GameObject <code>VGear</code>, <code>VGear (Script) &gt; [System] &gt; Batches </code>.</p>
+<li><p>Go to the GameObject <code>VGear</code>, <code>VGear (Script) &gt; [System] &gt; Buid Batch </code>.</p>
 </li>
-<li><p>Each element of the list stored will be generated with the corresponding parameters.</p>
+<li><p>By default, there are some predefined environments for building batches, including <code>PC</code>, <code>HMD</code>, <code>CAVE</code> and <code>DOME</code>.</p>
 </li>
-<li><p>Modify the existing element or add a new element by changing the <code>Size</code> of the list.</p>
+<li><p>Add a new element by changing the <code>Size</code> of the list <code>Customs</code>.</p>
 <p><img src="../images/faq001.1.png" alt=""></p>
 </li>
-<li><p>For each element, there are <code>Type</code>, <code>Name</code>, <code>Config Name</code>, <code>Reference Config</code> and <code>Setting Name</code> can be modified.</p>
-<p>Note: <code>Config Name</code>, <code>Reference Config</code> and <code>Setting Name</code> are the path to the configuration files. The path will be appended to the corresponding configuration folder if the path stored is not started with <code>Assets</code>. For example, the setting file read will be <code>Built application\VotanicXR\Settings</code>.</p>
+<li><p>For each element, there are <code>Type</code>, <code>Name</code> and <code>Config Name</code> can be modified.</p>
 </li>
 <li><p>Modify the <code>Type</code> with different environment types if needed, the <code>Name</code> and <code>Config Name</code> will be changed automatically.</p>
-<p><img src="../images/faq001.2.png" alt=""></p>
-<p><img src="../images/faq001.3.png" alt=""></p>
 <p><code>Name</code> will be concatenated to the application name into the batch file generated. The default value will be the chosen environment type warpped by bracket.</p>
 <p><code>Config Name</code> stores the path of the configuration file of the application. The default value will be the corresponding config of the chosen environment type. For <code>CAVE</code> and <code>DOME</code>, two batch files will be generated. Take <code>CAVE</code> as example, <code>applicationName_[CAVE].bat</code> and <code>applicationName_[TEST][CAVE].bat</code> will be generated, the former loading the <code>configCAVE.vxrc</code> file in <code>%VOTANIC_PATH%/Configs/</code>, the latter loading the <code>[output folder]\VotanicXR\Configs\ConfigCAVE.vxrc</code>. For other environment types, only one batch file will be generated with loading <code>[output folder]\VotanicXR\Configs\{Config Name}</code>.</p>
-</li>
-<li><p>Modify the <code>Reference Config</code> and <code>Setting Name</code> if needed.</p>
-<p><code>Reference Config</code> will create transparent screens for the reference in the application, the result will be similar to the transparent screen created by the reference config in the editor. The default value of the <code>Reference Config</code> will be null.</p>
-<p><img src="../images/1.3.5.png" alt=""></p>
-<p><code>Setting Name</code> stores the path of the setting file of the application. The default value will be <code>setting.vxrs</code>.</p>
-<p><strong>Note:</strong> <code>Config Name</code>, <code>Reference Config</code> and <code>Setting Name</code></p>
 </li>
 <li><p>After build the project, the batch files will be built with customized settings.</p>
 </li>

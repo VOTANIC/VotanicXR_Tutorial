@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/laye/VontanicXR Tutorial/Docfx Template/docfx_project",
+  "source_base_path": "D:/laye/VontanicXR Tutorial/Docfx Template/docfx_project/votanicxr_tutorial",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,17 +9,6 @@
       "output": {
         "resource": {
           "relative_path": "Resources/03_Configurator_UserManual.pdf"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Resources/2020_TTRS_2.exe",
-      "output": {
-        "resource": {
-          "relative_path": "Resources/2020_TTRS_2.exe"
         }
       },
       "is_incremental": false,
@@ -135,7 +124,7 @@
           "hash": "qaVLRYjh4kIO6bzJIAvGuQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -223,15 +212,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "documentation/vGearNetworkManagerDetail.md",
       "output": {
         ".html": {
           "relative_path": "documentation/vGearNetworkManagerDetail.html",
-          "hash": "i1FFDfM9AK6Cty8QvPmqIg=="
+          "hash": "m0PAgrz2J3sowrpA/c0BrA=="
         }
       },
       "is_incremental": true,
@@ -912,10 +898,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/2.4.4.5.PNG",
+      "source_relative_path": "images/2.4.4.5.png",
       "output": {
         "resource": {
-          "relative_path": "images/2.4.4.5.PNG"
+          "relative_path": "images/2.4.4.5.png"
         }
       },
       "is_incremental": false,
@@ -923,10 +909,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/2.4.4.6.PNG",
+      "source_relative_path": "images/2.4.4.6.png",
       "output": {
         "resource": {
-          "relative_path": "images/2.4.4.6.PNG"
+          "relative_path": "images/2.4.4.6.png"
         }
       },
       "is_incremental": false,
@@ -934,10 +920,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/2.4.4.7.PNG",
+      "source_relative_path": "images/2.4.4.7.png",
       "output": {
         "resource": {
-          "relative_path": "images/2.4.4.7.PNG"
+          "relative_path": "images/2.4.4.7.png"
         }
       },
       "is_incremental": false,
@@ -2628,6 +2614,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/7.1.0.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/7.1.0.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/7.1.1.png",
       "output": {
         "resource": {
@@ -2859,10 +2856,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/7.4.3.png",
+      "source_relative_path": "images/7.4.3.gif",
       "output": {
         "resource": {
-          "relative_path": "images/7.4.3.png"
+          "relative_path": "images/7.4.3.gif"
         }
       },
       "is_incremental": false,
@@ -3061,6 +3058,17 @@
       "output": {
         "resource": {
           "relative_path": "images/8.2.2.9.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/9.2 t.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/9.2 t.png"
         }
       },
       "is_incremental": false,
@@ -3618,17 +3626,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/faq001.2.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/faq001.2.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "images/faq001.3.png",
       "output": {
         "resource": {
@@ -3891,7 +3888,19 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/FAQ001.html",
-          "hash": "EUVWIXFhbSKB4E3WmGobew=="
+          "hash": "thJCTJ8TDB9IwuDB09UFZA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "knowledgeBase/FAQ002.md",
+      "output": {
+        ".html": {
+          "relative_path": "knowledgeBase/FAQ002.html",
+          "hash": "rAVk/dVt1SPP4Vi0tuzXeA=="
         }
       },
       "is_incremental": true,
@@ -4102,6 +4111,18 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "readme.html",
+          "hash": "Frdsnn8WSjvU1FBKdDMLYA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
@@ -4134,7 +4155,7 @@
           "hash": "eG2fHmgnWBUt0gciwYs0EQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4155,7 +4176,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut01.html",
-          "hash": "O6lQclHzYo1pIkuSE+Kslg=="
+          "hash": "DMaRxQIQYuHaWd0bsTWE/A=="
         }
       },
       "is_incremental": true,
@@ -4170,7 +4191,7 @@
           "hash": "j2BhJDdSdmM0yFPsjo27WQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4227,7 +4248,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut07.html",
-          "hash": "89X/liNEm7Rk7CzRfM1K1w=="
+          "hash": "Ppt5tIoeAd6qhJmkWz+nfA=="
         }
       },
       "is_incremental": true,
@@ -4254,7 +4275,7 @@
           "hash": "StlxVlnyEHAi7j5mui4szw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4266,7 +4287,7 @@
           "hash": "Ngy20XUnTEPL82aopp8u5w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4294,8 +4315,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 43,
-          "skipped_file_count": 42
+          "total_file_count": 45,
+          "skipped_file_count": 45
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

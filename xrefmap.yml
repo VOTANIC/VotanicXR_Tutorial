@@ -31,6 +31,9 @@ references:
 - uid: faq001
   name: How to cutomise the batch file settings?
   href: knowledgeBase/FAQ001.html
+- uid: faq002
+  name: What is the usage of Reference Config in the batch files?
+  href: knowledgeBase/FAQ002.html
 - uid: faq-index
   name: Frequent Asked Questions
   href: knowledgeBase/FAQIndex.html
