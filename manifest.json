@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/laye/VontanicXR Tutorial/Docfx Template/docfx_project/votanicxr_tutorial",
+  "source_base_path": "D:/egg/Projects/VotanicXR Tutorial/Git Project/votanicxr_tutorial",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -97,7 +97,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/UnderContructed.html",
-          "hash": "aFJ19zXOj0Lkwrob7m6K3w=="
+          "hash": "Kt4iw+8YatFZaHR73HkurXJ1H563Natofd7Y1nWV2mk="
         }
       },
       "is_incremental": true,
@@ -109,7 +109,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/bindingCommand.html",
-          "hash": "yD9nW5l4xQWlOjxnbtUlvA=="
+          "hash": "MxinTqITuAkjF/Qtb5NhOqq/ZlgKpokEVPhH2MBTnh4="
         }
       },
       "is_incremental": true,
@@ -121,7 +121,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/defaultMapping.html",
-          "hash": "qaVLRYjh4kIO6bzJIAvGuQ=="
+          "hash": "Q5N7iVmgKwvp4TDLAzkVswKyMuZBPGK/OY9CpzI5NsI="
         }
       },
       "is_incremental": true,
@@ -133,7 +133,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/index.html",
-          "hash": "tdAavYl9X+0t6sKKv/c6KA=="
+          "hash": "jWu3fHmnoZ/u0UpleawHMROoIZpzkLn+VM6g+ZjdMI8="
         }
       },
       "is_incremental": true,
@@ -145,7 +145,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/overview.html",
-          "hash": "IB6NkOOba+A2dulxD2RSgw=="
+          "hash": "ogU/u5MahrnZKg7TmiOcdMG3EMIAcMKqCqp91lstFB4="
         }
       },
       "is_incremental": true,
@@ -157,7 +157,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/toc.html",
-          "hash": "RBMbQrlQG8kpsZTVWI6YsA=="
+          "hash": "s+1PS23gf/Jp1E5hTJB99gZcuxUxEKKKONScPPGi3dk="
         }
       },
       "is_incremental": false,
@@ -169,7 +169,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearDebugMode.html",
-          "hash": "kSkNegPn0+4B/wXV/XmddA=="
+          "hash": "Blx5THIs5/3OJLT7XEHkMKmA9OOTCgFykfn5UP5X+1U="
         }
       },
       "is_incremental": true,
@@ -181,7 +181,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearDetail.html",
-          "hash": "y4bUrMHrkfJ9+2YqTWA6Aw=="
+          "hash": "l6WtgCI8olzZH2j/EwbWiZdXW2zUYN2bGsY4Rb+D55E="
         }
       },
       "is_incremental": true,
@@ -193,7 +193,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearInterctableDetail.html",
-          "hash": "246qmMUCWeFK8DuB6YYOKw=="
+          "hash": "2Sjud34/JLQB+Ht2cwohTNbBFYhVaU3onqhwhfYNYtg="
         }
       },
       "is_incremental": true,
@@ -205,7 +205,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearMediaplayerDetail.html",
-          "hash": "7dftgvtSf7kDULfzw/SwrQ=="
+          "hash": "VWQXv2dUv2umOfrkspRDy1JqlqqLReNtvmvctgh0Plw="
         }
       },
       "is_incremental": true,
@@ -217,7 +217,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearNetworkManagerDetail.html",
-          "hash": "m0PAgrz2J3sowrpA/c0BrA=="
+          "hash": "+NYfMoqVOerj09XXqD0z/RHob8QHpmWqhzbeo11aymQ="
         }
       },
       "is_incremental": true,
@@ -229,7 +229,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearTest3D.html",
-          "hash": "kA5kAuJBn4YmO3a+7F7tsw=="
+          "hash": "Kw1erTG0hvYNAHvD4wVTMkYCvatkY14F2yfkuw/OWvg="
         }
       },
       "is_incremental": true,
@@ -241,7 +241,7 @@
       "output": {
         ".html": {
           "relative_path": "documentation/vGearUIDetail.html",
-          "hash": "M9kPPW54JbDTkNljOoQHHw=="
+          "hash": "HScSM1bUYHG6mKlw2ULnyd/OiwgpVcKn8H38xcr6OSU="
         }
       },
       "is_incremental": true,
@@ -898,10 +898,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/2.4.4.5.png",
+      "source_relative_path": "images/2.4.4.5.PNG",
       "output": {
         "resource": {
-          "relative_path": "images/2.4.4.5.png"
+          "relative_path": "images/2.4.4.5.PNG"
         }
       },
       "is_incremental": false,
@@ -909,10 +909,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/2.4.4.6.png",
+      "source_relative_path": "images/2.4.4.6.PNG",
       "output": {
         "resource": {
-          "relative_path": "images/2.4.4.6.png"
+          "relative_path": "images/2.4.4.6.PNG"
         }
       },
       "is_incremental": false,
@@ -920,10 +920,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/2.4.4.7.png",
+      "source_relative_path": "images/2.4.4.7.PNG",
       "output": {
         "resource": {
-          "relative_path": "images/2.4.4.7.png"
+          "relative_path": "images/2.4.4.7.PNG"
         }
       },
       "is_incremental": false,
@@ -3655,10 +3655,10 @@
       "output": {
         ".html": {
           "relative_path": "index copy.html",
-          "hash": "6/wbFXsotWioeQJEhQvgtA=="
+          "hash": "E++iX1L6rQr5zKZRFNPm8yojHa5d+yb2dcllek/FvXY="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3667,7 +3667,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "scWXsQbTMmjydy9aRL5NKw=="
+          "hash": "qJYo2fHw57GvXWhmusTmZ1IaeZZLFkW13OWI2MtVFQw="
         }
       },
       "is_incremental": true,
@@ -3840,10 +3840,153 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.10.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.10.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.11.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.11.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.12.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.12.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.4.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.5.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.5.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.6.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.6.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.7.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.7.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.8.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.8.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.9.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.9.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "install/sdk3.png",
       "output": {
         "resource": {
           "relative_path": "install/sdk3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/sdk4.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk4.png"
         }
       },
       "is_incremental": false,
@@ -3888,7 +4031,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/FAQ001.html",
-          "hash": "thJCTJ8TDB9IwuDB09UFZA=="
+          "hash": "/Ch35ChvoVv4qYr1Bbvub6uwxiBSUTe2pvXC2ERTK5k="
         }
       },
       "is_incremental": true,
@@ -3900,7 +4043,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/FAQ002.html",
-          "hash": "rAVk/dVt1SPP4Vi0tuzXeA=="
+          "hash": "rrzZAQB/BS1NAzyPCmkov0Gy6HLJ+wemGvkR2KOU/sU="
         }
       },
       "is_incremental": true,
@@ -3912,7 +4055,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/FAQIndex.html",
-          "hash": "zysaIG8jqPFtMNB+zE+joQ=="
+          "hash": "6BGZsQxsCTgi5vZXxTxZZMU35OK71G5altwiLD/FeEw="
         }
       },
       "is_incremental": true,
@@ -3924,7 +4067,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/TheoryIOSystem.html",
-          "hash": "sDfcMYSwf4cDtL1jCeFlqg=="
+          "hash": "1yEI4zPj0lbZRi2KnIqa/WKnXLzyzhSAWGa8XgGldzo="
         }
       },
       "is_incremental": true,
@@ -3936,7 +4079,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/TheoryInteractionSystem.html",
-          "hash": "+4+8WdeloIQT+6Lat4AQ7A=="
+          "hash": "1JnR6g86S/33EspS3Jzd7s8ZVVWrHRrEyOwttocU3Hw="
         }
       },
       "is_incremental": true,
@@ -3948,7 +4091,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/TheoryXRConfiguration.html",
-          "hash": "HBhGqR2Gk0H5IdNrOkTVBA=="
+          "hash": "0rIYrF55AhuENC5qs7SQlflEzoD7vmhs7SGhOpnwQh8="
         }
       },
       "is_incremental": true,
@@ -3960,7 +4103,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/TheoryXRDevices.html",
-          "hash": "D6f6q5//+8gEBE6mODZ+CQ=="
+          "hash": "B863yWK9minSmONTGdzuo3n705dkdx0iRZFNHZ94478="
         }
       },
       "is_incremental": true,
@@ -3972,7 +4115,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/TheoryXRStructure.html",
-          "hash": "KBFvFBoFZEbKYalsD+Sllg=="
+          "hash": "qx6BWYQHYQXqldbn3P7HT5KOd16ZY6QU1vIgqByHXn4="
         }
       },
       "is_incremental": true,
@@ -3984,7 +4127,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/UnderContructed.html",
-          "hash": "uwARKX8gj8E+TrY7a+sFDw=="
+          "hash": "BUJltyapH9xXKBJd8PUM1gggKBMFFL+jMeBKII2Uj1Q="
         }
       },
       "is_incremental": true,
@@ -3996,7 +4139,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/index.html",
-          "hash": "SiJ8tYmdqC+2BGjU7r1zdg=="
+          "hash": "OZe0BAiETzn/xs9q3v/0Vrdh/N79aBs9RbZGkhULrvU="
         }
       },
       "is_incremental": true,
@@ -4008,7 +4151,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/overview.html",
-          "hash": "WynqTSd/FDZKEuOJTIYvWQ=="
+          "hash": "5iPEtEZZTT+sDHw7QnIfmvnBJL3gDnnDhXRvY5+St0k="
         }
       },
       "is_incremental": true,
@@ -4020,7 +4163,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/toc.html",
-          "hash": "LfRu1gJlNUK3n4BYn2FxKw=="
+          "hash": "D7Htxpa5yLBWzkQbohpuwKj62aq8KUYbleJ4B7u0sRk="
         }
       },
       "is_incremental": false,
@@ -4032,7 +4175,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/UnderContructed.html",
-          "hash": "Kp7I1NjcDFOH0WWxfJRZiQ=="
+          "hash": "SR2grRMa9fqmxapnUnVnR/cHORVlIF5jyAfdCmcs6lY="
         }
       },
       "is_incremental": true,
@@ -4044,7 +4187,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/index.html",
-          "hash": "O7ivx1wUCyox241T4pG56A=="
+          "hash": "ALrXWQ0fZge/2BMCMzdG0hnyWQcG7jV0dbQpTZBYhB0="
         }
       },
       "is_incremental": true,
@@ -4056,7 +4199,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview01.html",
-          "hash": "hGhxxCP/K8spC1L0L1slHQ=="
+          "hash": "EAKMPaM8g7I4pScFFTPuWkrDDbW+nn00HN65IwgxY3Q="
         }
       },
       "is_incremental": true,
@@ -4068,7 +4211,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview02.html",
-          "hash": "OBXkUzIFUTbwfGtzPsA/vg=="
+          "hash": "zKLEzs/qV2wlUrzsEkZdQxjPOepicbS8u6+pXbDsVOs="
         }
       },
       "is_incremental": true,
@@ -4080,10 +4223,10 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview03.html",
-          "hash": "Y+iX+/yFjoRBdIlETCHrWg=="
+          "hash": "AwEQjB3uJ7iH+kEaesBNj4gPkfsmXINXiWGCzzCWvbU="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4092,7 +4235,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview04.html",
-          "hash": "H4rsYMamivLkqGVGg/MJog=="
+          "hash": "yhF5r70huNplw9jBaOJYp9ro0EcMsqjy7gd/IEdBMYc="
         }
       },
       "is_incremental": true,
@@ -4104,7 +4247,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/toc.html",
-          "hash": "i8Bhd7oAfAbIK3qM2kbRfA=="
+          "hash": "fHVvDqajb93LD2KUyJ9nDH60ReMiX+KLrjDz36l3giI="
         }
       },
       "is_incremental": false,
@@ -4116,7 +4259,7 @@
       "output": {
         ".html": {
           "relative_path": "readme.html",
-          "hash": "Frdsnn8WSjvU1FBKdDMLYA=="
+          "hash": "M6N/AIl+/AToJABlzWnoxUL//ZYAzk+H/1LKZFM3Bto="
         }
       },
       "is_incremental": true,
@@ -4128,7 +4271,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "gHaWdcHQ2cSKMyic+IQ1jQ=="
+          "hash": "sMk/eQDTghKFXTHMTaXpmoNONWQnitKEk8GlaLIyNTw="
         }
       },
       "is_incremental": false,
@@ -4140,7 +4283,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/UnderContructed.html",
-          "hash": "lQSJW/v471DPNo7GTloGsQ=="
+          "hash": "WyyorRqJTJyxyjVf902zCjOgnnaAt4QOHoOlQxhHFCk="
         }
       },
       "is_incremental": true,
@@ -4152,10 +4295,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/intro.html",
-          "hash": "eG2fHmgnWBUt0gciwYs0EQ=="
+          "hash": "2T5YoCW38xvoDMpq02HEtGKJxxxtMwkBvIjIooIqHgs="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4164,7 +4307,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "QNrDxsKz9ahrslCLoyJ2Yw=="
+          "hash": "+r2XUjN7gmHS3dWPyPxbd6+OzzEOIbA00iw5KaSYGB0="
         }
       },
       "is_incremental": false,
@@ -4176,10 +4319,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut01.html",
-          "hash": "DMaRxQIQYuHaWd0bsTWE/A=="
+          "hash": "A8R65YJ2jc1OlFzNc7brb195tiWTErQmx77krnD85M4="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4188,7 +4331,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut02.html",
-          "hash": "j2BhJDdSdmM0yFPsjo27WQ=="
+          "hash": "MCXkCYKNpIDLNan4U+djt7Q+XRPHHnxBSn+xztr6LfA="
         }
       },
       "is_incremental": true,
@@ -4200,7 +4343,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut03.html",
-          "hash": "fX7beSFNcFJtFNmPLHaB+g=="
+          "hash": "GE1Dr+7eYN0wbJdj7eN17C3wxifgzDrdKVp8b1brHoY="
         }
       },
       "is_incremental": true,
@@ -4212,7 +4355,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut04.html",
-          "hash": "V6458UBOvloUQ6rtTUWmDg=="
+          "hash": "7kR5Vtrml3bCxgyddXmFk07+EKkH+47bpsFYfFlObJw="
         }
       },
       "is_incremental": true,
@@ -4224,7 +4367,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut05.html",
-          "hash": "DOy14vLM7YorxQDkZX9f1w=="
+          "hash": "gEF12wqjjLCVi3nejkLKrO+EejJLuR6x29u+MQUZEmo="
         }
       },
       "is_incremental": true,
@@ -4236,7 +4379,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut06.html",
-          "hash": "sx47Wow6QMKY968J2yuT2Q=="
+          "hash": "xcl9HWnIOYReekDCP1QP/nOchWDEvmZeQ48WByA+ldk="
         }
       },
       "is_incremental": true,
@@ -4248,7 +4391,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut07.html",
-          "hash": "Ppt5tIoeAd6qhJmkWz+nfA=="
+          "hash": "CBp+S5fLp6zxELOameq1K5Xn0YakqEb7zTd5sXjxZ48="
         }
       },
       "is_incremental": true,
@@ -4260,7 +4403,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut08.html",
-          "hash": "sIvPuTgLBlZwj5dWLqpzuw=="
+          "hash": "EONPeLpJXkn2kmrjB+o867q/wVzQnrVQG/Vs5OHZIp4="
         }
       },
       "is_incremental": true,
@@ -4272,7 +4415,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut09.html",
-          "hash": "StlxVlnyEHAi7j5mui4szw=="
+          "hash": "1Cd2iT7Ry+qS01tivFhjN2IHrfN8wjhY2tephwLcNPc="
         }
       },
       "is_incremental": true,
@@ -4284,7 +4427,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut10.html",
-          "hash": "Ngy20XUnTEPL82aopp8u5w=="
+          "hash": "mkTjl4pxfoxe3davPy+CajlTouQ7Ja9jljMHb5BdIi8="
         }
       },
       "is_incremental": true,
@@ -4296,7 +4439,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut11.html",
-          "hash": "T70YamdCk4Iq/fP2J6oKkQ=="
+          "hash": "r0f9TqkWlwC4AGuBUi2jLo0zCXaIEph6LwuMkR+j+ys="
         }
       },
       "is_incremental": true,
@@ -4316,7 +4459,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 45,
-          "skipped_file_count": 45
+          "skipped_file_count": 44
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

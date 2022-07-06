@@ -8,7 +8,7 @@
     <title>Getting Started </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Getting Started ">
-    <meta name="generator" content="docfx 2.56.4.0">
+    <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,8 +87,8 @@
 <p>The VotanicXR for Unity SDK Package can be accessed from the VotanicXR Suite.</p>
 <p><img src="../install/sdk1.png" alt=""></p>
 <p>Select <code>Unity SDK</code> will open the VotanicXR Unity SDK folder shown below:</p>
-<p><img src="../install/sdk2.png" alt=""></p>
-<p>The VotanicXR 2020 for Unity SDK is available in two variations: <strong>VotanicXR 2020 for 2018.4</strong> - targeted for Unity 2018.4 version and <strong>VotanicXR 2020 for 2019.2+</strong> - targeted for Unity 2019.2 or above. The below table highlight the corresponding unity version and VotanicXR SDK version. VotanicXR 2020 may work with newer Unity releases than these listed in the table, but full compatibility is not guaranteed. Due to limitation of the Unity engine, it is highly recommended that you do not switch major release version of the Unity engine for your project once it is set up with the corresponding VotanicXR Unity SDK.</p>
+<p><img src="../install/sdk4.png" alt=""></p>
+<p>The VotanicXR 2020 for Unity SDK is available in three variations: <strong>VotanicXR 2020 for 2018.4</strong> - targeted for Unity 2018.4 version, <strong>VotanicXR 2020 for 2019.2+</strong> - targeted for Unity 2019.2 to 2019.4, and <strong>VotannicXR 2020 for 2020.3</strong> - targeted for Unity 2020.3 - 2021.3. The below table highlight the corresponding unity version and VotanicXR SDK version. VotanicXR 2020 may work with newer Unity releases than these listed in the table, but full compatibility is not guaranteed. Due to limitation of the Unity engine, it is highly recommended that you use the LTS (Long-Term Support) version of Unity for development, and do not switch major release version of the Unity engine for your project once it is set up with the corresponding VotanicXR Unity SDK.</p>
 <table>
 <thead>
 <tr>
@@ -113,9 +113,13 @@
 <td style="text-align: left;">2019.2 – 2019.4</td>
 <td style="text-align: left;">VotanicXR_2020.x for 2019.2+ [NET].unitypackage</td>
 </tr>
+<tr>
+<td style="text-align: left;">2020.3 – 2021.3</td>
+<td style="text-align: left;">VotanicXR_2020.x for 2020.3.unitypackage</td>
+</tr>
 </tbody>
 </table>
-<p>The VotanicXR 2020 for Unity SDK importing process is a bit different for Unity 2018 and Unity 2019 due to Unity changing the networking system in recent versions. Please follow the importing procedure for the corresponding version below:</p>
+<p>The VotanicXR 2020 for Unity SDK importing process is a bit different for Unity 2018, Unity 2019, and Unity 2020 &amp; 2021 several changes in Unity's components and APIs in recent versions. Please follow the importing procedure for the corresponding version below:</p>
 <p><ins>For Unity 2018</ins></p>
 <ol>
 <li><p>Right-click in Project windows. Click <code>Import Package &gt; Custom Package</code>, and select the VotanicXR SDK package.</p>
@@ -132,6 +136,47 @@
 <li><p>Right-click in Project windows. Click <code>Import Package &gt; Custom Package</code>, and select the VotanicXR SDK package.</p>
 </li>
 <li><p>Select all files in the <code>Importing Package</code> dialog, and click <code>Import</code> button.</p>
+</li>
+</ol>
+<p><ins>For Unity 2020 &amp; 2021</ins></p>
+<ol>
+<li><p>Select <code>Window &gt; Package Manager</code>.</p>
+<p><img src="../install/sdk2020.2.1.png" alt=""></p>
+</li>
+<li><p>Install <code>Multiplayer HLAPI</code>.</p>
+<ol>
+<li><strong>For Unity 2020</strong>: In the Package Manager, locate and install the <code>Multiplayer HLAPI</code>.</li>
+</ol>
+<p><img src="../install/sdk2020.2.2.png" alt=""></p>
+<ol start="2">
+<li><strong>For Unity 2021</strong>: Go to project folder and open <code>Packages &gt; manifest.json</code>, add [&quot;com.unity.multiplayer-hlapi&quot;: &quot;1.1.1&quot;,] under <code>dependencies</code> and save.</li>
+</ol>
+<p><img src="../install/sdk2020.2.3.png" alt=""></p>
+<p><img src="../install/sdk2020.2.4.png" alt=""></p>
+</li>
+<li><p>Install <code>XR Plugin Management</code> &amp; <code>OpenXR Plugin</code>.</p>
+<p><img src="../install/sdk2020.2.5.png" alt=""></p>
+<p><img src="../install/sdk2020.2.6.png" alt=""></p>
+<p>After installing the OpenXR Plugin, confirm using the new input system and restart Unity Editor.</p>
+<p><img src="../install/sdk2020.2.7.png" alt=""></p>
+</li>
+<li><p>After restarting the Editor and re-opening the project, open the Build Settings window by selecting <code>File &gt; Build Settings</code> then click the <code>Player Settings</code> button as shown below:</p>
+<p><img src="../install/sdk2020.2.8.png" alt=""></p>
+<p>In <code>Project Settings</code>, select <code>XR Plug-in Management</code> and choose  as the Plug-in Provider, then click on the warning sign next to the OpenXR option.</p>
+<p><img src="../install/sdk2020.2.9.png" alt=""></p>
+<p>Click <code>Fix All</code> to fix all issues identified during OpenXR project validation.</p>
+</li>
+<li><p>Under XR Plug-in Management, select <code>OpenXR</code> and change the Render Mode to <code>Multi Pass</code>.</p>
+<p><img src="../install/sdk2020.2.10.png" alt=""></p>
+</li>
+<li><p>Double click the <code>VotanicXR for Unity 2020.3+ package</code> to import the VotanicXR SDK to Unity.</p>
+</li>
+<li><p>Open the <code>OpenXR</code> setting window again, under <code>Interaction Profiles</code>, select the <code>+</code> button and add the profiles to the list.</p>
+<p><img src="../install/sdk2020.2.11.png" alt=""></p>
+<p>The setting page should look like below after adding the profiles:</p>
+<p><img src="../install/sdk2020.2.12.png" alt=""></p>
+</li>
+<li><p>You are now ready to use VotanicXR in Unity.</p>
 </li>
 </ol>
 <h3 id="import-tutorial-package">Import Tutorial Package</h3>
