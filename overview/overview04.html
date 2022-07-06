@@ -121,13 +121,6 @@
 <li>Added Unity UI drop down menu helper components
 新增 Unity UI 下拉色選單輔助組件</li>
 </ol>
-<p>[Extensions - 2020.7.9]</p>
-<ol>
-<li>Moved Point Cloud extension from Assets to Extensions
-移動點雲擴充功能</li>
-<li>Added WebRTC extension
-新增 WebRTC 擴充功能</li>
-</ol>
 <h3 id="202078-20211201">2020.7.8 (20211201)</h3>
 <p>[vCast - 2020.7.8]</p>
 <ol>
@@ -189,23 +182,11 @@
 <li>Magnifier and Report camera will sync Clear Flags and Background Color on start
 放大鏡及報告工具的相機將會在開始時同步清除標誌和背景顏色</li>
 </ol>
-<p>[Assets - 2020.7.5]</p>
-<ol>
-<li>Point Cloud support e57 format
-點雲將支援 e57 格式</li>
-<li>Optimized Point Cloud rendering on Unity 2019
-優化點雲在 Unity 2019 的渲染</li>
-</ol>
 <h3 id="202074-20210804">2020.7.4 (20210804)</h3>
 <p>[vGear - 2020.7.4]</p>
 <ol>
 <li>Added Select effect for Virtual Key
 新增虛擬鍵的點選效果</li>
-</ol>
-<p>[Assets - 2020.7.4]</p>
-<ol>
-<li>Display more information of point cloud files to output log (Length, Area, Volume)
-輸出日誌將顯示更多點雲檔案資訊（長度、面積、體積）</li>
 </ol>
 <h3 id="202073-20210727">2020.7.3 (20210727)</h3>
 <p>[vGear - 2020.7.3]</p>
@@ -246,11 +227,6 @@ Command All Received 將會傳回原字串值</li>
 為畫筆工具提供 2 種模式（手持、投射）</li>
 <li>Provided 3 modes for Measuerer Tool (Points, Laser &amp; Laser Points)
 為測量工具提供 3 種模式（點、雷射、雷射點）</li>
-</ol>
-<p>[Assets - 2020.7.2]</p>
-<ol>
-<li>Improved Point Cloud finding start point algorithm
-改善點雲搜尋起點的算法</li>
 </ol>
 <h3 id="202071-20210609">2020.7.1 (20210609)</h3>
 <p>[vCast - 2020.7.1]</p>
@@ -330,21 +306,6 @@ Command All Received 將會傳回原字串值</li>
 <ol>
 <li>Fixed the Network Object sync problem when grabbling
 修正抓握網絡物品時的同步問題</li>
-</ol>
-<p>[Assets - 2020.7.0]</p>
-<ol>
-<li>Optimized the PCROOT format display point method
-優化 PCROOT 格式顯示點的方法</li>
-<li>Support convert raw file by different preset
-支持以不同的預設檔轉換原始檔案</li>
-<li>Fixed the file saving problem on some settings
-修正部份檔案儲存的問題</li>
-<li>Provided external file for storing Point Cloud Setting (.pcs)
-提供額外檔案儲存點雲設定</li>
-<li>Provided more setting for point cloud waypoint
-提供更多點雲傳送點設定</li>
-<li>Added more API for loading files
-新增更多讀取檔案的 API</li>
 </ol>
 <h2 id="20206">2020.6</h2>
 <h3 id="202065-20210324">2020.6.5 (20210324)</h3>
@@ -632,13 +593,6 @@ SDK 現在將會彈出一個視窗提醒使用者啟動 XR Support</li>
 <li>Removed Advanced Teleport Setting on json
 移除 Json 的進階傳送工具設定</li>
 </ol>
-<p>[Assets - 2020.5.8]</p>
-<ol>
-<li>Fixed the point cloud profile density not work problem
-修正點雲預設集的密度設定沒有反應的問題</li>
-<li>Point Cloud Last and First method will consider Start Index now
-現在點雲的 Last 及 First 方法將會考慮 Start Index</li>
-</ol>
 <h3 id="202057-20201019">2020.5.7 (20201019)</h3>
 <p>[vMedia - 2020.5.7]</p>
 <ol>
@@ -649,11 +603,6 @@ SDK 現在將會彈出一個視窗提醒使用者啟動 XR Support</li>
 <ol>
 <li>Fixed the ScenesInBuild update problems of controller and sensor
 修正多場景項目的建構在控制器及感應器的更新問題</li>
-</ol>
-<p>[Assets - 2020.5.7]</p>
-<ol>
-<li>Fixed the point cloud Waypoint saving problem
-修正點雲傳送點儲存的問題</li>
 </ol>
 <h3 id="202056-20201012">2020.5.6 (20201012)</h3>
 <p>[vIO - 2020.5.6]</p>
@@ -681,15 +630,6 @@ SDK 現在將會彈出一個視窗提醒使用者啟動 XR Support</li>
 <li>Fixed the size problem of Landing Menu on rotated screen
 修正登陸選單在旋轉屏幕下大小不正確的問題</li>
 </ol>
-<p>[Assets - 2020.5.5]</p>
-<ol>
-<li>Added density setting for point cloud in runtime
-新增實時點雲密度設定</li>
-<li>Optimized converting point cloud format method (Auto add skip points for large size file)
-優化轉換點雲格式的方法（大型檔案將自動增加跳過載入點數系數)</li>
-<li>Optimized loading new point cloud file behaviour
-優化讀取新點雲檔案的行為</li>
-</ol>
 <h3 id="202054-20200928">2020.5.4 (20200928)</h3>
 <p>[vMedia - 2020.5.4]</p>
 <ol>
@@ -713,11 +653,6 @@ SDK 現在將會彈出一個視窗提醒使用者啟動 XR Support</li>
 優化在 XR 環境的自動掃瞄裝置功能</li>
 <li>VRPN buttons and axes can customize button and axis input determination now
 現在 VRPN 按鈕群及軸群可以自定義按鈕及軸的輸入判斷</li>
-</ol>
-<p>[Assets - 2020.5.4]</p>
-<ol>
-<li>Fixed the point cloud manager loading file problem by inputting file path
-修正點雲管理員透過輸入檔案路徑讀取檔案的問題</li>
 </ol>
 <h3 id="202053-20200921">2020.5.3 (20200921)</h3>
 <p>[vIO - 2020.5.3]</p>
@@ -773,15 +708,6 @@ SDK 現在將會彈出一個視窗提醒使用者啟動 XR Support</li>
 <ol>
 <li>Inventory Manager support Save and Load scene generatables
 庫存管理員將支援儲存及讀取場景可生成物</li>
-</ol>
-<p>[Assets - 2020.5.2]</p>
-<ol>
-<li>Fixed Point Cloud loading LAS file error
-修正點雲載入 LAS 檔的錯誤問題</li>
-<li>Fixed Point Cloud loading new file and get mean position failed problem
-修正點載入雲新檔案及讀時平均位置時會失敗的問題</li>
-<li>Fixed Point Cloud loading waypoint facing angle incorrect problem
-修正點載入雲傳送點面向角度錯誤的問題</li>
 </ol>
 <h3 id="202051-20200907">2020.5.1 (20200907)</h3>
 <p>[vNet - 2020.5.1]</p>
@@ -854,11 +780,6 @@ SDK 現在將會彈出一個視窗提醒使用者啟動 XR Support</li>
 改善放大鏡及報告工具的初始化功能</li>
 <li>Updated positioner Show API
 更新位置偵測器的 Show API</li>
-</ol>
-<p>[Assets - 2020.5.0]</p>
-<ol>
-<li>Point Cloud Manager is now available
-點雲管理員已啟用</li>
 </ol>
 <h2 id="20204">2020.4</h2>
 <h3 id="202044-20200824">2020.4.4 (20200824)</h3>
