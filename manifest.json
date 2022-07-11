@@ -3637,6 +3637,39 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/faq003.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/faq003.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/faq003.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/faq003.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/faq003.3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/faq003.3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/tut02.flow.png",
       "output": {
         "resource": {
@@ -4051,14 +4084,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "knowledgeBase/FAQ003.md",
+      "output": {
+        ".html": {
+          "relative_path": "knowledgeBase/FAQ003.html",
+          "hash": "johSZk5Yv/iBvYM4Kqt2bnF00yI4lBCHb4KVufGeesg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "knowledgeBase/FAQIndex.md",
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/FAQIndex.html",
-          "hash": "6BGZsQxsCTgi5vZXxTxZZMU35OK71G5altwiLD/FeEw="
+          "hash": "VHMRGhIvB0JWqWPcS+UMikiT92yiKtCOtS8lHuCD/Aw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4142,7 +4187,7 @@
           "hash": "OZe0BAiETzn/xs9q3v/0Vrdh/N79aBs9RbZGkhULrvU="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4163,7 +4208,7 @@
       "output": {
         ".html": {
           "relative_path": "knowledgeBase/toc.html",
-          "hash": "D7Htxpa5yLBWzkQbohpuwKj62aq8KUYbleJ4B7u0sRk="
+          "hash": "Q1rwBeiCaHUWESg+w5bSI4P35AuHhnTyQGQCyS+/acc="
         }
       },
       "is_incremental": false,
@@ -4190,7 +4235,7 @@
           "hash": "cruob8Uc9Sw+alhX3bq/9Vg4SKkhNxax/BaOS3cpUsg="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4238,7 +4283,7 @@
           "hash": "WQEDT7AwCifm+9P69UDT7v8o7Dz+CIneVf0CAs9lkqc="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4458,8 +4503,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 45,
-          "skipped_file_count": 44
+          "total_file_count": 46,
+          "skipped_file_count": 45
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

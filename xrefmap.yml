@@ -34,6 +34,9 @@ references:
 - uid: faq002
   name: What is the usage of Reference Config in the batch files?
   href: knowledgeBase/FAQ002.html
+- uid: faq003
+  name: Due with error lead by multiple Newtonsoft Json DLL file.
+  href: knowledgeBase/FAQ003.html
 - uid: faq-index
   name: Frequent Asked Questions
   href: knowledgeBase/FAQIndex.html

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Frequent Asked Questions </title>
+    <title>Due with error lead by multiple Newtonsoft Json DLL file. </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Frequent Asked Questions ">
+    <meta name="title" content="Due with error lead by multiple Newtonsoft Json DLL file. ">
     <meta name="generator" content="docfx 2.59.3.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -66,16 +66,22 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="faq-index">
-<h1 id="frequent-asked-questions">Frequent Asked Questions</h1>
+            <article class="content wrap" id="_content" data-uid="faq003">
+<h1 id="due-with-error-lead-by-multiple-newtonsoft-json-dll-file">Due with error lead by multiple Newtonsoft Json DLL file.</h1>
 
-<p>Frequent asked questions will be anwsered in this section.</p>
 <ol>
-<li><p><a href="FAQ001.html">How to cutomise the batch file settings?</a></p>
+<li><p>Back up the project to prevent any crash.</p>
 </li>
-<li><p><a href="FAQ002.html">What is the usage of Reference Config in the batch files?</a></p>
+<li><p>Search for “Newtonsoft.Json.dll” and delete them.</p>
+<p><img src="../images/faq003.1.png" alt=""></p>
 </li>
-<li><p><a href="FAQ003.html">Due with error lead by multiple Newtonsoft Json DLL file.</a></p>
+<li><p>Go to <code>Edit &gt; Project Settings &gt; Player Settings &gt; Other Settings &gt; Configuration</code>, uncheck the option <code>Assembly Version Validation</code>.</p>
+<p><img src="../images/faq003.2.png" alt=""></p>
+</li>
+<li><p>Install Newtonsoft Json from Package Manager.</p>
+<p><img src="../images/faq003.3.png" alt=""></p>
+</li>
+<li><p>Refresh the project.</p>
 </li>
 </ol>
 </article>
