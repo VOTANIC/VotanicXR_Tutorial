@@ -3691,7 +3691,7 @@
           "hash": "E++iX1L6rQr5zKZRFNPm8yojHa5d+yb2dcllek/FvXY="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4005,6 +4005,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "install/sdk2020.2.newtonsoft.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/sdk2020.2.newtonsoft.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "install/sdk3.png",
       "output": {
         "resource": {
@@ -4067,7 +4078,7 @@
           "hash": "/Ch35ChvoVv4qYr1Bbvub6uwxiBSUTe2pvXC2ERTK5k="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4079,7 +4090,7 @@
           "hash": "rrzZAQB/BS1NAzyPCmkov0Gy6HLJ+wemGvkR2KOU/sU="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4091,7 +4102,7 @@
           "hash": "QQpz35y4nIS6DrDqFWgM82SqmFSpgFa3/xcYzN5qw+E="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4103,7 +4114,7 @@
           "hash": "kbLOGYcHsKvDI4UwCIOC1fgaReLXWmSr7G5dM1K52q4="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4115,7 +4126,7 @@
           "hash": "1yEI4zPj0lbZRi2KnIqa/WKnXLzyzhSAWGa8XgGldzo="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4127,7 +4138,7 @@
           "hash": "1JnR6g86S/33EspS3Jzd7s8ZVVWrHRrEyOwttocU3Hw="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4139,7 +4150,7 @@
           "hash": "0rIYrF55AhuENC5qs7SQlflEzoD7vmhs7SGhOpnwQh8="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4151,7 +4162,7 @@
           "hash": "B863yWK9minSmONTGdzuo3n705dkdx0iRZFNHZ94478="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4163,7 +4174,7 @@
           "hash": "qx6BWYQHYQXqldbn3P7HT5KOd16ZY6QU1vIgqByHXn4="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4175,7 +4186,7 @@
           "hash": "BUJltyapH9xXKBJd8PUM1gggKBMFFL+jMeBKII2Uj1Q="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4187,7 +4198,7 @@
           "hash": "OZe0BAiETzn/xs9q3v/0Vrdh/N79aBs9RbZGkhULrvU="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4199,7 +4210,7 @@
           "hash": "5iPEtEZZTT+sDHw7QnIfmvnBJL3gDnnDhXRvY5+St0k="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4271,7 +4282,7 @@
           "hash": "AwEQjB3uJ7iH+kEaesBNj4gPkfsmXINXiWGCzzCWvbU="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4343,7 +4354,7 @@
           "hash": "2T5YoCW38xvoDMpq02HEtGKJxxxtMwkBvIjIooIqHgs="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4364,10 +4375,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut01.html",
-          "hash": "A8R65YJ2jc1OlFzNc7brb195tiWTErQmx77krnD85M4="
+          "hash": "oM4xP2C0Rgkdeqm4Q8DmzyxX23k3oAdpdmh+KUMzEC8="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4504,7 +4515,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 46,
-          "skipped_file_count": 44
+          "skipped_file_count": 45
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
