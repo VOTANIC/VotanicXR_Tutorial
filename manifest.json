@@ -4070,6 +4070,50 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "install/xrDriverConfig1.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/xrDriverConfig1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/xrDriverConfig2.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/xrDriverConfig2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/xrDriverConfig3.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/xrDriverConfig3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "install/xrDriverConfig4.png",
+      "output": {
+        "resource": {
+          "relative_path": "install/xrDriverConfig4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "knowledgeBase/FAQ001.md",
       "output": {
@@ -4255,7 +4299,7 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview01.html",
-          "hash": "EAKMPaM8g7I4pScFFTPuWkrDDbW+nn00HN65IwgxY3Q="
+          "hash": "7nM9Ov/O1Tn7XcaxXQLIpN64L/Zb+fwhlBqoSGHVDPc="
         }
       },
       "is_incremental": true,
@@ -4375,7 +4419,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut01.html",
-          "hash": "oM4xP2C0Rgkdeqm4Q8DmzyxX23k3oAdpdmh+KUMzEC8="
+          "hash": "UMbqbWDHouSAQQaHO75VRdhi02dqz3RGQmqJt/ST8nM="
         }
       },
       "is_incremental": false,

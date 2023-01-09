@@ -181,6 +181,41 @@
 <p>The setting page should look like below after adding the profiles:</p>
 <p><img src="../install/sdk2020.2.12.png" alt=""></p>
 </li>
+<li><p>(Optional)
+When <code>OpenXR</code> is enabled, VotanicXR uses the available <code>OpenXR runtime</code> when running the VotanicXR Application. For systems connected to <code>multiple head-mounted display (HMD)</code> VR systems, it is <strong>necessary</strong> to configure the <code>OpenXR runtime</code> before running the application.</p>
+<ol>
+<li><p><strong>For SteamVR Headsets</strong></p>
+<ol>
+<li><p>Install <code>SteamVR</code> Software</p>
+</li>
+<li><p>Open <code>Settings</code></p>
+<p><img src="../install/xrDriverConfig1.png" alt=""></p>
+</li>
+<li><p>Turn on <code>Developer Settings</code> and set <code>SteamVR as Current OpenXR Runtime</code></p>
+<p><img src="../install/xrDriverConfig2.png" alt=""></p>
+</li>
+</ol>
+</li>
+<li><p><strong>For Oculus / Meta Quest</strong></p>
+<ol>
+<li><p>Install <code>Oculus</code> Software</p>
+</li>
+<li><p>Open <code>Settings &gt; General</code>, allow content from <code>Unknown Sources</code>, and set <code>Oculus as Current OpenXR Runtime</code>.</p>
+</li>
+</ol>
+<p><img src="../install/xrDriverConfig3.png" alt=""></p>
+</li>
+<li><p><strong>For Windows Mixed Reality Headset</strong></p>
+<ol>
+<li><p>Install <code>SteamVR Software</code>, and set <code>SteamVR as Current OpenXR Runtime</code>. (Refer to 9.1)</p>
+</li>
+<li><p>After connecting the headset, open SteamVR and install <code>Windows Mixed Reality driver</code> following the pop-up prompt.</p>
+</li>
+</ol>
+<p><img src="../install/xrDriverConfig4.png" alt=""></p>
+</li>
+</ol>
+</li>
 <li><p>You are now ready to use VotanicXR in Unity.</p>
 </li>
 </ol>
