@@ -302,6 +302,7 @@ When <code>OpenXR</code> is enabled, VotanicXR uses the available <code>OpenXR r
 <h2 id="test-run-in-unity-editor">Test Run in Unity Editor</h2>
 <p>You can test run the VotanicXR application in Unity Editor. When the application is loaded,  the vGear GameObject will be populated with objects according to the Config and Setting files defined in vGear. By default, the PC config is loaded for in-editor testing. If you would like to use the HMD to test in Unity Editor, change the Config Path from <code>xxxxxx/ConfigPC.vxrc</code> to <code>xxxxxx/ConfigHMD.vxrc</code>, and make sure XR Support is set to <code>Role System</code> before hitting the play button.</p>
 <p><img src="../images/1.5.1.png" alt=""></p>
+<p>Remark: For <strong>Unity 2020 or later</strong>, the HMD device must be in <code>active state</code> (wearing by user) in order to get button input from VR controllers.</p>
 <h2 id="build-the-scene">Build the Scene</h2>
 <p>When building the VotanicXR application, VotanicXR creates a series of batch files that can launch the application for different hardware / software systems. By default, batch files are created for PC, HMD, CAVE, and DOME system. User can select which batch file to be created in the <code>Build Batches</code> setting in vGear SDK Manager.</p>
 <p><img src="../images/1.6.1.png" alt=""></p>
