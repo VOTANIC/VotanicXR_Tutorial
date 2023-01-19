@@ -2515,6 +2515,39 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/5.7.1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/5.7.1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/5.7.2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/5.7.2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/5.7.3.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/5.7.3.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/6.1.1.1.png",
       "output": {
         "resource": {
@@ -4323,7 +4356,7 @@
           "hash": "cruob8Uc9Sw+alhX3bq/9Vg4SKkhNxax/BaOS3cpUsg="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4368,10 +4401,10 @@
       "output": {
         ".html": {
           "relative_path": "overview/overview04.html",
-          "hash": "WQEDT7AwCifm+9P69UDT7v8o7Dz+CIneVf0CAs9lkqc="
+          "hash": "lso+1eYl/o7TODZaVpYePv1v+Tl1g4+SGXJYNRp5O/E="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -4431,7 +4464,7 @@
           "hash": "2T5YoCW38xvoDMpq02HEtGKJxxxtMwkBvIjIooIqHgs="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4440,7 +4473,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "B9VpAvjqeOMN0mKZllOoXw1IWzK40+87PjCavP2qtdw="
+          "hash": "gpOOfc5o1pLVn22jOMfVxPnzXok5KudObbgDNT8BkTs="
         }
       },
       "is_incremental": false,
@@ -4467,7 +4500,7 @@
           "hash": "MCXkCYKNpIDLNan4U+djt7Q+XRPHHnxBSn+xztr6LfA="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4500,7 +4533,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorials/tut05.html",
-          "hash": "gEF12wqjjLCVi3nejkLKrO+EejJLuR6x29u+MQUZEmo="
+          "hash": "EMna9BKje/1zQ0/lTOgeBrx11aTONxHWqar0Ea0wXjc="
         }
       },
       "is_incremental": true,
@@ -4551,7 +4584,7 @@
           "hash": "1Cd2iT7Ry+qS01tivFhjN2IHrfN8wjhY2tephwLcNPc="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -4563,7 +4596,7 @@
           "hash": "EHVXjdUfkMbbkawv/gcdbqHsunoQ6LwmFB4LxAfRNwQ="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
