@@ -70,8 +70,21 @@
 <h1 id="getting-started">Getting Started</h1>
 
 <p>VotanicXR is a Software Development Toolkit of Extended Reality as a plug-in of Unity Engine. This chapter is a quick start guide to build a XR application from a new empty project, and run the build in PC and HMD platform.</p>
-<p>In this section, <strong><code>Unity 2018 v.4</code></strong> is used for the demonstration.</p>
+<p>VotanicXR supports Unity 2018.4 to 2021.3. In this section, <strong><code>Unity 2018 v.4</code></strong> is used for the demonstration.</p>
 <h2 id="set-up-tutorial-project">Set Up Tutorial Project</h2>
+<h3 id="create-new-unity-project">Create New Unity Project</h3>
+<p><ins>For Standard 3D Project</ins></p>
+<p>For your chosen Unity version, select the <code>3D Core</code> template when you create new project.</p>
+<p><img src="../images/1.1.1.png" alt=""></p>
+<p><ins>For HDRP Projects</ins></p>
+<ol>
+<li>Create a new 2020.3 Unity project</li>
+</ol>
+<p><img src="../images/1.1.2.1.png" alt=""></p>
+<ol start="2">
+<li>Under Project Template, select <code>3D Sample Scene (HDRP)</code></li>
+</ol>
+<p><img src="../images/1.1.2.2.png" alt=""></p>
 <h3 id="configure-unity-project-settings">Configure Unity Project Settings</h3>
 <p>Configure the following settings before import the VotanicXR SDK:</p>
 <ol>
@@ -88,7 +101,7 @@
 <p><img src="../install/sdk1.png" alt=""></p>
 <p>Select <code>Unity SDK</code> will open the VotanicXR Unity SDK folder shown below:</p>
 <p><img src="../install/sdk4.png" alt=""></p>
-<p>The VotanicXR 2020 for Unity SDK is available in three variations: <strong>VotanicXR 2020 for 2018.4</strong> - targeted for Unity 2018.4 version, <strong>VotanicXR 2020 for 2019.2+</strong> - targeted for Unity 2019.2 to 2019.4, and <strong>VotannicXR 2020 for 2020.3</strong> - targeted for Unity 2020.3 - 2021.3. The below table highlight the corresponding unity version and VotanicXR SDK version. VotanicXR 2020 may work with newer Unity releases than these listed in the table, but full compatibility is not guaranteed. Due to limitation of the Unity engine, it is highly recommended that you use the LTS (Long-Term Support) version of Unity for development, and do not switch major release version of the Unity engine for your project once it is set up with the corresponding VotanicXR Unity SDK.</p>
+<p>The VotanicXR 2020 for Unity SDK is available in three variations: <strong>VotanicXR 2020 for 2018.4</strong> - targeted for Unity 2018.4 version, <strong>VotanicXR 2020 for 2019.2+</strong> - targeted for Unity 2019.2 to 2019.4, <strong>VotannicXR 2020 for 2020.3</strong> - targeted for Unity 2020.3 - 2021.3, and <strong>VotanicXR 2020 for 2020.3 HDRP</strong> - targeted for Unity 2020.3 - 2021.3. The below table highlight the corresponding unity version and VotanicXR SDK version. VotanicXR 2020 may work with newer Unity releases than these listed in the table, but full compatibility is not guaranteed. Due to limitation of the Unity engine, it is highly recommended that you use the LTS (Long-Term Support) version of Unity for development, and do not switch major release version of the Unity engine for your project once it is set up with the corresponding VotanicXR Unity SDK.</p>
 <table>
 <thead>
 <tr>
@@ -117,9 +130,13 @@
 <td style="text-align: left;">2020.3 – 2021.3</td>
 <td style="text-align: left;">VotanicXR_2020.x for 2020.3.unitypackage</td>
 </tr>
+<tr>
+<td style="text-align: left;">2020.3 – 2021.3 HDRP Project</td>
+<td style="text-align: left;">VotanicXR_2020.8.6f8 for 2020.3 HDRP.unitypackage</td>
+</tr>
 </tbody>
 </table>
-<p>The VotanicXR 2020 for Unity SDK importing process is a bit different for Unity 2018, Unity 2019, and Unity 2020 &amp; 2021 several changes in Unity's components and APIs in recent versions. Please follow the importing procedure for the corresponding version below:</p>
+<p>The VotanicXR 2020 for Unity SDK importing process is a bit different for various Unity versions due to several changes in Unity's components and APIs in recent versions. Please follow the importing procedure for the corresponding version below:</p>
 <p><ins>For Unity 2018</ins></p>
 <ol>
 <li><p>Right-click in Project windows. Click <code>Import Package &gt; Custom Package</code>, and select the VotanicXR SDK package.</p>
@@ -174,9 +191,13 @@
 <li><p>Under XR Plug-in Management, select <code>OpenXR</code> and change the Render Mode to <code>Multi Pass</code>.</p>
 <p><img src="../install/sdk2020.2.10.png" alt=""></p>
 </li>
-<li><p>Double click the <code>VotanicXR for Unity 2020.3+ package</code> to import the VotanicXR SDK to Unity.</p>
+<li><p>Import VotanicXR for Unity 2020.3 packages:</p>
+<ol>
+<li>For standard 3D Core projects: Double click the VotanicXR for Unity 2020.3 package to import the VotanicXR SDK to Unity</li>
+<li>For HDRP projects: Double click the VotanicXR for Unity 2020.3 HDRP package to import the VotanicXR SDK to Unity</li>
+</ol>
 </li>
-<li><p>Open the <code>OpenXR</code> setting window again, under <code>Interaction Profiles</code>, select the <code>+</code> button and add the profiles to the list.</p>
+<li><p>Open the <code>OpenXR</code> setting window again, under <code>Interaction Profiles</code>, select the <code>+</code> button and add the profiles to the lis</p>
 <p><img src="../install/sdk2020.2.11.png" alt=""></p>
 <p>The setting page should look like below after adding the profiles:</p>
 <p><img src="../install/sdk2020.2.12.png" alt=""></p>
@@ -221,19 +242,19 @@ When <code>OpenXR</code> is enabled, VotanicXR uses the available <code>OpenXR r
 </ol>
 <p>Note: If you encounter the below error regarding multiple copies of NewtonSoft dll:</p>
 <p>Multiple precompiled assemblies with the same name Newtonsoft.Json.dll included on the current platform. Only one assembly with the same name is allowed per platform. (Assets/Votanic/VotanicXR/Plugins/Core/Newtonsoft.Json.dll)</p>
-<p>Please refer to this <a class="xref" href="../knowledgeBase/FAQ003.html">FAQ</a> entry to resolve the issu</p>
-<h3 id="import-tutorial-package">Import Tutorial Package</h3>
+<p>Please refer to this <a class="xref" href="../knowledgeBase/FAQ003.html">FAQ</a> entry to resolve the issue.</p>
+<h3 id="import-tutorial-package-for-non-hdrp-projects-only">Import Tutorial Package (for Non-HDRP projects only)</h3>
 <p>Download Tutorial Package</p>
 <ul>
 <li>Click <a href="https://votanic-my.sharepoint.com/:f:/p/tobey/Ejl-1366wtxLq9wS29q9U6ABH-t1UnABIYtJSJJww1cRvg">here</a> to download the tutorial package.</li>
 </ul>
 <p>Import the Tutorial Package of VotanicXR:</p>
 <ol>
-<li>Right-click in Project windows. <code>Click Import Package &gt; Custom Package</code>, and select the tutorial package download.</li>
+<li>Right-click in Project windows. <code>Click Import Package &gt; Custom Package</code>, and select the tutorial package to download.</li>
 <li>Select all files in the <code>Importing Package</code> dialog, and click <code>Import</code> button.</li>
 </ol>
 <p>Note: Tutorial package <strong>must be</strong> imported after the VotanicXR package, as some tutorial prefabs and scripts require VotanicXR base classes and materials.</p>
-<h2 id="add-votanicxr-manager-to-scene">Add VotanicXR Manager to Scene</h2>
+<h2 id="add-votanicxr-manager-to-scene-for-non-hdrp-projects">Add VotanicXR Manager to Scene (for Non-HDRP projects)</h2>
 <h3 id="open-sample-scene">Open Sample Scene</h3>
 <p>In <code>Project</code> windows, select <code>Assets &gt; Votanic &gt; VotanicXR_Tutorial &gt; Tutorial01_GettingStarted</code>, open the <code>Demo</code> scene.</p>
 <p><img src="../images/1.3.0.png" alt="Demo Scene"></p>
@@ -259,6 +280,32 @@ When <code>OpenXR</code> is enabled, VotanicXR uses the available <code>OpenXR r
 <p><code>vGear SDK Manager</code> is a group of components for creating VR environment. It includes <code>VotanicXR core classes</code>, <code>cameras</code>, and <code>Input system</code>. This GameObject must be present for other VotanicXR components to function, such as Media, and Behaviour system.</p>
 <p><code>StartPoint</code> represents where the player will be standing when the application starts. You can change the transform of the StartPoint to adjust the starting position of the player. In <code>Game</code> and <code>Scene</code> windows, it is indicated by a giant red cross symbol whereas the robot is a virtual representation of the user in the game for size reference, both of which will be hidden in <code>Play</code> mode automatically.</p>
 <p><img src="../images/1.3.5.png" alt=""></p>
+</li>
+</ol>
+<h2 id="for-hdrp-projects-in-unity-sample-scene">For HDRP projects in Unity Sample Scene</h2>
+<h3 id="add-vgear-sdk-manager-1">Add vGear SDK Manager</h3>
+<ol>
+<li><p>Right-click in the <code>Hierarchy</code> window, select <code>vGear &gt; SDK Manager</code> . This will add the vGear and the StartPoint GameObject to the scene's hierarchy.</p>
+</li>
+<li><p>Agree to VotanicXR Licensing Agreement (first-run only) and XR support in the same way as non-HDRP projects.</p>
+</li>
+</ol>
+<h3 id="scene-object-settings">Scene Object Settings</h3>
+<ol>
+<li><p>For Lighting, set Layer of “Volumes” to <code>vLayerCore</code></p>
+<p><img src="../images/1.3a.1.png" alt=""></p>
+</li>
+<li><p>For Props, set Layer of “Structure” to <code>vLayerFloor</code></p>
+<p><img src="../images/1.3a.2.png" alt=""></p>
+</li>
+<li><p>Open <code>vGear -&gt; Boudary</code>, select and disable the <code>Floor</code> object</p>
+<p><img src="../images/1.3a.3.png" alt=""></p>
+</li>
+<li><p>Play the project in Unity, the HDRP project should be running normally</p>
+<p><img src="../images/1.3a.4.png" alt=""></p>
+<p>Note: you can also load the template scene in the vGear folder to inspect how each default component works in HDRP:</p>
+<p><img src="../images/1.3a.5.png" alt=""></p>
+<p><img src="../images/1.3a.6.png" alt=""></p>
 </li>
 </ol>
 <h2 id="configure-votanicxr-settings">Configure VotanicXR Settings</h2>
